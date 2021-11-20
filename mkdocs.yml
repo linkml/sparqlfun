@@ -4,9 +4,8 @@ theme:
   analytics:
     gtag: G-2SYBSJVZ23
 docs_dir: docs
-site_dir: docs
 nav:
   - Readme: home.md
   - Index: index.md
-site_url: https://biodatamodels.github.io/sparqlfun/
-repo_url: https://github.com/biodatamodels/sparqlfun/
+site_url: https://linkml.github.io/sparqlfun/
+repo_url: https://github.com/linkml/sparqlfun/

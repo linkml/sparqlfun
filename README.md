@@ -15,6 +15,12 @@ LinkML based SPARQL template library and execution engine
  - supports both SELECT and CONSTRUCT
  - optional export to TSV, JSON, YAML
 
+## Browse the default templates
+
+* [http://linkml.io/sparqlfun/](http://linkml.io/sparqlfun/)
+
+Note: currently not all metadata from the yaml is shown in the generated docs
+
 ## Command Line
 
 ```bash
