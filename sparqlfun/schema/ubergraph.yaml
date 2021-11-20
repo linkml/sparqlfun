@@ -1,0 +1,161 @@
+id: https://w3id.org/sparqlfun/ubergraph
+name: ubergraph
+title: sparqlfun ubergraph module
+description: >-
+  Abstractions for working with ubergraph
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  sparqlfun_ubergraph: https://w3id.org/sparqlfun/ubergraph
+  linkml: https://w3id.org/linkml/
+  ubergraph: http://reasoner.renci.org/
+  ubergraph_vocab: http://reasoner.renci.org/vocab/
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  RO: http://purl.obolibrary.org/obo/RO_
+  
+default_prefix: sparqlfun_ubergraph
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+#  - obo_context
+
+imports:
+  - linkml:types
+  - rdf
+  - ro
+  - relation_graph
+
+classes:
+
+  ubergraph taxon class:
+    #is_a: taxon class
+    annotations:
+      sparql.select: SELECT ?id WHERE { ?id rdfs:subClassOf NCBITaxon:1 }
+
+  ubergraph quad:
+    abstract: true
+    is_a: relation graph quad
+
+  normalized information content triple:
+    is_a: triple
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: ubergraph_vocab:normalizedInformationContent
+
+  SubClass count triple:
+    is_a: triple
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: ubergraph_vocab:subClassCount
+
+  is a or part of:
+    is_a: ubergraph quad
+    classification_rules:
+      - is_a: triple
+        exactly_one_of:
+          - slot_conditions:
+              predicate:
+                equals_string: rdfs:subClassOf
+          - slot_conditions:
+              predicate:
+                equals_string: BFO:0000050
+    annotations:
+      sparql.select: SELECT * WHERE { GRAPH ?graph { ?subject ?predicate ?object . VALUES ?predicate { rdfs:subClassOf BFO:0000050 } } }
+
+  in taxon triple:
+    description: |-
+      In ubergraph, an in-taxon triple is pre-inferred
+    is_a: triple
+    mixins:
+      - taxon applicable
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: RO:0002161
+
+  inferred never in taxon:
+    description: |-
+      We infer via join
+    slots:
+      - subject_predicate
+      - class_with_constraint
+      - direct_taxon
+    is_a: triple
+    mixins:
+      - taxon applicable
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?subject ?subject_predicate ?class_with_constraint .
+          ?class_with_constraint RO:0002162 ?direct_taxon .
+          FILTER NOT EXISTS { ?object (rdfs:subClassOf|^rdfs:subClassOf) ?direct_taxon }
+        }
+
+  pairwise common ancestor:
+    slots:
+      - node1
+      - node2
+      - predicate1
+      - predicate2
+      - ancestor
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?node1 ?predicate1 ?ancestor .
+          ?node2 ?predicate2 ?ancestor .
+        }
+
+  pairwise common SubClass ancestor:
+    is_a: pairwise common ancestor
+    classification_rules:
+      - is_a: pairwise common ancestor
+        slot_conditions:
+          predicate1:
+            equals_string: rdfs:subClassOf
+          predicate2:
+            equals_string: rdfs:subClassOf
+
+
+  obo class filtered:
+    is_a: class node
+    class_uri: owl:Class
+    slots:
+      - definition
+      - exact_synonyms
+    annotations:
+      sparql.construct: |-
+        CONSTRUCT {
+          ?id a owl:Class ;
+              IAO:0000115 ?definition ;
+              oboInOwl:hasExactSynonym ?exact_snonyms
+        }
+        WHERE {
+          ?id a owl:Class .
+          OPTIONAL { ?id IAO:0000115 ?definition } .
+          OPTIONAL { ?id oboInOwl:hasExactSynonym ?exact_snonyms } .
+          {% if query_has_subclass_ancestor %}
+          ?id rdfs:subClassOf ?query_has_subclass_ancestor
+          {% endif %}
+        }
+
+slots:
+  ancestor:
+  node1:
+  node2:
+  predicate1:
+    is_a: predicate
+  predicate2:
+    is_a: predicate
+  subject_predicate:
+  class_with_constraint:
+  direct_taxon:
+  query_has_subclass_ancestor:
+
+
+    

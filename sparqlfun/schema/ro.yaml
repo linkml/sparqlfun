@@ -1,0 +1,63 @@
+id: https://w3id.org/sparqlfun/ro
+name: ubergraph
+title: sparqlfun ubergraph module
+description: >-
+  Abstractions for working with ubergraph
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  sparqlfun_ubergraph: https://w3id.org/sparqlfun/ubergraph
+  linkml: https://w3id.org/linkml/
+  ubergraph: http://reasoner.renci.org/
+  RO: http://purl.obolibrary.org/obo/RO_
+  
+default_prefix: sparqlfun_ubergraph
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+#  - obo_context
+
+imports:
+  - linkml:types
+  - rdf
+
+
+
+classes:
+
+  taxon applicable class:
+    abstract: true
+    is_a: class node
+
+  taxon class:
+    abstract: true
+    is_a: class node
+    comments:
+      - see ubergraph module for an implementation of this
+
+  taxon applicable:
+    abstract: true
+    mixin: true
+    slot_usage:
+      subject:
+        range: taxon applicable class
+      object:
+        range: taxon class
+
+  never in taxon triple:
+    is_a: triple
+    mixins:
+      - taxon applicable
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: RO:0002161
+
+
+
+
+
+
+    

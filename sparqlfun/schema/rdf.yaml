@@ -1,0 +1,348 @@
+id: https://w3id.org/sparqlfun/rdf
+name: sparqlfun-RDF
+title: sparqlfun RDF module
+description: >-
+  Abstractions for working with RDF and RDFS triples
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  sparqlfun_rdf: https://w3id.org/sparqlfun/rdf
+  linkml: https://w3id.org/linkml/
+  sh: http://www.w3.org/ns/shacl#
+  
+default_prefix: sparqlfun_rdf
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+
+imports:
+  - linkml:types
+
+subsets:
+  export:
+    description: >-
+      Used to indicate a table/class that should be dumped as part of the export of a db
+  base table:
+    description: >-
+      Indicates the class/table is typically not constructed from a view
+
+classes:
+  prefix:
+    description: >-
+      Maps CURIEs to URIs
+    slots:
+      - prefix
+      - base
+    class_uri: sh:PrefixDeclaration
+    in_subset:
+      - export
+      - base table
+
+  # -- mixins --
+  node trait:
+    abstract: true
+    mixin: true
+    description: >-
+      abstract groupings/properties for different aspects of the model
+
+  class trait:
+    mixin: true
+    is_a: node trait
+
+  property trait:
+    mixin: true
+    is_a: node trait
+
+  individual trait:
+    mixin: true
+    is_a: node trait
+
+  # -- triples --
+  triple:
+    aliases:
+      - statement
+    description: >-
+      Represents an RDF triple
+    slots:
+      - subject
+      - predicate
+      - object
+    class_uri: rdf:Statement
+    in_subset:
+      - base table
+    annotations:
+      sparql.select: SELECT  * WHERE { ?subject ?predicate ?object}
+
+  quad:
+    is_a: triple
+    aliases:
+      - statement with graph
+    description: >-
+      Represents an RDF triple plus named graph
+    slots:
+      - subject
+      - predicate
+      - object
+      - graph
+    in_subset:
+      - base table
+    annotations:
+      sparql.select: SELECT  * WHERE { GRAPH ?graph { ?subject ?predicate ?object} }
+
+  node to node triple:
+    abstract: true
+    is_a: triple
+    description: >-
+      A triple where object is a node
+    slot_usage:
+      object:
+        range: node
+      
+  node to value triple:
+    abstract: true
+    is_a: triple
+    description: >-
+      A triple where object is a literal
+    slot_usage:
+      object:
+        range: string
+
+  rdf type triple:
+    is_a: node to node triple
+    description: >-
+      A triple that indicates the asserted type of the subject entity
+    slot_usage:
+      object:
+        description: >-
+          The entity type
+        range: class node
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: rdf:type
+    #annotations:
+    #  sparql.select: SELECT  * WHERE { ?subject rdf:type ?object}
+
+  rdfs subclass of triple:
+    is_a: node to node triple
+    slot_usage:
+      subject:
+        description: >-
+          The subclass element of the triple
+        range: class node
+      object:
+        description: >-
+          The superclass element of the triple
+        range: class node
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: rdfs:subClassOf
+    #annotations:
+    #  sparql.select: SELECT * WHERE { ?subject rdfs:subClassOf ?object}
+
+  rdfs subclass of named triple:
+    is_a: rdfs subclass of triple
+    classification_rules:
+      - is_a: rdfs subclass of triple
+        slot_conditions:
+          object:
+            range: node
+            ## TODO
+
+  rdfs subproperty of triple:
+    is_a: node to node triple
+    slot_usage:
+      subject:
+        description: >-
+          The subproperty element of the triple
+        range: property node
+      object:
+        description: >-
+          The superproperty element of the triple
+        range: property node
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: rdfs:subPropertyOf
+
+  rdfs label triple:
+    is_a: node to value triple
+    slot_usage:
+      value:
+        description: >-
+          The label value
+        range: string
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: rdfs:label
+
+  rdfs domain triple:
+    is_a: node to node triple
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: rdfs:domain
+
+  rdfs range triple:
+    is_a: node to node triple
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: rdfs:range
+
+  # -- nodes --
+  node:
+    aliases:
+      - object
+      - resource
+    description: >-
+      The basic unit of representation in an RDF or OWL graph
+    slots:
+      - id
+    exact_mappings:
+      - rdf:Resource
+
+  blank node:
+    is_a: node
+    description: >-
+      A node with an ID that is not preserved between databases
+
+  iri node:
+    aliases:
+      - IRI
+      - named entity
+    is_a: node
+    slot_usage:
+      id:
+        pattern: "^_:"
+
+  typed node:
+    is_a: node
+    slots:
+      - type
+
+  class node:
+    is_a: typed node
+    mixins:
+      - class trait
+    description: >-
+      A node that represents an RDFS/OWL class
+    class_uri: owl:Class
+    classification_rules:
+      - is_a: typed node
+        slot_conditions:
+          type:
+            equals_string: owl:Class
+
+  property node:
+    is_a: typed node
+    abstract: true
+    class_uri: owl:Property
+    description: >-
+      Note this only directly classifies nodes asserted to be rdf:Properties
+
+  named individual node:
+    is_a: node
+    description: >-
+      A node that represents an OWL Named Individual
+    class_uri: owl:NamedIndividual
+    classification_rules:
+      - is_a: typed node
+        slot_conditions:
+          type:
+            equals_string: owl:NamedIndividual
+
+  # -- reporting/stats --
+
+  basic class:
+    is_a: node
+    class_uri: owl:Class
+    attributes:
+      subClassOf:
+        slot_uri: rdfs:subClassOf
+        multivalued: true
+        range: class node
+    annotations:
+      sparql.construct: |-
+        CONSTRUCT { ?id a owl:Class ; rdfs:subClassOf ?subClassOf }
+        WHERE {
+         ?id rdfs:subClassOf ?subClassOf .
+         FILTER(?id != ?subClassOf)
+         FILTER(isIRI(?subClassOf))
+        }
+
+
+
+
+slots:
+  id:
+    identifier: true
+    range: node id type
+    description: >-
+      An identifier for an element. Note blank node ids are not unique across databases
+  subject:
+    range: node
+    slot_uri: rdf:subject
+  predicate:
+    range: property node
+    slot_uri: rdf:predicate
+  object:
+    description: >-
+      a literal or node representing the object of the triple
+    exactly_one_of:
+      - range: string
+      - range: node
+    slot_uri: rdf:object
+  graph:
+    description: >-
+      Graph to which the triple belongs
+    range: node
+
+  type:
+    range: node
+
+  datatype:
+  value:
+    description: >-
+      Note the range of this slot is always a string. Only used the triple represents a literal assertion
+    range: literal as string type
+    close_mappings:
+      - rdf:object
+  language:
+    range: string
+    todos:
+      - use an enum
+  prefix:
+    range: ncname
+    slot_uri: sh:prefix
+    description: >-
+      A standardized prefix such as 'GO' or 'rdf' or 'FlyBase'
+  base:
+    range: uri
+    slot_uri: sh:namespace
+    description: >-
+      The base URI a prefix will expand to
+  description:
+    slot_uri: dcterms:description
+
+types:
+  node id type:
+    typeof: uriorcurie
+    description: >-
+      IDs are either CURIEs, IRI, or blank nodes. IRIs are wrapped in <>s to distinguish them from
+      CURIEs, but in general it is good practice to populate the [prefixes][Prefixes.md] table such
+      that they are shortened to CURIEs. Blank nodes are ids starting with `_:`.
+    see_also:
+      - https://github.com/ontodev/rdftab.rs/issues/18
+  literal as string type:
+    typeof: string
+    

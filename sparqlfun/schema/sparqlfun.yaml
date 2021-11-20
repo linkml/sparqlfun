@@ -1,0 +1,38 @@
+id: https://w3id.org/sparqlfun
+name: sparqlfun
+title: SPARQLFun
+description: |-
+  SPARQL Templates
+license: https://creativecommons.org/publicdomain/zero/1.0/
+see_also:
+  - https://github.com/cmungall/semantic-sql
+
+prefixes:
+  sparqlfun: https://w3id.org/sparqlfun/
+  linkml: https://w3id.org/linkml/
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  
+default_prefix: sparqlfun
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+#  - obo_context
+
+imports:
+  - rdf
+  - relation_graph
+  - ro
+  - omo
+  - ubergraph
+
+classes:
+  GenericResult:
+    mixin: true
+  ResultSet:
+    slots:
+      - results
+slots:
+  results:
+    multivalued: true
+    range: GenericResult

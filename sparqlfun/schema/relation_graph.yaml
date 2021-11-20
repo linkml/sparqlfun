@@ -1,0 +1,55 @@
+id: https://w3id.org/sparqlfun/relation_graph
+name: relation_graph
+title: sparqlfun relation_graph module
+description: >-
+  Abstractions for working with relation_graph
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  sparqlfun_relation_graph: https://w3id.org/sparqlfun/relation_graph
+  linkml: https://w3id.org/linkml/
+  ubergraph: http://reasoner.renci.org/
+  
+default_prefix: sparqlfun_rdf
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+
+imports:
+  - linkml:types
+  - rdf
+
+enums:
+  UberGraphSourceEnum:
+    permissible_values:
+
+
+classes:
+
+  relation graph quad:
+    abstract: true
+    is_a: quad
+    slot_usage:
+      graph:
+        description: >-
+          Indicates inference/redundancy status
+        #range: UberGraphSourceEnum
+
+  non redundant quad:
+    is_a: relation graph quad
+    description: >-
+      A triple that indicates the asserted type of the subject entity
+    slot_usage:
+      graph:
+        description: >-
+          Source of
+        range: class node
+    classification_rules:
+      - is_a: quad
+        slot_conditions:
+          graph:
+            equals_string: ubergraph:nonredundant
+
+
+    

@@ -1,0 +1,43 @@
+id: https://w3id.org/sparqlfun/config_schema
+name: config_schema
+title: Config Schema
+description: |-
+  Schema for configuration
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  config_schema: https://w3id.org/sparqlfun/config_schema
+  linkml: https://w3id.org/linkml/
+
+default_prefix: config_schema
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+
+imports:
+  - linkml:types
+
+classes:
+  SystemConfiguration:
+    slots:
+      - endpoints
+  Endpoint:
+    slots:
+      - name
+      - url
+      - type_property
+
+slots:
+  endpoints:
+    multivalued: true
+    range: Endpoint
+    inlined: true
+  name:
+    identifier: true
+  url:
+    required: true
+  type_property:
+    description:
+      typically rdf:type, but others, e.g. wikidata may use others
+
