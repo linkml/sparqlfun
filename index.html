@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="canonical" href="https://linkml.github.io/sparqlfun/">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>SPARQL-Fun templates</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Index";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/sparqlfun/";
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SYBSJVZ23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2SYBSJVZ23');
+  </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> SPARQL-Fun templates</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="home/">Readme</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Index</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mixins">Mixins</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#slots">Slots</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#enums">Enums</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#subsets">Subsets</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#types">Types</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#built-in">Built in</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#defined">Defined</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">SPARQL-Fun templates</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Index</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/linkml/sparqlfun/edit/master/docs/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="sparqlfun-schema">sparqlfun schema</h1>
+<p>SPARQL Templates</p>
+<h3 id="classes">Classes</h3>
+<ul>
+<li><a href="ResultSet/">ResultSet</a></li>
+<li><a href="Node/">Node</a> - The basic unit of representation in an RDF or OWL graph<ul>
+<li><a href="BasicClass/">BasicClass</a></li>
+<li><a href="BlankNode/">BlankNode</a> - A node with an ID that is not preserved between databases</li>
+<li><a href="IriNode/">IriNode</a></li>
+<li><a href="NamedIndividualNode/">NamedIndividualNode</a> - A node that represents an OWL Named Individual</li>
+<li><a href="TypedNode/">TypedNode</a><ul>
+<li><a href="ClassNode/">ClassNode</a> - A node that represents an RDFS/OWL class<ul>
+<li><a href="OboClass/">OboClass</a></li>
+<li><a href="OboClassFiltered/">OboClassFiltered</a></li>
+<li><a href="TaxonApplicableClass/">TaxonApplicableClass</a></li>
+<li><a href="TaxonClass/">TaxonClass</a></li>
+</ul>
+</li>
+<li><a href="PropertyNode/">PropertyNode</a> - Note this only directly classifies nodes asserted to be rdf:Properties</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="PairwiseCommonAncestor/">PairwiseCommonAncestor</a><ul>
+<li><a href="PairwiseCommonSubClassAncestor/">PairwiseCommonSubClassAncestor</a></li>
+</ul>
+</li>
+<li><a href="Prefix.md">Prefix</a> - Maps CURIEs to URIs</li>
+<li><a href="Triple/">Triple</a> - Represents an RDF triple<ul>
+<li><a href="SubClassCountTriple/">SubClassCountTriple</a></li>
+<li><a href="InTaxonTriple/">InTaxonTriple</a> - In ubergraph, an in-taxon triple is pre-inferred</li>
+<li><a href="InferredNeverInTaxon/">InferredNeverInTaxon</a> - We infer via join</li>
+<li><a href="NeverInTaxonTriple/">NeverInTaxonTriple</a></li>
+<li><a href="NodeToNodeTriple/">NodeToNodeTriple</a> - A triple where object is a node<ul>
+<li><a href="RdfTypeTriple/">RdfTypeTriple</a> - A triple that indicates the asserted type of the subject entity</li>
+<li><a href="RdfsDomainTriple/">RdfsDomainTriple</a></li>
+<li><a href="RdfsRangeTriple/">RdfsRangeTriple</a></li>
+<li><a href="RdfsSubclassOfTriple/">RdfsSubclassOfTriple</a><ul>
+<li><a href="RdfsSubclassOfNamedTriple/">RdfsSubclassOfNamedTriple</a></li>
+</ul>
+</li>
+<li><a href="RdfsSubpropertyOfTriple/">RdfsSubpropertyOfTriple</a></li>
+</ul>
+</li>
+<li><a href="NodeToValueTriple/">NodeToValueTriple</a> - A triple where object is a literal<ul>
+<li><a href="DefinitionTriple/">DefinitionTriple</a></li>
+<li><a href="RdfsLabelTriple/">RdfsLabelTriple</a></li>
+</ul>
+</li>
+<li><a href="NormalizedInformationContentTriple/">NormalizedInformationContentTriple</a></li>
+<li><a href="Quad/">Quad</a> - Represents an RDF triple plus named graph<ul>
+<li><a href="RelationGraphQuad/">RelationGraphQuad</a><ul>
+<li><a href="NonRedundantQuad/">NonRedundantQuad</a> - A triple that indicates the asserted type of the subject entity</li>
+<li><a href="UbergraphQuad/">UbergraphQuad</a><ul>
+<li><a href="IsAOrPartOf/">IsAOrPartOf</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="UbergraphTaxonClass/">UbergraphTaxonClass</a></li>
+</ul>
+<h3 id="mixins">Mixins</h3>
+<ul>
+<li><a href="GenericResult/">GenericResult</a></li>
+<li><a href="ClassTrait/">ClassTrait</a></li>
+<li><a href="IndividualTrait/">IndividualTrait</a></li>
+<li><a href="NodeTrait/">NodeTrait</a> - abstract groupings/properties for different aspects of the model<ul>
+<li><a href="ClassTrait/">ClassTrait</a></li>
+<li><a href="IndividualTrait/">IndividualTrait</a></li>
+<li><a href="PropertyTrait/">PropertyTrait</a></li>
+</ul>
+</li>
+<li><a href="PropertyTrait/">PropertyTrait</a></li>
+<li><a href="TaxonApplicable/">TaxonApplicable</a></li>
+</ul>
+<h3 id="slots">Slots</h3>
+<ul>
+<li><a href="ancestor/">ancestor</a></li>
+<li><a href="base/">base</a> - The base URI a prefix will expand to</li>
+<li><a href="basicClass__subClassOf/">➞subClassOf</a></li>
+<li><a href="class_with_constraint/">class_with_constraint</a></li>
+<li><a href="datatype/">datatype</a></li>
+<li><a href="definition/">definition</a></li>
+<li><a href="description/">description</a></li>
+<li><a href="direct_taxon/">direct_taxon</a></li>
+<li><a href="exact_synonyms/">exact_synonyms</a></li>
+<li><a href="graph/">graph</a> - Graph to which the triple belongs<ul>
+<li><a href="relation_graph_quad_graph/">relation graph quad➞graph</a> - Indicates inference/redundancy status<ul>
+<li><a href="non_redundant_quad_graph/">non redundant quad➞graph</a> - Source of</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="id/">id</a> - An identifier for an element. Note blank node ids are not unique across databases<ul>
+<li><a href="iri_node_id/">iri node➞id</a></li>
+</ul>
+</li>
+<li><a href="language/">language</a></li>
+<li><a href="node1/">node1</a></li>
+<li><a href="node2/">node2</a></li>
+<li><a href="object/">object</a> - a literal or node representing the object of the triple<ul>
+<li><a href="node_to_node_triple_object/">node to node triple➞object</a><ul>
+<li><a href="rdf_type_triple_object/">rdf type triple➞object</a> - The entity type</li>
+<li><a href="rdfs_subclass_of_triple_object/">rdfs subclass of triple➞object</a> - The superclass element of the triple</li>
+<li><a href="rdfs_subproperty_of_triple_object/">rdfs subproperty of triple➞object</a> - The superproperty element of the triple</li>
+</ul>
+</li>
+<li><a href="node_to_value_triple_object/">node to value triple➞object</a></li>
+<li><a href="taxon_applicable_object/">taxon applicable➞object</a></li>
+</ul>
+</li>
+<li><a href="predicate/">predicate</a><ul>
+<li><a href="predicate1/">predicate1</a></li>
+<li><a href="predicate2/">predicate2</a></li>
+</ul>
+</li>
+<li><a href="prefix/">prefix</a> - A standardized prefix such as 'GO' or 'rdf' or 'FlyBase'</li>
+<li><a href="query_has_subclass_ancestor/">query_has_subclass_ancestor</a></li>
+<li><a href="results/">results</a></li>
+<li><a href="subject/">subject</a><ul>
+<li><a href="rdfs_subclass_of_triple_subject/">rdfs subclass of triple➞subject</a> - The subclass element of the triple</li>
+<li><a href="rdfs_subproperty_of_triple_subject/">rdfs subproperty of triple➞subject</a> - The subproperty element of the triple</li>
+<li><a href="taxon_applicable_subject/">taxon applicable➞subject</a></li>
+</ul>
+</li>
+<li><a href="subject_predicate/">subject_predicate</a></li>
+<li><a href="type/">type</a></li>
+<li><a href="value/">value</a> - Note the range of this slot is always a string. Only used the triple represents a literal assertion<ul>
+<li><a href="rdfs_label_triple_value/">rdfs label triple➞value</a> - The label value</li>
+</ul>
+</li>
+</ul>
+<h3 id="enums">Enums</h3>
+<ul>
+<li><a href="UberGraphSourceEnum/">UberGraphSourceEnum</a></li>
+</ul>
+<h3 id="subsets">Subsets</h3>
+<ul>
+<li><a href="BaseTable/">BaseTable</a> - Indicates the class/table is typically not constructed from a view</li>
+<li><a href="Export/">Export</a> - Used to indicate a table/class that should be dumped as part of the export of a db</li>
+</ul>
+<h3 id="types">Types</h3>
+<h4 id="built-in">Built in</h4>
+<ul>
+<li><strong>Bool</strong></li>
+<li><strong>Decimal</strong></li>
+<li><strong>ElementIdentifier</strong></li>
+<li><strong>NCName</strong></li>
+<li><strong>NodeIdentifier</strong></li>
+<li><strong>URI</strong></li>
+<li><strong>URIorCURIE</strong></li>
+<li><strong>XSDDate</strong></li>
+<li><strong>XSDDateTime</strong></li>
+<li><strong>XSDTime</strong></li>
+<li><strong>float</strong></li>
+<li><strong>int</strong></li>
+<li><strong>str</strong></li>
+</ul>
+<h4 id="defined">Defined</h4>
+<ul>
+<li><a href="types/Boolean/">Boolean</a>  (<strong>Bool</strong>)  - A binary (true or false) value</li>
+<li><a href="types/Date/">Date</a>  (<strong>XSDDate</strong>)  - a date (year, month and day) in an idealized calendar</li>
+<li><a href="types/Datetime/">Datetime</a>  (<strong>XSDDateTime</strong>)  - The combination of a date and time</li>
+<li><a href="types/Decimal/">Decimal</a>  (<strong>Decimal</strong>)  - A real number with arbitrary precision that conforms to the xsd:decimal specification</li>
+<li><a href="types/Double/">Double</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:double specification</li>
+<li><a href="types/Float/">Float</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:float specification</li>
+<li><a href="types/Integer/">Integer</a>  (<strong>int</strong>)  - An integer</li>
+<li><a href="types/LiteralAsStringType/">LiteralAsStringType</a>  (<a href="types/String/">String</a>) </li>
+<li><a href="types/Ncname/">Ncname</a>  (<strong>NCName</strong>)  - Prefix part of CURIE</li>
+<li><a href="types/NodeIdType/">NodeIdType</a>  (<a href="types/Uriorcurie/">Uriorcurie</a>)  - IDs are either CURIEs, IRI, or blank nodes. IRIs are wrapped in &lt;&gt;s to distinguish them from CURIEs, but in general it is good practice to populate the [prefixes][Prefixes.md] table such that they are shortened to CURIEs. Blank nodes are ids starting with <code>_:</code>.</li>
+<li><a href="types/Nodeidentifier/">Nodeidentifier</a>  (<strong>NodeIdentifier</strong>)  - A URI, CURIE or BNODE that represents a node in a model.</li>
+<li><a href="types/Objectidentifier/">Objectidentifier</a>  (<strong>ElementIdentifier</strong>)  - A URI or CURIE that represents an object in the model.</li>
+<li><a href="types/String/">String</a>  (<strong>str</strong>)  - A character string</li>
+<li><a href="types/Time/">Time</a>  (<strong>XSDTime</strong>)  - A time object represents a (local) time of day, independent of any particular day</li>
+<li><a href="types/Uri/">Uri</a>  (<strong>URI</strong>)  - a complete URI</li>
+<li><a href="types/Uriorcurie/">Uriorcurie</a>  (<strong>URIorCURIE</strong>)  - a URI or a CURIE</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="home/" class="btn btn-neutral" title="Readme"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/linkml/sparqlfun/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="home/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.2.3
+Build Date UTC : 2021-11-20 02:31:22.473319+00:00
+-->

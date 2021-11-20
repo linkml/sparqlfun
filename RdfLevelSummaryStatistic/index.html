@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://linkml.github.io/sparqlfun/RdfLevelSummaryStatistic/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Class: rdf level summary statistic - SPARQL-Fun templates</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Class: rdf level summary statistic";
+    var mkdocs_page_input_path = "RdfLevelSummaryStatistic.md";
+    var mkdocs_page_url = "/sparqlfun/RdfLevelSummaryStatistic/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SYBSJVZ23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2SYBSJVZ23');
+  </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> SPARQL-Fun templates</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../home/">Readme</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">SPARQL-Fun templates</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Class: rdf level summary statistic</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/linkml/sparqlfun/edit/master/docs/RdfLevelSummaryStatistic.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="class-rdf-level-summary-statistic">Class: rdf level summary statistic</h1>
+<p>Abstract grouping for views/classes that provide some kind of count summary about an individual element</p>
+<p>URI: <a href="https://w3id.org/sparqlfun/RdfLevelSummaryStatistic">sparqlfun:RdfLevelSummaryStatistic</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Node]&lt;element%200..1-%20[RdfLevelSummaryStatistic&#124;count_value:integer%20%3F],[RdfLevelSummaryStatistic]uses%20-.-&gt;[IsReport],[RdfLevelSummaryStatistic]^-[CountOfSubclasses],[RdfLevelSummaryStatistic]^-[CountOfPredicates],[RdfLevelSummaryStatistic]^-[CountOfInstantiatedClasses],[Node],[IsReport],[CountOfSubclasses],[CountOfPredicates],[CountOfInstantiatedClasses]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Node]&lt;element%200..1-%20[RdfLevelSummaryStatistic&#124;count_value:integer%20%3F],[RdfLevelSummaryStatistic]uses%20-.-&gt;[IsReport],[RdfLevelSummaryStatistic]^-[CountOfSubclasses],[RdfLevelSummaryStatistic]^-[CountOfPredicates],[RdfLevelSummaryStatistic]^-[CountOfInstantiatedClasses],[Node],[IsReport],[CountOfSubclasses],[CountOfPredicates],[CountOfInstantiatedClasses]" /></a></p>
+<h2 id="uses-mixin">Uses Mixin</h2>
+<ul>
+<li>mixin: <a href="../IsReport/">IsReport</a> - Used to describe classes/views that have a reporting function</li>
+</ul>
+<h2 id="children">Children</h2>
+<ul>
+<li><a href="../CountOfInstantiatedClasses/">CountOfInstantiatedClasses</a> - Number of distinct instantiations of a class. Note in many OBOs, classes are not directly instantiated</li>
+<li><a href="../CountOfPredicates/">CountOfPredicates</a> - Number of distinct usages of a predicate. NOTE MAY CHANGE: does not currently count existential usage in OWL</li>
+<li><a href="../CountOfSubclasses/">CountOfSubclasses</a> - Number of subclasses for a given class</li>
+</ul>
+<h2 id="referenced-by-class">Referenced by Class</h2>
+<h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../rdfLevelSummaryStatistic__element/">➞element</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../Node/">Node</a></li>
+</ul>
+</li>
+<li><a href="../rdfLevelSummaryStatistic__count_value/">➞count_value</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../types/Integer/">Integer</a></li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/linkml/sparqlfun/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://linkml.github.io/sparqlfun/home/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Readme - SPARQL-Fun templates</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Readme";
+    var mkdocs_page_input_path = "home.md";
+    var mkdocs_page_url = "/sparqlfun/home/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SYBSJVZ23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2SYBSJVZ23');
+  </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> SPARQL-Fun templates</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Readme</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#command-line">Command Line</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#python">Python</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#service-via-fast-api">Service (via Fast API)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#browsing-the-templates">Browsing the templates</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-it-works">How it works</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basics">Basics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#template-inheritance">Template Inheritance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modularity">Modularity</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#use-of-jinja-commands">Use of Jinja commands</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#supported-endpoints">Supported Endpoints</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#see-also">See also</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#todos">TODOs</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">SPARQL-Fun templates</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Readme</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/linkml/sparqlfun/edit/master/docs/home.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="sparqlfun">sparqlfun</h1>
+<p>LinkML based SPARQL template library and execution engine</p>
+<ul>
+<li>modularized core library of SPARQL templates<ul>
+<li>generic templates using common vocabs (rdf, owl, skos, ...)</li>
+<li>OBO and biology specific, e.g. Ubergraph</li>
+<li>coming soon: uniprot, wikidata, etc</li>
+</ul>
+</li>
+<li>Fully FAIR description of templates<ul>
+<li>Each template has a URI</li>
+<li>Each template parameters has a URI</li>
+<li>Full metadata including descriptions of each</li>
+<li>Templates described in YAML, RDF, SHACL, ShEx, ...</li>
+</ul>
+</li>
+<li>optional python bindings using LinkML</li>
+<li>supports both SELECT and CONSTRUCT</li>
+<li>optional export to TSV, JSON, YAML</li>
+</ul>
+<h2 id="command-line">Command Line</h2>
+<pre><code class="language-bash">sparqlfun -e ubergraph -T PairwiseCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
+</code></pre>
+<p>results:</p>
+<pre><code class="language-yaml">results:
+- node1: GO:0046220
+  node2: GO:0008295
+  predicate1: rdfs:subClassOf
+  predicate2: rdfs:subClassOf
+  ancestor: GO:0009987
+- node1: GO:0046220
+  node2: GO:0008295
+  predicate1: rdfs:subClassOf
+  predicate2: rdfs:subClassOf
+  ancestor: GO:0044237
+- node1: GO:0046220
+  node2: GO:0008295
+  predicate1: rdfs:subClassOf
+  predicate2: rdfs:subClassOf
+  ancestor: GO:0044271
+...
+</code></pre>
+<h2 id="python">Python</h2>
+<pre><code class="language-python">se = SparqlEngine(endpoint='ubergraph')
+se.bind_prefixes(GO='http://purl.obolibrary.org/obo/GO_')
+for row in se.query(PairwiseCommonSubClassAncestor, node1='GO:0046220', node2='GO:0008295'):
+        print(f'ROW={row}')
+</code></pre>
+<p>For more examples, see tests/</p>
+<h2 id="service-via-fast-api">Service (via Fast API)</h2>
+<p>coming soon!</p>
+<h2 id="browsing-the-templates">Browsing the templates</h2>
+<ul>
+<li>source is in sparqlfun/schema<ul>
+<li>add new templates here</li>
+</ul>
+</li>
+<li>Browse the generated markdown on the site</li>
+</ul>
+<h2 id="how-it-works">How it works</h2>
+<h3 id="basics">Basics</h3>
+<p>Templates are defined as YAML files following the LinkML schema.</p>
+<p>A yaml file with a single template might look like this:</p>
+<pre><code class="language-yaml">classes:
+  my template:
+    slots:
+      - my_var1
+      - my_var2
+    annotations:
+      sparql.select: |-
+        SELECT  * WHERE { ... ?my_var1 ... ?my_var2}
+
+slots:
+  my_var1:
+    description: about my var 1
+  my_var2:
+    description: about my var 2
+</code></pre>
+<p>This defines a template <code>MyTemplate</code> with two slots/parameters, and an
+arbitrarily complex SPARQL select query.</p>
+<p>Note that the definitions of the slots go in a different section from
+the classes/templates. You are encouraged to "reuse" slots across templates.</p>
+<p>The above can be used in queries:</p>
+<pre><code class="language-bash">sparqlfun -e ubergraph -T MyTemplate my_var2=MY_VAL
+</code></pre>
+<p>You can ground any or all of your vars on the command line (if you ground all then your SELECT is effectively an ASK query).</p>
+<p>However, the features go beyond other templating systems, and leverage
+the fact that LinkML is a fully-fledged rich modeling language with bindings to JSON-Schema, SHACL, ShEx, etc.</p>
+<p>For example, you will get markdown documentation describing your templates. This markdown documentation will be even richer if you annotate your schemas with metadata such as</p>
+<ul>
+<li>descriptions</li>
+<li>ranges for slots</li>
+<li>mappings and URIs for your templates and slots</li>
+</ul>
+<h3 id="template-inheritance">Template Inheritance</h3>
+<p>Templates can be inherited, facilitating reuse and composition patterns</p>
+<p>To illustrate consider a simple "base" template to query a triple:</p>
+<pre><code class="language-yaml">triple:
+    aliases:
+      - statement
+    description: &gt;-
+      Represents an RDF triple
+    slots:
+      - subject
+      - predicate
+      - object
+    class_uri: rdf:Statement
+    in_subset:
+      - base table
+    annotations:
+      sparql.select: SELECT  * WHERE { ?subject ?predicate ?object}
+</code></pre>
+<p>This is not a particularly useful template in isolation - you may as
+well query directly with sparql (nevertheless it can be useful to have
+templates for even this simple pattern, to faciliate generation of
+APIs etc)</p>
+<p>This template can be inherited, which means that slots will be
+inherited, eliminating some boilerplate and the need to redefine them</p>
+<p>Inerhitance allows even more powerful features using the LinkML
+<code>classification_rules</code> construct. Let's say we want to represent type
+triples as children of generic triples:</p>
+<pre><code class="language-yaml">rdf type triple:
+    is_a: triple
+    description: &gt;-
+      A triple that indicates the asserted type of the subject entity
+    slot_usage:
+      object:
+        description: &gt;-
+          The entity type
+        range: class node
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: rdf:type
+</code></pre>
+<p><strong>Note we don't need to specify a SPARQL template here</strong> - the
+template is autogenerated from the classification rule.</p>
+<h3 id="modularity">Modularity</h3>
+<p>LinkML allows importing so templates can be modularized</p>
+<p>In future this repo may be split up, with the bio/obo specific features migrating to a new repo.</p>
+<h3 id="use-of-jinja-commands">Use of Jinja commands</h3>
+<p>TODO - document this</p>
+<h2 id="supported-endpoints">Supported Endpoints</h2>
+<p>This framework can be used with any SPARQL endpoint. However, the
+current pre-defined templates are geared towards the combination of
+OBO-style ontologies together with storage patterns employed in
+triplestores such as ubergraph and ontobee.</p>
+<ul>
+<li><a href="https://github.com/INCATools/ubergraph">ubergraph</a></li>
+</ul>
+<p>In particular, ubergraph uses the relation-graph inference tool to
+pre-compute inferred direct triples from TBox existential axioms,
+allowing for simple and powerful queries over inferred ontologies</p>
+<h2 id="see-also">See also</h2>
+<p>This was inspired in part by the powerful but arcane <a href="https://github.com/cmungall/sparqlprog/">sparqlprog</a> system</p>
+<h2 id="todos">TODOs</h2>
+<ul>
+<li>Better Document<ul>
+<li>framework</li>
+<li>templates</li>
+<li>How-tos for use with Python, SHACL, ...</li>
+<li>exemplar notebooks</li>
+</ul>
+</li>
+<li>Unify with SQL/rdftab functionality in semantic-sql</li>
+<li>Split into bio-specific</li>
+<li>Expose more ubergraph awesomeness</li>
+<li>FastAPI/serverless endpoint</li>
+<li>Templates for<ul>
+<li>uniprot</li>
+<li>gocams</li>
+<li>wikidata</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".." class="btn btn-neutral float-right" title="Index">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/linkml/sparqlfun/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+      <span><a href=".." style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
