@@ -1,0 +1,553 @@
+{
+   "$defs": {
+      "BasicClass": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "subClassOf": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "BasicClass",
+         "type": "object"
+      },
+      "BlankNode": {
+         "additionalProperties": false,
+         "description": "A node with an ID that is not preserved between databases",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "BlankNode",
+         "type": "object"
+      },
+      "ClassNode": {
+         "additionalProperties": false,
+         "description": "A node that represents an RDFS/OWL class",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "ClassNode",
+         "type": "object"
+      },
+      "DefinitionTriple": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "DefinitionTriple",
+         "type": "object"
+      },
+      "InTaxonTriple": {
+         "additionalProperties": false,
+         "description": "In ubergraph, an in-taxon triple is pre-inferred",
+         "properties": {
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "InTaxonTriple",
+         "type": "object"
+      },
+      "InferredNeverInTaxon": {
+         "additionalProperties": false,
+         "description": "We infer via join",
+         "properties": {
+            "class_with_constraint": {
+               "type": "string"
+            },
+            "direct_taxon": {
+               "type": "string"
+            },
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            },
+            "subject_predicate": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "InferredNeverInTaxon",
+         "type": "object"
+      },
+      "IriNode": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "pattern": "^_:",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "IriNode",
+         "type": "object"
+      },
+      "IsAOrPartOf": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "graph": {
+               "description": "Indicates inference/redundancy status",
+               "type": "string"
+            },
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "IsAOrPartOf",
+         "type": "object"
+      },
+      "NamedIndividualNode": {
+         "additionalProperties": false,
+         "description": "A node that represents an OWL Named Individual",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "NamedIndividualNode",
+         "type": "object"
+      },
+      "NeverInTaxonTriple": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "NeverInTaxonTriple",
+         "type": "object"
+      },
+      "Node": {
+         "additionalProperties": false,
+         "description": "The basic unit of representation in an RDF or OWL graph",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Node",
+         "type": "object"
+      },
+      "NonRedundantQuad": {
+         "additionalProperties": false,
+         "description": "A triple that indicates the asserted type of the subject entity",
+         "properties": {
+            "graph": {
+               "description": "Source of",
+               "type": "string"
+            },
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "NonRedundantQuad",
+         "type": "object"
+      },
+      "NormalizedInformationContentTriple": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "NormalizedInformationContentTriple",
+         "type": "object"
+      },
+      "OboClass": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "definition": {
+               "type": "string"
+            },
+            "exact_synonyms": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "OboClass",
+         "type": "object"
+      },
+      "Prefix": {
+         "additionalProperties": false,
+         "description": "Maps CURIEs to URIs",
+         "properties": {
+            "base": {
+               "description": "The base URI a prefix will expand to",
+               "type": "string"
+            },
+            "prefix": {
+               "description": "A standardized prefix such as 'GO' or 'rdf' or 'FlyBase'",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Prefix",
+         "type": "object"
+      },
+      "Quad": {
+         "additionalProperties": false,
+         "description": "Represents an RDF triple plus named graph",
+         "properties": {
+            "graph": {
+               "description": "Graph to which the triple belongs",
+               "type": "string"
+            },
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Quad",
+         "type": "object"
+      },
+      "RdfTypeTriple": {
+         "additionalProperties": false,
+         "description": "A triple that indicates the asserted type of the subject entity",
+         "properties": {
+            "object": {
+               "description": "The entity type",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "RdfTypeTriple",
+         "type": "object"
+      },
+      "RdfsDomainTriple": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "RdfsDomainTriple",
+         "type": "object"
+      },
+      "RdfsLabelTriple": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            },
+            "value": {
+               "description": "The label value",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "RdfsLabelTriple",
+         "type": "object"
+      },
+      "RdfsRangeTriple": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "RdfsRangeTriple",
+         "type": "object"
+      },
+      "RdfsSubclassOfNamedTriple": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "object": {
+               "description": "The superclass element of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "description": "The subclass element of the triple",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "RdfsSubclassOfNamedTriple",
+         "type": "object"
+      },
+      "RdfsSubclassOfTriple": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "object": {
+               "description": "The superclass element of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "description": "The subclass element of the triple",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "RdfsSubclassOfTriple",
+         "type": "object"
+      },
+      "RdfsSubpropertyOfTriple": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "object": {
+               "description": "The superproperty element of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "description": "The subproperty element of the triple",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "RdfsSubpropertyOfTriple",
+         "type": "object"
+      },
+      "ResultSet": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "results": {
+               "items": {
+                  "$ref": "#/$defs/GenericResult"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "ResultSet",
+         "type": "object"
+      },
+      "SubClassCountTriple": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "SubClassCountTriple",
+         "type": "object"
+      },
+      "Triple": {
+         "additionalProperties": false,
+         "description": "Represents an RDF triple",
+         "properties": {
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Triple",
+         "type": "object"
+      },
+      "TypedNode": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "TypedNode",
+         "type": "object"
+      },
+      "UberGraphSourceEnum": {
+         "description": "",
+         "enum": [],
+         "title": "UberGraphSourceEnum",
+         "type": "string"
+      },
+      "UbergraphTaxonClass": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "UbergraphTaxonClass",
+         "type": "object"
+      }
+   },
+   "$id": "https://w3id.org/sparqlfun",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "properties": {},
+   "required": [],
+   "title": "sparqlfun",
+   "type": "object"
+}

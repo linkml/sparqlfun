@@ -1,0 +1,208 @@
+{
+   "_comments": "Auto generated from sparqlfun.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-11-19T16:31:27\n    Schema: sparqlfun\n    \n    id: https://w3id.org/sparqlfun\n    description: SPARQL Templates\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "@context": {
+      "IAO": {
+         "@id": "http://purl.obolibrary.org/obo/IAO_",
+         "@prefix": true
+      },
+      "dcterms": "http://purl.org/dc/terms/",
+      "linkml": "https://w3id.org/linkml/",
+      "oio": "http://www.geneontology.org/formats/oboInOwl#",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "sh": "http://www.w3.org/ns/shacl#",
+      "sparqlfun": "https://w3id.org/sparqlfun/",
+      "sparqlfun_omo": {
+         "@id": "https://w3id.org/sparqlfun/omo",
+         "@prefix": true
+      },
+      "sparqlfun_rdf": {
+         "@id": "https://w3id.org/sparqlfun/rdf",
+         "@prefix": true
+      },
+      "sparqlfun_ubergraph": {
+         "@id": "https://w3id.org/sparqlfun/ubergraph",
+         "@prefix": true
+      },
+      "@vocab": "https://w3id.org/sparqlfun/",
+      "base": {
+         "@type": "@id",
+         "@id": "sh:namespace"
+      },
+      "subClassOf": {
+         "@type": "@id",
+         "@id": "rdfs:subClassOf"
+      },
+      "class_with_constraint": {
+         "@id": "sparqlfun_ubergraph:class_with_constraint"
+      },
+      "datatype": {
+         "@id": "sparqlfun_rdf:datatype"
+      },
+      "definition": {
+         "@id": "IAO:0000115"
+      },
+      "description": {
+         "@id": "dcterms:description"
+      },
+      "direct_taxon": {
+         "@id": "sparqlfun_ubergraph:direct_taxon"
+      },
+      "exact_synonyms": {
+         "@id": "oio:hasExactSynonym"
+      },
+      "graph": {
+         "@type": "@id",
+         "@id": "sparqlfun_rdf:graph"
+      },
+      "id": "@id",
+      "language": {
+         "@id": "sparqlfun_rdf:language"
+      },
+      "object": {
+         "@id": "rdf:object"
+      },
+      "predicate": {
+         "@type": "@id",
+         "@id": "rdf:predicate"
+      },
+      "prefix": {
+         "@id": "sh:prefix"
+      },
+      "results": {
+         "@type": "@id"
+      },
+      "subject": {
+         "@type": "@id",
+         "@id": "rdf:subject"
+      },
+      "subject_predicate": {
+         "@id": "sparqlfun_ubergraph:subject_predicate"
+      },
+      "type": {
+         "@type": "@id",
+         "@id": "sparqlfun_rdf:type"
+      },
+      "value": {
+         "@id": "sparqlfun_rdf:value"
+      },
+      "BasicClass": {
+         "@id": "owl:Class"
+      },
+      "BlankNode": {
+         "@id": "sparqlfun_rdf:BlankNode"
+      },
+      "ClassNode": {
+         "@id": "owl:Class"
+      },
+      "ClassTrait": {
+         "@id": "sparqlfun_rdf:ClassTrait"
+      },
+      "DefinitionTriple": {
+         "@id": "sparqlfun_omo:DefinitionTriple"
+      },
+      "InTaxonTriple": {
+         "@id": "sparqlfun_ubergraph:InTaxonTriple"
+      },
+      "IndividualTrait": {
+         "@id": "sparqlfun_rdf:IndividualTrait"
+      },
+      "InferredNeverInTaxon": {
+         "@id": "sparqlfun_ubergraph:InferredNeverInTaxon"
+      },
+      "IriNode": {
+         "@id": "sparqlfun_rdf:IriNode"
+      },
+      "IsAOrPartOf": {
+         "@id": "sparqlfun_ubergraph:IsAOrPartOf"
+      },
+      "NamedIndividualNode": {
+         "@id": "owl:NamedIndividual"
+      },
+      "NeverInTaxonTriple": {
+         "@id": "sparqlfun_ubergraph:NeverInTaxonTriple"
+      },
+      "Node": {
+         "@id": "sparqlfun_rdf:Node"
+      },
+      "NodeToNodeTriple": {
+         "@id": "sparqlfun_rdf:NodeToNodeTriple"
+      },
+      "NodeToValueTriple": {
+         "@id": "sparqlfun_rdf:NodeToValueTriple"
+      },
+      "NodeTrait": {
+         "@id": "sparqlfun_rdf:NodeTrait"
+      },
+      "NonRedundantQuad": {
+         "@id": "sparqlfun_rdf:NonRedundantQuad"
+      },
+      "NormalizedInformationContentTriple": {
+         "@id": "sparqlfun_ubergraph:NormalizedInformationContentTriple"
+      },
+      "OboClass": {
+         "@id": "sparqlfun_omo:OboClass"
+      },
+      "Prefix": {
+         "@id": "sh:PrefixDeclaration"
+      },
+      "PropertyNode": {
+         "@id": "owl:Property"
+      },
+      "PropertyTrait": {
+         "@id": "sparqlfun_rdf:PropertyTrait"
+      },
+      "Quad": {
+         "@id": "sparqlfun_rdf:Quad"
+      },
+      "RdfTypeTriple": {
+         "@id": "sparqlfun_rdf:RdfTypeTriple"
+      },
+      "RdfsDomainTriple": {
+         "@id": "sparqlfun_rdf:RdfsDomainTriple"
+      },
+      "RdfsLabelTriple": {
+         "@id": "sparqlfun_rdf:RdfsLabelTriple"
+      },
+      "RdfsRangeTriple": {
+         "@id": "sparqlfun_rdf:RdfsRangeTriple"
+      },
+      "RdfsSubclassOfNamedTriple": {
+         "@id": "sparqlfun_rdf:RdfsSubclassOfNamedTriple"
+      },
+      "RdfsSubclassOfTriple": {
+         "@id": "sparqlfun_rdf:RdfsSubclassOfTriple"
+      },
+      "RdfsSubpropertyOfTriple": {
+         "@id": "sparqlfun_rdf:RdfsSubpropertyOfTriple"
+      },
+      "RelationGraphQuad": {
+         "@id": "sparqlfun_rdf:RelationGraphQuad"
+      },
+      "SubClassCountTriple": {
+         "@id": "sparqlfun_ubergraph:SubClassCountTriple"
+      },
+      "TaxonApplicable": {
+         "@id": "sparqlfun_ubergraph:TaxonApplicable"
+      },
+      "TaxonApplicableClass": {
+         "@id": "sparqlfun_ubergraph:TaxonApplicableClass"
+      },
+      "TaxonClass": {
+         "@id": "sparqlfun_ubergraph:TaxonClass"
+      },
+      "Triple": {
+         "@id": "rdf:Statement"
+      },
+      "TypedNode": {
+         "@id": "sparqlfun_rdf:TypedNode"
+      },
+      "UbergraphQuad": {
+         "@id": "sparqlfun_ubergraph:UbergraphQuad"
+      },
+      "UbergraphTaxonClass": {
+         "@id": "sparqlfun_ubergraph:UbergraphTaxonClass"
+      }
+   }
+}

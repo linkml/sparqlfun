@@ -1,0 +1,3 @@
+endpoints:
+  ubergraph:
+    url: https://stars-app.renci.org/ubergraph/sparql
