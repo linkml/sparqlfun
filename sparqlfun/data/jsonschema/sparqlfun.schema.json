@@ -73,6 +73,24 @@
          "title": "DefinitionTriple",
          "type": "object"
       },
+      "DeprecatedOboClassQuery": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "label_regex": {
+               "type": "string"
+            },
+            "results": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "DeprecatedOboClassQuery",
+         "type": "object"
+      },
       "InTaxonTriple": {
          "additionalProperties": false,
          "description": "In ubergraph, an in-taxon triple is pre-inferred",
@@ -275,6 +293,99 @@
             "id"
          ],
          "title": "OboClass",
+         "type": "object"
+      },
+      "OboClassFiltered": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "definition": {
+               "type": "string"
+            },
+            "exact_synonyms": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "OboClassFiltered",
+         "type": "object"
+      },
+      "OboClassQuery": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "label_regex": {
+               "type": "string"
+            },
+            "results": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "OboClassQuery",
+         "type": "object"
+      },
+      "PairwiseCommonAncestor": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "ancestor": {
+               "type": "string"
+            },
+            "node1": {
+               "type": "string"
+            },
+            "node2": {
+               "type": "string"
+            },
+            "predicate1": {
+               "type": "string"
+            },
+            "predicate2": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "PairwiseCommonAncestor",
+         "type": "object"
+      },
+      "PairwiseCommonSubClassAncestor": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "ancestor": {
+               "type": "string"
+            },
+            "node1": {
+               "type": "string"
+            },
+            "node2": {
+               "type": "string"
+            },
+            "predicate1": {
+               "type": "string"
+            },
+            "predicate2": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "PairwiseCommonSubClassAncestor",
          "type": "object"
       },
       "Prefix": {
@@ -537,8 +648,18 @@
       "UbergraphTaxonClass": {
          "additionalProperties": false,
          "description": "",
-         "properties": {},
-         "required": [],
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
          "title": "UbergraphTaxonClass",
          "type": "object"
       }

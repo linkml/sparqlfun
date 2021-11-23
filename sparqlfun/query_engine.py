@@ -20,6 +20,7 @@ from rdflib import URIRef, Graph, Literal, BNode, RDF
 from rdflib.term import Node
 from jinja2 import Template
 from sparqlfun.config_schema import SystemConfiguration, Endpoint
+from sparqlfun.resultset import ResultSet
 import re
 
 RE_COMBINE_WHITESPACE = re.compile(r"\s+")
@@ -83,28 +84,32 @@ class SparqlEngine:
     prefix_map: PREFIXMAP = None
     limit: int = 30
 
-    def query(self, template: Union[Type[YAMLRoot], YAMLRoot],
+    def query(self, template: Union[Type[YAMLRoot], YAMLRoot, SparqlTemplateInstance],
               _url = None,
-              **kwargs):
+              **kwargs) -> ResultSet:
         """
+        Compile a template, binding variables, executed, and translate results to objects
 
         :param template:
-        :param _url:
+        :param _url: uses endpoint URL if not specified
         :param kwargs:
-        :return:
+        :return: result set container
         """
-
-        #graph: Graph = None
         if _url is None:
             _url = self.get_endpoint().url
         prefix_map = self._get_prefix_map()
         cn = template.class_name
         c = self.schema_view.get_class(cn)
         default_vals = self._get_defaults(c)
-        ti = self.extract_template_instance(template, **kwargs)
+        if isinstance(template, SparqlTemplateInstance):
+            ti = template
+        else:
+            ti = self.extract_template_instance(template, **kwargs)
+        template_py_class = ti.python_class
         sq = ti.query
-        #sq = self.extract_sparql(template, **kwargs)
 
+        objs = []
+        result_set = ResultSet()
         if sq.query_type == 'SELECT':
             spw = SPARQLWrapper2(_url)
             spw.setQuery(sq.query)
@@ -120,7 +125,7 @@ class SparqlEngine:
             for result in spw.query().bindings:
                 # TODO: default values
                 row = {k: getval(v) for k, v in result.items()}
-                yield template(**{**row, **kwargs, **default_vals})
+                objs.append(template_py_class(**{**row, **kwargs, **default_vals}))
         else:
             spw = SPARQLWrapper(_url)
             spw.setQuery(sq.query)
@@ -141,17 +146,20 @@ class SparqlEngine:
                 logging.info(f'M={module}')
                 result_template = getattr(module, results_slot_range)
             else:
-                result_template = template
+                result_template = template_py_class
             logging.info(f'Result template: {result_template}')
             for obj in rdflib_loader.from_rdf_graph(g, target_class=result_template, schemaview=self.schema_view, prefix_map=prefix_map):
-                yield obj
+                objs.append(obj)
+        result_set.results = objs
+        return result_set
 
     def extract_template_instance(self, template: Union[Type[YAMLRoot], YAMLRoot], **kwargs) -> SparqlTemplateInstance:
         if isinstance(template, YAMLRoot):
             template_py_class = type(template)
             bindings = {}
             for k, v in vars(template).items():
-                if v is not None:
+                # only use values that have been set
+                if v is not None and not isinstance(v, list) and not isinstance(v, dict):
                     bindings[k] = v
         else:
             template_py_class = template
@@ -381,10 +389,10 @@ def cli(params: List[str], endpoint: str, limit: int, curie_maps: List[str],
     else:
         raise Exception(f'Unknown format: {to_format}')
 
-    objs = list(se.query(template_py, *args, **kwargs))
-    result_set_py_class = getattr(module, 'ResultSet')
-    container = result_set_py_class()
-    container.results = objs
+    container = se.query(template_py, *args, **kwargs)
+    #result_set_py_class = getattr(module, 'ResultSet')
+    #container = result_set_py_class()
+    #container.results = objs
     if to_format == 'tsv':
         dump_str = csv_dumper.dumps(container, index_slot='results', schemaview=se.schema_view)
     elif to_format == 'ttl':

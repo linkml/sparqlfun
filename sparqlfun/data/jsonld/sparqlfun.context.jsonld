@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from sparqlfun.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-11-19T16:31:27\n    Schema: sparqlfun\n    \n    id: https://w3id.org/sparqlfun\n    description: SPARQL Templates\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from sparqlfun.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-11-22T16:17:49\n    Schema: sparqlfun\n    \n    id: https://w3id.org/sparqlfun\n    description: SPARQL Templates\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "IAO": {
          "@id": "http://purl.obolibrary.org/obo/IAO_",
@@ -7,10 +7,14 @@
       },
       "dcterms": "http://purl.org/dc/terms/",
       "linkml": "https://w3id.org/linkml/",
-      "oio": "http://www.geneontology.org/formats/oboInOwl#",
+      "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
       "owl": "http://www.w3.org/2002/07/owl#",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "resultset": {
+         "@id": "https://w3id.org/sparqlfun/resultset",
+         "@prefix": true
+      },
       "sh": "http://www.w3.org/ns/shacl#",
       "sparqlfun": "https://w3id.org/sparqlfun/",
       "sparqlfun_omo": {
@@ -26,6 +30,9 @@
          "@prefix": true
       },
       "@vocab": "https://w3id.org/sparqlfun/",
+      "ancestor": {
+         "@id": "sparqlfun_ubergraph:ancestor"
+      },
       "base": {
          "@type": "@id",
          "@id": "sh:namespace"
@@ -50,15 +57,24 @@
          "@id": "sparqlfun_ubergraph:direct_taxon"
       },
       "exact_synonyms": {
-         "@id": "oio:hasExactSynonym"
+         "@id": "oboInOwl:hasExactSynonym"
       },
       "graph": {
          "@type": "@id",
          "@id": "sparqlfun_rdf:graph"
       },
       "id": "@id",
+      "label_regex": {
+         "@id": "sparqlfun_omo:label_regex"
+      },
       "language": {
          "@id": "sparqlfun_rdf:language"
+      },
+      "node1": {
+         "@id": "sparqlfun_ubergraph:node1"
+      },
+      "node2": {
+         "@id": "sparqlfun_ubergraph:node2"
       },
       "object": {
          "@id": "rdf:object"
@@ -67,11 +83,23 @@
          "@type": "@id",
          "@id": "rdf:predicate"
       },
+      "predicate1": {
+         "@type": "@id",
+         "@id": "sparqlfun_ubergraph:predicate1"
+      },
+      "predicate2": {
+         "@type": "@id",
+         "@id": "sparqlfun_ubergraph:predicate2"
+      },
       "prefix": {
          "@id": "sh:prefix"
       },
+      "query_has_subclass_ancestor": {
+         "@id": "sparqlfun_ubergraph:query_has_subclass_ancestor"
+      },
       "results": {
-         "@type": "@id"
+         "@type": "@id",
+         "@id": "resultset:results"
       },
       "subject": {
          "@type": "@id",
@@ -87,6 +115,10 @@
       "value": {
          "@id": "sparqlfun_rdf:value"
       },
+      "xxresults": {
+         "@type": "@id",
+         "@id": "sparqlfun_omo:xxresults"
+      },
       "BasicClass": {
          "@id": "owl:Class"
       },
@@ -101,6 +133,9 @@
       },
       "DefinitionTriple": {
          "@id": "sparqlfun_omo:DefinitionTriple"
+      },
+      "GenericResult": {
+         "@id": "resultset:GenericResult"
       },
       "InTaxonTriple": {
          "@id": "sparqlfun_ubergraph:InTaxonTriple"
@@ -142,7 +177,19 @@
          "@id": "sparqlfun_ubergraph:NormalizedInformationContentTriple"
       },
       "OboClass": {
-         "@id": "sparqlfun_omo:OboClass"
+         "@id": "owl:Class"
+      },
+      "OboClassFiltered": {
+         "@id": "owl:Class"
+      },
+      "OboClassQuery": {
+         "@id": "sparqlfun_omo:OboClassQuery"
+      },
+      "PairwiseCommonAncestor": {
+         "@id": "sparqlfun_ubergraph:PairwiseCommonAncestor"
+      },
+      "PairwiseCommonSubClassAncestor": {
+         "@id": "sparqlfun_ubergraph:PairwiseCommonSubClassAncestor"
       },
       "Prefix": {
          "@id": "sh:PrefixDeclaration"
@@ -179,6 +226,9 @@
       },
       "RelationGraphQuad": {
          "@id": "sparqlfun_rdf:RelationGraphQuad"
+      },
+      "ResultSet": {
+         "@id": "resultset:ResultSet"
       },
       "SubClassCountTriple": {
          "@id": "sparqlfun_ubergraph:SubClassCountTriple"

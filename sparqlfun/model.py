@@ -1,5 +1,5 @@
 # Auto generated from sparqlfun.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-11-20T10:33:24
+# Generation date: 2021-11-22T16:17:44
 # Schema: sparqlfun
 #
 # id: https://w3id.org/sparqlfun
@@ -38,6 +38,7 @@ OBOINOWL = CurieNamespace('oboInOwl', 'http://www.geneontology.org/formats/oboIn
 OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
+RESULTSET = CurieNamespace('resultset', 'https://w3id.org/sparqlfun/resultset')
 SH = CurieNamespace('sh', 'http://www.w3.org/ns/shacl#')
 SPARQLFUN = CurieNamespace('sparqlfun', 'https://w3id.org/sparqlfun/')
 SPARQLFUN_OMO = CurieNamespace('sparqlfun_omo', 'https://w3id.org/sparqlfun/omo')
@@ -108,6 +109,10 @@ class OboClassId(ClassNodeId):
     pass
 
 
+class UbergraphTaxonClassId(TaxonClassId):
+    pass
+
+
 class OboClassFilteredId(ClassNodeId):
     pass
 
@@ -115,8 +120,8 @@ class OboClassFilteredId(ClassNodeId):
 class GenericResult(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SPARQLFUN.GenericResult
-    class_class_curie: ClassVar[str] = "sparqlfun:GenericResult"
+    class_class_uri: ClassVar[URIRef] = RESULTSET.GenericResult
+    class_class_curie: ClassVar[str] = "resultset:GenericResult"
     class_name: ClassVar[str] = "GenericResult"
     class_model_uri: ClassVar[URIRef] = SPARQLFUN.GenericResult
 
@@ -125,8 +130,8 @@ class GenericResult(YAMLRoot):
 class ResultSet(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SPARQLFUN.ResultSet
-    class_class_curie: ClassVar[str] = "sparqlfun:ResultSet"
+    class_class_uri: ClassVar[URIRef] = RESULTSET.ResultSet
+    class_class_curie: ClassVar[str] = "resultset:ResultSet"
     class_name: ClassVar[str] = "ResultSet"
     class_model_uri: ClassVar[URIRef] = SPARQLFUN.ResultSet
 
@@ -733,22 +738,60 @@ class OboClassQuery(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = SPARQLFUN.OboClassQuery
 
     results: Optional[Union[Union[str, OboClassId], List[Union[str, OboClassId]]]] = empty_list()
+    label_regex: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.results, list):
             self.results = [self.results] if self.results is not None else []
         self.results = [v if isinstance(v, OboClassId) else OboClassId(v) for v in self.results]
 
+        if self.label_regex is not None and not isinstance(self.label_regex, str):
+            self.label_regex = str(self.label_regex)
+
         super().__post_init__(**kwargs)
 
 
-class UbergraphTaxonClass(YAMLRoot):
+@dataclass
+class DeprecatedOboClassQuery(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SPARQLFUN.OboClassQuery
+    class_class_curie: ClassVar[str] = "sparqlfun:OboClassQuery"
+    class_name: ClassVar[str] = "deprecated obo class query"
+    class_model_uri: ClassVar[URIRef] = SPARQLFUN.DeprecatedOboClassQuery
+
+    results: Optional[Union[Union[str, OboClassId], List[Union[str, OboClassId]]]] = empty_list()
+    label_regex: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.results, list):
+            self.results = [self.results] if self.results is not None else []
+        self.results = [v if isinstance(v, OboClassId) else OboClassId(v) for v in self.results]
+
+        if self.label_regex is not None and not isinstance(self.label_regex, str):
+            self.label_regex = str(self.label_regex)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class UbergraphTaxonClass(TaxonClass):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = SPARQLFUN_UBERGRAPH.UbergraphTaxonClass
     class_class_curie: ClassVar[str] = "sparqlfun_ubergraph:UbergraphTaxonClass"
     class_name: ClassVar[str] = "ubergraph taxon class"
     class_model_uri: ClassVar[URIRef] = SPARQLFUN.UbergraphTaxonClass
+
+    id: Union[str, UbergraphTaxonClassId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, UbergraphTaxonClassId):
+            self.id = UbergraphTaxonClassId(self.id)
+
+        super().__post_init__(**kwargs)
 
 
 class UbergraphQuad(RelationGraphQuad):
@@ -911,7 +954,7 @@ class UberGraphSourceEnum(EnumDefinitionImpl):
 class slots:
     pass
 
-slots.results = Slot(uri=SPARQLFUN.results, name="results", curie=SPARQLFUN.curie('results'),
+slots.results = Slot(uri=RESULTSET.results, name="results", curie=RESULTSET.curie('results'),
                    model_uri=SPARQLFUN.results, domain=None, range=Optional[Union[Union[dict, GenericResult], List[Union[dict, GenericResult]]]])
 
 slots.id = Slot(uri=SPARQLFUN_RDF.id, name="id", curie=SPARQLFUN_RDF.curie('id'),
@@ -953,8 +996,8 @@ slots.description = Slot(uri=DCTERMS.description, name="description", curie=DCTE
 slots.label_regex = Slot(uri=SPARQLFUN_OMO.label_regex, name="label_regex", curie=SPARQLFUN_OMO.curie('label_regex'),
                    model_uri=SPARQLFUN.label_regex, domain=None, range=Optional[str])
 
-slots.xresults = Slot(uri=SPARQLFUN_OMO.xresults, name="xresults", curie=SPARQLFUN_OMO.curie('xresults'),
-                   model_uri=SPARQLFUN.xresults, domain=None, range=Optional[Union[List[Union[str, NodeId]], Dict[Union[str, NodeId], Union[dict, Node]]]])
+slots.xxresults = Slot(uri=SPARQLFUN_OMO.xxresults, name="xxresults", curie=SPARQLFUN_OMO.curie('xxresults'),
+                   model_uri=SPARQLFUN.xxresults, domain=None, range=Optional[Union[List[Union[str, NodeId]], Dict[Union[str, NodeId], Union[dict, Node]]]])
 
 slots.definition = Slot(uri=IAO['0000115'], name="definition", curie=IAO.curie('0000115'),
                    model_uri=SPARQLFUN.definition, domain=None, range=Optional[str])
@@ -1032,5 +1075,8 @@ slots.taxon_applicable_subject = Slot(uri=RDF.subject, name="taxon applicable_su
 slots.taxon_applicable_object = Slot(uri=RDF.object, name="taxon applicable_object", curie=RDF.curie('object'),
                    model_uri=SPARQLFUN.taxon_applicable_object, domain=None, range=Optional[Union[str, TaxonClassId]])
 
-slots.obo_class_query_results = Slot(uri=SPARQLFUN.results, name="obo class query_results", curie=SPARQLFUN.curie('results'),
+slots.obo_class_query_results = Slot(uri=RESULTSET.results, name="obo class query_results", curie=RESULTSET.curie('results'),
                    model_uri=SPARQLFUN.obo_class_query_results, domain=OboClassQuery, range=Optional[Union[Union[str, OboClassId], List[Union[str, OboClassId]]]])
+
+slots.deprecated_obo_class_query_results = Slot(uri=RESULTSET.results, name="deprecated obo class query_results", curie=RESULTSET.curie('results'),
+                   model_uri=SPARQLFUN.deprecated_obo_class_query_results, domain=DeprecatedOboClassQuery, range=Optional[Union[Union[str, OboClassId], List[Union[str, OboClassId]]]])

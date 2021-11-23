@@ -37,24 +37,27 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
     ns1:closed true ;
     ns1:description "Maps CURIEs to URIs" ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:description "A standardized prefix such as 'GO' or 'rdf' or 'FlyBase'" ;
-            ns1:maxCount 1 ;
-            ns1:order 0 ;
-            ns1:path ns1:prefix ],
-        [ ns1:description "The base URI a prefix will expand to" ;
+    ns1:property [ ns1:description "The base URI a prefix will expand to" ;
             ns1:maxCount 1 ;
             ns1:order 1 ;
-            ns1:path ns1:namespace ] ;
+            ns1:path ns1:namespace ],
+        [ ns1:description "A standardized prefix such as 'GO' or 'rdf' or 'FlyBase'" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path ns1:prefix ] ;
     ns1:targetClass ns1:PrefixDeclaration .
 
-<https://w3id.org/sparqlfun/ResultSet> a ns1:NodeShape ;
+<https://w3id.org/sparqlfun/OboClassQuery> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/GenericResult> ;
-            ns1:nodeKind ns1:BlankNode ;
+    ns1:property [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_omo:label_regex> ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/results> ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ResultSet> .
+            ns1:path <resultset:results> ] ;
+    ns1:targetClass <https://w3id.org/sparqlfun/OboClassQuery> .
 
 <https://w3id.org/sparqlfun/rdfBlankNode> a ns1:NodeShape ;
     ns1:closed true ;
@@ -90,12 +93,7 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
     ns1:closed true ;
     ns1:description "A triple where object is a node" ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
@@ -105,7 +103,12 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 2 ;
-            ns1:path rdf:object ] ;
+            ns1:path rdf:object ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ] ;
     ns1:targetClass <https://w3id.org/sparqlfun/rdfNodeToNodeTriple> .
 
 <https://w3id.org/sparqlfun/rdfNodeToValueTriple> a ns1:NodeShape ;
@@ -138,26 +141,26 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
     ns1:closed true ;
     ns1:description "A triple that indicates the asserted type of the subject entity" ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
             ns1:description "Graph to which the triple belongs" ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 3 ;
             ns1:path <https://w3id.org/sparqlfun/rdfgraph> ],
-        [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
         [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 1 ;
-            ns1:path rdf:predicate ] ;
+            ns1:path rdf:predicate ],
+        [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ] ;
     ns1:targetClass <https://w3id.org/sparqlfun/rdfNonRedundantQuad> .
 
 <https://w3id.org/sparqlfun/rdfPropertyTrait> a ns1:NodeShape ;
@@ -175,15 +178,15 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 3 ;
             ns1:path <https://w3id.org/sparqlfun/rdfgraph> ],
-        [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
         [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 1 ;
             ns1:path rdf:predicate ],
+        [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
         [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
@@ -195,12 +198,7 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
     ns1:closed true ;
     ns1:description "A triple that indicates the asserted type of the subject entity" ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
             ns1:description "a literal or node representing the object of the triple" ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
@@ -210,7 +208,12 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 1 ;
-            ns1:path rdf:predicate ] ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ] ;
     ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfTypeTriple> .
 
 <https://w3id.org/sparqlfun/rdfRdfsDomainTriple> a ns1:NodeShape ;
@@ -221,23 +224,28 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
             ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
         [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
             ns1:description "a literal or node representing the object of the triple" ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ] ;
+            ns1:path rdf:object ] ;
     ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfsDomainTriple> .
 
 <https://w3id.org/sparqlfun/rdfRdfsLabelTriple> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
@@ -245,12 +253,7 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
         [ ns1:description "a literal or node representing the object of the triple" ;
             ns1:maxCount 1 ;
             ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ] ;
+            ns1:path rdf:object ] ;
     ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfsLabelTriple> .
 
 <https://w3id.org/sparqlfun/rdfRdfsRangeTriple> a ns1:NodeShape ;
@@ -261,23 +264,29 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
             ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
         [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
             ns1:description "a literal or node representing the object of the triple" ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ] ;
+            ns1:path rdf:object ] ;
     ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfsRangeTriple> .
 
 <https://w3id.org/sparqlfun/rdfRdfsSubclassOfNamedTriple> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
     ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
@@ -286,40 +295,13 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
-            ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 2 ;
-            ns1:path rdf:object ] ;
+            ns1:path rdf:predicate ] ;
     ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfsSubclassOfNamedTriple> .
 
 <https://w3id.org/sparqlfun/rdfRdfsSubclassOfTriple> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
-            ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 2 ;
-            ns1:path rdf:object ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfsSubclassOfTriple> .
-
-<https://w3id.org/sparqlfun/rdfRdfsSubpropertyOfTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
             ns1:description "a literal or node representing the object of the triple" ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
@@ -330,11 +312,32 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 1 ;
             ns1:path rdf:predicate ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
             ns1:path rdf:subject ] ;
+    ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfsSubclassOfTriple> .
+
+<https://w3id.org/sparqlfun/rdfRdfsSubpropertyOfTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ] ;
     ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfsSubpropertyOfTriple> .
 
 <https://w3id.org/sparqlfun/rdfRelationGraphQuad> a ns1:NodeShape ;
@@ -365,15 +368,15 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
 <https://w3id.org/sparqlfun/rdfTypedNode> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
+        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/rdftype> ],
-        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            ns1:maxCount 1 ;
-            ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ] ;
+            ns1:path <https://w3id.org/sparqlfun/rdftype> ] ;
     ns1:targetClass <https://w3id.org/sparqlfun/rdfTypedNode> .
 
 <https://w3id.org/sparqlfun/ubergraphInTaxonTriple> a ns1:NodeShape ;
@@ -385,17 +388,17 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 1 ;
             ns1:path rdf:predicate ],
-        [ ns1:class <https://w3id.org/sparqlfun/ubergraphTaxonApplicableClass> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
         [ ns1:class <https://w3id.org/sparqlfun/ubergraphTaxonClass> ;
             ns1:description "a literal or node representing the object of the triple" ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 2 ;
-            ns1:path rdf:object ] ;
+            ns1:path rdf:object ],
+        [ ns1:class <https://w3id.org/sparqlfun/ubergraphTaxonApplicableClass> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ] ;
     ns1:targetClass <https://w3id.org/sparqlfun/ubergraphInTaxonTriple> .
 
 <https://w3id.org/sparqlfun/ubergraphInferredNeverInTaxon> a ns1:NodeShape ;
@@ -408,45 +411,45 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 5 ;
             ns1:path rdf:object ],
-        [ ns1:maxCount 1 ;
-            ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphclass_with_constraint> ],
-        [ ns1:maxCount 1 ;
-            ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphsubject_predicate> ],
-        [ ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphdirect_taxon> ],
         [ ns1:class <https://w3id.org/sparqlfun/ubergraphTaxonApplicableClass> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 3 ;
             ns1:path rdf:subject ],
+        [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <https://w3id.org/sparqlfun/ubergraphclass_with_constraint> ],
         [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 4 ;
-            ns1:path rdf:predicate ] ;
+            ns1:path rdf:predicate ],
+        [ ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path <https://w3id.org/sparqlfun/ubergraphdirect_taxon> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <https://w3id.org/sparqlfun/ubergraphsubject_predicate> ] ;
     ns1:targetClass <https://w3id.org/sparqlfun/ubergraphInferredNeverInTaxon> .
 
 <https://w3id.org/sparqlfun/ubergraphIsAOrPartOf> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:description "a literal or node representing the object of the triple" ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
             ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
         [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
             ns1:description "Graph to which the triple belongs" ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 3 ;
             ns1:path <https://w3id.org/sparqlfun/rdfgraph> ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+        [ ns1:description "a literal or node representing the object of the triple" ;
             ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
+            ns1:order 2 ;
+            ns1:path rdf:object ],
         [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
@@ -463,92 +466,19 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 2 ;
             ns1:path rdf:object ],
-        [ ns1:class <https://w3id.org/sparqlfun/ubergraphTaxonApplicableClass> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphNeverInTaxonTriple> .
-
-<https://w3id.org/sparqlfun/ubergraphNormalizedInformationContentTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphNormalizedInformationContentTriple> .
-
-<https://w3id.org/sparqlfun/ubergraphSubClassCountTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
         [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 1 ;
             ns1:path rdf:predicate ],
-        [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphSubClassCountTriple> .
-
-<https://w3id.org/sparqlfun/ubergraphTaxonApplicable> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphTaxonApplicable> .
-
-<https://w3id.org/sparqlfun/ubergraphUbergraphQuad> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+        [ ns1:class <https://w3id.org/sparqlfun/ubergraphTaxonApplicableClass> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:description "Graph to which the triple belongs" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 3 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfgraph> ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphUbergraphQuad> .
+            ns1:path rdf:subject ] ;
+    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphNeverInTaxonTriple> .
 
-<https://w3id.org/sparqlfun/ubergraphUbergraphTaxonClass> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphUbergraphTaxonClass> .
-
-<sparqlfun_omo:DefinitionTriple> a ns1:NodeShape ;
+<https://w3id.org/sparqlfun/ubergraphNormalizedInformationContentTriple> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
     ns1:property [ ns1:description "a literal or node representing the object of the triple" ;
@@ -565,33 +495,98 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
             ns1:path rdf:subject ] ;
-    ns1:targetClass <sparqlfun_omo:DefinitionTriple> .
+    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphNormalizedInformationContentTriple> .
 
-<sparqlfun_omo:OboClass> a ns1:NodeShape ;
+<https://w3id.org/sparqlfun/ubergraphPairwiseCommonAncestor> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
     ns1:property [ ns1:maxCount 1 ;
             ns1:order 0 ;
-            ns1:path <http://purl.obolibrary.org/obo/IAO_0000115> ],
-        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            ns1:maxCount 1 ;
+            ns1:path <https://w3id.org/sparqlfun/ubergraphnode1> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <https://w3id.org/sparqlfun/ubergraphnode2> ],
+        [ ns1:maxCount 1 ;
             ns1:order 3 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
+            ns1:path <https://w3id.org/sparqlfun/ubergraphpredicate2> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path <https://w3id.org/sparqlfun/ubergraphpredicate1> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 4 ;
+            ns1:path <https://w3id.org/sparqlfun/ubergraphancestor> ] ;
+    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphPairwiseCommonAncestor> .
+
+<https://w3id.org/sparqlfun/ubergraphPairwiseCommonSubClassAncestor> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <https://w3id.org/sparqlfun/ubergraphnode1> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path <https://w3id.org/sparqlfun/ubergraphpredicate1> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 3 ;
+            ns1:path <https://w3id.org/sparqlfun/ubergraphpredicate2> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 4 ;
+            ns1:path <https://w3id.org/sparqlfun/ubergraphancestor> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <https://w3id.org/sparqlfun/ubergraphnode2> ] ;
+    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphPairwiseCommonSubClassAncestor> .
+
+<https://w3id.org/sparqlfun/ubergraphSubClassCountTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
         [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
-            ns1:order 2 ;
-            ns1:path <https://w3id.org/sparqlfun/rdftype> ],
-        [ ns1:order 1 ;
-            ns1:path <oio:hasExactSynonym> ] ;
-    ns1:targetClass <sparqlfun_omo:OboClass> .
+            ns1:order 0 ;
+            ns1:path rdf:subject ] ;
+    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphSubClassCountTriple> .
 
-<https://w3id.org/sparqlfun/GenericResult> a ns1:NodeShape ;
+<https://w3id.org/sparqlfun/ubergraphTaxonApplicable> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:targetClass <https://w3id.org/sparqlfun/GenericResult> .
+    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphTaxonApplicable> .
 
-<https://w3id.org/sparqlfun/ubergraphTaxonApplicableClass> a ns1:NodeShape ;
+<https://w3id.org/sparqlfun/ubergraphUbergraphQuad> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+            ns1:description "Graph to which the triple belongs" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 3 ;
+            ns1:path <https://w3id.org/sparqlfun/rdfgraph> ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ] ;
+    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphUbergraphQuad> .
+
+<https://w3id.org/sparqlfun/ubergraphUbergraphTaxonClass> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
     ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
@@ -603,6 +598,65 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:maxCount 1 ;
             ns1:order 1 ;
             ns1:path <https://w3id.org/sparqlfun/rdfid> ] ;
+    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphUbergraphTaxonClass> .
+
+<resultset:ResultSet> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <resultset:GenericResult> ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 0 ;
+            ns1:path <resultset:results> ] ;
+    ns1:targetClass <resultset:ResultSet> .
+
+<sparqlfun_omo:DefinitionTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ] ;
+    ns1:targetClass <sparqlfun_omo:DefinitionTriple> .
+
+<sparqlfun_omo:OboClassQuery> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path <resultset:results> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_omo:label_regex> ] ;
+    ns1:targetClass <sparqlfun_omo:OboClassQuery> .
+
+<resultset:GenericResult> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <resultset:GenericResult> .
+
+<https://w3id.org/sparqlfun/ubergraphTaxonApplicableClass> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
+        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path <https://w3id.org/sparqlfun/rdftype> ] ;
     ns1:targetClass <https://w3id.org/sparqlfun/ubergraphTaxonApplicableClass> .
 
 <https://w3id.org/sparqlfun/ubergraphTaxonClass> a ns1:NodeShape ;
@@ -623,15 +677,14 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
     ns1:closed true ;
     ns1:description "A node that represents an RDFS/OWL class" ;
     ns1:ignoredProperties ( rdf:type ),
+        ( rdf:type ),
+        ( rdf:type ),
         ( rdf:type ) ;
-    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
             ns1:maxCount 1 ;
-            ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
             ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdfs:subClassOf ],
+            ns1:order 2 ;
+            ns1:path <https://w3id.org/sparqlfun/rdftype> ],
         [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
@@ -639,8 +692,39 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:path <https://w3id.org/sparqlfun/rdftype> ],
         [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
             ns1:maxCount 1 ;
+            ns1:order 3 ;
+            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdfs:subClassOf ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
             ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ] ;
+            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 3 ;
+            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
+        [ ns1:order 1 ;
+            ns1:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
+        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path <https://w3id.org/sparqlfun/rdftype> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <http://purl.obolibrary.org/obo/IAO_0000115> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <http://purl.obolibrary.org/obo/IAO_0000115> ],
+        [ ns1:order 1 ;
+            ns1:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ] ;
     ns1:targetClass <http://www.w3.org/2002/07/owl#Class> .
 
 <http://www.w3.org/2002/07/owl#Property> a ns1:NodeShape ;

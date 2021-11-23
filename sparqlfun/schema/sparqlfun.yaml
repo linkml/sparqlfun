@@ -20,19 +20,11 @@ default_curi_maps:
 #  - obo_context
 
 imports:
+  - linkml:types
+  - resultset
   - rdf
   - relation_graph
   - ro
   - omo
   - ubergraph
 
-classes:
-  GenericResult:
-    mixin: true
-  ResultSet:
-    slots:
-      - results
-slots:
-  results:
-    multivalued: true
-    range: GenericResult

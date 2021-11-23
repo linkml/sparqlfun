@@ -29,7 +29,7 @@ imports:
 classes:
 
   ubergraph taxon class:
-    #is_a: taxon class
+    is_a: taxon class
     annotations:
       sparql.select: SELECT ?id WHERE { ?id rdfs:subClassOf NCBITaxon:1 }
 

@@ -37,6 +37,26 @@ def test_instantiation_from_prototype(engine: SparqlEngine):
     assert 'LIMIT' in qstr
     assert 'PREFIX owl' in qstr
 
+def test_instantiation_from_prototype2(engine: SparqlEngine):
+    proto = UbergraphTaxonClass(id='NCBITaxon:1')
+    ti = engine.extract_template_instance(proto)
+    print(ti)
+    assert ti.bindings['id'] == 'NCBITaxon:1'
+    assert len(ti.bindings.keys()) == 1
+    qstr = ti.query.normalized_query
+    print(qstr)
+    assert 'PREFIX NCBITaxon' in qstr
+
+def test_instantiation_from_with_list(engine: SparqlEngine):
+    proto = BasicClass(id='NCBITaxon:1')
+    ti = engine.extract_template_instance(proto)
+    print(ti)
+    assert ti.bindings['id'] == 'NCBITaxon:1'
+    assert len(ti.bindings.keys()) == 1
+    qstr = ti.query.normalized_query
+    print(qstr)
+    assert 'PREFIX NCBITaxon' in qstr
+
 def test_namespaces(engine):
     engine.bind_prefixes(GO='http://purl.obolibrary.org/obo/GO_')
     print(f'PM={engine._get_prefix_map()}')

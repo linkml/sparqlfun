@@ -7,12 +7,13 @@
   ],
   "id": "https://w3id.org/sparqlfun",
   "imports": [
+    "linkml:types",
+    "resultset",
     "rdf",
     "relation_graph",
     "ro",
     "omo",
-    "ubergraph",
-    "linkml:types"
+    "ubergraph"
   ],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
   "prefixes": [
@@ -51,29 +52,6 @@
     }
   ],
   "types": [
-    {
-      "name": "node_id_type",
-      "definition_uri": "https://w3id.org/sparqlfun/rdfNodeIdType",
-      "description": "IDs are either CURIEs, IRI, or blank nodes. IRIs are wrapped in <>s to distinguish them from CURIEs, but in general it is good practice to populate the [prefixes][Prefixes.md] table such that they are shortened to CURIEs. Blank nodes are ids starting with `_:`.",
-      "from_schema": "https://w3id.org/sparqlfun/rdf",
-      "see_also": [
-        "https://github.com/ontodev/rdftab.rs/issues/18"
-      ],
-      "typeof": "uriorcurie",
-      "base": "URIorCURIE",
-      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-      "repr": "str",
-      "@type": "TypeDefinition"
-    },
-    {
-      "name": "literal_as_string_type",
-      "definition_uri": "https://w3id.org/sparqlfun/rdfLiteralAsStringType",
-      "from_schema": "https://w3id.org/sparqlfun/rdf",
-      "typeof": "string",
-      "base": "str",
-      "uri": "http://www.w3.org/2001/XMLSchema#string",
-      "@type": "TypeDefinition"
-    },
     {
       "name": "string",
       "definition_uri": "https://w3id.org/linkml/String",
@@ -231,6 +209,29 @@
       "uri": "http://www.w3.org/ns/shex#nonLiteral",
       "repr": "str",
       "@type": "TypeDefinition"
+    },
+    {
+      "name": "node_id_type",
+      "definition_uri": "https://w3id.org/sparqlfun/rdfNodeIdType",
+      "description": "IDs are either CURIEs, IRI, or blank nodes. IRIs are wrapped in <>s to distinguish them from CURIEs, but in general it is good practice to populate the [prefixes][Prefixes.md] table such that they are shortened to CURIEs. Blank nodes are ids starting with `_:`.",
+      "from_schema": "https://w3id.org/sparqlfun/rdf",
+      "see_also": [
+        "https://github.com/ontodev/rdftab.rs/issues/18"
+      ],
+      "typeof": "uriorcurie",
+      "base": "URIorCURIE",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "literal_as_string_type",
+      "definition_uri": "https://w3id.org/sparqlfun/rdfLiteralAsStringType",
+      "from_schema": "https://w3id.org/sparqlfun/rdf",
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
     }
   ],
   "enums": [
@@ -243,14 +244,16 @@
   "slots": [
     {
       "name": "results",
-      "definition_uri": "https://w3id.org/sparqlfun/results",
-      "from_schema": "https://w3id.org/sparqlfun",
-      "slot_uri": "https://w3id.org/sparqlfun/results",
+      "definition_uri": "https://w3id.org/sparqlfun/resultsetresults",
+      "from_schema": "https://w3id.org/sparqlfun/resultset",
+      "slot_uri": "https://w3id.org/sparqlfun/resultsetresults",
       "multivalued": true,
       "inlined": true,
-      "owner": "ResultSet",
+      "owner": "DeprecatedOboClassQuery",
       "domain_of": [
-        "ResultSet"
+        "ResultSet",
+        "OboClassQuery",
+        "DeprecatedOboClassQuery"
       ],
       "range": "GenericResult",
       "@type": "SlotDefinition"
@@ -429,6 +432,30 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "label_regex",
+      "definition_uri": "https://w3id.org/sparqlfun/omolabel_regex",
+      "from_schema": "https://w3id.org/sparqlfun/omo",
+      "slot_uri": "https://w3id.org/sparqlfun/omolabel_regex",
+      "owner": "DeprecatedOboClassQuery",
+      "domain_of": [
+        "OboClassQuery",
+        "DeprecatedOboClassQuery"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "xxresults",
+      "definition_uri": "https://w3id.org/sparqlfun/omoxxresults",
+      "from_schema": "https://w3id.org/sparqlfun/omo",
+      "slot_uri": "https://w3id.org/sparqlfun/omoxxresults",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "range": "Node",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "definition",
       "definition_uri": "https://w3id.org/sparqlfun/omodefinition",
       "mappings": [
@@ -436,9 +463,10 @@
       ],
       "from_schema": "https://w3id.org/sparqlfun/omo",
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000115",
-      "owner": "OboClass",
+      "owner": "OboClassFiltered",
       "domain_of": [
-        "OboClass"
+        "OboClass",
+        "OboClassFiltered"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -452,11 +480,74 @@
       "from_schema": "https://w3id.org/sparqlfun/omo",
       "slot_uri": "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym",
       "multivalued": true,
-      "owner": "OboClass",
+      "owner": "OboClassFiltered",
       "domain_of": [
-        "OboClass"
+        "OboClass",
+        "OboClassFiltered"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ancestor",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphancestor",
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "slot_uri": "https://w3id.org/sparqlfun/ubergraphancestor",
+      "owner": "PairwiseCommonAncestor",
+      "domain_of": [
+        "PairwiseCommonAncestor"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "node1",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphnode1",
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "slot_uri": "https://w3id.org/sparqlfun/ubergraphnode1",
+      "owner": "PairwiseCommonAncestor",
+      "domain_of": [
+        "PairwiseCommonAncestor"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "node2",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphnode2",
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "slot_uri": "https://w3id.org/sparqlfun/ubergraphnode2",
+      "owner": "PairwiseCommonAncestor",
+      "domain_of": [
+        "PairwiseCommonAncestor"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "predicate1",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphpredicate1",
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "is_a": "predicate",
+      "slot_uri": "https://w3id.org/sparqlfun/ubergraphpredicate1",
+      "owner": "PairwiseCommonAncestor",
+      "domain_of": [
+        "PairwiseCommonAncestor"
+      ],
+      "range": "PropertyNode",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "predicate2",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphpredicate2",
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "is_a": "predicate",
+      "slot_uri": "https://w3id.org/sparqlfun/ubergraphpredicate2",
+      "owner": "PairwiseCommonAncestor",
+      "domain_of": [
+        "PairwiseCommonAncestor"
+      ],
+      "range": "PropertyNode",
       "@type": "SlotDefinition"
     },
     {
@@ -492,6 +583,14 @@
       "domain_of": [
         "InferredNeverInTaxon"
       ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "query_has_subclass_ancestor",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphquery_has_subclass_ancestor",
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "slot_uri": "https://w3id.org/sparqlfun/ubergraphquery_has_subclass_ancestor",
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -836,27 +935,63 @@
         }
       ],
       "@type": "SlotDefinition"
+    },
+    {
+      "name": "obo_class_query_results",
+      "definition_uri": "https://w3id.org/sparqlfun/resultsetresults",
+      "from_schema": "https://w3id.org/sparqlfun/resultset",
+      "is_a": "results",
+      "domain": "OboClassQuery",
+      "slot_uri": "https://w3id.org/sparqlfun/resultsetresults",
+      "multivalued": true,
+      "alias": "results",
+      "owner": "OboClassQuery",
+      "domain_of": [
+        "OboClassQuery"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "results",
+      "range": "OboClass",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "deprecated_obo_class_query_results",
+      "definition_uri": "https://w3id.org/sparqlfun/resultsetresults",
+      "from_schema": "https://w3id.org/sparqlfun/resultset",
+      "is_a": "results",
+      "domain": "DeprecatedOboClassQuery",
+      "slot_uri": "https://w3id.org/sparqlfun/resultsetresults",
+      "multivalued": true,
+      "alias": "results",
+      "owner": "DeprecatedOboClassQuery",
+      "domain_of": [
+        "DeprecatedOboClassQuery"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "results",
+      "range": "OboClass",
+      "@type": "SlotDefinition"
     }
   ],
   "classes": [
     {
       "name": "GenericResult",
-      "definition_uri": "https://w3id.org/sparqlfun/GenericResult",
-      "from_schema": "https://w3id.org/sparqlfun",
+      "definition_uri": "https://w3id.org/sparqlfun/resultsetGenericResult",
+      "from_schema": "https://w3id.org/sparqlfun/resultset",
       "mixin": true,
       "slot_usage": {},
-      "class_uri": "https://w3id.org/sparqlfun/GenericResult",
+      "class_uri": "https://w3id.org/sparqlfun/resultsetGenericResult",
       "@type": "ClassDefinition"
     },
     {
       "name": "ResultSet",
-      "definition_uri": "https://w3id.org/sparqlfun/ResultSet",
-      "from_schema": "https://w3id.org/sparqlfun",
+      "definition_uri": "https://w3id.org/sparqlfun/resultsetResultSet",
+      "from_schema": "https://w3id.org/sparqlfun/resultset",
       "slots": [
         "results"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/sparqlfun/ResultSet",
+      "class_uri": "https://w3id.org/sparqlfun/resultsetResultSet",
       "@type": "ClassDefinition"
     },
     {
@@ -932,7 +1067,7 @@
       "annotations": [
         {
           "tag": "sparql.select",
-          "value": "SELECT  * WHERE {{ ?subject ?predicate ?object}}",
+          "value": "SELECT * WHERE { ?subject ?predicate ?object}",
           "@type": "Annotation"
         }
       ],
@@ -959,7 +1094,7 @@
       "annotations": [
         {
           "tag": "sparql.select",
-          "value": "SELECT  * WHERE {{ GRAPH ?graph {{ ?subject ?predicate ?object}} }}",
+          "value": "SELECT * WHERE { GRAPH ?graph { ?subject ?predicate ?object} }",
           "@type": "Annotation"
         }
       ],
@@ -1352,7 +1487,7 @@
       "annotations": [
         {
           "tag": "sparql.construct",
-          "value": "CONSTRUCT {{ ?id a owl:Class ; rdfs:subClassOf ?subClassOf }}\nWHERE {{\n ?id rdfs:subClassOf ?subClassOf .\n FILTER(?id != ?subClassOf)\n FILTER(isIRI(?subClassOf))\n}}",
+          "value": "CONSTRUCT { ?id a owl:Class ; rdfs:subClassOf ?subClassOf }\nWHERE {\n ?id rdfs:subClassOf ?subClassOf .\n FILTER(?id != ?subClassOf)\n FILTER(isIRI(?subClassOf))\n}",
           "@type": "Annotation"
         }
       ],
@@ -1525,10 +1660,13 @@
     {
       "name": "OboClass",
       "definition_uri": "https://w3id.org/sparqlfun/omoOboClass",
+      "mappings": [
+        "owl:Class"
+      ],
       "annotations": [
         {
           "tag": "sparql.construct",
-          "value": "CONSTRUCT {{\n  ?id a owl:Class ;\n      IAO:0000115 ?definition\n      oio:hasExactSynonym ?exact_snonyms\n}}\nWHERE {{\n  ?id a owl:Class .\n  OPTIONAL {{ ?id IAO:0000115 ?definition }} .\n  OPTIONAL {{ ?id oio:hasExactSynonym ?exact_snonyms }} .\n}}",
+          "value": "CONSTRUCT {\n  ?id a owl:Class ;\n      IAO:0000115 ?definition ;\n      oboInOwl:hasExactSynonym ?exact_snonyms\n}\nWHERE {\n  ?id a owl:Class .\n  OPTIONAL { ?id IAO:0000115 ?definition } .\n  OPTIONAL { ?id oboInOwl:hasExactSynonym ?exact_snonyms } .\n}",
           "@type": "Annotation"
         }
       ],
@@ -1541,7 +1679,53 @@
         "exact_synonyms"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/sparqlfun/omoOboClass",
+      "class_uri": "http://www.w3.org/2002/07/owl#Class",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "OboClassQuery",
+      "definition_uri": "https://w3id.org/sparqlfun/omoOboClassQuery",
+      "annotations": [
+        {
+          "tag": "sparql.results_slot",
+          "value": "results",
+          "@type": "Annotation"
+        },
+        {
+          "tag": "sparql.construct",
+          "value": "CONSTRUCT {\n  ?id a owl:Class ;\n      ?_p ?_v\n}\nWHERE {\n  ?id a owl:Class .\n  ?id ?_p ?_v .\n  VALUES ?_p { IAO:0000115 oboInOwl:hasExactSynonym }\n  {% if label_regex  %}\n  ?id rdfs:label ?label .\n  FILTER regex( ?label, \"{{label_regex}}\", \"i\" )\n  {% endif %}\n}",
+          "@type": "Annotation"
+        }
+      ],
+      "from_schema": "https://w3id.org/sparqlfun/omo",
+      "slots": [
+        "obo_class_query_results",
+        "label_regex"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/omoOboClassQuery",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DeprecatedOboClassQuery",
+      "definition_uri": "https://w3id.org/sparqlfun/omoDeprecatedOboClassQuery",
+      "mappings": [
+        "sparqlfun:OboClassQuery"
+      ],
+      "annotations": [
+        {
+          "tag": "sparql.construct",
+          "value": "CONSTRUCT {\n  [a sparqlfun:OboClassQuery ;\n     sparqlfun:results ?id\n  ] .\n  ?id a owl:Class ;\n      ?_p ?_v\n}\nWHERE {\n  ?id a owl:Class .\n  ?id ?_p ?_v .\n  {% if label_regex  %}\n  ?id rdfs:label ?label .\n  FILTER regex( ?label, \"{{label_regex}}\", \"i\" )\n  {% endif %}\n}",
+          "@type": "Annotation"
+        }
+      ],
+      "from_schema": "https://w3id.org/sparqlfun/omo",
+      "slots": [
+        "deprecated_obo_class_query_results",
+        "label_regex"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/OboClassQuery",
       "@type": "ClassDefinition"
     },
     {
@@ -1550,11 +1734,16 @@
       "annotations": [
         {
           "tag": "sparql.select",
-          "value": "SELECT ?id WHERE {{ ?id rdfs:subClassOf NCBITaxon:1 }}",
+          "value": "SELECT ?id WHERE { ?id rdfs:subClassOf NCBITaxon:1 }",
           "@type": "Annotation"
         }
       ],
       "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "is_a": "TaxonClass",
+      "slots": [
+        "id",
+        "type"
+      ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/sparqlfun/ubergraphUbergraphTaxonClass",
       "@type": "ClassDefinition"
@@ -1635,7 +1824,7 @@
       "annotations": [
         {
           "tag": "sparql.select",
-          "value": "SELECT * WHERE {{ GRAPH ?graph {{ ?subject ?predicate ?object . VALUES ?predicate {{ rdfs:subClassOf BFO:0000050 }} }} }}",
+          "value": "SELECT * WHERE { GRAPH ?graph { ?subject ?predicate ?object . VALUES ?predicate { rdfs:subClassOf BFO:0000050 } } }",
           "@type": "Annotation"
         }
       ],
@@ -1716,7 +1905,7 @@
       "annotations": [
         {
           "tag": "sparql.select",
-          "value": "SELECT * WHERE {{\n  ?subject ?subject_predicate ?class_with_constraint .\n  ?class_with_constraint RO:0002162 ?direct_taxon .\n  FILTER NOT EXISTS {{ ?object (rdfs:subClassOf|^rdfs:subClassOf) ?direct_taxon }}\n}}",
+          "value": "SELECT * WHERE {\n  ?subject ?subject_predicate ?class_with_constraint .\n  ?class_with_constraint RO:0002162 ?direct_taxon .\n  FILTER NOT EXISTS { ?object (rdfs:subClassOf|^rdfs:subClassOf) ?direct_taxon }\n}",
           "@type": "Annotation"
         }
       ],
@@ -1737,22 +1926,104 @@
       "slot_usage": {},
       "class_uri": "https://w3id.org/sparqlfun/ubergraphInferredNeverInTaxon",
       "@type": "ClassDefinition"
+    },
+    {
+      "name": "PairwiseCommonAncestor",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphPairwiseCommonAncestor",
+      "annotations": [
+        {
+          "tag": "sparql.select",
+          "value": "SELECT * WHERE {\n  ?node1 ?predicate1 ?ancestor .\n  ?node2 ?predicate2 ?ancestor .\n}",
+          "@type": "Annotation"
+        }
+      ],
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "slots": [
+        "node1",
+        "node2",
+        "predicate1",
+        "predicate2",
+        "ancestor"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/ubergraphPairwiseCommonAncestor",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PairwiseCommonSubClassAncestor",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphPairwiseCommonSubClassAncestor",
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "is_a": "PairwiseCommonAncestor",
+      "slots": [
+        "node1",
+        "node2",
+        "predicate1",
+        "predicate2",
+        "ancestor"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/ubergraphPairwiseCommonSubClassAncestor",
+      "classification_rules": [
+        {
+          "is_a": "PairwiseCommonAncestor",
+          "slot_conditions": [
+            {
+              "name": "predicate1",
+              "equals_string": "rdfs:subClassOf",
+              "@type": "SlotDefinition"
+            },
+            {
+              "name": "predicate2",
+              "equals_string": "rdfs:subClassOf",
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        }
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "OboClassFiltered",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphOboClassFiltered",
+      "mappings": [
+        "owl:Class"
+      ],
+      "annotations": [
+        {
+          "tag": "sparql.construct",
+          "value": "CONSTRUCT {\n  ?id a owl:Class ;\n      IAO:0000115 ?definition ;\n      oboInOwl:hasExactSynonym ?exact_snonyms\n}\nWHERE {\n  ?id a owl:Class .\n  OPTIONAL { ?id IAO:0000115 ?definition } .\n  OPTIONAL { ?id oboInOwl:hasExactSynonym ?exact_snonyms } .\n  {% if query_has_subclass_ancestor %}\n  ?id rdfs:subClassOf ?query_has_subclass_ancestor\n  {% endif %}\n}",
+          "@type": "Annotation"
+        }
+      ],
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "is_a": "ClassNode",
+      "slots": [
+        "id",
+        "type",
+        "definition",
+        "exact_synonyms"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://www.w3.org/2002/07/owl#Class",
+      "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "sparqlfun.yaml",
-  "source_file_date": "2021-11-19T16:07:43",
-  "source_file_size": 665,
-  "generation_date": "2021-11-19T16:31:28",
+  "source_file_date": "2021-11-22T16:06:30",
+  "source_file_size": 549,
+  "generation_date": "2021-11-22T16:17:50",
   "@type": "SchemaDefinition",
   "@context": [
     "sparqlfun/data/jsonld/sparqlfun.context.jsonld",
+    "https://w3id.org/linkml/types.context.jsonld",
+    "resultset.context.jsonld",
     "rdf.context.jsonld",
     "relation_graph.context.jsonld",
     "ro.context.jsonld",
     "omo.context.jsonld",
     "ubergraph.context.jsonld",
-    "https://w3id.org/linkml/types.context.jsonld",
     {
       "@base": "https://w3id.org/sparqlfun/"
     }

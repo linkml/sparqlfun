@@ -15,6 +15,11 @@ py:
 sparqlfun/config_schema.py: sparqlfun/schema/config_schema.yaml
 	$(RUN) gen-python $< > $@
 
+sparqlfun/resultset.py: sparqlfun/schema/resultset.yaml
+	$(RUN) gen-python $< > $@
+
+
+
 examples/%.ttl: examples/%.tsv $(SRC)
 	$(RUN) linkml-convert -s $(SRC) -C Container $< -o $@
 examples/%.json: examples/%.tsv $(SRC)

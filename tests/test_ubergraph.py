@@ -16,74 +16,64 @@ def engine():
     se.bind_prefixes(hgnc='http://identifiers.org/hgnc/', GO='http://purl.obolibrary.org/obo/GO_')
     return se
 
+def check(rs: ResultSet, min_expected=1, max_expected: int = None):
+    n = 0
+    for result in rs.results:
+        print(f'RESULT={result}')
+        n += 1
+    assert n >= min_expected
+    if max_expected is not None:
+        assert n <= max_expected
+
+
 def test_limit_zero(engine):
     engine.limit = 0
-    assert len(list(engine.query(Triple, subject='GO:0005694'))) == 0
+    assert engine.query(Triple, subject='GO:0005694').results == []
 
 def test_limit_default(engine):
     assert engine.limit > 0
-    assert len(list(engine.query(Triple, subject='GO:0005694'))) > 1
+    assert len(engine.query(Triple, subject='GO:0005694').results) > 1
 
 def test_limit_one(engine):
     engine.limit = 1
-    assert len(list(engine.query(Triple, subject='GO:0005694'))) == 1
+    assert len(engine.query(Triple, subject='GO:0005694').results) == 1
 
-def test_ubergraph(engine):
-    se = engine
-    #se = SparqlEngine(endpoint=ubergraph_url)
-    #se.bind_prefixes(hgnc='http://identifiers.org/hgnc/', GO='http://purl.obolibrary.org/obo/GO_')
-    print(f'PM={se._get_prefix_map()}')
-    print(f'se = {se}')
-    for row in se.query(BasicClass, id='GO:0005694'):
-        print(f'BC={row}')
-    for row in se.query(RdfTypeTriple, object='owl:Class'):
-        print(f'ROW={row}')
-    print('DONE')
-    for row in se.query(Quad, object='owl:ObjectProperty'):
-        print(f'ROW={row}')
-    for row in se.query(RdfsSubclassOfTriple, object='GO:0005694'):
-        print(f'ROW={row}')
+def test_kwargs_style(engine):
+    check(engine.query(BasicClass, id='GO:0005694'))
+    check(engine.query(RdfTypeTriple, object='owl:Class'))
+    check(engine.query(Quad, object='owl:ObjectProperty'))
+    check(engine.query(RdfsSubclassOfTriple, object='GO:0005694'))
+
+def test_proto_style(engine):
+    check(engine.query(RdfTypeTriple(object='owl:Class')))
+    check(engine.query(Quad(object='owl:ObjectProperty')))
+    check(engine.query(RdfsSubclassOfTriple(object='GO:0005694')))
+    check(engine.query(BasicClass(id='GO:0005694')))
+
+def test_construct(engine):
+    check(engine.query(BasicClass(id='GO:0005694')))
 
 def test_nr(engine):
-    se = engine
-    se.limit = 3
-    #se = SparqlEngine(endpoint=ubergraph_url)
-    #se.bind_prefixes(hgnc='http://identifiers.org/hgnc/', GO='http://purl.obolibrary.org/obo/GO_')
-    for row in se.query(NonRedundantQuad, subject='GO:0005694'):
-        print(f'ROW={row}')
+    check(engine.query(NonRedundantQuad, subject='GO:0005694'))
 
-def test_taxon(engine):
-    for row in engine.query(UbergraphTaxonClass):
-        print(f'ROW={row}')
+def test_taxon_class(engine):
+    check(engine.query(UbergraphTaxonClass))
+    # TODO: if no variables in SELECT then convert to an ASK
+    #check(engine.query(UbergraphTaxonClass(id='NCBITaxon:1')))
 
 def test_never_in_taxon(engine):
-    for row in engine.query(InferredNeverInTaxon, object='NCBITaxon:33213'):
-        print(f'ROW={row}')
+    check(engine.query(InferredNeverInTaxon(object='NCBITaxon:33213')))
 
 def test_definition(engine):
-    #se = SparqlEngine(endpoint=ubergraph_url)
-    #se.bind_prefixes(GO='http://purl.obolibrary.org/obo/GO_')
-    for row in engine.query(DefinitionTriple, subject='GO:0005694'):
-        print(f'ROW={row}')
+    check(engine.query(DefinitionTriple, subject='GO:0005694'), max_expected=1)
 
 def test_jinja(engine):
-    #se = SparqlEngine(endpoint=ubergraph_url)
-    #se.bind_prefixes(GO='http://purl.obolibrary.org/obo/GO_')
-    for row in engine.query(OboClassFiltered, query_has_subclass_ancestor='GO:0044271'):
-        print(f'ROW={row}')
+    check(engine.query(OboClassFiltered, query_has_subclass_ancestor='GO:0044271'))
 
-def test_query(engine):
-    engine.limit = 9999
-    for row in engine.query(OboClassQuery, label_regex='^cysteine metabol'):
-        print(f'ROW={row}')
+def test_regex(engine):
+    check(engine.query(OboClassQuery, label_regex='^cysteine metabol'))
 
 def test_common_ancestor(engine):
-    for row in engine.query(PairwiseCommonSubClassAncestor, node1='GO:0046220', node2='GO:0008295'):
-        print(f'ROW={row}')
+    check(engine.query(PairwiseCommonSubClassAncestor, node1='GO:0046220', node2='GO:0008295'))
 
-def test_namespaces(engine):
-    print(f'PM={engine._get_prefix_map()}')
-    print(f'SM = {engine.schema_view.schema_map.keys()}')
-    pb = engine._get_prefix_block()
-    print(pb)
-    assert 'renci' in pb
+
