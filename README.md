@@ -322,6 +322,8 @@ This was inspired in part by the powerful but arcane [sparqlprog](https://github
  - Chaining
     - inject output from one into another and merge results, e.g. to get labels
     - similar to wikidata services
+ - UI/yasgui integration
+ - generation from dosdp (use dosdp-query algorithm)
  - Templates for
     - uniprot
     - gocams

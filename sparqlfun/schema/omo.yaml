@@ -57,10 +57,64 @@ classes:
           OPTIONAL { ?id oboInOwl:hasExactSynonym ?exact_snonyms } .
         }
 
+  obo class query:
+    slots:
+      - results
+      - label_regex
+    slot_usage:
+      results:
+        range: obo class
+    annotations:
+      sparql.results_slot: results
+      sparql.construct: |-
+        CONSTRUCT {
+          ?id a owl:Class ;
+              ?_p ?_v
+        }
+        WHERE {
+          ?id a owl:Class .
+          ?id ?_p ?_v .
+          VALUES ?_p { IAO:0000115 oboInOwl:hasExactSynonym }
+          {% if label_regex  %}
+          ?id rdfs:label ?label .
+          FILTER regex( ?label, "{{label_regex}}", "i" )
+          {% endif %}
+        }
 
-
+  deprecated obo class query:
+    class_uri: sparqlfun:OboClassQuery
+    slots:
+      - results
+      - label_regex
+    slot_usage:
+      results:
+        range: obo class
+    annotations:
+      sparql.construct: |-
+        CONSTRUCT {
+          [a sparqlfun:OboClassQuery ;
+             sparqlfun:results ?id
+          ] .
+          ?id a owl:Class ;
+              ?_p ?_v
+        }
+        WHERE {
+          ?id a owl:Class .
+          ?id ?_p ?_v .
+          {% if label_regex  %}
+          ?id rdfs:label ?label .
+          FILTER regex( ?label, "{{label_regex}}", "i" )
+          {% endif %}
+        }
 
 slots:
+  label_regex:
+  xxresults:
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+    range: node
+
   definition:
     slot_uri: IAO:0000115
   exact_synonyms:

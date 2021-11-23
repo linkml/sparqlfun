@@ -1,5 +1,5 @@
 # Auto generated from sparqlfun.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-11-19T17:44:46
+# Generation date: 2021-11-20T10:33:24
 # Schema: sparqlfun
 #
 # id: https://w3id.org/sparqlfun
@@ -723,6 +723,25 @@ class OboClass(ClassNode):
         super().__post_init__(**kwargs)
 
 
+@dataclass
+class OboClassQuery(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SPARQLFUN_OMO.OboClassQuery
+    class_class_curie: ClassVar[str] = "sparqlfun_omo:OboClassQuery"
+    class_name: ClassVar[str] = "obo class query"
+    class_model_uri: ClassVar[URIRef] = SPARQLFUN.OboClassQuery
+
+    results: Optional[Union[Union[str, OboClassId], List[Union[str, OboClassId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.results, list):
+            self.results = [self.results] if self.results is not None else []
+        self.results = [v if isinstance(v, OboClassId) else OboClassId(v) for v in self.results]
+
+        super().__post_init__(**kwargs)
+
+
 class UbergraphTaxonClass(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -931,6 +950,12 @@ slots.base = Slot(uri=SH.namespace, name="base", curie=SH.curie('namespace'),
 slots.description = Slot(uri=DCTERMS.description, name="description", curie=DCTERMS.curie('description'),
                    model_uri=SPARQLFUN.description, domain=None, range=Optional[str])
 
+slots.label_regex = Slot(uri=SPARQLFUN_OMO.label_regex, name="label_regex", curie=SPARQLFUN_OMO.curie('label_regex'),
+                   model_uri=SPARQLFUN.label_regex, domain=None, range=Optional[str])
+
+slots.xresults = Slot(uri=SPARQLFUN_OMO.xresults, name="xresults", curie=SPARQLFUN_OMO.curie('xresults'),
+                   model_uri=SPARQLFUN.xresults, domain=None, range=Optional[Union[List[Union[str, NodeId]], Dict[Union[str, NodeId], Union[dict, Node]]]])
+
 slots.definition = Slot(uri=IAO['0000115'], name="definition", curie=IAO.curie('0000115'),
                    model_uri=SPARQLFUN.definition, domain=None, range=Optional[str])
 
@@ -1006,3 +1031,6 @@ slots.taxon_applicable_subject = Slot(uri=RDF.subject, name="taxon applicable_su
 
 slots.taxon_applicable_object = Slot(uri=RDF.object, name="taxon applicable_object", curie=RDF.curie('object'),
                    model_uri=SPARQLFUN.taxon_applicable_object, domain=None, range=Optional[Union[str, TaxonClassId]])
+
+slots.obo_class_query_results = Slot(uri=SPARQLFUN.results, name="obo class query_results", curie=SPARQLFUN.curie('results'),
+                   model_uri=SPARQLFUN.obo_class_query_results, domain=OboClassQuery, range=Optional[Union[Union[str, OboClassId], List[Union[str, OboClassId]]]])
