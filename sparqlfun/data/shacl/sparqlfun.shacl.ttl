@@ -3,24 +3,1600 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://purl.uniprot.org/core/Absorption_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Absorption_Annotation> .
+
+<http://purl.uniprot.org/core/Active_Site_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Active_Site_Annotation> .
+
+<http://purl.uniprot.org/core/Activity_Regulation_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Activity_Regulation_Annotation> .
+
+<http://purl.uniprot.org/core/Allergen_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Allergen_Annotation> .
+
+<http://purl.uniprot.org/core/Alternative_Initiation_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Alternative_Initiation_Annotation> .
+
+<http://purl.uniprot.org/core/Alternative_Products_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Alternative_Products_Annotation> .
+
+<http://purl.uniprot.org/core/Alternative_Promoter_Usage_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Alternative_Promoter_Usage_Annotation> .
+
+<http://purl.uniprot.org/core/Alternative_Sequence_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Alternative_Sequence_Annotation> .
+
+<http://purl.uniprot.org/core/Alternative_Splicing_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Alternative_Splicing_Annotation> .
+
+<http://purl.uniprot.org/core/Beta_Strand_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Beta_Strand_Annotation> .
+
+<http://purl.uniprot.org/core/Binding_Site_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Binding_Site_Annotation> .
+
+<http://purl.uniprot.org/core/Biophysicochemical_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Biophysicochemical_Annotation> .
+
+<http://purl.uniprot.org/core/Biotechnology_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Biotechnology_Annotation> .
+
+<http://purl.uniprot.org/core/Book_Citation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Book_Citation> .
+
+<http://purl.uniprot.org/core/Calcium_Binding_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Calcium_Binding_Annotation> .
+
+<http://purl.uniprot.org/core/Catalytic_Activity> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "The catalytic activity of an enzyme." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Catalytic_Activity> .
+
+<http://purl.uniprot.org/core/Catalytic_Activity_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Catalytic_Activity_Annotation> .
+
+<http://purl.uniprot.org/core/Caution_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Caution_Annotation> .
+
+<http://purl.uniprot.org/core/Cellular_Component> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Cellular_Component> .
+
+<http://purl.uniprot.org/core/Chain_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Chain_Annotation> .
+
+<http://purl.uniprot.org/core/Citation_Statement> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Citation_Statement> .
+
+<http://purl.uniprot.org/core/Cofactor_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Cofactor_Annotation> .
+
+<http://purl.uniprot.org/core/Coiled_Coil_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Coiled_Coil_Annotation> .
+
+<http://purl.uniprot.org/core/Compositional_Bias_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Compositional_Bias_Annotation> .
+
+<http://purl.uniprot.org/core/Cross-link_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Cross-link_Annotation> .
+
+<http://purl.uniprot.org/core/DNA> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/DNA> .
+
+<http://purl.uniprot.org/core/Database> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Database> .
+
+<http://purl.uniprot.org/core/Developmental_Stage_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Developmental_Stage_Annotation> .
+
+<http://purl.uniprot.org/core/Disease> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Disease> .
+
+<http://purl.uniprot.org/core/Disease_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Disease_Annotation> .
+
+<http://purl.uniprot.org/core/Disruption_Phenotype_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Disruption_Phenotype_Annotation> .
+
+<http://purl.uniprot.org/core/Disulfide_Bond_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Disulfide_Bond_Annotation> .
+
+<http://purl.uniprot.org/core/Domain_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Domain_Annotation> .
+
+<http://purl.uniprot.org/core/Domain_Assignment_Statement> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Domain_Assignment_Statement> .
+
+<http://purl.uniprot.org/core/Domain_Extent_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Domain_Extent_Annotation> .
+
+<http://purl.uniprot.org/core/Electronic_Citation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Electronic_Citation> .
+
+<http://purl.uniprot.org/core/Endpoint_Statement> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Endpoint_Statement> .
+
+<http://purl.uniprot.org/core/Enzyme_Regulation_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "The use of this class has been replaced by Activity_Regulation_Annotation" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Enzyme_Regulation_Annotation> .
+
+<http://purl.uniprot.org/core/Erroneous_Gene_Model_Prediction_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Erroneous_Gene_Model_Prediction_Annotation> .
+
+<http://purl.uniprot.org/core/Erroneous_Initiation_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Erroneous_Initiation_Annotation> .
+
+<http://purl.uniprot.org/core/Erroneous_Termination_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Erroneous_Termination_Annotation> .
+
+<http://purl.uniprot.org/core/Erroneous_Translation_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Erroneous_Translation_Annotation> .
+
+<http://purl.uniprot.org/core/Experimental_Information_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Experimental_Information_Annotation> .
+
+<http://purl.uniprot.org/core/Family_Membership_Statement> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Family_Membership_Statement> .
+
+<http://purl.uniprot.org/core/Frameshift_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Frameshift_Annotation> .
+
+<http://purl.uniprot.org/core/Function_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Function_Annotation> .
+
+<http://purl.uniprot.org/core/Genomic_DNA> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Genomic_DNA> .
+
+<http://purl.uniprot.org/core/Genomic_RNA> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Genomic_RNA> .
+
+<http://purl.uniprot.org/core/Glycosylation_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Glycosylation_Annotation> .
+
+<http://purl.uniprot.org/core/Helix_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Helix_Annotation> .
+
+<http://purl.uniprot.org/core/Induction_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Induction_Annotation> .
+
+<http://purl.uniprot.org/core/Initiator_Methionine_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Initiator_Methionine_Annotation> .
+
+<http://purl.uniprot.org/core/Intramembrane_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Intramembrane_Annotation> .
+
+<http://purl.uniprot.org/core/Journal> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Journal> .
+
+<http://purl.uniprot.org/core/Journal_Citation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Journal_Citation> .
+
+<http://purl.uniprot.org/core/Kinetics_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Kinetics_Annotation> .
+
+<http://purl.uniprot.org/core/Known_Sequence> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Known_Sequence> .
+
+<http://purl.uniprot.org/core/Lipidation_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Lipidation_Annotation> .
+
+<http://purl.uniprot.org/core/MRNA> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/MRNA> .
+
+<http://purl.uniprot.org/core/Mass_Measurement_Method> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Mass_Measurement_Method> .
+
+<http://purl.uniprot.org/core/Mass_Spectrometry_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Mass_Spectrometry_Annotation> .
+
+<http://purl.uniprot.org/core/Member_Of_Redudant_Proteome> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://purl.uniprot.org/core/Citation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 5 ;
+            ns1:path <http://purl.uniprot.org/core/citation> ],
+        [ ns1:class <http://purl.uniprot.org/core/Cluster> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 13 ;
+            ns1:path <http://purl.uniprot.org/core/representativeFor> ],
+        [ ns1:class <http://purl.uniprot.org/core/Cluster> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 19 ;
+            ns1:path <http://purl.uniprot.org/core/seedFor> ],
+        [ ns1:class <http://purl.uniprot.org/core/Sequence> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 20 ;
+            ns1:path <http://purl.uniprot.org/core/sequence> ],
+        [ ns1:class <http://purl.uniprot.org/core/Annotation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 2 ;
+            ns1:path <http://purl.uniprot.org/core/annotation> ],
+        [ ns1:class <http://purl.uniprot.org/core/Enzyme> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 26 ;
+            ns1:path <http://purl.uniprot.org/core/enzyme> ],
+        [ ns1:class <http://purl.uniprot.org/core/Attribution> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 8 ;
+            ns1:path <http://purl.uniprot.org/core/attribution> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 17 ;
+            ns1:path <http://purl.uniprot.org/core/version> ],
+        [ ns1:class <http://purl.uniprot.org/core/Structured_Name> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 24 ;
+            ns1:path <http://purl.uniprot.org/core/submittedName> ],
+        [ ns1:class <http://purl.uniprot.org/core/Citation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path <http://purl.uniprot.org/core/mappedCitation> ],
+        [ ns1:class <http://purl.uniprot.org/core/Gene> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 10 ;
+            ns1:path <http://purl.uniprot.org/core/encodedBy> ],
+        [ ns1:class <http://purl.uniprot.org/core/Structured_Name> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 21 ;
+            ns1:path <http://purl.uniprot.org/core/alternativeName> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 6 ;
+            ns1:path <http://purl.uniprot.org/core/oldMnemonic> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 22 ;
+            ns1:path <http://purl.uniprot.org/core/reviewed> ],
+        [ ns1:class <http://purl.uniprot.org/core/Taxon> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 9 ;
+            ns1:path <http://purl.uniprot.org/core/organism> ],
+        [ ns1:class <http://purl.uniprot.org/core/External_Sequence> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 15 ;
+            ns1:path <http://purl.uniprot.org/core/conflictingSequence> ],
+        [ ns1:class <http://purl.uniprot.org/core/Sequence> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 16 ;
+            ns1:path <http://purl.uniprot.org/core/potentialSequence> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 14 ;
+            ns1:path <http://purl.uniprot.org/core/created> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 11 ;
+            ns1:path <http://purl.uniprot.org/core/mnemonic> ],
+        [ ns1:class <http://purl.uniprot.org/core/Concept> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 4 ;
+            ns1:path <http://purl.uniprot.org/core/classifiedWith> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 25 ;
+            ns1:path <http://purl.uniprot.org/core/modified> ],
+        [ ns1:class <http://purl.uniprot.org/core/Annotation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 3 ;
+            ns1:path <http://purl.uniprot.org/core/mappedAnnotation> ],
+        [ ns1:class <http://purl.uniprot.org/core/Thing> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdfs:seeAlso ],
+        [ ns1:class <http://purl.uniprot.org/core/Structured_Name> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 23 ;
+            ns1:path <http://purl.uniprot.org/core/recommendedName> ],
+        [ ns1:class <http://purl.uniprot.org/core/Interaction> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 12 ;
+            ns1:path <http://purl.uniprot.org/core/interaction> ],
+        [ ns1:class <http://purl.uniprot.org/core/Tissue> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 7 ;
+            ns1:path <http://purl.uniprot.org/core/isolatedFrom> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 27 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 18 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Member_Of_Redudant_Proteome> .
+
+<http://purl.uniprot.org/core/Metal_Binding_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Metal_Binding_Annotation> .
+
+<http://purl.uniprot.org/core/Method> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "An experimental method." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Method> .
+
+<http://purl.uniprot.org/core/Modification_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Modification_Annotation> .
+
+<http://purl.uniprot.org/core/Modified_Residue_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Modified_Residue_Annotation> .
+
+<http://purl.uniprot.org/core/Modified_Sequence> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Modified_Sequence> .
+
+<http://purl.uniprot.org/core/Molecule> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A biological molecule." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Molecule> .
+
+<http://purl.uniprot.org/core/Molecule_Processing_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Molecule_Processing_Annotation> .
+
+<http://purl.uniprot.org/core/Motif_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Motif_Annotation> .
+
+<http://purl.uniprot.org/core/Mutagenesis_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Mutagenesis_Annotation> .
+
+<http://purl.uniprot.org/core/NP_Binding_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/NP_Binding_Annotation> .
+
+<http://purl.uniprot.org/core/Natural_Variant_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Natural_Variant_Annotation> .
+
+<http://purl.uniprot.org/core/Natural_Variation_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Natural_Variation_Annotation> .
+
+<http://purl.uniprot.org/core/Non-adjacent_Residues_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Non-adjacent_Residues_Annotation> .
+
+<http://purl.uniprot.org/core/Non-standard_Residue_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Non-standard_Residue_Annotation> .
+
+<http://purl.uniprot.org/core/Non-terminal_Residue_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Non-terminal_Residue_Annotation> .
+
+<http://purl.uniprot.org/core/Non_Self_Interaction> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Non_Self_Interaction> .
+
+<http://purl.uniprot.org/core/Not_Obsolete> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A class introduced to group all records that are currently in the database." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Not_Obsolete> .
+
+<http://purl.uniprot.org/core/Not_Obsolete_Protein> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:maxCount 1 ;
+            ns1:order 22 ;
+            ns1:path <http://purl.uniprot.org/core/reviewed> ],
+        [ ns1:class <http://purl.uniprot.org/core/Cluster> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 13 ;
+            ns1:path <http://purl.uniprot.org/core/representativeFor> ],
+        [ ns1:class <http://purl.uniprot.org/core/Sequence> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 20 ;
+            ns1:path <http://purl.uniprot.org/core/sequence> ],
+        [ ns1:class <http://purl.uniprot.org/core/Cluster> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 19 ;
+            ns1:path <http://purl.uniprot.org/core/seedFor> ],
+        [ ns1:class <http://purl.uniprot.org/core/Enzyme> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 26 ;
+            ns1:path <http://purl.uniprot.org/core/enzyme> ],
+        [ ns1:class <http://purl.uniprot.org/core/Taxon> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 9 ;
+            ns1:path <http://purl.uniprot.org/core/organism> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 17 ;
+            ns1:path <http://purl.uniprot.org/core/version> ],
+        [ ns1:class <http://purl.uniprot.org/core/Structured_Name> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 24 ;
+            ns1:path <http://purl.uniprot.org/core/submittedName> ],
+        [ ns1:class <http://purl.uniprot.org/core/Gene> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 10 ;
+            ns1:path <http://purl.uniprot.org/core/encodedBy> ],
+        [ ns1:class <http://purl.uniprot.org/core/Structured_Name> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 21 ;
+            ns1:path <http://purl.uniprot.org/core/alternativeName> ],
+        [ ns1:class <http://purl.uniprot.org/core/Annotation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 3 ;
+            ns1:path <http://purl.uniprot.org/core/mappedAnnotation> ],
+        [ ns1:class <http://purl.uniprot.org/core/Citation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 5 ;
+            ns1:path <http://purl.uniprot.org/core/citation> ],
+        [ ns1:class <http://purl.uniprot.org/core/Attribution> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 8 ;
+            ns1:path <http://purl.uniprot.org/core/attribution> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 14 ;
+            ns1:path <http://purl.uniprot.org/core/created> ],
+        [ ns1:class <http://purl.uniprot.org/core/Concept> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 4 ;
+            ns1:path <http://purl.uniprot.org/core/classifiedWith> ],
+        [ ns1:class <http://purl.uniprot.org/core/External_Sequence> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 15 ;
+            ns1:path <http://purl.uniprot.org/core/conflictingSequence> ],
+        [ ns1:class <http://purl.uniprot.org/core/Thing> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdfs:seeAlso ],
+        [ ns1:maxCount 1 ;
+            ns1:order 6 ;
+            ns1:path <http://purl.uniprot.org/core/oldMnemonic> ],
+        [ ns1:class <http://purl.uniprot.org/core/Interaction> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 12 ;
+            ns1:path <http://purl.uniprot.org/core/interaction> ],
+        [ ns1:class <http://purl.uniprot.org/core/Tissue> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 7 ;
+            ns1:path <http://purl.uniprot.org/core/isolatedFrom> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 27 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 25 ;
+            ns1:path <http://purl.uniprot.org/core/modified> ],
+        [ ns1:class <http://purl.uniprot.org/core/Annotation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 2 ;
+            ns1:path <http://purl.uniprot.org/core/annotation> ],
+        [ ns1:class <http://purl.uniprot.org/core/Citation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path <http://purl.uniprot.org/core/mappedCitation> ],
+        [ ns1:class <http://purl.uniprot.org/core/Structured_Name> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 23 ;
+            ns1:path <http://purl.uniprot.org/core/recommendedName> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 18 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:class <http://purl.uniprot.org/core/Sequence> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 16 ;
+            ns1:path <http://purl.uniprot.org/core/potentialSequence> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 11 ;
+            ns1:path <http://purl.uniprot.org/core/mnemonic> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Not_Obsolete_Protein> .
+
+<http://purl.uniprot.org/core/Not_Obsolete_Taxon> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Not_Obsolete_Taxon> .
+
+<http://purl.uniprot.org/core/Nucleotide_Binding_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Nucleotide_Binding_Annotation> .
+
+<http://purl.uniprot.org/core/Nucleotide_Mapping_Statement> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Nucleotide_Mapping_Statement> .
+
+<http://purl.uniprot.org/core/Nucleotide_Resource> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Nucleotide_Resource> .
+
+<http://purl.uniprot.org/core/Observation_Citation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Observation_Citation> .
+
+<http://purl.uniprot.org/core/Obsolete> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "The class of all obsolete records in the database (i.e. records that where once published but are now removed)." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Obsolete> .
+
+<http://purl.uniprot.org/core/Obsolete_Protein> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://purl.uniprot.org/core/Tissue> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 7 ;
+            ns1:path <http://purl.uniprot.org/core/isolatedFrom> ],
+        [ ns1:class <http://purl.uniprot.org/core/Sequence> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 20 ;
+            ns1:path <http://purl.uniprot.org/core/sequence> ],
+        [ ns1:class <http://purl.uniprot.org/core/Thing> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdfs:seeAlso ],
+        [ ns1:maxCount 1 ;
+            ns1:order 11 ;
+            ns1:path <http://purl.uniprot.org/core/mnemonic> ],
+        [ ns1:class <http://purl.uniprot.org/core/Taxon> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 9 ;
+            ns1:path <http://purl.uniprot.org/core/organism> ],
+        [ ns1:class <http://purl.uniprot.org/core/Concept> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 4 ;
+            ns1:path <http://purl.uniprot.org/core/classifiedWith> ],
+        [ ns1:class <http://purl.uniprot.org/core/Structured_Name> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 21 ;
+            ns1:path <http://purl.uniprot.org/core/alternativeName> ],
+        [ ns1:class <http://purl.uniprot.org/core/Interaction> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 12 ;
+            ns1:path <http://purl.uniprot.org/core/interaction> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 27 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <http://purl.uniprot.org/core/Citation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 5 ;
+            ns1:path <http://purl.uniprot.org/core/citation> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 22 ;
+            ns1:path <http://purl.uniprot.org/core/reviewed> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 25 ;
+            ns1:path <http://purl.uniprot.org/core/modified> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 14 ;
+            ns1:path <http://purl.uniprot.org/core/created> ],
+        [ ns1:class <http://purl.uniprot.org/core/Structured_Name> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 24 ;
+            ns1:path <http://purl.uniprot.org/core/submittedName> ],
+        [ ns1:class <http://purl.uniprot.org/core/Attribution> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 8 ;
+            ns1:path <http://purl.uniprot.org/core/attribution> ],
+        [ ns1:class <http://purl.uniprot.org/core/Sequence> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 16 ;
+            ns1:path <http://purl.uniprot.org/core/potentialSequence> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 17 ;
+            ns1:path <http://purl.uniprot.org/core/version> ],
+        [ ns1:class <http://purl.uniprot.org/core/Annotation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 3 ;
+            ns1:path <http://purl.uniprot.org/core/mappedAnnotation> ],
+        [ ns1:class <http://purl.uniprot.org/core/External_Sequence> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 15 ;
+            ns1:path <http://purl.uniprot.org/core/conflictingSequence> ],
+        [ ns1:class <http://purl.uniprot.org/core/Citation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path <http://purl.uniprot.org/core/mappedCitation> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 18 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 6 ;
+            ns1:path <http://purl.uniprot.org/core/oldMnemonic> ],
+        [ ns1:class <http://purl.uniprot.org/core/Structured_Name> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 23 ;
+            ns1:path <http://purl.uniprot.org/core/recommendedName> ],
+        [ ns1:class <http://purl.uniprot.org/core/Cluster> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 19 ;
+            ns1:path <http://purl.uniprot.org/core/seedFor> ],
+        [ ns1:class <http://purl.uniprot.org/core/Gene> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 10 ;
+            ns1:path <http://purl.uniprot.org/core/encodedBy> ],
+        [ ns1:class <http://purl.uniprot.org/core/Enzyme> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 26 ;
+            ns1:path <http://purl.uniprot.org/core/enzyme> ],
+        [ ns1:class <http://purl.uniprot.org/core/Annotation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 2 ;
+            ns1:path <http://purl.uniprot.org/core/annotation> ],
+        [ ns1:class <http://purl.uniprot.org/core/Cluster> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 13 ;
+            ns1:path <http://purl.uniprot.org/core/representativeFor> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Obsolete_Protein> .
+
+<http://purl.uniprot.org/core/Obsolete_Taxon> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Obsolete_Taxon> .
+
+<http://purl.uniprot.org/core/Organelle> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Organelle> .
+
+<http://purl.uniprot.org/core/Orientation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Orientation> .
+
+<http://purl.uniprot.org/core/Other_DNA> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Other_DNA> .
+
+<http://purl.uniprot.org/core/Other_RNA> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Other_RNA> .
+
+<http://purl.uniprot.org/core/PH_Dependence_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/PH_Dependence_Annotation> .
+
+<http://purl.uniprot.org/core/PTM_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/PTM_Annotation> .
+
+<http://purl.uniprot.org/core/Part> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Part> .
+
+<http://purl.uniprot.org/core/Participant> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A participant in a protein-protein interaction." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Participant> .
+
+<http://purl.uniprot.org/core/Patent_Citation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Patent_Citation> .
+
+<http://purl.uniprot.org/core/Pathway> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A hierarchical discription of a metabolic pathway." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Pathway> .
+
+<http://purl.uniprot.org/core/Pathway_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Pathway_Annotation> .
+
+<http://purl.uniprot.org/core/Peptide_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Peptide_Annotation> .
+
+<http://purl.uniprot.org/core/Pharmaceutical_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Pharmaceutical_Annotation> .
+
+<http://purl.uniprot.org/core/Plasmid> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "Description of a Plasmid" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Plasmid> .
+
+<http://purl.uniprot.org/core/Polymorphism_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Polymorphism_Annotation> .
+
+<http://purl.uniprot.org/core/Propeptide_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Propeptide_Annotation> .
+
+<http://purl.uniprot.org/core/Protein> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:maxCount 1 ;
+            ns1:order 17 ;
+            ns1:path <http://purl.uniprot.org/core/version> ],
+        [ ns1:class <http://purl.uniprot.org/core/Taxon> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 9 ;
+            ns1:path <http://purl.uniprot.org/core/organism> ],
+        [ ns1:class <http://purl.uniprot.org/core/Structured_Name> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 21 ;
+            ns1:path <http://purl.uniprot.org/core/alternativeName> ],
+        [ ns1:class <http://purl.uniprot.org/core/Enzyme> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 26 ;
+            ns1:path <http://purl.uniprot.org/core/enzyme> ],
+        [ ns1:class <http://purl.uniprot.org/core/Annotation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 2 ;
+            ns1:path <http://purl.uniprot.org/core/annotation> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 27 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <http://purl.uniprot.org/core/Structured_Name> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 24 ;
+            ns1:path <http://purl.uniprot.org/core/submittedName> ],
+        [ ns1:class <http://purl.uniprot.org/core/Interaction> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 12 ;
+            ns1:path <http://purl.uniprot.org/core/interaction> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 11 ;
+            ns1:path <http://purl.uniprot.org/core/mnemonic> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 25 ;
+            ns1:path <http://purl.uniprot.org/core/modified> ],
+        [ ns1:class <http://purl.uniprot.org/core/Annotation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 3 ;
+            ns1:path <http://purl.uniprot.org/core/mappedAnnotation> ],
+        [ ns1:class <http://purl.uniprot.org/core/Attribution> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 8 ;
+            ns1:path <http://purl.uniprot.org/core/attribution> ],
+        [ ns1:class <http://purl.uniprot.org/core/Sequence> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 20 ;
+            ns1:path <http://purl.uniprot.org/core/sequence> ],
+        [ ns1:class <http://purl.uniprot.org/core/Citation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path <http://purl.uniprot.org/core/mappedCitation> ],
+        [ ns1:class <http://purl.uniprot.org/core/Structured_Name> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 23 ;
+            ns1:path <http://purl.uniprot.org/core/recommendedName> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 6 ;
+            ns1:path <http://purl.uniprot.org/core/oldMnemonic> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 22 ;
+            ns1:path <http://purl.uniprot.org/core/reviewed> ],
+        [ ns1:class <http://purl.uniprot.org/core/External_Sequence> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 15 ;
+            ns1:path <http://purl.uniprot.org/core/conflictingSequence> ],
+        [ ns1:class <http://purl.uniprot.org/core/Gene> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 10 ;
+            ns1:path <http://purl.uniprot.org/core/encodedBy> ],
+        [ ns1:class <http://purl.uniprot.org/core/Cluster> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 13 ;
+            ns1:path <http://purl.uniprot.org/core/representativeFor> ],
+        [ ns1:class <http://purl.uniprot.org/core/Thing> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdfs:seeAlso ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 18 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:class <http://purl.uniprot.org/core/Sequence> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 16 ;
+            ns1:path <http://purl.uniprot.org/core/potentialSequence> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 14 ;
+            ns1:path <http://purl.uniprot.org/core/created> ],
+        [ ns1:class <http://purl.uniprot.org/core/Concept> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 4 ;
+            ns1:path <http://purl.uniprot.org/core/classifiedWith> ],
+        [ ns1:class <http://purl.uniprot.org/core/Tissue> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:BlankNode ;
+            ns1:order 7 ;
+            ns1:path <http://purl.uniprot.org/core/isolatedFrom> ],
+        [ ns1:class <http://purl.uniprot.org/core/Citation> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 5 ;
+            ns1:path <http://purl.uniprot.org/core/citation> ],
+        [ ns1:class <http://purl.uniprot.org/core/Cluster> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 19 ;
+            ns1:path <http://purl.uniprot.org/core/seedFor> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Protein> .
+
+<http://purl.uniprot.org/core/Protein_Existence> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Protein_Existence> .
+
+<http://purl.uniprot.org/core/Proteome> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "Description of a proteome." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Proteome> .
+
+<http://purl.uniprot.org/core/Proteome_Component> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Proteome_Component> .
+
+<http://purl.uniprot.org/core/Published_Citation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Published_Citation> .
+
+<http://purl.uniprot.org/core/RNA> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/RNA> .
+
+<http://purl.uniprot.org/core/RNA_Editing_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/RNA_Editing_Annotation> .
+
+<http://purl.uniprot.org/core/Rank> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A rank of a taxon." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Rank> .
+
+<http://purl.uniprot.org/core/Redox_Potential_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Redox_Potential_Annotation> .
+
+<http://purl.uniprot.org/core/Reference_Proteome> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Reference_Proteome> .
+
+<http://purl.uniprot.org/core/Region_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Region_Annotation> .
+
+<http://purl.uniprot.org/core/Repeat_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Repeat_Annotation> .
+
+<http://purl.uniprot.org/core/Representative_Proteome> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Representative_Proteome> .
+
+<http://purl.uniprot.org/core/Resource> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A life science resource." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Resource> .
+
+<http://purl.uniprot.org/core/Reviewed> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description " The class of all reviewed records in the database (i.e. records that where looked at by a curator for integration into the database)." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Reviewed> .
+
+<http://purl.uniprot.org/core/Reviewed_Protein> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Reviewed_Protein> .
+
+<http://purl.uniprot.org/core/Ribosomal_Frameshifting> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Ribosomal_Frameshifting> .
+
+<http://purl.uniprot.org/core/Secondary_Structure_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Secondary_Structure_Annotation> .
+
+<http://purl.uniprot.org/core/Self_Interaction> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Self_Interaction> .
+
+<http://purl.uniprot.org/core/Sequence_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Sequence_Annotation> .
+
+<http://purl.uniprot.org/core/Sequence_Caution_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Sequence_Caution_Annotation> .
+
+<http://purl.uniprot.org/core/Sequence_Conflict_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Sequence_Conflict_Annotation> .
+
+<http://purl.uniprot.org/core/Sequence_Uncertainty_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Sequence_Uncertainty_Annotation> .
+
+<http://purl.uniprot.org/core/Signal_Peptide_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Signal_Peptide_Annotation> .
+
+<http://purl.uniprot.org/core/Similarity_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Similarity_Annotation> .
+
+<http://purl.uniprot.org/core/Simple_Sequence> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Simple_Sequence> .
+
+<http://purl.uniprot.org/core/Site_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Site_Annotation> .
+
+<http://purl.uniprot.org/core/Status> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "Indicator for the reliability of a piece of information." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Status> .
+
+<http://purl.uniprot.org/core/Strain> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A strain of a species." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Strain> .
+
+<http://purl.uniprot.org/core/Structure_Determination_Method> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Structure_Determination_Method> .
+
+<http://purl.uniprot.org/core/Structure_Mapping_Statement> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Structure_Mapping_Statement> .
+
+<http://purl.uniprot.org/core/Structure_Resource> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Structure_Resource> .
+
+<http://purl.uniprot.org/core/Subcellular_Location> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Subcellular_Location> .
+
+<http://purl.uniprot.org/core/Subcellular_Location_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Subcellular_Location_Annotation> .
+
+<http://purl.uniprot.org/core/Submission_Citation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Submission_Citation> .
+
+<http://purl.uniprot.org/core/Subunit_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Subunit_Annotation> .
+
+<http://purl.uniprot.org/core/Temperature_Dependence_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Temperature_Dependence_Annotation> .
+
+<http://purl.uniprot.org/core/Thesis_Citation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Thesis_Citation> .
+
+<http://purl.uniprot.org/core/Tissue_Specificity_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Tissue_Specificity_Annotation> .
+
+<http://purl.uniprot.org/core/Topological_Domain_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Topological_Domain_Annotation> .
+
+<http://purl.uniprot.org/core/Topology> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Topology> .
+
+<http://purl.uniprot.org/core/Toxic_Dose_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Toxic_Dose_Annotation> .
+
+<http://purl.uniprot.org/core/Transcribed_RNA> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Transcribed_RNA> .
+
+<http://purl.uniprot.org/core/Transcript_Resource> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Transcript_Resource> .
+
+<http://purl.uniprot.org/core/Transit_Peptide_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Transit_Peptide_Annotation> .
+
+<http://purl.uniprot.org/core/Transmembrane_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Transmembrane_Annotation> .
+
+<http://purl.uniprot.org/core/Transposon> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A transposon" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Transposon> .
+
+<http://purl.uniprot.org/core/Turn_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Turn_Annotation> .
+
+<http://purl.uniprot.org/core/Unassigned_DNA> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Unassigned_DNA> .
+
+<http://purl.uniprot.org/core/Unassigned_RNA> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Unassigned_RNA> .
+
+<http://purl.uniprot.org/core/Unknown_Sequence> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Unknown_Sequence> .
+
+<http://purl.uniprot.org/core/Unpublished_Citation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Unpublished_Citation> .
+
+<http://purl.uniprot.org/core/Viral_cRNA> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Viral_cRNA> .
+
+<http://purl.uniprot.org/core/Zinc_Finger_Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Zinc_Finger_Annotation> .
+
 rdf:Statement a ns1:NodeShape ;
     ns1:closed true ;
     ns1:description "Represents an RDF triple" ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+    ns1:ignoredProperties ( rdf:type ),
+        ( rdf:type ) ;
+    ns1:property [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
             ns1:path rdf:subject ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
         [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ] ;
+            ns1:path rdf:predicate ] ;
     ns1:targetClass rdf:Statement .
 
 <http://www.w3.org/2002/07/owl#NamedIndividual> a ns1:NodeShape ;
@@ -30,22 +1606,28 @@ rdf:Statement a ns1:NodeShape ;
     ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
             ns1:maxCount 1 ;
             ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ] ;
+            ns1:path <sparqlfun_rdf:id> ] ;
     ns1:targetClass <http://www.w3.org/2002/07/owl#NamedIndividual> .
 
-ns1:PrefixDeclaration a ns1:NodeShape ;
+<http://www.w3.org/2002/07/owl#Restriction> a ns1:NodeShape ;
     ns1:closed true ;
-    ns1:description "Maps CURIEs to URIs" ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:description "The base URI a prefix will expand to" ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
             ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
             ns1:order 1 ;
-            ns1:path ns1:namespace ],
-        [ ns1:description "A standardized prefix such as 'GO' or 'rdf' or 'FlyBase'" ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
             ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path <sparqlfun_owl:filler> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
-            ns1:path ns1:prefix ] ;
-    ns1:targetClass ns1:PrefixDeclaration .
+            ns1:path rdf:subject ] ;
+    ns1:targetClass <http://www.w3.org/2002/07/owl#Restriction> .
 
 <https://w3id.org/sparqlfun/OboClassQuery> a ns1:NodeShape ;
     ns1:closed true ;
@@ -59,546 +1641,17 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:path <resultset:results> ] ;
     ns1:targetClass <https://w3id.org/sparqlfun/OboClassQuery> .
 
-<https://w3id.org/sparqlfun/rdfBlankNode> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:description "A node with an ID that is not preserved between databases" ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            ns1:maxCount 1 ;
-            ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfBlankNode> .
-
-<https://w3id.org/sparqlfun/rdfClassTrait> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfClassTrait> .
-
-<https://w3id.org/sparqlfun/rdfIndividualTrait> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfIndividualTrait> .
-
-<https://w3id.org/sparqlfun/rdfIriNode> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            ns1:maxCount 1 ;
-            ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ;
-            ns1:pattern "^_:" ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfIriNode> .
-
-<https://w3id.org/sparqlfun/rdfNodeToNodeTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:description "A triple where object is a node" ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfNodeToNodeTriple> .
-
-<https://w3id.org/sparqlfun/rdfNodeToValueTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:description "A triple where object is a literal" ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfNodeToValueTriple> .
-
-<https://w3id.org/sparqlfun/rdfNodeTrait> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:description "abstract groupings/properties for different aspects of the model" ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfNodeTrait> .
-
-<https://w3id.org/sparqlfun/rdfNonRedundantQuad> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:description "A triple that indicates the asserted type of the subject entity" ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
-            ns1:description "Graph to which the triple belongs" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 3 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfgraph> ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfNonRedundantQuad> .
-
-<https://w3id.org/sparqlfun/rdfPropertyTrait> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfPropertyTrait> .
-
-<https://w3id.org/sparqlfun/rdfQuad> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:description "Represents an RDF triple plus named graph" ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:description "Graph to which the triple belongs" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 3 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfgraph> ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfQuad> .
-
-<https://w3id.org/sparqlfun/rdfRdfTypeTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:description "A triple that indicates the asserted type of the subject entity" ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
-            ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfTypeTriple> .
-
-<https://w3id.org/sparqlfun/rdfRdfsDomainTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 2 ;
-            ns1:path rdf:object ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfsDomainTriple> .
-
-<https://w3id.org/sparqlfun/rdfRdfsLabelTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfsLabelTriple> .
-
-<https://w3id.org/sparqlfun/rdfRdfsRangeTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 2 ;
-            ns1:path rdf:object ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfsRangeTriple> .
-
-<https://w3id.org/sparqlfun/rdfRdfsSubclassOfNamedTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
-            ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfsSubclassOfNamedTriple> .
-
-<https://w3id.org/sparqlfun/rdfRdfsSubclassOfTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
-            ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfsSubclassOfTriple> .
-
-<https://w3id.org/sparqlfun/rdfRdfsSubpropertyOfTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 2 ;
-            ns1:path rdf:object ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfRdfsSubpropertyOfTriple> .
-
-<https://w3id.org/sparqlfun/rdfRelationGraphQuad> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:description "Graph to which the triple belongs" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 3 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfgraph> ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfRelationGraphQuad> .
-
-<https://w3id.org/sparqlfun/rdfTypedNode> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            ns1:maxCount 1 ;
-            ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/rdftype> ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfTypedNode> .
-
-<https://w3id.org/sparqlfun/ubergraphInTaxonTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:description "In ubergraph, an in-taxon triple is pre-inferred" ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <https://w3id.org/sparqlfun/ubergraphTaxonClass> ;
-            ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <https://w3id.org/sparqlfun/ubergraphTaxonApplicableClass> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphInTaxonTriple> .
-
-<https://w3id.org/sparqlfun/ubergraphInferredNeverInTaxon> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:description "We infer via join" ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/ubergraphTaxonClass> ;
-            ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 5 ;
-            ns1:path rdf:object ],
-        [ ns1:class <https://w3id.org/sparqlfun/ubergraphTaxonApplicableClass> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 3 ;
-            ns1:path rdf:subject ],
-        [ ns1:maxCount 1 ;
-            ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphclass_with_constraint> ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 4 ;
-            ns1:path rdf:predicate ],
-        [ ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphdirect_taxon> ],
-        [ ns1:maxCount 1 ;
-            ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphsubject_predicate> ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphInferredNeverInTaxon> .
-
-<https://w3id.org/sparqlfun/ubergraphIsAOrPartOf> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:description "Graph to which the triple belongs" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 3 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfgraph> ],
-        [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphIsAOrPartOf> .
-
-<https://w3id.org/sparqlfun/ubergraphNeverInTaxonTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/ubergraphTaxonClass> ;
-            ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <https://w3id.org/sparqlfun/ubergraphTaxonApplicableClass> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphNeverInTaxonTriple> .
-
-<https://w3id.org/sparqlfun/ubergraphNormalizedInformationContentTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphNormalizedInformationContentTriple> .
-
-<https://w3id.org/sparqlfun/ubergraphPairwiseCommonAncestor> a ns1:NodeShape ;
+<resultset:Binding> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
     ns1:property [ ns1:maxCount 1 ;
-            ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphnode1> ],
-        [ ns1:maxCount 1 ;
             ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphnode2> ],
+            ns1:path <resultset:binding_value> ],
         [ ns1:maxCount 1 ;
-            ns1:order 3 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphpredicate2> ],
-        [ ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphpredicate1> ],
-        [ ns1:maxCount 1 ;
-            ns1:order 4 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphancestor> ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphPairwiseCommonAncestor> .
-
-<https://w3id.org/sparqlfun/ubergraphPairwiseCommonSubClassAncestor> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:maxCount 1 ;
+            ns1:minCount 1 ;
             ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphnode1> ],
-        [ ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphpredicate1> ],
-        [ ns1:maxCount 1 ;
-            ns1:order 3 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphpredicate2> ],
-        [ ns1:maxCount 1 ;
-            ns1:order 4 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphancestor> ],
-        [ ns1:maxCount 1 ;
-            ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/ubergraphnode2> ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphPairwiseCommonSubClassAncestor> .
-
-<https://w3id.org/sparqlfun/ubergraphSubClassCountTriple> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphSubClassCountTriple> .
-
-<https://w3id.org/sparqlfun/ubergraphTaxonApplicable> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphTaxonApplicable> .
-
-<https://w3id.org/sparqlfun/ubergraphUbergraphQuad> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path rdf:subject ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:description "Graph to which the triple belongs" ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 3 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfgraph> ],
-        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 1 ;
-            ns1:path rdf:predicate ],
-        [ ns1:description "a literal or node representing the object of the triple" ;
-            ns1:maxCount 1 ;
-            ns1:order 2 ;
-            ns1:path rdf:object ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphUbergraphQuad> .
-
-<https://w3id.org/sparqlfun/ubergraphUbergraphTaxonClass> a ns1:NodeShape ;
-    ns1:closed true ;
-    ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/rdftype> ],
-        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            ns1:maxCount 1 ;
-            ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphUbergraphTaxonClass> .
+            ns1:path <resultset:binding_key> ] ;
+    ns1:targetClass <resultset:Binding> .
 
 <resultset:ResultSet> a ns1:NodeShape ;
     ns1:closed true ;
@@ -609,7 +1662,439 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:path <resultset:results> ] ;
     ns1:targetClass <resultset:ResultSet> .
 
+<sh:PrefixDeclaration> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "Maps CURIEs to URIs" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "The base URI a prefix will expand to" ;
+            ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sh:namespace> ],
+        [ ns1:description "A standardized prefix such as 'GO' or 'rdf' or 'FlyBase'" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sh:prefix> ] ;
+    ns1:targetClass <sh:PrefixDeclaration> .
+
 <sparqlfun_omo:DefinitionTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ] ;
+    ns1:targetClass <sparqlfun_omo:DefinitionTriple> .
+
+<sparqlfun_omo:OboClassQuery> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_omo:label_regex> ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path <resultset:results> ] ;
+    ns1:targetClass <sparqlfun_omo:OboClassQuery> .
+
+<sparqlfun_owl:DescribeEquivalentExpression> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path <resultset:results> ] ;
+    ns1:targetClass <sparqlfun_owl:DescribeEquivalentExpression> .
+
+<sparqlfun_owl:EquivalenceTripleMixin> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <sparqlfun_owl:EquivalenceTripleMixin> .
+
+<sparqlfun_owl:OwlEquivalentClassTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A statement that connects two class nodes where both classes are equivalent" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ] ;
+    ns1:targetClass <sparqlfun_owl:OwlEquivalentClassTriple> .
+
+<sparqlfun_owl:OwlNamedEquivalentClassTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "An equivalence triple between two named classes" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:description "One of the two classes that are equivalent. No significance to subject vs object" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:description "One of the two classes that are equivalent. No significance to subject vs object" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ] ;
+    ns1:targetClass <sparqlfun_owl:OwlNamedEquivalentClassTriple> .
+
+<sparqlfun_owl:SubclassOfSomeValuesFrom> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <sparqlfun_owl:SubclassOfSomeValuesFrom> .
+
+<sparqlfun_rdf:BlankNode> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A node with an ID that is not preserved between databases" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <sparqlfun_rdf:BlankNode> .
+
+<sparqlfun_rdf:ClassTrait> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <sparqlfun_rdf:ClassTrait> .
+
+<sparqlfun_rdf:IndividualTrait> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <sparqlfun_rdf:IndividualTrait> .
+
+<sparqlfun_rdf:IriNode> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ;
+            ns1:pattern "^_:" ] ;
+    ns1:targetClass <sparqlfun_rdf:IriNode> .
+
+<sparqlfun_rdf:NamedNodeToNamedNodeTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ] ;
+    ns1:targetClass <sparqlfun_rdf:NamedNodeToNamedNodeTriple> .
+
+<sparqlfun_rdf:NodeToNodeTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A triple where object is a node" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ] ;
+    ns1:targetClass <sparqlfun_rdf:NodeToNodeTriple> .
+
+<sparqlfun_rdf:NodeToValueTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A triple where object is a literal" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ] ;
+    ns1:targetClass <sparqlfun_rdf:NodeToValueTriple> .
+
+<sparqlfun_rdf:NodeTrait> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "abstract groupings/properties for different aspects of the model" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <sparqlfun_rdf:NodeTrait> .
+
+<sparqlfun_rdf:NonRedundantQuad> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A triple that indicates the asserted type of the subject entity" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:description "Source of" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 3 ;
+            ns1:path <sparqlfun_rdf:graph> ],
+        [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ] ;
+    ns1:targetClass <sparqlfun_rdf:NonRedundantQuad> .
+
+<sparqlfun_rdf:PropertyTrait> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <sparqlfun_rdf:PropertyTrait> .
+
+<sparqlfun_rdf:ProteinClassifiedWith> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path rdf:object ] ;
+    ns1:targetClass <sparqlfun_rdf:ProteinClassifiedWith> .
+
+<sparqlfun_rdf:Quad> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "Represents an RDF triple plus named graph" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:description "Graph to which the triple belongs" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 3 ;
+            ns1:path <sparqlfun_rdf:graph> ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ] ;
+    ns1:targetClass <sparqlfun_rdf:Quad> .
+
+<sparqlfun_rdf:RdfTypeTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A triple that indicates the asserted type of the subject entity" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:description "The entity type" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ] ;
+    ns1:targetClass <sparqlfun_rdf:RdfTypeTriple> .
+
+<sparqlfun_rdf:RdfsDomainTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ] ;
+    ns1:targetClass <sparqlfun_rdf:RdfsDomainTriple> .
+
+<sparqlfun_rdf:RdfsLabelTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ] ;
+    ns1:targetClass <sparqlfun_rdf:RdfsLabelTriple> .
+
+<sparqlfun_rdf:RdfsRangeTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ] ;
+    ns1:targetClass <sparqlfun_rdf:RdfsRangeTriple> .
+
+<sparqlfun_rdf:RdfsSubclassOfNamedTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ] ;
+    ns1:targetClass <sparqlfun_rdf:RdfsSubclassOfNamedTriple> .
+
+<sparqlfun_rdf:RdfsSubclassOfTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:description "The superclass element of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+            ns1:description "The subclass element of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ] ;
+    ns1:targetClass <sparqlfun_rdf:RdfsSubclassOfTriple> .
+
+<sparqlfun_rdf:RdfsSubpropertyOfTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:description "The subproperty element of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:description "The superproperty element of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ] ;
+    ns1:targetClass <sparqlfun_rdf:RdfsSubpropertyOfTriple> .
+
+<sparqlfun_rdf:RelationGraphQuad> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
     ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
@@ -621,57 +2106,548 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
             ns1:maxCount 1 ;
             ns1:order 2 ;
             ns1:path rdf:object ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:description "Indicates inference/redundancy status" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 3 ;
+            ns1:path <sparqlfun_rdf:graph> ] ;
+    ns1:targetClass <sparqlfun_rdf:RelationGraphQuad> .
+
+<sparqlfun_rdf:TypedNode> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <sparqlfun_rdf:TypedNode> .
+
+<sparqlfun_ubergraph:ClassTaxonExclusion> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_ubergraph:TaxonClass> ;
+            ns1:description "The taxon that cannot have the subject class." ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 5 ;
+            ns1:path rdf:object ],
+        [ ns1:class <sparqlfun_ubergraph:TaxonApplicableClass> ;
+            ns1:description "The class inferred to have the constraint" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 3 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 4 ;
+            ns1:path rdf:predicate ],
+        [ ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path <sparqlfun_ubergraph:direct_taxon> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_ubergraph:subject_predicate> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_ubergraph:class_with_constraint> ] ;
+    ns1:targetClass <sparqlfun_ubergraph:ClassTaxonExclusion> .
+
+<sparqlfun_ubergraph:ClassTaxonExclusionViaNeverIn> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description """An inferred never-in between a subject term and an object taxon, which holds
+when the inferred direct taxon is not in an ancestry relationship with the object taxon""" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path <sparqlfun_ubergraph:direct_taxon> ],
+        [ ns1:class <sparqlfun_ubergraph:TaxonApplicableClass> ;
+            ns1:description "The class inferred to have the constraint" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 3 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <sparqlfun_ubergraph:TaxonClass> ;
+            ns1:description "The taxon that cannot have the subject class." ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 5 ;
+            ns1:path rdf:object ],
+        [ ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_ubergraph:subject_predicate> ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 4 ;
+            ns1:path rdf:predicate ],
+        [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_ubergraph:class_with_constraint> ] ;
+    ns1:targetClass <sparqlfun_ubergraph:ClassTaxonExclusionViaNeverIn> .
+
+<sparqlfun_ubergraph:ClassTaxonExclusionViaOnlyIn> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path <sparqlfun_ubergraph:direct_taxon> ],
+        [ ns1:class <sparqlfun_ubergraph:TaxonClass> ;
+            ns1:description "The taxon that cannot have the subject class." ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 5 ;
+            ns1:path rdf:object ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 4 ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <sparqlfun_ubergraph:TaxonApplicableClass> ;
+            ns1:description "The class inferred to have the constraint" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 3 ;
+            ns1:path rdf:subject ],
+        [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_ubergraph:class_with_constraint> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_ubergraph:subject_predicate> ] ;
+    ns1:targetClass <sparqlfun_ubergraph:ClassTaxonExclusionViaOnlyIn> .
+
+<sparqlfun_ubergraph:InTaxonTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "In ubergraph, an in-taxon triple is pre-inferred" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_ubergraph:TaxonClass> ;
+            ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <sparqlfun_ubergraph:TaxonApplicableClass> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ] ;
+    ns1:targetClass <sparqlfun_ubergraph:InTaxonTriple> .
+
+<sparqlfun_ubergraph:IsAOrPartOf> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:description "Graph to which the triple belongs" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 3 ;
+            ns1:path <sparqlfun_rdf:graph> ],
+        [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ] ;
+    ns1:targetClass <sparqlfun_ubergraph:IsAOrPartOf> .
+
+<sparqlfun_ubergraph:NeverInTaxonTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_ubergraph:TaxonApplicableClass> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <sparqlfun_ubergraph:TaxonClass> ;
+            ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 2 ;
+            ns1:path rdf:object ] ;
+    ns1:targetClass <sparqlfun_ubergraph:NeverInTaxonTriple> .
+
+<sparqlfun_ubergraph:NormalizedInformationContentTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path rdf:subject ],
+        [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ] ;
+    ns1:targetClass <sparqlfun_ubergraph:NormalizedInformationContentTriple> .
+
+<sparqlfun_ubergraph:PairwiseCommonAncestor> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "Common ancestor in relation graph over any relations between two nodes" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:maxCount 1 ;
+            ns1:order 3 ;
+            ns1:path <sparqlfun_ubergraph:predicate2> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 4 ;
+            ns1:path <sparqlfun_ubergraph:ancestor> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path <sparqlfun_ubergraph:predicate1> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_ubergraph:node1> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_ubergraph:node2> ] ;
+    ns1:targetClass <sparqlfun_ubergraph:PairwiseCommonAncestor> .
+
+<sparqlfun_ubergraph:PairwiseCommonSubClassAncestor> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:maxCount 1 ;
+            ns1:order 4 ;
+            ns1:path <sparqlfun_ubergraph:ancestor> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_ubergraph:node2> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path <sparqlfun_ubergraph:predicate1> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_ubergraph:node1> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 3 ;
+            ns1:path <sparqlfun_ubergraph:predicate2> ] ;
+    ns1:targetClass <sparqlfun_ubergraph:PairwiseCommonSubClassAncestor> .
+
+<sparqlfun_ubergraph:PairwiseMostRecentCommonAncestor> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "Common non-redundant ancestor in relation graph over any relations between two nodes" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path <sparqlfun_ubergraph:predicate1> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 3 ;
+            ns1:path <sparqlfun_ubergraph:predicate2> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 4 ;
+            ns1:path <sparqlfun_ubergraph:ancestor> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_ubergraph:node2> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_ubergraph:node1> ] ;
+    ns1:targetClass <sparqlfun_ubergraph:PairwiseMostRecentCommonAncestor> .
+
+<sparqlfun_ubergraph:PairwiseMostRecentCommonSubClassAncestor> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "Common non-redundant SubClass ancestor between two nodes" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_ubergraph:node2> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path <sparqlfun_ubergraph:ancestor> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_ubergraph:node1> ] ;
+    ns1:targetClass <sparqlfun_ubergraph:PairwiseMostRecentCommonSubClassAncestor> .
+
+<sparqlfun_ubergraph:SetwiseCommonSubClassAncestor> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "Common superclass ancestor to a set of nodes" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:order 0 ;
+            ns1:path <sparqlfun_ubergraph:nodes> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_ubergraph:ancestor> ] ;
+    ns1:targetClass <sparqlfun_ubergraph:SetwiseCommonSubClassAncestor> .
+
+<sparqlfun_ubergraph:SetwiseMostRecentCommonSubClassAncestor> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "Most recent common superclass ancestor to a set of nodes" ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_ubergraph:ancestor> ],
+        [ ns1:order 0 ;
+            ns1:path <sparqlfun_ubergraph:nodes> ] ;
+    ns1:targetClass <sparqlfun_ubergraph:SetwiseMostRecentCommonSubClassAncestor> .
+
+<sparqlfun_ubergraph:SubClassCountTriple> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path rdf:predicate ],
+        [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
             ns1:path rdf:subject ] ;
-    ns1:targetClass <sparqlfun_omo:DefinitionTriple> .
+    ns1:targetClass <sparqlfun_ubergraph:SubClassCountTriple> .
 
-<sparqlfun_omo:OboClassQuery> a ns1:NodeShape ;
+<sparqlfun_ubergraph:TaxonApplicable> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
+    ns1:targetClass <sparqlfun_ubergraph:TaxonApplicable> .
+
+<sparqlfun_ubergraph:UbergraphQuad> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:description "Graph to which the triple belongs" ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 3 ;
+            ns1:path <sparqlfun_rdf:graph> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
-            ns1:path <resultset:results> ],
-        [ ns1:maxCount 1 ;
+            ns1:path rdf:subject ],
+        [ ns1:class <http://www.w3.org/2002/07/owl#Property> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
             ns1:order 1 ;
-            ns1:path <sparqlfun_omo:label_regex> ] ;
-    ns1:targetClass <sparqlfun_omo:OboClassQuery> .
+            ns1:path rdf:predicate ],
+        [ ns1:description "a literal or node representing the object of the triple" ;
+            ns1:maxCount 1 ;
+            ns1:order 2 ;
+            ns1:path rdf:object ] ;
+    ns1:targetClass <sparqlfun_ubergraph:UbergraphQuad> .
+
+<sparqlfun_ubergraph:UbergraphTaxonClass> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <sparqlfun_ubergraph:UbergraphTaxonClass> .
 
 <resultset:GenericResult> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
     ns1:targetClass <resultset:GenericResult> .
 
-<https://w3id.org/sparqlfun/ubergraphTaxonApplicableClass> a ns1:NodeShape ;
+<http://purl.uniprot.org/core/Attribution> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "Entity used to attach evidence or provenance to a rdf statement via reification." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Attribution> .
+
+<http://purl.uniprot.org/core/Concept> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
     ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
             ns1:maxCount 1 ;
-            ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
-            ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/rdftype> ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphTaxonApplicableClass> .
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Concept> .
 
-<https://w3id.org/sparqlfun/ubergraphTaxonClass> a ns1:NodeShape ;
+<http://purl.uniprot.org/core/Enzyme> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Enzyme> .
+
+<http://purl.uniprot.org/core/External_Sequence> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/External_Sequence> .
+
+<http://purl.uniprot.org/core/Gene> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Gene> .
+
+<http://purl.uniprot.org/core/Interaction> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "Description of a protein-protein interaction." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Interaction> .
+
+<http://purl.uniprot.org/core/Taxon> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Taxon> .
+
+<http://purl.uniprot.org/core/Thing> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Thing> .
+
+<http://purl.uniprot.org/core/Tissue> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A tissue such as lung or heart." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Tissue> .
+
+<sparqlfun_ubergraph:TaxonApplicableClass> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/rdftype> ],
+            ns1:path <sparqlfun_rdf:type> ],
         [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
             ns1:maxCount 1 ;
             ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/ubergraphTaxonClass> .
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <sparqlfun_ubergraph:TaxonApplicableClass> .
+
+<sparqlfun_ubergraph:TaxonClass> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <sparqlfun_ubergraph:TaxonClass> .
+
+<http://purl.uniprot.org/core/Annotation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "Description of a resource on a specific topic." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Annotation> .
+
+<http://purl.uniprot.org/core/Citation> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Citation> .
+
+<http://purl.uniprot.org/core/Cluster> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
+    ns1:targetClass <http://purl.uniprot.org/core/Cluster> .
+
+<http://purl.uniprot.org/core/Sequence> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "An amino acid sequence." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Sequence> .
+
+<http://purl.uniprot.org/core/Structured_Name> a ns1:NodeShape ;
+    ns1:closed true ;
+    ns1:description "A resource that holds a set of the known names for this protein together." ;
+    ns1:ignoredProperties ( rdf:type ) ;
+    ns1:targetClass <http://purl.uniprot.org/core/Structured_Name> .
 
 <http://www.w3.org/2002/07/owl#Class> a ns1:NodeShape ;
     ns1:closed true ;
@@ -679,76 +2655,86 @@ ns1:PrefixDeclaration a ns1:NodeShape ;
     ns1:ignoredProperties ( rdf:type ),
         ( rdf:type ),
         ( rdf:type ),
+        ( rdf:type ),
         ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+    ns1:property [ ns1:class <sparqlfun_rdf:Node> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 2 ;
-            ns1:path <https://w3id.org/sparqlfun/rdftype> ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
-            ns1:maxCount 1 ;
-            ns1:nodeKind ns1:IRI ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:order 1 ;
+            ns1:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
+        [ ns1:maxCount 1 ;
             ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/rdftype> ],
+            ns1:path <http://purl.obolibrary.org/obo/IAO_0000115> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:maxCount 1 ;
+            ns1:order 0 ;
+            ns1:path <http://purl.obolibrary.org/obo/IAO_0000115> ],
         [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
             ns1:maxCount 1 ;
             ns1:order 3 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
+            ns1:path <sparqlfun_rdf:id> ],
         [ ns1:class <http://www.w3.org/2002/07/owl#Class> ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
             ns1:path rdfs:subClassOf ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 0 ;
+            ns1:path <sparqlfun_rdf:type> ],
         [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
             ns1:maxCount 1 ;
             ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
+            ns1:path <sparqlfun_rdf:id> ],
         [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
             ns1:maxCount 1 ;
             ns1:order 3 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
-        [ ns1:order 1 ;
-            ns1:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
-        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            ns1:maxCount 1 ;
-            ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ],
-        [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 2 ;
-            ns1:path <https://w3id.org/sparqlfun/rdftype> ],
-        [ ns1:maxCount 1 ;
+            ns1:path <sparqlfun_rdf:type> ],
+        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
             ns1:order 0 ;
-            ns1:path <http://purl.obolibrary.org/obo/IAO_0000115> ],
-        [ ns1:maxCount 1 ;
-            ns1:order 0 ;
-            ns1:path <http://purl.obolibrary.org/obo/IAO_0000115> ],
+            ns1:path <sparqlfun_rdf:id> ],
         [ ns1:order 1 ;
-            ns1:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ] ;
+            ns1:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
+            ns1:maxCount 1 ;
+            ns1:nodeKind ns1:IRI ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:type> ] ;
     ns1:targetClass <http://www.w3.org/2002/07/owl#Class> .
 
 <http://www.w3.org/2002/07/owl#Property> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:description "Note this only directly classifies nodes asserted to be rdf:Properties" ;
     ns1:ignoredProperties ( rdf:type ) ;
-    ns1:property [ ns1:class <https://w3id.org/sparqlfun/rdfNode> ;
+    ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            ns1:maxCount 1 ;
+            ns1:order 1 ;
+            ns1:path <sparqlfun_rdf:id> ],
+        [ ns1:class <sparqlfun_rdf:Node> ;
             ns1:maxCount 1 ;
             ns1:nodeKind ns1:IRI ;
             ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/rdftype> ],
-        [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            ns1:maxCount 1 ;
-            ns1:order 1 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ] ;
+            ns1:path <sparqlfun_rdf:type> ] ;
     ns1:targetClass <http://www.w3.org/2002/07/owl#Property> .
 
-<https://w3id.org/sparqlfun/rdfNode> a ns1:NodeShape ;
+<sparqlfun_rdf:Node> a ns1:NodeShape ;
     ns1:closed true ;
     ns1:description "The basic unit of representation in an RDF or OWL graph" ;
     ns1:ignoredProperties ( rdf:type ) ;
     ns1:property [ ns1:description "An identifier for an element. Note blank node ids are not unique across databases" ;
             ns1:maxCount 1 ;
             ns1:order 0 ;
-            ns1:path <https://w3id.org/sparqlfun/rdfid> ] ;
-    ns1:targetClass <https://w3id.org/sparqlfun/rdfNode> .
+            ns1:path <sparqlfun_rdf:id> ] ;
+    ns1:targetClass <sparqlfun_rdf:Node> .
 

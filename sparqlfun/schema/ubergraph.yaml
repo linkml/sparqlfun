@@ -67,25 +67,45 @@ classes:
     annotations:
       sparql.select: SELECT * WHERE { GRAPH ?graph { ?subject ?predicate ?object . VALUES ?predicate { rdfs:subClassOf BFO:0000050 } } }
 
-  in taxon triple:
-    description: |-
-      In ubergraph, an in-taxon triple is pre-inferred
-    is_a: triple
-    mixins:
-      - taxon applicable
-    classification_rules:
-      - is_a: triple
-        slot_conditions:
-          predicate:
-            equals_string: RO:0002161
 
-  inferred never in taxon:
+  class taxon exclusion via never in:
     description: |-
-      We infer via join
+      An inferred never-in between a subject term and an object taxon, which holds
+      when the inferred direct taxon is not in an ancestry relationship with the object taxon
     slots:
       - subject_predicate
       - class_with_constraint
       - direct_taxon
+    slot_usage:
+      subject:
+        description:
+          The class inferred to have the constraint
+      object:
+        description:
+          The taxon that cannot have the subject class.
+    is_a: triple
+    mixins:
+      - taxon applicable
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?subject ?subject_predicate ?class_with_constraint .
+          ?class_with_constraint RO:0002161 ?direct_taxon .
+          FILTER EXISTS { ?object rdfs:subClassOf ?direct_taxon }
+        }
+
+  class taxon exclusion via only in:
+    slots:
+      - subject_predicate
+      - class_with_constraint
+      - direct_taxon
+    slot_usage:
+      subject:
+        description:
+          The class inferred to have the constraint
+      object:
+        description:
+          The taxon that cannot have the subject class.
     is_a: triple
     mixins:
       - taxon applicable
@@ -97,7 +117,72 @@ classes:
           FILTER NOT EXISTS { ?object (rdfs:subClassOf|^rdfs:subClassOf) ?direct_taxon }
         }
 
+  class taxon exclusion:
+    slots:
+      - subject_predicate
+      - class_with_constraint
+      - direct_taxon
+    slot_usage:
+      subject:
+        description:
+          The class inferred to have the constraint
+      object:
+        description:
+          The taxon that cannot have the subject class.
+    is_a: triple
+    mixins:
+      - taxon applicable
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+         {
+          ?subject ?subject_predicate ?class_with_constraint BIND(RO:0002162 as ?predicate) .
+          ?class_with_constraint RO:0002162 ?direct_taxon .
+          FILTER NOT EXISTS { ?object (rdfs:subClassOf|^rdfs:subClassOf) ?direct_taxon }
+         }
+         UNION
+         {
+          ?subject ?subject_predicate ?class_with_constraint BIND(RO:0002161 as ?predicate).
+          ?class_with_constraint RO:0002161 ?direct_taxon .
+          FILTER EXISTS { ?object rdfs:subClassOf ?direct_taxon }
+         }
+        }
+
+  setwise common SubClass ancestor:
+    description: Common superclass ancestor to a set of nodes
+    slots:
+      - nodes
+      - ancestor
+    annotations:
+      sparql.select: |-
+        SELECT ?ancestor WHERE {
+          VALUES ?sub { {{ _values(nodes) }} }
+          ?sub rdfs:subClassOf ?ancestor .
+          FILTER(isIRI(?ancestor))
+        }
+
+  setwise most recent common SubClass ancestor:
+    description: Most recent common superclass ancestor to a set of nodes
+    slots:
+      - nodes
+      - ancestor
+    annotations:
+      sparql.select: |-
+        SELECT ?ancestor WHERE {
+          VALUES ?sub { {{ _values(nodes) }} }
+          ?sub rdfs:subClassOf ?ancestor .
+          FILTER(isIRI(?ancestor)) .
+          FILTER NOT EXISTS {
+                      VALUES ?sub2 { {{ _values(nodes) }} }
+                      ?sub2 rdfs:subClassOf ?a2 .
+                      ?a2 rdfs:subClassOf ?ancestor .
+                      FILTER(?a2 != ?ancestor)
+                      FILTER(isIRI(?a2))
+          }
+        }
+
   pairwise common ancestor:
+    description: Common ancestor in relation graph over any relations between two nodes
     slots:
       - node1
       - node2
@@ -121,6 +206,45 @@ classes:
           predicate2:
             equals_string: rdfs:subClassOf
 
+  pairwise most recent common ancestor:
+    description: Common non-redundant ancestor in relation graph over any relations between two nodes
+    slots:
+      - node1
+      - node2
+      - predicate1
+      - predicate2
+      - ancestor
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?node1 ?predicate1 ?ancestor .
+          ?node2 ?predicate2 ?ancestor .
+          FILTER NOT EXISTS {
+            ?a2 (?predicate1|?predicate2|rdfs:subClassOf) ?ancestor .
+            ?node1 ?predicate1 ?a2 .
+            ?node2 ?predicate2 ?a2 .
+            FILTER(?a2 != ?ancestor)
+          }
+        }
+
+  pairwise most recent common SubClass ancestor:
+    description: Common non-redundant SubClass ancestor between two nodes
+    slots:
+      - node1
+      - node2
+      - ancestor
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?node1 rdfs:subClassOf ?ancestor .
+          ?node2 rdfs:subClassOf ?ancestor .
+          FILTER NOT EXISTS {
+            ?a2 rdfs:subClassOf ?ancestor .
+            ?node1 rdfs:subClassOf ?a2 .
+            ?node2 rdfs:subClassOf ?a2 .
+            FILTER(?a2 != ?ancestor)
+          }
+        }
 
   obo class filtered:
     is_a: class node
@@ -148,6 +272,8 @@ slots:
   ancestor:
   node1:
   node2:
+  nodes:
+    multivalued: true
   predicate1:
     is_a: predicate
   predicate2:

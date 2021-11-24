@@ -15,6 +15,8 @@ LinkML based SPARQL template library and execution engine
  - supports both SELECT and CONSTRUCT
  - optional export to TSV, JSON, YAML
 
+This is currently alpha software, interfaces and organization may change
+
 ## Browse the default templates
 
 * [http://linkml.io/sparqlfun/](http://linkml.io/sparqlfun/)
@@ -301,6 +303,32 @@ triplestores such as ubergraph and ontobee.
 In particular, ubergraph uses the relation-graph inference tool to
 pre-compute inferred direct triples from TBox existential axioms,
 allowing for simple and powerful queries over inferred ontologies
+
+## Adding your own queries
+
+Currently this library is easiest to use if you are working with the existing pre-defined templates (PRs are welcome)
+
+However, you can use the framework with your own templates for your own triple data. There are a couple of steps involved, in future this will be easier.
+
+First you need to create your own yaml file. This needs to conform to
+the LinkML metamodel - we recommend just copying an existing template
+to do this. Some of this may seem like unnecessary boilerplate at this
+stage, but it will come in useful later.
+
+Next you need to compile the template:
+
+```bash
+gen-python my_template.yaml > my_template.py
+```
+
+This requires linkml (this library uses linkml as a developer dependency)
+
+You will need to pass BOTH of these as arguments to sparqlfun (`-m` and `-S`)
+
+TODO:
+
+ - add a dependency to the full linkml framework
+ - allow dynamic compilation of templates
 
 ## See also
 

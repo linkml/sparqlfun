@@ -1,0 +1,1047 @@
+id: http://purl.uniprot.org/core/
+name: uniprot-core
+description: |-
+  uniprot ontology schema
+default_curi_maps:
+  - semweb_context
+imports:
+  - linkml:types
+prefixes:
+  upcore: http://purl.uniprot.org/core/
+  uniprot: http://purl.uniprot.org/uniprot/
+  uptaxon: http://purl.uniprot.org/taxonomy/
+  upkeywords: http://purl.uniprot.org/keywords/
+  interpro: http://purl.uniprot.org/interpro/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+
+default_prefix: upcore
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+classes:
+
+  Thing:
+    slots:
+      - id
+      - type
+
+  Protein:
+    is_a: Thing
+    class_uri: upcore:Protein
+    slots:
+      - mappedCitation
+      - seeAlso
+      - annotation
+      - mappedAnnotation
+      - classifiedWith
+      - citation
+      - oldMnemonic
+      - isolatedFrom
+      - attribution
+      - organism
+      - encodedBy
+      - mnemonic
+      - interaction
+      - representativeFor
+      - created
+      - conflictingSequence
+      - potentialSequence
+      - version
+      - type
+      - seedFor
+      - sequence
+      - alternativeName
+      - reviewed
+      - recommendedName
+      - submittedName
+      - modified
+      - enzyme
+    annotations:
+      sparql.construct: |-
+        CONSTRUCT {
+          ?id a upcore:Protein ;
+              ?prop ?val
+         }
+         WHERE {
+           ?id ?prop ?val
+         }
+
+  Subcellular_Location:
+    is_a: Thing
+    class_uri: upcore:Subcellular_Location
+  Disease:
+    is_a: Thing
+    class_uri: upcore:Disease
+  Protein_Existence:
+    is_a: Thing
+    class_uri: upcore:Protein_Existence
+  Organelle:
+    is_a: Thing
+    class_uri: upcore:Organelle
+  Family_Membership_Statement:
+    is_a: Thing
+    class_uri: upcore:Family_Membership_Statement
+
+  Class:
+    is_a: Thing
+    class_uri: owl:Class
+  Statement:
+    is_a: Thing
+    class_uri: rdf:Statement
+  Enzyme:
+    is_a: Thing
+    class_uri: upcore:Enzyme
+  Taxon:
+    is_a: Thing
+    class_uri: upcore:Taxon
+  Citation:
+    is_a: Thing
+    class_uri: upcore:Citation
+
+  ##
+
+  Catalytic_Activity:
+    description: "The catalytic activity of an enzyme."
+    class_uri: upcore:Catalytic_Activity
+  Molecule:
+    description: "A biological molecule."
+    class_uri: upcore:Molecule
+  Tissue:
+    description: "A tissue such as lung or heart."
+    class_uri: upcore:Tissue
+  Sequence:
+    description: "An amino acid sequence."
+    class_uri: upcore:Sequence
+  Participant:
+    description: "A participant in a protein-protein interaction."
+    class_uri: upcore:Participant
+  Not_Obsolete:
+    description: "A class introduced to group all records that are currently in the database."
+    class_uri: upcore:Not_Obsolete
+  Structured_Name:
+    description: "A resource that holds a set of the known names for this protein together."
+    class_uri: upcore:Structured_Name
+  Status:
+    description: "Indicator for the reliability of a piece of information."
+    class_uri: upcore:Status
+  Method:
+    description: "An experimental method."
+    class_uri: upcore:Method
+  Plasmid:
+    description: "Description of a Plasmid"
+    class_uri: upcore:Plasmid
+  Resource:
+    description: "A life science resource."
+    class_uri: upcore:Resource
+  Annotation:
+    description: "Description of a resource on a specific topic."
+    class_uri: upcore:Annotation
+  Reviewed:
+    description: " The class of all reviewed records in the database (i.e. records that where looked at by a curator for integration into the database)."
+    class_uri: upcore:Reviewed
+  Interaction:
+    description: "Description of a protein-protein interaction."
+    class_uri: upcore:Interaction
+  Transposon:
+    description: "A transposon"
+    class_uri: upcore:Transposon
+  Pathway:
+    description: "A hierarchical discription of a metabolic pathway."
+    class_uri: upcore:Pathway
+  Attribution:
+    description: "Entity used to attach evidence or provenance to a rdf statement via reification."
+    class_uri: upcore:Attribution
+  Strain:
+    description: "A strain of a species."
+    class_uri: upcore:Strain
+  Rank:
+    description: "A rank of a taxon."
+    class_uri: upcore:Rank
+  Obsolete:
+    description: "The class of all obsolete records in the database (i.e. records that where once published but are now removed)."
+    class_uri: upcore:Obsolete
+  Enzyme_Regulation_Annotation:
+    description: "The use of this class has been replaced by Activity_Regulation_Annotation"
+    class_uri: upcore:Enzyme_Regulation_Annotation
+  Proteome:
+    description: "Description of a proteome."
+    class_uri: upcore:Proteome
+  Domain_Assignment_Statement:
+    is_a: Statement
+    class_uri: upcore:Domain_Assignment_Statement
+  Genomic_DNA:
+    is_a: DNA
+    class_uri: upcore:Genomic_DNA
+  Intramembrane_Annotation:
+    is_a: Region_Annotation
+    class_uri: upcore:Intramembrane_Annotation
+  Compositional_Bias_Annotation:
+    is_a: Region_Annotation
+    class_uri: upcore:Compositional_Bias_Annotation
+  Submission_Citation:
+    is_a: Published_Citation
+    class_uri: upcore:Submission_Citation
+  Unpublished_Citation:
+    is_a: Citation
+    class_uri: upcore:Unpublished_Citation
+  Natural_Variation_Annotation:
+    is_a: Sequence_Annotation
+    class_uri: upcore:Natural_Variation_Annotation
+  Activity_Regulation_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Activity_Regulation_Annotation
+  Orientation:
+    is_a: Subcellular_Location
+    class_uri: upcore:Orientation
+  Reference_Proteome:
+    is_a: Proteome
+    class_uri: upcore:Reference_Proteome
+  Erroneous_Termination_Annotation:
+    is_a: Sequence_Caution_Annotation
+    class_uri: upcore:Erroneous_Termination_Annotation
+  Other_RNA:
+    is_a: RNA
+    class_uri: upcore:Other_RNA
+  Induction_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Induction_Annotation
+  Sequence_Caution_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Sequence_Caution_Annotation
+  Metal_Binding_Annotation:
+    is_a: Site_Annotation
+    class_uri: upcore:Metal_Binding_Annotation
+  Sequence_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Sequence_Annotation
+  Caution_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Caution_Annotation
+  Lipidation_Annotation:
+    is_a: Modification_Annotation
+    class_uri: upcore:Lipidation_Annotation
+  Alternative_Promoter_Usage_Annotation:
+    is_a: Alternative_Products_Annotation
+    class_uri: upcore:Alternative_Promoter_Usage_Annotation
+  Experimental_Information_Annotation:
+    is_a: Sequence_Annotation
+    class_uri: upcore:Experimental_Information_Annotation
+  Not_Obsolete_Taxon:
+    is_a: Taxon
+    class_uri: upcore:Not_Obsolete_Taxon
+  Transmembrane_Annotation:
+    is_a: Region_Annotation
+    class_uri: upcore:Transmembrane_Annotation
+  Sequence_Conflict_Annotation:
+    is_a: Experimental_Information_Annotation
+    class_uri: upcore:Sequence_Conflict_Annotation
+  Temperature_Dependence_Annotation:
+    is_a: Biophysicochemical_Annotation
+    class_uri: upcore:Temperature_Dependence_Annotation
+  Observation_Citation:
+    is_a: Unpublished_Citation
+    class_uri: upcore:Observation_Citation
+  DNA:
+    is_a: Molecule
+    class_uri: upcore:DNA
+  Calcium_Binding_Annotation:
+    is_a: Region_Annotation
+    class_uri: upcore:Calcium_Binding_Annotation
+  Binding_Site_Annotation:
+    is_a: Site_Annotation
+    class_uri: upcore:Binding_Site_Annotation
+  Citation_Statement:
+    is_a: Statement
+    class_uri: upcore:Citation_Statement
+  Member_Of_Redudant_Proteome:
+    is_a: Obsolete_Protein
+    class_uri: upcore:Member_Of_Redudant_Proteome
+  RNA_Editing_Annotation:
+    is_a: Annotation
+    class_uri: upcore:RNA_Editing_Annotation
+  Part:
+    is_a: Thing
+    class_uri: upcore:Part
+  Unassigned_DNA:
+    is_a: DNA
+    class_uri: upcore:Unassigned_DNA
+  Reviewed_Protein:
+    is_a: Reviewed
+    class_uri: upcore:Reviewed_Protein
+  Zinc_Finger_Annotation:
+    is_a: Region_Annotation
+    class_uri: upcore:Zinc_Finger_Annotation
+  Journal_Citation:
+    is_a: Published_Citation
+    class_uri: upcore:Journal_Citation
+  Transit_Peptide_Annotation:
+    is_a: Molecule_Processing_Annotation
+    class_uri: upcore:Transit_Peptide_Annotation
+  Mass_Measurement_Method:
+    is_a: Method
+    class_uri: upcore:Mass_Measurement_Method
+  Nucleotide_Resource:
+    is_a: Resource
+    class_uri: upcore:Nucleotide_Resource
+  Redox_Potential_Annotation:
+    is_a: Biophysicochemical_Annotation
+    class_uri: upcore:Redox_Potential_Annotation
+  PH_Dependence_Annotation:
+    is_a: Biophysicochemical_Annotation
+    class_uri: upcore:PH_Dependence_Annotation
+  PTM_Annotation:
+    is_a: Annotation
+    class_uri: upcore:PTM_Annotation
+  Cofactor_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Cofactor_Annotation
+  Frameshift_Annotation:
+    is_a: Sequence_Caution_Annotation
+    class_uri: upcore:Frameshift_Annotation
+  Signal_Peptide_Annotation:
+    is_a: Molecule_Processing_Annotation
+    class_uri: upcore:Signal_Peptide_Annotation
+  Pathway_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Pathway_Annotation
+  Polymorphism_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Polymorphism_Annotation
+  Non_terminal_Residue_Annotation:
+    is_a: Experimental_Information_Annotation
+    class_uri: upcore:Non-terminal_Residue_Annotation
+  Erroneous_Gene_Model_Prediction_Annotation:
+    is_a: Sequence_Caution_Annotation
+    class_uri: upcore:Erroneous_Gene_Model_Prediction_Annotation
+  Coiled_Coil_Annotation:
+    is_a: Region_Annotation
+    class_uri: upcore:Coiled_Coil_Annotation
+  Beta_Strand_Annotation:
+    is_a: Secondary_Structure_Annotation
+    class_uri: upcore:Beta_Strand_Annotation
+  Ribosomal_Frameshifting:
+    is_a: Alternative_Products_Annotation
+    class_uri: upcore:Ribosomal_Frameshifting
+  Unassigned_RNA:
+    is_a: RNA
+    class_uri: upcore:Unassigned_RNA
+  Molecule_Processing_Annotation:
+    is_a: Sequence_Annotation
+    class_uri: upcore:Molecule_Processing_Annotation
+  Subunit_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Subunit_Annotation
+  Peptide_Annotation:
+    is_a: Molecule_Processing_Annotation
+    class_uri: upcore:Peptide_Annotation
+  Erroneous_Initiation_Annotation:
+    is_a: Sequence_Caution_Annotation
+    class_uri: upcore:Erroneous_Initiation_Annotation
+  Repeat_Annotation:
+    is_a: Region_Annotation
+    class_uri: upcore:Repeat_Annotation
+  Biotechnology_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Biotechnology_Annotation
+  Region_Annotation:
+    is_a: Sequence_Annotation
+    class_uri: upcore:Region_Annotation
+  Not_Obsolete_Protein:
+    is_a: Protein
+    class_uri: upcore:Not_Obsolete_Protein
+  Catalytic_Activity_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Catalytic_Activity_Annotation
+  Non_Self_Interaction:
+    is_a: Interaction
+    class_uri: upcore:Non_Self_Interaction
+  Patent_Citation:
+    is_a: Published_Citation
+    class_uri: upcore:Patent_Citation
+  External_Sequence:
+    is_a: Known_Sequence
+    class_uri: upcore:External_Sequence
+  Known_Sequence:
+    is_a: Sequence
+    class_uri: upcore:Known_Sequence
+  Erroneous_Translation_Annotation:
+    is_a: Sequence_Caution_Annotation
+    class_uri: upcore:Erroneous_Translation_Annotation
+  Structure_Mapping_Statement:
+    is_a: Statement
+    class_uri: upcore:Structure_Mapping_Statement
+  Developmental_Stage_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Developmental_Stage_Annotation
+  Site_Annotation:
+    is_a: Sequence_Annotation
+    class_uri: upcore:Site_Annotation
+  Toxic_Dose_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Toxic_Dose_Annotation
+  Nucleotide_Binding_Annotation:
+    is_a: Region_Annotation
+    class_uri: upcore:Nucleotide_Binding_Annotation
+  Obsolete_Taxon:
+    is_a: Taxon
+    class_uri: upcore:Obsolete_Taxon
+  Secondary_Structure_Annotation:
+    is_a: Sequence_Annotation
+    class_uri: upcore:Secondary_Structure_Annotation
+  Mutagenesis_Annotation:
+    is_a: Experimental_Information_Annotation
+    class_uri: upcore:Mutagenesis_Annotation
+  Pharmaceutical_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Pharmaceutical_Annotation
+  Viral_cRNA:
+    is_a: RNA
+    class_uri: upcore:Viral_cRNA
+  Representative_Proteome:
+    is_a: Proteome
+    class_uri: upcore:Representative_Proteome
+  Non_adjacent_Residues_Annotation:
+    is_a: Experimental_Information_Annotation
+    class_uri: upcore:Non-adjacent_Residues_Annotation
+  Concept:
+    is_a: Class
+    class_uri: upcore:Concept
+  Topology:
+    is_a: Subcellular_Location
+    class_uri: upcore:Topology
+  Obsolete_Protein:
+    is_a: Protein
+    class_uri: upcore:Obsolete_Protein
+  Simple_Sequence:
+    is_a: Known_Sequence
+    class_uri: upcore:Simple_Sequence
+  Journal:
+    is_a: Thing
+    class_uri: upcore:Journal
+  Published_Citation:
+    is_a: Citation
+    class_uri: upcore:Published_Citation
+  Genomic_RNA:
+    is_a: RNA
+    class_uri: upcore:Genomic_RNA
+  Mass_Spectrometry_Annotation:
+    is_a: Experimental_Information_Annotation
+    class_uri: upcore:Mass_Spectrometry_Annotation
+  Book_Citation:
+    is_a: Published_Citation
+    class_uri: upcore:Book_Citation
+  Cellular_Component:
+    is_a: Subcellular_Location
+    class_uri: upcore:Cellular_Component
+  Natural_Variant_Annotation:
+    is_a: Natural_Variation_Annotation
+    class_uri: upcore:Natural_Variant_Annotation
+  Modified_Residue_Annotation:
+    is_a: Modification_Annotation
+    class_uri: upcore:Modified_Residue_Annotation
+  Structure_Resource:
+    is_a: Resource
+    class_uri: upcore:Structure_Resource
+  Unknown_Sequence:
+    is_a: Sequence
+    class_uri: upcore:Unknown_Sequence
+  Alternative_Sequence_Annotation:
+    is_a: Natural_Variation_Annotation
+    class_uri: upcore:Alternative_Sequence_Annotation
+  Active_Site_Annotation:
+    is_a: Site_Annotation
+    class_uri: upcore:Active_Site_Annotation
+  Nucleotide_Mapping_Statement:
+    is_a: Statement
+    class_uri: upcore:Nucleotide_Mapping_Statement
+  Modification_Annotation:
+    is_a: Sequence_Annotation
+    class_uri: upcore:Modification_Annotation
+  Glycosylation_Annotation:
+    is_a: Modification_Annotation
+    class_uri: upcore:Glycosylation_Annotation
+  Initiator_Methionine_Annotation:
+    is_a: Molecule_Processing_Annotation
+    class_uri: upcore:Initiator_Methionine_Annotation
+  Motif_Annotation:
+    is_a: Region_Annotation
+    class_uri: upcore:Motif_Annotation
+  Similarity_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Similarity_Annotation
+  Kinetics_Annotation:
+    is_a: Biophysicochemical_Annotation
+    class_uri: upcore:Kinetics_Annotation
+  Transcribed_RNA:
+    is_a: RNA
+    class_uri: upcore:Transcribed_RNA
+  Database:
+    is_a: Class
+    class_uri: upcore:Database
+  NP_Binding_Annotation:
+    is_a: Region_Annotation
+    class_uri: upcore:NP_Binding_Annotation
+  Topological_Domain_Annotation:
+    is_a: Region_Annotation
+    class_uri: upcore:Topological_Domain_Annotation
+  Tissue_Specificity_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Tissue_Specificity_Annotation
+  Transcript_Resource:
+    is_a: Resource
+    class_uri: upcore:Transcript_Resource
+  Function_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Function_Annotation
+  Endpoint_Statement:
+    is_a: Statement
+    class_uri: upcore:Endpoint_Statement
+  Proteome_Component:
+    is_a: Thing
+    class_uri: upcore:Proteome_Component
+  Cross_link_Annotation:
+    is_a: Modification_Annotation
+    class_uri: upcore:Cross-link_Annotation
+  Structure_Determination_Method:
+    is_a: Method
+    class_uri: upcore:Structure_Determination_Method
+  Disulfide_Bond_Annotation:
+    is_a: Modification_Annotation
+    class_uri: upcore:Disulfide_Bond_Annotation
+  Biophysicochemical_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Biophysicochemical_Annotation
+  Domain_Extent_Annotation:
+    is_a: Region_Annotation
+    class_uri: upcore:Domain_Extent_Annotation
+  Sequence_Uncertainty_Annotation:
+    is_a: Experimental_Information_Annotation
+    class_uri: upcore:Sequence_Uncertainty_Annotation
+  Disease_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Disease_Annotation
+  Electronic_Citation:
+    is_a: Published_Citation
+    class_uri: upcore:Electronic_Citation
+  MRNA:
+    is_a: RNA
+    class_uri: upcore:MRNA
+  Turn_Annotation:
+    is_a: Secondary_Structure_Annotation
+    class_uri: upcore:Turn_Annotation
+  Self_Interaction:
+    is_a: Interaction
+    class_uri: upcore:Self_Interaction
+  Domain_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Domain_Annotation
+  Chain_Annotation:
+    is_a: Molecule_Processing_Annotation
+    class_uri: upcore:Chain_Annotation
+  Alternative_Splicing_Annotation:
+    is_a: Alternative_Products_Annotation
+    class_uri: upcore:Alternative_Splicing_Annotation
+  Subcellular_Location_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Subcellular_Location_Annotation
+  Disruption_Phenotype_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Disruption_Phenotype_Annotation
+  Thesis_Citation:
+    is_a: Published_Citation
+    class_uri: upcore:Thesis_Citation
+  Cluster:
+    is_a: Thing
+    class_uri: upcore:Cluster
+  RNA:
+    is_a: Molecule
+    class_uri: upcore:RNA
+  Alternative_Initiation_Annotation:
+    is_a: Alternative_Products_Annotation
+    class_uri: upcore:Alternative_Initiation_Annotation
+  Absorption_Annotation:
+    is_a: Biophysicochemical_Annotation
+    class_uri: upcore:Absorption_Annotation
+  Other_DNA:
+    is_a: DNA
+    class_uri: upcore:Other_DNA
+  Modified_Sequence:
+    is_a: Known_Sequence
+    class_uri: upcore:Modified_Sequence
+  Allergen_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Allergen_Annotation
+  Non_standard_Residue_Annotation:
+    is_a: Modification_Annotation
+    class_uri: upcore:Non-standard_Residue_Annotation
+  Propeptide_Annotation:
+    is_a: Molecule_Processing_Annotation
+    class_uri: upcore:Propeptide_Annotation
+  Gene:
+    is_a: Concept
+    class_uri: upcore:Gene
+  Helix_Annotation:
+    is_a: Secondary_Structure_Annotation
+    class_uri: upcore:Helix_Annotation
+  Alternative_Products_Annotation:
+    is_a: Annotation
+    class_uri: upcore:Alternative_Products_Annotation
+
+slots:
+
+  #id:
+  #  identifier: true
+
+  #type:
+  #  range: Class
+  #  slot_uri: rdf:type
+
+  seeAlso:
+    range: Thing
+    slot_uri: rdfs:seeAlso
+
+  objectProperty:
+
+  catalyticActivity:
+    is_a: objectProperty
+    range: Catalytic_Activity
+    slot_uri: upcore:catalyticActivity
+  mappedAnnotation:
+    is_a: objectProperty
+    range: Annotation
+    slot_uri: upcore:mappedAnnotation
+  structuredName:
+    is_a: objectProperty
+    range: Structured_Name
+    slot_uri: upcore:structuredName
+  mappedCitation:
+    is_a: objectProperty
+    range: Citation
+    slot_uri: upcore:mappedCitation
+  topology:
+    is_a: objectProperty
+    range: Topology
+    slot_uri: upcore:topology
+  classifiedWith:
+    is_a: objectProperty
+    range: Concept
+    slot_uri: upcore:classifiedWith
+  encodedIn:
+    is_a: objectProperty
+    range: Subcellular_Location
+    slot_uri: upcore:encodedIn
+  potentialSequence:
+    is_a: objectProperty
+    range: Sequence
+    slot_uri: upcore:potentialSequence
+  domain:
+    is_a: objectProperty
+    range: Part
+    slot_uri: upcore:domain
+  enzymeClass:
+    is_a: objectProperty
+    range: Enzyme
+    slot_uri: upcore:enzymeClass
+  publishedIn:
+    is_a: objectProperty
+    range: Journal
+    slot_uri: upcore:publishedIn
+  translatedFrom:
+    is_a: objectProperty
+    range: Nucleotide_Resource
+    slot_uri: upcore:translatedFrom
+  erratumFor:
+    is_a: objectProperty
+    range: Published_Citation
+    slot_uri: upcore:erratumFor
+  member:
+    is_a: objectProperty
+    range: Sequence
+    slot_uri: upcore:member
+  interaction:
+    is_a: objectProperty
+    range: Interaction
+    slot_uri: upcore:interaction
+  attribution:
+    is_a: objectProperty
+    range: Attribution
+    slot_uri: upcore:attribution
+  erratum:
+    is_a: objectProperty
+    range: Published_Citation
+    slot_uri: upcore:erratum
+  strain:
+    is_a: objectProperty
+    range: Strain
+    slot_uri: upcore:strain
+  basedOn:
+    is_a: objectProperty
+    range: Simple_Sequence
+    slot_uri: upcore:basedOn
+  alternativeName:
+    is_a: objectProperty
+    range: Structured_Name
+    slot_uri: upcore:alternativeName
+  orientation:
+    is_a: objectProperty
+    range: Orientation
+    slot_uri: upcore:orientation
+  database:
+    is_a: objectProperty
+    range: Database
+    slot_uri: upcore:database
+  host:
+    is_a: objectProperty
+    range: Taxon
+    slot_uri: upcore:host
+  enzyme:
+    is_a: objectProperty
+    range: Enzyme
+    slot_uri: upcore:enzyme
+  modification:
+    is_a: objectProperty
+    range: Alternative_Sequence_Annotation
+    slot_uri: upcore:modification
+  partOf:
+    is_a: objectProperty
+    range: Subcellular_Location
+    slot_uri: upcore:partOf
+  rank:
+    is_a: objectProperty
+    range: Rank
+    slot_uri: upcore:rank
+  participant:
+    is_a: objectProperty
+    range: Participant
+    slot_uri: upcore:participant
+  activity:
+    is_a: objectProperty
+    range: Catalytic_Activity
+    slot_uri: upcore:activity
+  organism:
+    is_a: objectProperty
+    range: Taxon
+    slot_uri: upcore:organism
+  conflictingSequence:
+    is_a: objectProperty
+    range: External_Sequence
+    slot_uri: upcore:conflictingSequence
+  citation:
+    is_a: objectProperty
+    range: Citation
+    slot_uri: upcore:citation
+  seedFor:
+    is_a: objectProperty
+    range: Cluster
+    slot_uri: upcore:seedFor
+  representativeFor:
+    is_a: objectProperty
+    range: Cluster
+    slot_uri: upcore:representativeFor
+  relatedLocation:
+    is_a: objectProperty
+    range: Subcellular_Location
+    slot_uri: upcore:relatedLocation
+  isolatedFrom:
+    is_a: objectProperty
+    range: Tissue
+    slot_uri: upcore:isolatedFrom
+  component:
+    is_a: objectProperty
+    range: Part
+    slot_uri: upcore:component
+  annotation:
+    is_a: objectProperty
+    range: Annotation
+    slot_uri: upcore:annotation
+  commonTaxon:
+    is_a: objectProperty
+    range: Taxon
+    slot_uri: upcore:commonTaxon
+  encodedBy:
+    is_a: objectProperty
+    range: Gene
+    slot_uri: upcore:encodedBy
+  disease:
+    is_a: objectProperty
+    range: Disease
+    slot_uri: upcore:disease
+  sequence:
+    is_a: objectProperty
+    range: Sequence
+    slot_uri: upcore:sequence
+  part:
+    is_a: objectProperty
+    range: Part
+    slot_uri: upcore:part
+  submittedName:
+    is_a: objectProperty
+    range: Structured_Name
+    slot_uri: upcore:submittedName
+  redundantTo:
+    is_a: objectProperty
+    range: Proteome
+    slot_uri: upcore:redundantTo
+  locatedOn:
+    is_a: objectProperty
+    range: Molecule
+    slot_uri: upcore:locatedOn
+  recommendedName:
+    is_a: objectProperty
+    range: Structured_Name
+    slot_uri: upcore:recommendedName
+  cellularComponent:
+    is_a: objectProperty
+    range: Cellular_Component
+    slot_uri: upcore:cellularComponent
+  memberOf:
+    is_a: objectProperty
+    range: Cluster
+    slot_uri: upcore:memberOf
+  panproteome:
+    is_a: objectProperty
+    range: Proteome
+    slot_uri: upcore:panproteome
+  nucleotideSequenceMappingIssue:
+    is_a: objectProperty
+    range: Nucleotide_Resource
+    slot_uri: upcore:nucleotideSequenceMappingIssue
+  method:
+    is_a: objectProperty
+    range: Method
+    slot_uri: upcore:method
+
+  datatypeProperty:
+
+  title:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:title
+  height:
+    is_a: datatypeProperty
+    range: integer
+    slot_uri: upcore:height
+  cofactorLabel:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:cofactorLabel
+  precursor:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:precursor
+  created:
+    is_a: datatypeProperty
+    range: date
+    slot_uri: upcore:created
+  linkIsExplicit:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:linkIsExplicit
+  length:
+    is_a: datatypeProperty
+    range: integer
+    slot_uri: upcore:length
+  partOfLineage:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:partOfLineage
+  measuredActivity:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:measuredActivity
+  curated:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:curated
+  otherName:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:otherName
+  experiments:
+    is_a: datatypeProperty
+    range: integer
+    slot_uri: upcore:experiments
+  reviewed:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:reviewed
+  modified:
+    is_a: datatypeProperty
+    range: date
+    slot_uri: upcore:modified
+  institution:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:institution
+  authorsIncomplete:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:authorsIncomplete
+  abstract:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:abstract
+  groupcore:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:group
+  orfName:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:orfName
+  width:
+    is_a: datatypeProperty
+    range: integer
+    slot_uri: upcore:width
+  place:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:place
+  name:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:name
+  md5Checksum:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:md5Checksum
+  mnemonic:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:mnemonic
+  frameshift:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:frameshift
+  oldMnemonic:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:oldMnemonic
+  chain:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:chain
+  pages:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:pages
+  pattern:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:pattern
+  substitution:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:substitution
+  version:
+    is_a: datatypeProperty
+    range: integer
+    slot_uri: upcore:version
+  implicit:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:implicit
+  measuredAffinity:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:measuredAffinity
+  obsolete:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:obsolete
+  locator:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:locator
+  mass:
+    is_a: datatypeProperty
+    range: integer
+    slot_uri: upcore:mass
+  uriTemplate:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:uriTemplate
+  scientificName:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:scientificName
+  alias:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:alias
+  exclusionReason:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:exclusionReason
+  measuredError:
+    is_a: datatypeProperty
+    range: float
+    slot_uri: upcore:measuredError
+  publisher:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:publisher
+  maximum:
+    is_a: datatypeProperty
+    range: float
+    slot_uri: upcore:maximum
+  structuredNameType:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:structuredNameType
+  editor:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:editor
+  author:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:author
+  measuredValue:
+    is_a: datatypeProperty
+    range: float
+    slot_uri: upcore:measuredValue
+  negative:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:negative
+  shortCoden:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:shortCoden
+  xeno:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:xeno
+  synonym:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:synonym
+  scope:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:scope
+  urlTemplate:
+    is_a: datatypeProperty
+    range: string
+    slot_uri: upcore:urlTemplate
+  resolution:
+    is_a: datatypeProperty
+    range: float
+    slot_uri: upcore:resolution
+  manual:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:manual
+  certain:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:certain
+  complete:
+    is_a: datatypeProperty
+    range: boolean
+    slot_uri: upcore:complete
+
+

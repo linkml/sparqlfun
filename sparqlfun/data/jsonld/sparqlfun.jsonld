@@ -10,10 +10,13 @@
     "linkml:types",
     "resultset",
     "rdf",
+    "owl",
     "relation_graph",
     "ro",
     "omo",
-    "ubergraph"
+    "ubergraph",
+    "uniprot_queries",
+    "uniprot"
   ],
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
   "prefixes": [
@@ -28,6 +31,18 @@
     {
       "prefix_prefix": "IAO",
       "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"
+    },
+    {
+      "prefix_prefix": "NCBITaxon",
+      "prefix_reference": "http://purl.obolibrary.org/obo/NCBITaxon_"
+    },
+    {
+      "prefix_prefix": "RO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/RO_"
+    },
+    {
+      "prefix_prefix": "ubergraph",
+      "prefix_reference": "http://reasoner.renci.org/"
     }
   ],
   "default_curi_maps": [
@@ -252,10 +267,55 @@
       "owner": "DeprecatedOboClassQuery",
       "domain_of": [
         "ResultSet",
+        "DescribeEquivalentExpression",
         "OboClassQuery",
         "DeprecatedOboClassQuery"
       ],
       "range": "GenericResult",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "binding_key",
+      "definition_uri": "https://w3id.org/sparqlfun/resultsetbinding_key",
+      "from_schema": "https://w3id.org/sparqlfun/resultset",
+      "slot_uri": "https://w3id.org/sparqlfun/resultsetbinding_key",
+      "key": true,
+      "owner": "Binding",
+      "domain_of": [
+        "Binding"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "binding_value",
+      "definition_uri": "https://w3id.org/sparqlfun/resultsetbinding_value",
+      "from_schema": "https://w3id.org/sparqlfun/resultset",
+      "slot_uri": "https://w3id.org/sparqlfun/resultsetbinding_value",
+      "owner": "Binding",
+      "domain_of": [
+        "Binding"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "query_template",
+      "definition_uri": "https://w3id.org/sparqlfun/resultsetquery_template",
+      "from_schema": "https://w3id.org/sparqlfun/resultset",
+      "slot_uri": "https://w3id.org/sparqlfun/resultsetquery_template",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "bindings",
+      "definition_uri": "https://w3id.org/sparqlfun/resultsetbindings",
+      "from_schema": "https://w3id.org/sparqlfun/resultset",
+      "slot_uri": "https://w3id.org/sparqlfun/resultsetbindings",
+      "multivalued": true,
+      "inlined": true,
+      "range": "Binding",
       "@type": "SlotDefinition"
     },
     {
@@ -265,9 +325,10 @@
       "from_schema": "https://w3id.org/sparqlfun/rdf",
       "slot_uri": "https://w3id.org/sparqlfun/rdfid",
       "identifier": true,
-      "owner": "Node",
+      "owner": "Thing",
       "domain_of": [
-        "Node"
+        "Node",
+        "Thing"
       ],
       "range": "node_id_type",
       "required": true,
@@ -281,10 +342,13 @@
       ],
       "from_schema": "https://w3id.org/sparqlfun/rdf",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
-      "owner": "Quad",
+      "owner": "ProteinClassifiedWith",
       "domain_of": [
         "Triple",
-        "Quad"
+        "Quad",
+        "SomeValuesFromRestriction",
+        "DescribeEquivalentExpression",
+        "ProteinClassifiedWith"
       ],
       "range": "Node",
       "@type": "SlotDefinition"
@@ -297,10 +361,11 @@
       ],
       "from_schema": "https://w3id.org/sparqlfun/rdf",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-      "owner": "Quad",
+      "owner": "SomeValuesFromRestriction",
       "domain_of": [
         "Triple",
-        "Quad"
+        "Quad",
+        "SomeValuesFromRestriction"
       ],
       "range": "PropertyNode",
       "@type": "SlotDefinition"
@@ -314,10 +379,11 @@
       "description": "a literal or node representing the object of the triple",
       "from_schema": "https://w3id.org/sparqlfun/rdf",
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
-      "owner": "Quad",
+      "owner": "ProteinClassifiedWith",
       "domain_of": [
         "Triple",
-        "Quad"
+        "Quad",
+        "ProteinClassifiedWith"
       ],
       "range": "string",
       "exactly_one_of": [
@@ -350,9 +416,11 @@
       "definition_uri": "https://w3id.org/sparqlfun/rdftype",
       "from_schema": "https://w3id.org/sparqlfun/rdf",
       "slot_uri": "https://w3id.org/sparqlfun/rdftype",
-      "owner": "TypedNode",
+      "owner": "Protein",
       "domain_of": [
-        "TypedNode"
+        "TypedNode",
+        "Thing",
+        "Protein"
       ],
       "range": "Node",
       "@type": "SlotDefinition"
@@ -432,6 +500,18 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "filler",
+      "definition_uri": "https://w3id.org/sparqlfun/owlfiller",
+      "from_schema": "https://w3id.org/sparqlfun/owl",
+      "slot_uri": "https://w3id.org/sparqlfun/owlfiller",
+      "owner": "SomeValuesFromRestriction",
+      "domain_of": [
+        "SomeValuesFromRestriction"
+      ],
+      "range": "Node",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "label_regex",
       "definition_uri": "https://w3id.org/sparqlfun/omolabel_regex",
       "from_schema": "https://w3id.org/sparqlfun/omo",
@@ -493,9 +573,13 @@
       "definition_uri": "https://w3id.org/sparqlfun/ubergraphancestor",
       "from_schema": "https://w3id.org/sparqlfun/ubergraph",
       "slot_uri": "https://w3id.org/sparqlfun/ubergraphancestor",
-      "owner": "PairwiseCommonAncestor",
+      "owner": "PairwiseMostRecentCommonSubClassAncestor",
       "domain_of": [
-        "PairwiseCommonAncestor"
+        "SetwiseCommonSubClassAncestor",
+        "SetwiseMostRecentCommonSubClassAncestor",
+        "PairwiseCommonAncestor",
+        "PairwiseMostRecentCommonAncestor",
+        "PairwiseMostRecentCommonSubClassAncestor"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -505,9 +589,11 @@
       "definition_uri": "https://w3id.org/sparqlfun/ubergraphnode1",
       "from_schema": "https://w3id.org/sparqlfun/ubergraph",
       "slot_uri": "https://w3id.org/sparqlfun/ubergraphnode1",
-      "owner": "PairwiseCommonAncestor",
+      "owner": "PairwiseMostRecentCommonSubClassAncestor",
       "domain_of": [
-        "PairwiseCommonAncestor"
+        "PairwiseCommonAncestor",
+        "PairwiseMostRecentCommonAncestor",
+        "PairwiseMostRecentCommonSubClassAncestor"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -517,9 +603,25 @@
       "definition_uri": "https://w3id.org/sparqlfun/ubergraphnode2",
       "from_schema": "https://w3id.org/sparqlfun/ubergraph",
       "slot_uri": "https://w3id.org/sparqlfun/ubergraphnode2",
-      "owner": "PairwiseCommonAncestor",
+      "owner": "PairwiseMostRecentCommonSubClassAncestor",
       "domain_of": [
-        "PairwiseCommonAncestor"
+        "PairwiseCommonAncestor",
+        "PairwiseMostRecentCommonAncestor",
+        "PairwiseMostRecentCommonSubClassAncestor"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "nodes",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphnodes",
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "slot_uri": "https://w3id.org/sparqlfun/ubergraphnodes",
+      "multivalued": true,
+      "owner": "SetwiseMostRecentCommonSubClassAncestor",
+      "domain_of": [
+        "SetwiseCommonSubClassAncestor",
+        "SetwiseMostRecentCommonSubClassAncestor"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -530,9 +632,10 @@
       "from_schema": "https://w3id.org/sparqlfun/ubergraph",
       "is_a": "predicate",
       "slot_uri": "https://w3id.org/sparqlfun/ubergraphpredicate1",
-      "owner": "PairwiseCommonAncestor",
+      "owner": "PairwiseMostRecentCommonAncestor",
       "domain_of": [
-        "PairwiseCommonAncestor"
+        "PairwiseCommonAncestor",
+        "PairwiseMostRecentCommonAncestor"
       ],
       "range": "PropertyNode",
       "@type": "SlotDefinition"
@@ -543,9 +646,10 @@
       "from_schema": "https://w3id.org/sparqlfun/ubergraph",
       "is_a": "predicate",
       "slot_uri": "https://w3id.org/sparqlfun/ubergraphpredicate2",
-      "owner": "PairwiseCommonAncestor",
+      "owner": "PairwiseMostRecentCommonAncestor",
       "domain_of": [
-        "PairwiseCommonAncestor"
+        "PairwiseCommonAncestor",
+        "PairwiseMostRecentCommonAncestor"
       ],
       "range": "PropertyNode",
       "@type": "SlotDefinition"
@@ -555,9 +659,11 @@
       "definition_uri": "https://w3id.org/sparqlfun/ubergraphsubject_predicate",
       "from_schema": "https://w3id.org/sparqlfun/ubergraph",
       "slot_uri": "https://w3id.org/sparqlfun/ubergraphsubject_predicate",
-      "owner": "InferredNeverInTaxon",
+      "owner": "ClassTaxonExclusion",
       "domain_of": [
-        "InferredNeverInTaxon"
+        "ClassTaxonExclusionViaNeverIn",
+        "ClassTaxonExclusionViaOnlyIn",
+        "ClassTaxonExclusion"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -567,9 +673,11 @@
       "definition_uri": "https://w3id.org/sparqlfun/ubergraphclass_with_constraint",
       "from_schema": "https://w3id.org/sparqlfun/ubergraph",
       "slot_uri": "https://w3id.org/sparqlfun/ubergraphclass_with_constraint",
-      "owner": "InferredNeverInTaxon",
+      "owner": "ClassTaxonExclusion",
       "domain_of": [
-        "InferredNeverInTaxon"
+        "ClassTaxonExclusionViaNeverIn",
+        "ClassTaxonExclusionViaOnlyIn",
+        "ClassTaxonExclusion"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -579,9 +687,11 @@
       "definition_uri": "https://w3id.org/sparqlfun/ubergraphdirect_taxon",
       "from_schema": "https://w3id.org/sparqlfun/ubergraph",
       "slot_uri": "https://w3id.org/sparqlfun/ubergraphdirect_taxon",
-      "owner": "InferredNeverInTaxon",
+      "owner": "ClassTaxonExclusion",
       "domain_of": [
-        "InferredNeverInTaxon"
+        "ClassTaxonExclusionViaNeverIn",
+        "ClassTaxonExclusionViaOnlyIn",
+        "ClassTaxonExclusion"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -592,6 +702,1471 @@
       "from_schema": "https://w3id.org/sparqlfun/ubergraph",
       "slot_uri": "https://w3id.org/sparqlfun/ubergraphquery_has_subclass_ancestor",
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "seeAlso",
+      "definition_uri": "http://purl.uniprot.org/core/seeAlso",
+      "mappings": [
+        "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_uri": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Thing",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "objectProperty",
+      "definition_uri": "http://purl.uniprot.org/core/objectProperty",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_uri": "http://purl.uniprot.org/core/objectProperty",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalyticActivity",
+      "definition_uri": "http://purl.uniprot.org/core/catalyticActivity",
+      "mappings": [
+        "http://purl.uniprot.org/core/catalyticActivity"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/catalyticActivity",
+      "inlined": true,
+      "range": "CatalyticActivity",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "mappedAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/mappedAnnotation",
+      "mappings": [
+        "http://purl.uniprot.org/core/mappedAnnotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/mappedAnnotation",
+      "inlined": true,
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Annotation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "structuredName",
+      "definition_uri": "http://purl.uniprot.org/core/structuredName",
+      "mappings": [
+        "http://purl.uniprot.org/core/structuredName"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/structuredName",
+      "inlined": true,
+      "range": "StructuredName",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "mappedCitation",
+      "definition_uri": "http://purl.uniprot.org/core/mappedCitation",
+      "mappings": [
+        "http://purl.uniprot.org/core/mappedCitation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/mappedCitation",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Citation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "topology",
+      "definition_uri": "http://purl.uniprot.org/core/topology",
+      "mappings": [
+        "http://purl.uniprot.org/core/topology"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/topology",
+      "range": "Topology",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "classifiedWith",
+      "definition_uri": "http://purl.uniprot.org/core/classifiedWith",
+      "mappings": [
+        "http://purl.uniprot.org/core/classifiedWith"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/classifiedWith",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Concept",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "encodedIn",
+      "definition_uri": "http://purl.uniprot.org/core/encodedIn",
+      "mappings": [
+        "http://purl.uniprot.org/core/encodedIn"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/encodedIn",
+      "range": "SubcellularLocation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "potentialSequence",
+      "definition_uri": "http://purl.uniprot.org/core/potentialSequence",
+      "mappings": [
+        "http://purl.uniprot.org/core/potentialSequence"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/potentialSequence",
+      "inlined": true,
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Sequence",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "domain",
+      "definition_uri": "http://purl.uniprot.org/core/domain",
+      "mappings": [
+        "http://purl.uniprot.org/core/domain"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/domain",
+      "range": "Part",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "enzymeClass",
+      "definition_uri": "http://purl.uniprot.org/core/enzymeClass",
+      "mappings": [
+        "http://purl.uniprot.org/core/enzymeClass"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/enzymeClass",
+      "range": "Enzyme",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "publishedIn",
+      "definition_uri": "http://purl.uniprot.org/core/publishedIn",
+      "mappings": [
+        "http://purl.uniprot.org/core/publishedIn"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/publishedIn",
+      "range": "Journal",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "translatedFrom",
+      "definition_uri": "http://purl.uniprot.org/core/translatedFrom",
+      "mappings": [
+        "http://purl.uniprot.org/core/translatedFrom"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/translatedFrom",
+      "inlined": true,
+      "range": "NucleotideResource",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "erratumFor",
+      "definition_uri": "http://purl.uniprot.org/core/erratumFor",
+      "mappings": [
+        "http://purl.uniprot.org/core/erratumFor"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/erratumFor",
+      "range": "PublishedCitation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "member",
+      "definition_uri": "http://purl.uniprot.org/core/member",
+      "mappings": [
+        "http://purl.uniprot.org/core/member"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/member",
+      "inlined": true,
+      "range": "Sequence",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "interaction",
+      "definition_uri": "http://purl.uniprot.org/core/interaction",
+      "mappings": [
+        "http://purl.uniprot.org/core/interaction"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/interaction",
+      "inlined": true,
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Interaction",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "attribution",
+      "definition_uri": "http://purl.uniprot.org/core/attribution",
+      "mappings": [
+        "http://purl.uniprot.org/core/attribution"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/attribution",
+      "inlined": true,
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Attribution",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "erratum",
+      "definition_uri": "http://purl.uniprot.org/core/erratum",
+      "mappings": [
+        "http://purl.uniprot.org/core/erratum"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/erratum",
+      "range": "PublishedCitation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "strain",
+      "definition_uri": "http://purl.uniprot.org/core/strain",
+      "mappings": [
+        "http://purl.uniprot.org/core/strain"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/strain",
+      "inlined": true,
+      "range": "Strain",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "basedOn",
+      "definition_uri": "http://purl.uniprot.org/core/basedOn",
+      "mappings": [
+        "http://purl.uniprot.org/core/basedOn"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/basedOn",
+      "inlined": true,
+      "range": "SimpleSequence",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "alternativeName",
+      "definition_uri": "http://purl.uniprot.org/core/alternativeName",
+      "mappings": [
+        "http://purl.uniprot.org/core/alternativeName"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/alternativeName",
+      "inlined": true,
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "StructuredName",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "orientation",
+      "definition_uri": "http://purl.uniprot.org/core/orientation",
+      "mappings": [
+        "http://purl.uniprot.org/core/orientation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/orientation",
+      "range": "Orientation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "database",
+      "definition_uri": "http://purl.uniprot.org/core/database",
+      "mappings": [
+        "http://purl.uniprot.org/core/database"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/database",
+      "range": "Database",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "host",
+      "definition_uri": "http://purl.uniprot.org/core/host",
+      "mappings": [
+        "http://purl.uniprot.org/core/host"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/host",
+      "range": "Taxon",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "enzyme",
+      "definition_uri": "http://purl.uniprot.org/core/enzyme",
+      "mappings": [
+        "http://purl.uniprot.org/core/enzyme"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/enzyme",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Enzyme",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "modification",
+      "definition_uri": "http://purl.uniprot.org/core/modification",
+      "mappings": [
+        "http://purl.uniprot.org/core/modification"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/modification",
+      "inlined": true,
+      "range": "AlternativeSequenceAnnotation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "partOf",
+      "definition_uri": "http://purl.uniprot.org/core/partOf",
+      "mappings": [
+        "http://purl.uniprot.org/core/partOf"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/partOf",
+      "range": "SubcellularLocation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "rank",
+      "definition_uri": "http://purl.uniprot.org/core/rank",
+      "mappings": [
+        "http://purl.uniprot.org/core/rank"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/rank",
+      "inlined": true,
+      "range": "Rank",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "participant",
+      "definition_uri": "http://purl.uniprot.org/core/participant",
+      "mappings": [
+        "http://purl.uniprot.org/core/participant"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/participant",
+      "inlined": true,
+      "range": "Participant",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "activity",
+      "definition_uri": "http://purl.uniprot.org/core/activity",
+      "mappings": [
+        "http://purl.uniprot.org/core/activity"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/activity",
+      "inlined": true,
+      "range": "CatalyticActivity",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "organism",
+      "definition_uri": "http://purl.uniprot.org/core/organism",
+      "mappings": [
+        "http://purl.uniprot.org/core/organism"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/organism",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Taxon",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "conflictingSequence",
+      "definition_uri": "http://purl.uniprot.org/core/conflictingSequence",
+      "mappings": [
+        "http://purl.uniprot.org/core/conflictingSequence"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/conflictingSequence",
+      "inlined": true,
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "ExternalSequence",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "citation",
+      "definition_uri": "http://purl.uniprot.org/core/citation",
+      "mappings": [
+        "http://purl.uniprot.org/core/citation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/citation",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Citation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "seedFor",
+      "definition_uri": "http://purl.uniprot.org/core/seedFor",
+      "mappings": [
+        "http://purl.uniprot.org/core/seedFor"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/seedFor",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Cluster",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "representativeFor",
+      "definition_uri": "http://purl.uniprot.org/core/representativeFor",
+      "mappings": [
+        "http://purl.uniprot.org/core/representativeFor"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/representativeFor",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Cluster",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "relatedLocation",
+      "definition_uri": "http://purl.uniprot.org/core/relatedLocation",
+      "mappings": [
+        "http://purl.uniprot.org/core/relatedLocation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/relatedLocation",
+      "range": "SubcellularLocation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "isolatedFrom",
+      "definition_uri": "http://purl.uniprot.org/core/isolatedFrom",
+      "mappings": [
+        "http://purl.uniprot.org/core/isolatedFrom"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/isolatedFrom",
+      "inlined": true,
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Tissue",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "component",
+      "definition_uri": "http://purl.uniprot.org/core/component",
+      "mappings": [
+        "http://purl.uniprot.org/core/component"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/component",
+      "range": "Part",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "annotation",
+      "definition_uri": "http://purl.uniprot.org/core/annotation",
+      "mappings": [
+        "http://purl.uniprot.org/core/annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/annotation",
+      "inlined": true,
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Annotation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "commonTaxon",
+      "definition_uri": "http://purl.uniprot.org/core/commonTaxon",
+      "mappings": [
+        "http://purl.uniprot.org/core/commonTaxon"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/commonTaxon",
+      "range": "Taxon",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "encodedBy",
+      "definition_uri": "http://purl.uniprot.org/core/encodedBy",
+      "mappings": [
+        "http://purl.uniprot.org/core/encodedBy"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/encodedBy",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Gene",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease",
+      "definition_uri": "http://purl.uniprot.org/core/disease",
+      "mappings": [
+        "http://purl.uniprot.org/core/disease"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/disease",
+      "range": "Disease",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sequence",
+      "definition_uri": "http://purl.uniprot.org/core/sequence",
+      "mappings": [
+        "http://purl.uniprot.org/core/sequence"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/sequence",
+      "inlined": true,
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "Sequence",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "part",
+      "definition_uri": "http://purl.uniprot.org/core/part",
+      "mappings": [
+        "http://purl.uniprot.org/core/part"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/part",
+      "range": "Part",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "submittedName",
+      "definition_uri": "http://purl.uniprot.org/core/submittedName",
+      "mappings": [
+        "http://purl.uniprot.org/core/submittedName"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/submittedName",
+      "inlined": true,
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "StructuredName",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "redundantTo",
+      "definition_uri": "http://purl.uniprot.org/core/redundantTo",
+      "mappings": [
+        "http://purl.uniprot.org/core/redundantTo"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/redundantTo",
+      "inlined": true,
+      "range": "Proteome",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "locatedOn",
+      "definition_uri": "http://purl.uniprot.org/core/locatedOn",
+      "mappings": [
+        "http://purl.uniprot.org/core/locatedOn"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/locatedOn",
+      "inlined": true,
+      "range": "Molecule",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "recommendedName",
+      "definition_uri": "http://purl.uniprot.org/core/recommendedName",
+      "mappings": [
+        "http://purl.uniprot.org/core/recommendedName"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/recommendedName",
+      "inlined": true,
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "StructuredName",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cellularComponent",
+      "definition_uri": "http://purl.uniprot.org/core/cellularComponent",
+      "mappings": [
+        "http://purl.uniprot.org/core/cellularComponent"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/cellularComponent",
+      "range": "CellularComponent",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "memberOf",
+      "definition_uri": "http://purl.uniprot.org/core/memberOf",
+      "mappings": [
+        "http://purl.uniprot.org/core/memberOf"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/memberOf",
+      "range": "Cluster",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "panproteome",
+      "definition_uri": "http://purl.uniprot.org/core/panproteome",
+      "mappings": [
+        "http://purl.uniprot.org/core/panproteome"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/panproteome",
+      "inlined": true,
+      "range": "Proteome",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "nucleotideSequenceMappingIssue",
+      "definition_uri": "http://purl.uniprot.org/core/nucleotideSequenceMappingIssue",
+      "mappings": [
+        "http://purl.uniprot.org/core/nucleotideSequenceMappingIssue"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/nucleotideSequenceMappingIssue",
+      "inlined": true,
+      "range": "NucleotideResource",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "method",
+      "definition_uri": "http://purl.uniprot.org/core/method",
+      "mappings": [
+        "http://purl.uniprot.org/core/method"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "objectProperty",
+      "slot_uri": "http://purl.uniprot.org/core/method",
+      "inlined": true,
+      "range": "Method",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "datatypeProperty",
+      "definition_uri": "http://purl.uniprot.org/core/datatypeProperty",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_uri": "http://purl.uniprot.org/core/datatypeProperty",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "title",
+      "definition_uri": "http://purl.uniprot.org/core/title",
+      "mappings": [
+        "http://purl.uniprot.org/core/title"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/title",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "height",
+      "definition_uri": "http://purl.uniprot.org/core/height",
+      "mappings": [
+        "http://purl.uniprot.org/core/height"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/height",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cofactorLabel",
+      "definition_uri": "http://purl.uniprot.org/core/cofactorLabel",
+      "mappings": [
+        "http://purl.uniprot.org/core/cofactorLabel"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/cofactorLabel",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "precursor",
+      "definition_uri": "http://purl.uniprot.org/core/precursor",
+      "mappings": [
+        "http://purl.uniprot.org/core/precursor"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/precursor",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "created",
+      "definition_uri": "http://purl.uniprot.org/core/created",
+      "mappings": [
+        "http://purl.uniprot.org/core/created"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/created",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "date",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "linkIsExplicit",
+      "definition_uri": "http://purl.uniprot.org/core/linkIsExplicit",
+      "mappings": [
+        "http://purl.uniprot.org/core/linkIsExplicit"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/linkIsExplicit",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "length",
+      "definition_uri": "http://purl.uniprot.org/core/length",
+      "mappings": [
+        "http://purl.uniprot.org/core/length"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/length",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "partOfLineage",
+      "definition_uri": "http://purl.uniprot.org/core/partOfLineage",
+      "mappings": [
+        "http://purl.uniprot.org/core/partOfLineage"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/partOfLineage",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "measuredActivity",
+      "definition_uri": "http://purl.uniprot.org/core/measuredActivity",
+      "mappings": [
+        "http://purl.uniprot.org/core/measuredActivity"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/measuredActivity",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "curated",
+      "definition_uri": "http://purl.uniprot.org/core/curated",
+      "mappings": [
+        "http://purl.uniprot.org/core/curated"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/curated",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "otherName",
+      "definition_uri": "http://purl.uniprot.org/core/otherName",
+      "mappings": [
+        "http://purl.uniprot.org/core/otherName"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/otherName",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "experiments",
+      "definition_uri": "http://purl.uniprot.org/core/experiments",
+      "mappings": [
+        "http://purl.uniprot.org/core/experiments"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/experiments",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "reviewed",
+      "definition_uri": "http://purl.uniprot.org/core/reviewed",
+      "mappings": [
+        "http://purl.uniprot.org/core/reviewed"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/reviewed",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "modified",
+      "definition_uri": "http://purl.uniprot.org/core/modified",
+      "mappings": [
+        "http://purl.uniprot.org/core/modified"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/modified",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "date",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "institution",
+      "definition_uri": "http://purl.uniprot.org/core/institution",
+      "mappings": [
+        "http://purl.uniprot.org/core/institution"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/institution",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "authorsIncomplete",
+      "definition_uri": "http://purl.uniprot.org/core/authorsIncomplete",
+      "mappings": [
+        "http://purl.uniprot.org/core/authorsIncomplete"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/authorsIncomplete",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "abstract",
+      "definition_uri": "http://purl.uniprot.org/core/abstract",
+      "mappings": [
+        "http://purl.uniprot.org/core/abstract"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/abstract",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "groupcore",
+      "definition_uri": "http://purl.uniprot.org/core/groupcore",
+      "mappings": [
+        "http://purl.uniprot.org/core/group"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/group",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "orfName",
+      "definition_uri": "http://purl.uniprot.org/core/orfName",
+      "mappings": [
+        "http://purl.uniprot.org/core/orfName"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/orfName",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "width",
+      "definition_uri": "http://purl.uniprot.org/core/width",
+      "mappings": [
+        "http://purl.uniprot.org/core/width"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/width",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "place",
+      "definition_uri": "http://purl.uniprot.org/core/place",
+      "mappings": [
+        "http://purl.uniprot.org/core/place"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/place",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "name",
+      "definition_uri": "http://purl.uniprot.org/core/name",
+      "mappings": [
+        "http://purl.uniprot.org/core/name"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/name",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "md5Checksum",
+      "definition_uri": "http://purl.uniprot.org/core/md5Checksum",
+      "mappings": [
+        "http://purl.uniprot.org/core/md5Checksum"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/md5Checksum",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "mnemonic",
+      "definition_uri": "http://purl.uniprot.org/core/mnemonic",
+      "mappings": [
+        "http://purl.uniprot.org/core/mnemonic"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/mnemonic",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "frameshift",
+      "definition_uri": "http://purl.uniprot.org/core/frameshift",
+      "mappings": [
+        "http://purl.uniprot.org/core/frameshift"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/frameshift",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "oldMnemonic",
+      "definition_uri": "http://purl.uniprot.org/core/oldMnemonic",
+      "mappings": [
+        "http://purl.uniprot.org/core/oldMnemonic"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/oldMnemonic",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "chain",
+      "definition_uri": "http://purl.uniprot.org/core/chain",
+      "mappings": [
+        "http://purl.uniprot.org/core/chain"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/chain",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pages",
+      "definition_uri": "http://purl.uniprot.org/core/pages",
+      "mappings": [
+        "http://purl.uniprot.org/core/pages"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/pages",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pattern",
+      "definition_uri": "http://purl.uniprot.org/core/pattern",
+      "mappings": [
+        "http://purl.uniprot.org/core/pattern"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/pattern",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "substitution",
+      "definition_uri": "http://purl.uniprot.org/core/substitution",
+      "mappings": [
+        "http://purl.uniprot.org/core/substitution"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/substitution",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "version",
+      "definition_uri": "http://purl.uniprot.org/core/version",
+      "mappings": [
+        "http://purl.uniprot.org/core/version"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/version",
+      "owner": "Protein",
+      "domain_of": [
+        "Protein"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "implicit",
+      "definition_uri": "http://purl.uniprot.org/core/implicit",
+      "mappings": [
+        "http://purl.uniprot.org/core/implicit"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/implicit",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "measuredAffinity",
+      "definition_uri": "http://purl.uniprot.org/core/measuredAffinity",
+      "mappings": [
+        "http://purl.uniprot.org/core/measuredAffinity"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/measuredAffinity",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "obsolete",
+      "definition_uri": "http://purl.uniprot.org/core/obsolete",
+      "mappings": [
+        "http://purl.uniprot.org/core/obsolete"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/obsolete",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "locator",
+      "definition_uri": "http://purl.uniprot.org/core/locator",
+      "mappings": [
+        "http://purl.uniprot.org/core/locator"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/locator",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "mass",
+      "definition_uri": "http://purl.uniprot.org/core/mass",
+      "mappings": [
+        "http://purl.uniprot.org/core/mass"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/mass",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "uriTemplate",
+      "definition_uri": "http://purl.uniprot.org/core/uriTemplate",
+      "mappings": [
+        "http://purl.uniprot.org/core/uriTemplate"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/uriTemplate",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "scientificName",
+      "definition_uri": "http://purl.uniprot.org/core/scientificName",
+      "mappings": [
+        "http://purl.uniprot.org/core/scientificName"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/scientificName",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "alias",
+      "definition_uri": "http://purl.uniprot.org/core/alias",
+      "mappings": [
+        "http://purl.uniprot.org/core/alias"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/alias",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "exclusionReason",
+      "definition_uri": "http://purl.uniprot.org/core/exclusionReason",
+      "mappings": [
+        "http://purl.uniprot.org/core/exclusionReason"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/exclusionReason",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "measuredError",
+      "definition_uri": "http://purl.uniprot.org/core/measuredError",
+      "mappings": [
+        "http://purl.uniprot.org/core/measuredError"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/measuredError",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "publisher",
+      "definition_uri": "http://purl.uniprot.org/core/publisher",
+      "mappings": [
+        "http://purl.uniprot.org/core/publisher"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/publisher",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "maximum",
+      "definition_uri": "http://purl.uniprot.org/core/maximum",
+      "mappings": [
+        "http://purl.uniprot.org/core/maximum"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/maximum",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "structuredNameType",
+      "definition_uri": "http://purl.uniprot.org/core/structuredNameType",
+      "mappings": [
+        "http://purl.uniprot.org/core/structuredNameType"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/structuredNameType",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "editor",
+      "definition_uri": "http://purl.uniprot.org/core/editor",
+      "mappings": [
+        "http://purl.uniprot.org/core/editor"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/editor",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "author",
+      "definition_uri": "http://purl.uniprot.org/core/author",
+      "mappings": [
+        "http://purl.uniprot.org/core/author"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/author",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "measuredValue",
+      "definition_uri": "http://purl.uniprot.org/core/measuredValue",
+      "mappings": [
+        "http://purl.uniprot.org/core/measuredValue"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/measuredValue",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "negative",
+      "definition_uri": "http://purl.uniprot.org/core/negative",
+      "mappings": [
+        "http://purl.uniprot.org/core/negative"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/negative",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "shortCoden",
+      "definition_uri": "http://purl.uniprot.org/core/shortCoden",
+      "mappings": [
+        "http://purl.uniprot.org/core/shortCoden"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/shortCoden",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "xeno",
+      "definition_uri": "http://purl.uniprot.org/core/xeno",
+      "mappings": [
+        "http://purl.uniprot.org/core/xeno"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/xeno",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "synonym",
+      "definition_uri": "http://purl.uniprot.org/core/synonym",
+      "mappings": [
+        "http://purl.uniprot.org/core/synonym"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/synonym",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "scope",
+      "definition_uri": "http://purl.uniprot.org/core/scope",
+      "mappings": [
+        "http://purl.uniprot.org/core/scope"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/scope",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "urlTemplate",
+      "definition_uri": "http://purl.uniprot.org/core/urlTemplate",
+      "mappings": [
+        "http://purl.uniprot.org/core/urlTemplate"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/urlTemplate",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "resolution",
+      "definition_uri": "http://purl.uniprot.org/core/resolution",
+      "mappings": [
+        "http://purl.uniprot.org/core/resolution"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/resolution",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "manual",
+      "definition_uri": "http://purl.uniprot.org/core/manual",
+      "mappings": [
+        "http://purl.uniprot.org/core/manual"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/manual",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "certain",
+      "definition_uri": "http://purl.uniprot.org/core/certain",
+      "mappings": [
+        "http://purl.uniprot.org/core/certain"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/certain",
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "complete",
+      "definition_uri": "http://purl.uniprot.org/core/complete",
+      "mappings": [
+        "http://purl.uniprot.org/core/complete"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "datatypeProperty",
+      "slot_uri": "http://purl.uniprot.org/core/complete",
+      "range": "boolean",
       "@type": "SlotDefinition"
     },
     {
@@ -850,6 +2425,128 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "equivalence_triple_mixin_subject",
+      "definition_uri": "https://w3id.org/sparqlfun/rdfsubject",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "description": "One of the two classes that are equivalent. No significance to subject vs object",
+      "from_schema": "https://w3id.org/sparqlfun/rdf",
+      "is_a": "subject",
+      "domain": "EquivalenceTripleMixin",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "EquivalenceTripleMixin",
+      "domain_of": [
+        "EquivalenceTripleMixin"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "ClassNode",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "equivalence_triple_mixin_object",
+      "definition_uri": "https://w3id.org/sparqlfun/rdfobject",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "description": "One of the two classes that are equivalent. No significance to subject vs object",
+      "from_schema": "https://w3id.org/sparqlfun/rdf",
+      "is_a": "object",
+      "domain": "EquivalenceTripleMixin",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "EquivalenceTripleMixin",
+      "domain_of": [
+        "EquivalenceTripleMixin"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "ClassNode",
+      "exactly_one_of": [
+        {
+          "range": "string",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "Node",
+          "@type": "AnonymousSlotExpression"
+        }
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "owl_named_equivalent_class_triple_subject",
+      "definition_uri": "https://w3id.org/sparqlfun/rdfsubject",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "description": "One of the two classes that are equivalent. No significance to subject vs object",
+      "from_schema": "https://w3id.org/sparqlfun/rdf",
+      "is_a": "equivalence_triple_mixin_subject",
+      "domain": "OwlNamedEquivalentClassTriple",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "OwlNamedEquivalentClassTriple",
+      "domain_of": [
+        "OwlNamedEquivalentClassTriple"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "ClassNode",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "owl_named_equivalent_class_triple_object",
+      "definition_uri": "https://w3id.org/sparqlfun/rdfobject",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "description": "One of the two classes that are equivalent. No significance to subject vs object",
+      "from_schema": "https://w3id.org/sparqlfun/rdf",
+      "is_a": "equivalence_triple_mixin_object",
+      "domain": "OwlNamedEquivalentClassTriple",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "OwlNamedEquivalentClassTriple",
+      "domain_of": [
+        "OwlNamedEquivalentClassTriple"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "ClassNode",
+      "exactly_one_of": [
+        {
+          "range": "string",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "Node",
+          "@type": "AnonymousSlotExpression"
+        }
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "describe_equivalent_expression_results",
+      "definition_uri": "https://w3id.org/sparqlfun/resultsetresults",
+      "from_schema": "https://w3id.org/sparqlfun/resultset",
+      "is_a": "results",
+      "domain": "DescribeEquivalentExpression",
+      "slot_uri": "https://w3id.org/sparqlfun/resultsetresults",
+      "multivalued": true,
+      "alias": "results",
+      "owner": "DescribeEquivalentExpression",
+      "domain_of": [
+        "DescribeEquivalentExpression"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "results",
+      "range": "ClassNode",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "relation_graph_quad_graph",
       "definition_uri": "https://w3id.org/sparqlfun/rdfgraph",
       "description": "Indicates inference/redundancy status",
@@ -971,6 +2668,162 @@
       "usage_slot_name": "results",
       "range": "OboClass",
       "@type": "SlotDefinition"
+    },
+    {
+      "name": "class_taxon_exclusion_via_never_in_subject",
+      "definition_uri": "https://w3id.org/sparqlfun/rdfsubject",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "description": "The class inferred to have the constraint",
+      "from_schema": "https://w3id.org/sparqlfun/rdf",
+      "is_a": "subject",
+      "domain": "ClassTaxonExclusionViaNeverIn",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "ClassTaxonExclusionViaNeverIn",
+      "domain_of": [
+        "ClassTaxonExclusionViaNeverIn"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "Node",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "class_taxon_exclusion_via_never_in_object",
+      "definition_uri": "https://w3id.org/sparqlfun/rdfobject",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "description": "The taxon that cannot have the subject class.",
+      "from_schema": "https://w3id.org/sparqlfun/rdf",
+      "is_a": "object",
+      "domain": "ClassTaxonExclusionViaNeverIn",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "ClassTaxonExclusionViaNeverIn",
+      "domain_of": [
+        "ClassTaxonExclusionViaNeverIn"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "string",
+      "exactly_one_of": [
+        {
+          "range": "string",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "Node",
+          "@type": "AnonymousSlotExpression"
+        }
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "class_taxon_exclusion_via_only_in_subject",
+      "definition_uri": "https://w3id.org/sparqlfun/rdfsubject",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "description": "The class inferred to have the constraint",
+      "from_schema": "https://w3id.org/sparqlfun/rdf",
+      "is_a": "subject",
+      "domain": "ClassTaxonExclusionViaOnlyIn",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "ClassTaxonExclusionViaOnlyIn",
+      "domain_of": [
+        "ClassTaxonExclusionViaOnlyIn"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "Node",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "class_taxon_exclusion_via_only_in_object",
+      "definition_uri": "https://w3id.org/sparqlfun/rdfobject",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "description": "The taxon that cannot have the subject class.",
+      "from_schema": "https://w3id.org/sparqlfun/rdf",
+      "is_a": "object",
+      "domain": "ClassTaxonExclusionViaOnlyIn",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "ClassTaxonExclusionViaOnlyIn",
+      "domain_of": [
+        "ClassTaxonExclusionViaOnlyIn"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "string",
+      "exactly_one_of": [
+        {
+          "range": "string",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "Node",
+          "@type": "AnonymousSlotExpression"
+        }
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "class_taxon_exclusion_subject",
+      "definition_uri": "https://w3id.org/sparqlfun/rdfsubject",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
+      ],
+      "description": "The class inferred to have the constraint",
+      "from_schema": "https://w3id.org/sparqlfun/rdf",
+      "is_a": "subject",
+      "domain": "ClassTaxonExclusion",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+      "alias": "subject",
+      "owner": "ClassTaxonExclusion",
+      "domain_of": [
+        "ClassTaxonExclusion"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "subject",
+      "range": "Node",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "class_taxon_exclusion_object",
+      "definition_uri": "https://w3id.org/sparqlfun/rdfobject",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#object"
+      ],
+      "description": "The taxon that cannot have the subject class.",
+      "from_schema": "https://w3id.org/sparqlfun/rdf",
+      "is_a": "object",
+      "domain": "ClassTaxonExclusion",
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+      "alias": "object",
+      "owner": "ClassTaxonExclusion",
+      "domain_of": [
+        "ClassTaxonExclusion"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "object",
+      "range": "string",
+      "exactly_one_of": [
+        {
+          "range": "string",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "Node",
+          "@type": "AnonymousSlotExpression"
+        }
+      ],
+      "@type": "SlotDefinition"
     }
   ],
   "classes": [
@@ -992,6 +2845,18 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/sparqlfun/resultsetResultSet",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Binding",
+      "definition_uri": "https://w3id.org/sparqlfun/resultsetBinding",
+      "from_schema": "https://w3id.org/sparqlfun/resultset",
+      "slots": [
+        "binding_key",
+        "binding_value"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/resultsetBinding",
       "@type": "ClassDefinition"
     },
     {
@@ -1128,6 +2993,27 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/sparqlfun/rdfNodeToNodeTriple",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NamedNodeToNamedNodeTriple",
+      "definition_uri": "https://w3id.org/sparqlfun/rdfNamedNodeToNamedNodeTriple",
+      "annotations": [
+        {
+          "tag": "sparql.select",
+          "value": "SELECT * WHERE {\n ?subject ?predicate ?object .\n FILTER isIRI(?subject) .\n FILTER isIRI(?object) .\n}",
+          "@type": "Annotation"
+        }
+      ],
+      "from_schema": "https://w3id.org/sparqlfun/rdf",
+      "is_a": "NodeToNodeTriple",
+      "slots": [
+        "subject",
+        "predicate",
+        "node_to_node_triple_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/rdfNamedNodeToNamedNodeTriple",
       "@type": "ClassDefinition"
     },
     {
@@ -1491,6 +3377,9 @@
           "@type": "Annotation"
         }
       ],
+      "comments": [
+        "this is mostly to serve as an example and may move"
+      ],
       "from_schema": "https://w3id.org/sparqlfun/rdf",
       "is_a": "Node",
       "slots": [
@@ -1508,6 +3397,144 @@
         }
       ],
       "class_uri": "http://www.w3.org/2002/07/owl#Class",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "EquivalenceTripleMixin",
+      "definition_uri": "https://w3id.org/sparqlfun/owlEquivalenceTripleMixin",
+      "from_schema": "https://w3id.org/sparqlfun/owl",
+      "mixin": true,
+      "slots": [
+        "equivalence_triple_mixin_subject",
+        "equivalence_triple_mixin_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/owlEquivalenceTripleMixin",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "OwlEquivalentClassTriple",
+      "definition_uri": "https://w3id.org/sparqlfun/owlOwlEquivalentClassTriple",
+      "description": "A statement that connects two class nodes where both classes are equivalent",
+      "from_schema": "https://w3id.org/sparqlfun/owl",
+      "is_a": "NodeToNodeTriple",
+      "mixins": [
+        "EquivalenceTripleMixin"
+      ],
+      "slots": [
+        "subject",
+        "predicate",
+        "node_to_node_triple_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/owlOwlEquivalentClassTriple",
+      "classification_rules": [
+        {
+          "is_a": "Triple",
+          "slot_conditions": [
+            {
+              "name": "predicate",
+              "equals_string": "owl:equivalentClass",
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        }
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "OwlNamedEquivalentClassTriple",
+      "definition_uri": "https://w3id.org/sparqlfun/owlOwlNamedEquivalentClassTriple",
+      "description": "An equivalence triple between two named classes",
+      "from_schema": "https://w3id.org/sparqlfun/owl",
+      "is_a": "NamedNodeToNamedNodeTriple",
+      "mixins": [
+        "EquivalenceTripleMixin"
+      ],
+      "slots": [
+        "predicate",
+        "owl_named_equivalent_class_triple_subject",
+        "owl_named_equivalent_class_triple_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/owlOwlNamedEquivalentClassTriple",
+      "classification_rules": [
+        {
+          "is_a": "Triple",
+          "slot_conditions": [
+            {
+              "name": "predicate",
+              "equals_string": "owl:equivalentClass",
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        }
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SomeValuesFromRestriction",
+      "definition_uri": "https://w3id.org/sparqlfun/owlSomeValuesFromRestriction",
+      "mappings": [
+        "owl:Restriction"
+      ],
+      "annotations": [
+        {
+          "tag": "sparql.construct",
+          "value": "CONSTRUCT { ?subject a owl:Restriction ; owl:onProperty ?predicate ; owl:someValuesFrom ?filler } WHERE { ?subject a owl:Restriction ; owl:onProperty ?predicate ; owl:someValuesFrom ?filler }",
+          "@type": "Annotation"
+        }
+      ],
+      "from_schema": "https://w3id.org/sparqlfun/owl",
+      "slots": [
+        "subject",
+        "predicate",
+        "filler"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://www.w3.org/2002/07/owl#Restriction",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SubclassOfSomeValuesFrom",
+      "definition_uri": "https://w3id.org/sparqlfun/owlSubclassOfSomeValuesFrom",
+      "annotations": [
+        {
+          "tag": "sparql.select",
+          "value": "SELECT * WHERE { ?subject rdfs:subClassOf [ a owl:Restriction ; owl:onProperty ?predicate ; owl:someValuesFrom ?object ] }",
+          "@type": "Annotation"
+        }
+      ],
+      "from_schema": "https://w3id.org/sparqlfun/owl",
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/owlSubclassOfSomeValuesFrom",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DescribeEquivalentExpression",
+      "definition_uri": "https://w3id.org/sparqlfun/owlDescribeEquivalentExpression",
+      "annotations": [
+        {
+          "tag": "sparql.results_slot",
+          "value": "results",
+          "@type": "Annotation"
+        },
+        {
+          "tag": "sparql.construct",
+          "value": "DESCRIBE ?object WHERE { ?subject owl:equivalentClass ?object }",
+          "@type": "Annotation"
+        }
+      ],
+      "from_schema": "https://w3id.org/sparqlfun/owl",
+      "is_a": "ResultSet",
+      "slots": [
+        "describe_equivalent_expression_results",
+        "subject"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/owlDescribeEquivalentExpression",
       "@type": "ClassDefinition"
     },
     {
@@ -1631,6 +3658,37 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "InTaxonTriple",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphInTaxonTriple",
+      "description": "In ubergraph, an in-taxon triple is pre-inferred",
+      "from_schema": "https://w3id.org/sparqlfun/ro",
+      "is_a": "Triple",
+      "mixins": [
+        "TaxonApplicable"
+      ],
+      "slots": [
+        "subject",
+        "predicate",
+        "object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/ubergraphInTaxonTriple",
+      "classification_rules": [
+        {
+          "is_a": "Triple",
+          "slot_conditions": [
+            {
+              "name": "predicate",
+              "equals_string": "RO:0002162",
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        }
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "DefinitionTriple",
       "definition_uri": "https://w3id.org/sparqlfun/omoDefinitionTriple",
       "from_schema": "https://w3id.org/sparqlfun/omo",
@@ -1698,6 +3756,7 @@
         }
       ],
       "from_schema": "https://w3id.org/sparqlfun/omo",
+      "is_a": "ResultSet",
       "slots": [
         "obo_class_query_results",
         "label_regex"
@@ -1869,39 +3928,36 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "InTaxonTriple",
-      "definition_uri": "https://w3id.org/sparqlfun/ubergraphInTaxonTriple",
-      "description": "In ubergraph, an in-taxon triple is pre-inferred",
+      "name": "ClassTaxonExclusionViaNeverIn",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphClassTaxonExclusionViaNeverIn",
+      "annotations": [
+        {
+          "tag": "sparql.select",
+          "value": "SELECT * WHERE {\n  ?subject ?subject_predicate ?class_with_constraint .\n  ?class_with_constraint RO:0002161 ?direct_taxon .\n  FILTER EXISTS { ?object rdfs:subClassOf ?direct_taxon }\n}",
+          "@type": "Annotation"
+        }
+      ],
+      "description": "An inferred never-in between a subject term and an object taxon, which holds\nwhen the inferred direct taxon is not in an ancestry relationship with the object taxon",
       "from_schema": "https://w3id.org/sparqlfun/ubergraph",
       "is_a": "Triple",
       "mixins": [
         "TaxonApplicable"
       ],
       "slots": [
-        "subject",
         "predicate",
-        "object"
+        "subject_predicate",
+        "class_with_constraint",
+        "direct_taxon",
+        "class_taxon_exclusion_via_never_in_subject",
+        "class_taxon_exclusion_via_never_in_object"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/sparqlfun/ubergraphInTaxonTriple",
-      "classification_rules": [
-        {
-          "is_a": "Triple",
-          "slot_conditions": [
-            {
-              "name": "predicate",
-              "equals_string": "RO:0002161",
-              "@type": "SlotDefinition"
-            }
-          ],
-          "@type": "AnonymousClassExpression"
-        }
-      ],
+      "class_uri": "https://w3id.org/sparqlfun/ubergraphClassTaxonExclusionViaNeverIn",
       "@type": "ClassDefinition"
     },
     {
-      "name": "InferredNeverInTaxon",
-      "definition_uri": "https://w3id.org/sparqlfun/ubergraphInferredNeverInTaxon",
+      "name": "ClassTaxonExclusionViaOnlyIn",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphClassTaxonExclusionViaOnlyIn",
       "annotations": [
         {
           "tag": "sparql.select",
@@ -1909,22 +3965,88 @@
           "@type": "Annotation"
         }
       ],
-      "description": "We infer via join",
       "from_schema": "https://w3id.org/sparqlfun/ubergraph",
       "is_a": "Triple",
       "mixins": [
         "TaxonApplicable"
       ],
       "slots": [
-        "subject",
         "predicate",
-        "object",
         "subject_predicate",
         "class_with_constraint",
-        "direct_taxon"
+        "direct_taxon",
+        "class_taxon_exclusion_via_only_in_subject",
+        "class_taxon_exclusion_via_only_in_object"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/sparqlfun/ubergraphInferredNeverInTaxon",
+      "class_uri": "https://w3id.org/sparqlfun/ubergraphClassTaxonExclusionViaOnlyIn",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ClassTaxonExclusion",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphClassTaxonExclusion",
+      "annotations": [
+        {
+          "tag": "sparql.select",
+          "value": "SELECT * WHERE {\n {\n  ?subject ?subject_predicate ?class_with_constraint BIND(RO:0002162 as ?predicate) .\n  ?class_with_constraint RO:0002162 ?direct_taxon .\n  FILTER NOT EXISTS { ?object (rdfs:subClassOf|^rdfs:subClassOf) ?direct_taxon }\n }\n UNION\n {\n  ?subject ?subject_predicate ?class_with_constraint BIND(RO:0002161 as ?predicate).\n  ?class_with_constraint RO:0002161 ?direct_taxon .\n  FILTER EXISTS { ?object rdfs:subClassOf ?direct_taxon }\n }\n}",
+          "@type": "Annotation"
+        }
+      ],
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "is_a": "Triple",
+      "mixins": [
+        "TaxonApplicable"
+      ],
+      "slots": [
+        "predicate",
+        "subject_predicate",
+        "class_with_constraint",
+        "direct_taxon",
+        "class_taxon_exclusion_subject",
+        "class_taxon_exclusion_object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/ubergraphClassTaxonExclusion",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SetwiseCommonSubClassAncestor",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphSetwiseCommonSubClassAncestor",
+      "annotations": [
+        {
+          "tag": "sparql.select",
+          "value": "SELECT ?ancestor WHERE {\n  VALUES ?sub { {{ _values(nodes) }} }\n  ?sub rdfs:subClassOf ?ancestor .\n  FILTER(isIRI(?ancestor))\n}",
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Common superclass ancestor to a set of nodes",
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "slots": [
+        "nodes",
+        "ancestor"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/ubergraphSetwiseCommonSubClassAncestor",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SetwiseMostRecentCommonSubClassAncestor",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphSetwiseMostRecentCommonSubClassAncestor",
+      "annotations": [
+        {
+          "tag": "sparql.select",
+          "value": "SELECT ?ancestor WHERE {\n  VALUES ?sub { {{ _values(nodes) }} }\n  ?sub rdfs:subClassOf ?ancestor .\n  FILTER(isIRI(?ancestor)) .\n  FILTER NOT EXISTS {\n              VALUES ?sub2 { {{ _values(nodes) }} }\n              ?sub2 rdfs:subClassOf ?a2 .\n              ?a2 rdfs:subClassOf ?ancestor .\n              FILTER(?a2 != ?ancestor)\n              FILTER(isIRI(?a2))\n  }\n}",
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Most recent common superclass ancestor to a set of nodes",
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "slots": [
+        "nodes",
+        "ancestor"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/ubergraphSetwiseMostRecentCommonSubClassAncestor",
       "@type": "ClassDefinition"
     },
     {
@@ -1937,6 +4059,7 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Common ancestor in relation graph over any relations between two nodes",
       "from_schema": "https://w3id.org/sparqlfun/ubergraph",
       "slots": [
         "node1",
@@ -1984,6 +4107,50 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "PairwiseMostRecentCommonAncestor",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphPairwiseMostRecentCommonAncestor",
+      "annotations": [
+        {
+          "tag": "sparql.select",
+          "value": "SELECT * WHERE {\n  ?node1 ?predicate1 ?ancestor .\n  ?node2 ?predicate2 ?ancestor .\n  FILTER NOT EXISTS {\n    ?a2 (?predicate1|?predicate2|rdfs:subClassOf) ?ancestor .\n    ?node1 ?predicate1 ?a2 .\n    ?node2 ?predicate2 ?a2 .\n    FILTER(?a2 != ?ancestor)\n  }\n}",
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Common non-redundant ancestor in relation graph over any relations between two nodes",
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "slots": [
+        "node1",
+        "node2",
+        "predicate1",
+        "predicate2",
+        "ancestor"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/ubergraphPairwiseMostRecentCommonAncestor",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PairwiseMostRecentCommonSubClassAncestor",
+      "definition_uri": "https://w3id.org/sparqlfun/ubergraphPairwiseMostRecentCommonSubClassAncestor",
+      "annotations": [
+        {
+          "tag": "sparql.select",
+          "value": "SELECT * WHERE {\n  ?node1 rdfs:subClassOf ?ancestor .\n  ?node2 rdfs:subClassOf ?ancestor .\n  FILTER NOT EXISTS {\n    ?a2 rdfs:subClassOf ?ancestor .\n    ?node1 rdfs:subClassOf ?a2 .\n    ?node2 rdfs:subClassOf ?a2 .\n    FILTER(?a2 != ?ancestor)\n  }\n}",
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Common non-redundant SubClass ancestor between two nodes",
+      "from_schema": "https://w3id.org/sparqlfun/ubergraph",
+      "slots": [
+        "node1",
+        "node2",
+        "ancestor"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/ubergraphPairwiseMostRecentCommonSubClassAncestor",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "OboClassFiltered",
       "definition_uri": "https://w3id.org/sparqlfun/ubergraphOboClassFiltered",
       "mappings": [
@@ -2007,23 +4174,2404 @@
       "slot_usage": {},
       "class_uri": "http://www.w3.org/2002/07/owl#Class",
       "@type": "ClassDefinition"
+    },
+    {
+      "name": "ProteinClassifiedWith",
+      "definition_uri": "https://w3id.org/sparqlfun/uniprot_queries/ProteinClassifiedWith",
+      "annotations": [
+        {
+          "tag": "sparql.select",
+          "value": "SELECT * WHERE {?subject upcore:classifiedWith ?object}",
+          "@type": "Annotation"
+        }
+      ],
+      "from_schema": "https://w3id.org/sparqlfun/uniprot_queries",
+      "slots": [
+        "subject",
+        "object"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/sparqlfun/rdfProteinClassifiedWith",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Thing",
+      "definition_uri": "http://purl.uniprot.org/core/Thing",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Thing",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Protein",
+      "definition_uri": "http://purl.uniprot.org/core/Protein",
+      "mappings": [
+        "upcore:Protein"
+      ],
+      "annotations": [
+        {
+          "tag": "sparql.construct",
+          "value": "CONSTRUCT {\n  ?id a upcore:Protein ;\n      ?prop ?val\n }\n WHERE {\n   ?id ?prop ?val\n }",
+          "@type": "Annotation"
+        }
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "mappedCitation",
+        "seeAlso",
+        "annotation",
+        "mappedAnnotation",
+        "classifiedWith",
+        "citation",
+        "oldMnemonic",
+        "isolatedFrom",
+        "attribution",
+        "organism",
+        "encodedBy",
+        "mnemonic",
+        "interaction",
+        "representativeFor",
+        "created",
+        "conflictingSequence",
+        "potentialSequence",
+        "version",
+        "type",
+        "seedFor",
+        "sequence",
+        "alternativeName",
+        "reviewed",
+        "recommendedName",
+        "submittedName",
+        "modified",
+        "enzyme"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Protein",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SubcellularLocation",
+      "definition_uri": "http://purl.uniprot.org/core/SubcellularLocation",
+      "mappings": [
+        "upcore:Subcellular_Location"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Subcellular_Location",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Disease",
+      "definition_uri": "http://purl.uniprot.org/core/Disease",
+      "mappings": [
+        "upcore:Disease"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Disease",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ProteinExistence",
+      "definition_uri": "http://purl.uniprot.org/core/ProteinExistence",
+      "mappings": [
+        "upcore:Protein_Existence"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Protein_Existence",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Organelle",
+      "definition_uri": "http://purl.uniprot.org/core/Organelle",
+      "mappings": [
+        "upcore:Organelle"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Organelle",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "FamilyMembershipStatement",
+      "definition_uri": "http://purl.uniprot.org/core/FamilyMembershipStatement",
+      "mappings": [
+        "upcore:Family_Membership_Statement"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Family_Membership_Statement",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Class",
+      "definition_uri": "http://purl.uniprot.org/core/Class",
+      "mappings": [
+        "owl:Class"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://www.w3.org/2002/07/owl#Class",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Statement",
+      "definition_uri": "http://purl.uniprot.org/core/Statement",
+      "mappings": [
+        "rdf:Statement"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Enzyme",
+      "definition_uri": "http://purl.uniprot.org/core/Enzyme",
+      "mappings": [
+        "upcore:Enzyme"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Enzyme",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Taxon",
+      "definition_uri": "http://purl.uniprot.org/core/Taxon",
+      "mappings": [
+        "upcore:Taxon"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Taxon",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Citation",
+      "definition_uri": "http://purl.uniprot.org/core/Citation",
+      "mappings": [
+        "upcore:Citation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Citation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CatalyticActivity",
+      "definition_uri": "http://purl.uniprot.org/core/CatalyticActivity",
+      "mappings": [
+        "upcore:Catalytic_Activity"
+      ],
+      "description": "The catalytic activity of an enzyme.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Catalytic_Activity",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Molecule",
+      "definition_uri": "http://purl.uniprot.org/core/Molecule",
+      "mappings": [
+        "upcore:Molecule"
+      ],
+      "description": "A biological molecule.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Molecule",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Tissue",
+      "definition_uri": "http://purl.uniprot.org/core/Tissue",
+      "mappings": [
+        "upcore:Tissue"
+      ],
+      "description": "A tissue such as lung or heart.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Tissue",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Sequence",
+      "definition_uri": "http://purl.uniprot.org/core/Sequence",
+      "mappings": [
+        "upcore:Sequence"
+      ],
+      "description": "An amino acid sequence.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Sequence",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Participant",
+      "definition_uri": "http://purl.uniprot.org/core/Participant",
+      "mappings": [
+        "upcore:Participant"
+      ],
+      "description": "A participant in a protein-protein interaction.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Participant",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NotObsolete",
+      "definition_uri": "http://purl.uniprot.org/core/NotObsolete",
+      "mappings": [
+        "upcore:Not_Obsolete"
+      ],
+      "description": "A class introduced to group all records that are currently in the database.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Not_Obsolete",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "StructuredName",
+      "definition_uri": "http://purl.uniprot.org/core/StructuredName",
+      "mappings": [
+        "upcore:Structured_Name"
+      ],
+      "description": "A resource that holds a set of the known names for this protein together.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Structured_Name",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Status",
+      "definition_uri": "http://purl.uniprot.org/core/Status",
+      "mappings": [
+        "upcore:Status"
+      ],
+      "description": "Indicator for the reliability of a piece of information.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Status",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Method",
+      "definition_uri": "http://purl.uniprot.org/core/Method",
+      "mappings": [
+        "upcore:Method"
+      ],
+      "description": "An experimental method.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Method",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Plasmid",
+      "definition_uri": "http://purl.uniprot.org/core/Plasmid",
+      "mappings": [
+        "upcore:Plasmid"
+      ],
+      "description": "Description of a Plasmid",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Plasmid",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Resource",
+      "definition_uri": "http://purl.uniprot.org/core/Resource",
+      "mappings": [
+        "upcore:Resource"
+      ],
+      "description": "A life science resource.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Resource",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Annotation",
+      "definition_uri": "http://purl.uniprot.org/core/Annotation",
+      "mappings": [
+        "upcore:Annotation"
+      ],
+      "description": "Description of a resource on a specific topic.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Reviewed",
+      "definition_uri": "http://purl.uniprot.org/core/Reviewed",
+      "mappings": [
+        "upcore:Reviewed"
+      ],
+      "description": " The class of all reviewed records in the database (i.e. records that where looked at by a curator for integration into the database).",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Reviewed",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Interaction",
+      "definition_uri": "http://purl.uniprot.org/core/Interaction",
+      "mappings": [
+        "upcore:Interaction"
+      ],
+      "description": "Description of a protein-protein interaction.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Interaction",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Transposon",
+      "definition_uri": "http://purl.uniprot.org/core/Transposon",
+      "mappings": [
+        "upcore:Transposon"
+      ],
+      "description": "A transposon",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Transposon",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Pathway",
+      "definition_uri": "http://purl.uniprot.org/core/Pathway",
+      "mappings": [
+        "upcore:Pathway"
+      ],
+      "description": "A hierarchical discription of a metabolic pathway.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Pathway",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Attribution",
+      "definition_uri": "http://purl.uniprot.org/core/Attribution",
+      "mappings": [
+        "upcore:Attribution"
+      ],
+      "description": "Entity used to attach evidence or provenance to a rdf statement via reification.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Attribution",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Strain",
+      "definition_uri": "http://purl.uniprot.org/core/Strain",
+      "mappings": [
+        "upcore:Strain"
+      ],
+      "description": "A strain of a species.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Strain",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Rank",
+      "definition_uri": "http://purl.uniprot.org/core/Rank",
+      "mappings": [
+        "upcore:Rank"
+      ],
+      "description": "A rank of a taxon.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Rank",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Obsolete",
+      "definition_uri": "http://purl.uniprot.org/core/Obsolete",
+      "mappings": [
+        "upcore:Obsolete"
+      ],
+      "description": "The class of all obsolete records in the database (i.e. records that where once published but are now removed).",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Obsolete",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "EnzymeRegulationAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/EnzymeRegulationAnnotation",
+      "mappings": [
+        "upcore:Enzyme_Regulation_Annotation"
+      ],
+      "description": "The use of this class has been replaced by Activity_Regulation_Annotation",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Enzyme_Regulation_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Proteome",
+      "definition_uri": "http://purl.uniprot.org/core/Proteome",
+      "mappings": [
+        "upcore:Proteome"
+      ],
+      "description": "Description of a proteome.",
+      "from_schema": "http://purl.uniprot.org/core/",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Proteome",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DomainAssignmentStatement",
+      "definition_uri": "http://purl.uniprot.org/core/DomainAssignmentStatement",
+      "mappings": [
+        "upcore:Domain_Assignment_Statement"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Statement",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Domain_Assignment_Statement",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GenomicDNA",
+      "definition_uri": "http://purl.uniprot.org/core/GenomicDNA",
+      "mappings": [
+        "upcore:Genomic_DNA"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "DNA",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Genomic_DNA",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "IntramembraneAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/IntramembraneAnnotation",
+      "mappings": [
+        "upcore:Intramembrane_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RegionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Intramembrane_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CompositionalBiasAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/CompositionalBiasAnnotation",
+      "mappings": [
+        "upcore:Compositional_Bias_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RegionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Compositional_Bias_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SubmissionCitation",
+      "definition_uri": "http://purl.uniprot.org/core/SubmissionCitation",
+      "mappings": [
+        "upcore:Submission_Citation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "PublishedCitation",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Submission_Citation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "UnpublishedCitation",
+      "definition_uri": "http://purl.uniprot.org/core/UnpublishedCitation",
+      "mappings": [
+        "upcore:Unpublished_Citation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Citation",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Unpublished_Citation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NaturalVariationAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/NaturalVariationAnnotation",
+      "mappings": [
+        "upcore:Natural_Variation_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SequenceAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Natural_Variation_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ActivityRegulationAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/ActivityRegulationAnnotation",
+      "mappings": [
+        "upcore:Activity_Regulation_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Activity_Regulation_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Orientation",
+      "definition_uri": "http://purl.uniprot.org/core/Orientation",
+      "mappings": [
+        "upcore:Orientation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SubcellularLocation",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Orientation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ReferenceProteome",
+      "definition_uri": "http://purl.uniprot.org/core/ReferenceProteome",
+      "mappings": [
+        "upcore:Reference_Proteome"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Proteome",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Reference_Proteome",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ErroneousTerminationAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/ErroneousTerminationAnnotation",
+      "mappings": [
+        "upcore:Erroneous_Termination_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SequenceCautionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Erroneous_Termination_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "OtherRNA",
+      "definition_uri": "http://purl.uniprot.org/core/OtherRNA",
+      "mappings": [
+        "upcore:Other_RNA"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RNA",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Other_RNA",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "InductionAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/InductionAnnotation",
+      "mappings": [
+        "upcore:Induction_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Induction_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SequenceCautionAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/SequenceCautionAnnotation",
+      "mappings": [
+        "upcore:Sequence_Caution_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Sequence_Caution_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MetalBindingAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/MetalBindingAnnotation",
+      "mappings": [
+        "upcore:Metal_Binding_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SiteAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Metal_Binding_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SequenceAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/SequenceAnnotation",
+      "mappings": [
+        "upcore:Sequence_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Sequence_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CautionAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/CautionAnnotation",
+      "mappings": [
+        "upcore:Caution_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Caution_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "LipidationAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/LipidationAnnotation",
+      "mappings": [
+        "upcore:Lipidation_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "ModificationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Lipidation_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AlternativePromoterUsageAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/AlternativePromoterUsageAnnotation",
+      "mappings": [
+        "upcore:Alternative_Promoter_Usage_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "AlternativeProductsAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Alternative_Promoter_Usage_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ExperimentalInformationAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/ExperimentalInformationAnnotation",
+      "mappings": [
+        "upcore:Experimental_Information_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SequenceAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Experimental_Information_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NotObsoleteTaxon",
+      "definition_uri": "http://purl.uniprot.org/core/NotObsoleteTaxon",
+      "mappings": [
+        "upcore:Not_Obsolete_Taxon"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Taxon",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Not_Obsolete_Taxon",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TransmembraneAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/TransmembraneAnnotation",
+      "mappings": [
+        "upcore:Transmembrane_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RegionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Transmembrane_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SequenceConflictAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/SequenceConflictAnnotation",
+      "mappings": [
+        "upcore:Sequence_Conflict_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "ExperimentalInformationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Sequence_Conflict_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TemperatureDependenceAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/TemperatureDependenceAnnotation",
+      "mappings": [
+        "upcore:Temperature_Dependence_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "BiophysicochemicalAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Temperature_Dependence_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ObservationCitation",
+      "definition_uri": "http://purl.uniprot.org/core/ObservationCitation",
+      "mappings": [
+        "upcore:Observation_Citation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "UnpublishedCitation",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Observation_Citation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DNA",
+      "definition_uri": "http://purl.uniprot.org/core/DNA",
+      "mappings": [
+        "upcore:DNA"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Molecule",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/DNA",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CalciumBindingAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/CalciumBindingAnnotation",
+      "mappings": [
+        "upcore:Calcium_Binding_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RegionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Calcium_Binding_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BindingSiteAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/BindingSiteAnnotation",
+      "mappings": [
+        "upcore:Binding_Site_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SiteAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Binding_Site_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CitationStatement",
+      "definition_uri": "http://purl.uniprot.org/core/CitationStatement",
+      "mappings": [
+        "upcore:Citation_Statement"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Statement",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Citation_Statement",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MemberOfRedudantProteome",
+      "definition_uri": "http://purl.uniprot.org/core/MemberOfRedudantProteome",
+      "mappings": [
+        "upcore:Member_Of_Redudant_Proteome"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "ObsoleteProtein",
+      "slots": [
+        "id",
+        "mappedCitation",
+        "seeAlso",
+        "annotation",
+        "mappedAnnotation",
+        "classifiedWith",
+        "citation",
+        "oldMnemonic",
+        "isolatedFrom",
+        "attribution",
+        "organism",
+        "encodedBy",
+        "mnemonic",
+        "interaction",
+        "representativeFor",
+        "created",
+        "conflictingSequence",
+        "potentialSequence",
+        "version",
+        "type",
+        "seedFor",
+        "sequence",
+        "alternativeName",
+        "reviewed",
+        "recommendedName",
+        "submittedName",
+        "modified",
+        "enzyme"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Member_Of_Redudant_Proteome",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RNAEditingAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/RNAEditingAnnotation",
+      "mappings": [
+        "upcore:RNA_Editing_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/RNA_Editing_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Part",
+      "definition_uri": "http://purl.uniprot.org/core/Part",
+      "mappings": [
+        "upcore:Part"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Part",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "UnassignedDNA",
+      "definition_uri": "http://purl.uniprot.org/core/UnassignedDNA",
+      "mappings": [
+        "upcore:Unassigned_DNA"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "DNA",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Unassigned_DNA",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ReviewedProtein",
+      "definition_uri": "http://purl.uniprot.org/core/ReviewedProtein",
+      "mappings": [
+        "upcore:Reviewed_Protein"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Reviewed",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Reviewed_Protein",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ZincFingerAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/ZincFingerAnnotation",
+      "mappings": [
+        "upcore:Zinc_Finger_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RegionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Zinc_Finger_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "JournalCitation",
+      "definition_uri": "http://purl.uniprot.org/core/JournalCitation",
+      "mappings": [
+        "upcore:Journal_Citation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "PublishedCitation",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Journal_Citation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TransitPeptideAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/TransitPeptideAnnotation",
+      "mappings": [
+        "upcore:Transit_Peptide_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "MoleculeProcessingAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Transit_Peptide_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MassMeasurementMethod",
+      "definition_uri": "http://purl.uniprot.org/core/MassMeasurementMethod",
+      "mappings": [
+        "upcore:Mass_Measurement_Method"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Method",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Mass_Measurement_Method",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NucleotideResource",
+      "definition_uri": "http://purl.uniprot.org/core/NucleotideResource",
+      "mappings": [
+        "upcore:Nucleotide_Resource"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Resource",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Nucleotide_Resource",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RedoxPotentialAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/RedoxPotentialAnnotation",
+      "mappings": [
+        "upcore:Redox_Potential_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "BiophysicochemicalAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Redox_Potential_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PHDependenceAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/PHDependenceAnnotation",
+      "mappings": [
+        "upcore:PH_Dependence_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "BiophysicochemicalAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/PH_Dependence_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PTMAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/PTMAnnotation",
+      "mappings": [
+        "upcore:PTM_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/PTM_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CofactorAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/CofactorAnnotation",
+      "mappings": [
+        "upcore:Cofactor_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Cofactor_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "FrameshiftAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/FrameshiftAnnotation",
+      "mappings": [
+        "upcore:Frameshift_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SequenceCautionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Frameshift_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SignalPeptideAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/SignalPeptideAnnotation",
+      "mappings": [
+        "upcore:Signal_Peptide_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "MoleculeProcessingAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Signal_Peptide_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PathwayAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/PathwayAnnotation",
+      "mappings": [
+        "upcore:Pathway_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Pathway_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PolymorphismAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/PolymorphismAnnotation",
+      "mappings": [
+        "upcore:Polymorphism_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Polymorphism_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NonTerminalResidueAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/NonTerminalResidueAnnotation",
+      "mappings": [
+        "upcore:Non-terminal_Residue_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "ExperimentalInformationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Non-terminal_Residue_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ErroneousGeneModelPredictionAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/ErroneousGeneModelPredictionAnnotation",
+      "mappings": [
+        "upcore:Erroneous_Gene_Model_Prediction_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SequenceCautionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Erroneous_Gene_Model_Prediction_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CoiledCoilAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/CoiledCoilAnnotation",
+      "mappings": [
+        "upcore:Coiled_Coil_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RegionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Coiled_Coil_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BetaStrandAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/BetaStrandAnnotation",
+      "mappings": [
+        "upcore:Beta_Strand_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SecondaryStructureAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Beta_Strand_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RibosomalFrameshifting",
+      "definition_uri": "http://purl.uniprot.org/core/RibosomalFrameshifting",
+      "mappings": [
+        "upcore:Ribosomal_Frameshifting"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "AlternativeProductsAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Ribosomal_Frameshifting",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "UnassignedRNA",
+      "definition_uri": "http://purl.uniprot.org/core/UnassignedRNA",
+      "mappings": [
+        "upcore:Unassigned_RNA"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RNA",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Unassigned_RNA",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MoleculeProcessingAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/MoleculeProcessingAnnotation",
+      "mappings": [
+        "upcore:Molecule_Processing_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SequenceAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Molecule_Processing_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SubunitAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/SubunitAnnotation",
+      "mappings": [
+        "upcore:Subunit_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Subunit_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PeptideAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/PeptideAnnotation",
+      "mappings": [
+        "upcore:Peptide_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "MoleculeProcessingAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Peptide_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ErroneousInitiationAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/ErroneousInitiationAnnotation",
+      "mappings": [
+        "upcore:Erroneous_Initiation_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SequenceCautionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Erroneous_Initiation_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RepeatAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/RepeatAnnotation",
+      "mappings": [
+        "upcore:Repeat_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RegionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Repeat_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BiotechnologyAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/BiotechnologyAnnotation",
+      "mappings": [
+        "upcore:Biotechnology_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Biotechnology_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RegionAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/RegionAnnotation",
+      "mappings": [
+        "upcore:Region_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SequenceAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Region_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NotObsoleteProtein",
+      "definition_uri": "http://purl.uniprot.org/core/NotObsoleteProtein",
+      "mappings": [
+        "upcore:Not_Obsolete_Protein"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Protein",
+      "slots": [
+        "id",
+        "mappedCitation",
+        "seeAlso",
+        "annotation",
+        "mappedAnnotation",
+        "classifiedWith",
+        "citation",
+        "oldMnemonic",
+        "isolatedFrom",
+        "attribution",
+        "organism",
+        "encodedBy",
+        "mnemonic",
+        "interaction",
+        "representativeFor",
+        "created",
+        "conflictingSequence",
+        "potentialSequence",
+        "version",
+        "type",
+        "seedFor",
+        "sequence",
+        "alternativeName",
+        "reviewed",
+        "recommendedName",
+        "submittedName",
+        "modified",
+        "enzyme"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Not_Obsolete_Protein",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CatalyticActivityAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/CatalyticActivityAnnotation",
+      "mappings": [
+        "upcore:Catalytic_Activity_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Catalytic_Activity_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NonSelfInteraction",
+      "definition_uri": "http://purl.uniprot.org/core/NonSelfInteraction",
+      "mappings": [
+        "upcore:Non_Self_Interaction"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Interaction",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Non_Self_Interaction",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PatentCitation",
+      "definition_uri": "http://purl.uniprot.org/core/PatentCitation",
+      "mappings": [
+        "upcore:Patent_Citation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "PublishedCitation",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Patent_Citation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ExternalSequence",
+      "definition_uri": "http://purl.uniprot.org/core/ExternalSequence",
+      "mappings": [
+        "upcore:External_Sequence"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "KnownSequence",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/External_Sequence",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "KnownSequence",
+      "definition_uri": "http://purl.uniprot.org/core/KnownSequence",
+      "mappings": [
+        "upcore:Known_Sequence"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Sequence",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Known_Sequence",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ErroneousTranslationAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/ErroneousTranslationAnnotation",
+      "mappings": [
+        "upcore:Erroneous_Translation_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SequenceCautionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Erroneous_Translation_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "StructureMappingStatement",
+      "definition_uri": "http://purl.uniprot.org/core/StructureMappingStatement",
+      "mappings": [
+        "upcore:Structure_Mapping_Statement"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Statement",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Structure_Mapping_Statement",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DevelopmentalStageAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/DevelopmentalStageAnnotation",
+      "mappings": [
+        "upcore:Developmental_Stage_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Developmental_Stage_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SiteAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/SiteAnnotation",
+      "mappings": [
+        "upcore:Site_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SequenceAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Site_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ToxicDoseAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/ToxicDoseAnnotation",
+      "mappings": [
+        "upcore:Toxic_Dose_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Toxic_Dose_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NucleotideBindingAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/NucleotideBindingAnnotation",
+      "mappings": [
+        "upcore:Nucleotide_Binding_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RegionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Nucleotide_Binding_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ObsoleteTaxon",
+      "definition_uri": "http://purl.uniprot.org/core/ObsoleteTaxon",
+      "mappings": [
+        "upcore:Obsolete_Taxon"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Taxon",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Obsolete_Taxon",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SecondaryStructureAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/SecondaryStructureAnnotation",
+      "mappings": [
+        "upcore:Secondary_Structure_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SequenceAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Secondary_Structure_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MutagenesisAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/MutagenesisAnnotation",
+      "mappings": [
+        "upcore:Mutagenesis_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "ExperimentalInformationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Mutagenesis_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PharmaceuticalAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/PharmaceuticalAnnotation",
+      "mappings": [
+        "upcore:Pharmaceutical_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Pharmaceutical_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ViralCRNA",
+      "definition_uri": "http://purl.uniprot.org/core/ViralCRNA",
+      "mappings": [
+        "upcore:Viral_cRNA"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RNA",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Viral_cRNA",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RepresentativeProteome",
+      "definition_uri": "http://purl.uniprot.org/core/RepresentativeProteome",
+      "mappings": [
+        "upcore:Representative_Proteome"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Proteome",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Representative_Proteome",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NonAdjacentResiduesAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/NonAdjacentResiduesAnnotation",
+      "mappings": [
+        "upcore:Non-adjacent_Residues_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "ExperimentalInformationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Non-adjacent_Residues_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Concept",
+      "definition_uri": "http://purl.uniprot.org/core/Concept",
+      "mappings": [
+        "upcore:Concept"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Class",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Concept",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Topology",
+      "definition_uri": "http://purl.uniprot.org/core/Topology",
+      "mappings": [
+        "upcore:Topology"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SubcellularLocation",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Topology",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ObsoleteProtein",
+      "definition_uri": "http://purl.uniprot.org/core/ObsoleteProtein",
+      "mappings": [
+        "upcore:Obsolete_Protein"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Protein",
+      "slots": [
+        "id",
+        "mappedCitation",
+        "seeAlso",
+        "annotation",
+        "mappedAnnotation",
+        "classifiedWith",
+        "citation",
+        "oldMnemonic",
+        "isolatedFrom",
+        "attribution",
+        "organism",
+        "encodedBy",
+        "mnemonic",
+        "interaction",
+        "representativeFor",
+        "created",
+        "conflictingSequence",
+        "potentialSequence",
+        "version",
+        "type",
+        "seedFor",
+        "sequence",
+        "alternativeName",
+        "reviewed",
+        "recommendedName",
+        "submittedName",
+        "modified",
+        "enzyme"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Obsolete_Protein",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SimpleSequence",
+      "definition_uri": "http://purl.uniprot.org/core/SimpleSequence",
+      "mappings": [
+        "upcore:Simple_Sequence"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "KnownSequence",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Simple_Sequence",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Journal",
+      "definition_uri": "http://purl.uniprot.org/core/Journal",
+      "mappings": [
+        "upcore:Journal"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Journal",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PublishedCitation",
+      "definition_uri": "http://purl.uniprot.org/core/PublishedCitation",
+      "mappings": [
+        "upcore:Published_Citation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Citation",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Published_Citation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GenomicRNA",
+      "definition_uri": "http://purl.uniprot.org/core/GenomicRNA",
+      "mappings": [
+        "upcore:Genomic_RNA"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RNA",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Genomic_RNA",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MassSpectrometryAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/MassSpectrometryAnnotation",
+      "mappings": [
+        "upcore:Mass_Spectrometry_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "ExperimentalInformationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Mass_Spectrometry_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BookCitation",
+      "definition_uri": "http://purl.uniprot.org/core/BookCitation",
+      "mappings": [
+        "upcore:Book_Citation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "PublishedCitation",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Book_Citation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CellularComponent",
+      "definition_uri": "http://purl.uniprot.org/core/CellularComponent",
+      "mappings": [
+        "upcore:Cellular_Component"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SubcellularLocation",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Cellular_Component",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NaturalVariantAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/NaturalVariantAnnotation",
+      "mappings": [
+        "upcore:Natural_Variant_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "NaturalVariationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Natural_Variant_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ModifiedResidueAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/ModifiedResidueAnnotation",
+      "mappings": [
+        "upcore:Modified_Residue_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "ModificationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Modified_Residue_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "StructureResource",
+      "definition_uri": "http://purl.uniprot.org/core/StructureResource",
+      "mappings": [
+        "upcore:Structure_Resource"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Resource",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Structure_Resource",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "UnknownSequence",
+      "definition_uri": "http://purl.uniprot.org/core/UnknownSequence",
+      "mappings": [
+        "upcore:Unknown_Sequence"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Sequence",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Unknown_Sequence",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AlternativeSequenceAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/AlternativeSequenceAnnotation",
+      "mappings": [
+        "upcore:Alternative_Sequence_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "NaturalVariationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Alternative_Sequence_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ActiveSiteAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/ActiveSiteAnnotation",
+      "mappings": [
+        "upcore:Active_Site_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SiteAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Active_Site_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NucleotideMappingStatement",
+      "definition_uri": "http://purl.uniprot.org/core/NucleotideMappingStatement",
+      "mappings": [
+        "upcore:Nucleotide_Mapping_Statement"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Statement",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Nucleotide_Mapping_Statement",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ModificationAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/ModificationAnnotation",
+      "mappings": [
+        "upcore:Modification_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SequenceAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Modification_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GlycosylationAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/GlycosylationAnnotation",
+      "mappings": [
+        "upcore:Glycosylation_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "ModificationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Glycosylation_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "InitiatorMethionineAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/InitiatorMethionineAnnotation",
+      "mappings": [
+        "upcore:Initiator_Methionine_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "MoleculeProcessingAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Initiator_Methionine_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MotifAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/MotifAnnotation",
+      "mappings": [
+        "upcore:Motif_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RegionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Motif_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SimilarityAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/SimilarityAnnotation",
+      "mappings": [
+        "upcore:Similarity_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Similarity_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "KineticsAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/KineticsAnnotation",
+      "mappings": [
+        "upcore:Kinetics_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "BiophysicochemicalAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Kinetics_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TranscribedRNA",
+      "definition_uri": "http://purl.uniprot.org/core/TranscribedRNA",
+      "mappings": [
+        "upcore:Transcribed_RNA"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RNA",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Transcribed_RNA",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Database",
+      "definition_uri": "http://purl.uniprot.org/core/Database",
+      "mappings": [
+        "upcore:Database"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Class",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Database",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NPBindingAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/NPBindingAnnotation",
+      "mappings": [
+        "upcore:NP_Binding_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RegionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/NP_Binding_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TopologicalDomainAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/TopologicalDomainAnnotation",
+      "mappings": [
+        "upcore:Topological_Domain_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RegionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Topological_Domain_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TissueSpecificityAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/TissueSpecificityAnnotation",
+      "mappings": [
+        "upcore:Tissue_Specificity_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Tissue_Specificity_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TranscriptResource",
+      "definition_uri": "http://purl.uniprot.org/core/TranscriptResource",
+      "mappings": [
+        "upcore:Transcript_Resource"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Resource",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Transcript_Resource",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "FunctionAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/FunctionAnnotation",
+      "mappings": [
+        "upcore:Function_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Function_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "EndpointStatement",
+      "definition_uri": "http://purl.uniprot.org/core/EndpointStatement",
+      "mappings": [
+        "upcore:Endpoint_Statement"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Statement",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Endpoint_Statement",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ProteomeComponent",
+      "definition_uri": "http://purl.uniprot.org/core/ProteomeComponent",
+      "mappings": [
+        "upcore:Proteome_Component"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Proteome_Component",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CrossLinkAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/CrossLinkAnnotation",
+      "mappings": [
+        "upcore:Cross-link_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "ModificationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Cross-link_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "StructureDeterminationMethod",
+      "definition_uri": "http://purl.uniprot.org/core/StructureDeterminationMethod",
+      "mappings": [
+        "upcore:Structure_Determination_Method"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Method",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Structure_Determination_Method",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DisulfideBondAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/DisulfideBondAnnotation",
+      "mappings": [
+        "upcore:Disulfide_Bond_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "ModificationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Disulfide_Bond_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BiophysicochemicalAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/BiophysicochemicalAnnotation",
+      "mappings": [
+        "upcore:Biophysicochemical_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Biophysicochemical_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DomainExtentAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/DomainExtentAnnotation",
+      "mappings": [
+        "upcore:Domain_Extent_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RegionAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Domain_Extent_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SequenceUncertaintyAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/SequenceUncertaintyAnnotation",
+      "mappings": [
+        "upcore:Sequence_Uncertainty_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "ExperimentalInformationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Sequence_Uncertainty_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DiseaseAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/DiseaseAnnotation",
+      "mappings": [
+        "upcore:Disease_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Disease_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ElectronicCitation",
+      "definition_uri": "http://purl.uniprot.org/core/ElectronicCitation",
+      "mappings": [
+        "upcore:Electronic_Citation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "PublishedCitation",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Electronic_Citation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MRNA",
+      "definition_uri": "http://purl.uniprot.org/core/MRNA",
+      "mappings": [
+        "upcore:MRNA"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "RNA",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/MRNA",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TurnAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/TurnAnnotation",
+      "mappings": [
+        "upcore:Turn_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SecondaryStructureAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Turn_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SelfInteraction",
+      "definition_uri": "http://purl.uniprot.org/core/SelfInteraction",
+      "mappings": [
+        "upcore:Self_Interaction"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Interaction",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Self_Interaction",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DomainAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/DomainAnnotation",
+      "mappings": [
+        "upcore:Domain_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Domain_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ChainAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/ChainAnnotation",
+      "mappings": [
+        "upcore:Chain_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "MoleculeProcessingAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Chain_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AlternativeSplicingAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/AlternativeSplicingAnnotation",
+      "mappings": [
+        "upcore:Alternative_Splicing_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "AlternativeProductsAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Alternative_Splicing_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SubcellularLocationAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/SubcellularLocationAnnotation",
+      "mappings": [
+        "upcore:Subcellular_Location_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Subcellular_Location_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DisruptionPhenotypeAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/DisruptionPhenotypeAnnotation",
+      "mappings": [
+        "upcore:Disruption_Phenotype_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Disruption_Phenotype_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ThesisCitation",
+      "definition_uri": "http://purl.uniprot.org/core/ThesisCitation",
+      "mappings": [
+        "upcore:Thesis_Citation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "PublishedCitation",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Thesis_Citation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Cluster",
+      "definition_uri": "http://purl.uniprot.org/core/Cluster",
+      "mappings": [
+        "upcore:Cluster"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Thing",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Cluster",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RNA",
+      "definition_uri": "http://purl.uniprot.org/core/RNA",
+      "mappings": [
+        "upcore:RNA"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Molecule",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/RNA",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AlternativeInitiationAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/AlternativeInitiationAnnotation",
+      "mappings": [
+        "upcore:Alternative_Initiation_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "AlternativeProductsAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Alternative_Initiation_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AbsorptionAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/AbsorptionAnnotation",
+      "mappings": [
+        "upcore:Absorption_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "BiophysicochemicalAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Absorption_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "OtherDNA",
+      "definition_uri": "http://purl.uniprot.org/core/OtherDNA",
+      "mappings": [
+        "upcore:Other_DNA"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "DNA",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Other_DNA",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ModifiedSequence",
+      "definition_uri": "http://purl.uniprot.org/core/ModifiedSequence",
+      "mappings": [
+        "upcore:Modified_Sequence"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "KnownSequence",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Modified_Sequence",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AllergenAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/AllergenAnnotation",
+      "mappings": [
+        "upcore:Allergen_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Allergen_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NonStandardResidueAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/NonStandardResidueAnnotation",
+      "mappings": [
+        "upcore:Non-standard_Residue_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "ModificationAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Non-standard_Residue_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PropeptideAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/PropeptideAnnotation",
+      "mappings": [
+        "upcore:Propeptide_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "MoleculeProcessingAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Propeptide_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Gene",
+      "definition_uri": "http://purl.uniprot.org/core/Gene",
+      "mappings": [
+        "upcore:Gene"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Concept",
+      "slots": [
+        "id",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Gene",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "HelixAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/HelixAnnotation",
+      "mappings": [
+        "upcore:Helix_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "SecondaryStructureAnnotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Helix_Annotation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AlternativeProductsAnnotation",
+      "definition_uri": "http://purl.uniprot.org/core/AlternativeProductsAnnotation",
+      "mappings": [
+        "upcore:Alternative_Products_Annotation"
+      ],
+      "from_schema": "http://purl.uniprot.org/core/",
+      "is_a": "Annotation",
+      "slot_usage": {},
+      "class_uri": "http://purl.uniprot.org/core/Alternative_Products_Annotation",
+      "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "sparqlfun.yaml",
-  "source_file_date": "2021-11-22T16:06:30",
-  "source_file_size": 549,
-  "generation_date": "2021-11-22T16:17:50",
+  "source_file_date": "2021-11-24T00:15:34",
+  "source_file_size": 755,
+  "generation_date": "2021-11-24T11:31:42",
   "@type": "SchemaDefinition",
   "@context": [
     "sparqlfun/data/jsonld/sparqlfun.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
     "resultset.context.jsonld",
     "rdf.context.jsonld",
+    "owl.context.jsonld",
     "relation_graph.context.jsonld",
     "ro.context.jsonld",
     "omo.context.jsonld",
     "ubergraph.context.jsonld",
+    "uniprot_queries.context.jsonld",
+    "uniprot.context.jsonld",
     {
       "@base": "https://w3id.org/sparqlfun/"
     }

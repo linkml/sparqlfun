@@ -55,6 +55,17 @@ classes:
           predicate:
             equals_string: RO:0002161
 
+  in taxon triple:
+    description: |-
+      In ubergraph, an in-taxon triple is pre-inferred
+    is_a: triple
+    mixins:
+      - taxon applicable
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: RO:0002162
 
 
 

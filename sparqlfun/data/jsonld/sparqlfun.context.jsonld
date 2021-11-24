@@ -1,8 +1,16 @@
 {
-   "_comments": "Auto generated from sparqlfun.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-11-22T16:17:49\n    Schema: sparqlfun\n    \n    id: https://w3id.org/sparqlfun\n    description: SPARQL Templates\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from sparqlfun.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-11-24T11:31:41\n    Schema: sparqlfun\n    \n    id: https://w3id.org/sparqlfun\n    description: SPARQL Templates\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "IAO": {
          "@id": "http://purl.obolibrary.org/obo/IAO_",
+         "@prefix": true
+      },
+      "NCBITaxon": {
+         "@id": "http://purl.obolibrary.org/obo/NCBITaxon_",
+         "@prefix": true
+      },
+      "RO": {
+         "@id": "http://purl.obolibrary.org/obo/RO_",
          "@prefix": true
       },
       "dcterms": "http://purl.org/dc/terms/",
@@ -21,6 +29,10 @@
          "@id": "https://w3id.org/sparqlfun/omo",
          "@prefix": true
       },
+      "sparqlfun_owl": {
+         "@id": "https://w3id.org/sparqlfun/owl",
+         "@prefix": true
+      },
       "sparqlfun_rdf": {
          "@id": "https://w3id.org/sparqlfun/rdf",
          "@prefix": true
@@ -29,23 +41,126 @@
          "@id": "https://w3id.org/sparqlfun/ubergraph",
          "@prefix": true
       },
+      "ubergraph": "http://reasoner.renci.org/",
+      "upcore": "http://purl.uniprot.org/core/",
       "@vocab": "https://w3id.org/sparqlfun/",
+      "abstract": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:abstract"
+      },
+      "activity": {
+         "@type": "@id",
+         "@id": "upcore:activity"
+      },
+      "alias": {
+         "@id": "upcore:alias"
+      },
+      "alternativeName": {
+         "@type": "@id",
+         "@id": "upcore:alternativeName"
+      },
       "ancestor": {
          "@id": "sparqlfun_ubergraph:ancestor"
+      },
+      "annotation": {
+         "@type": "@id",
+         "@id": "upcore:annotation"
+      },
+      "attribution": {
+         "@type": "@id",
+         "@id": "upcore:attribution"
+      },
+      "author": {
+         "@id": "upcore:author"
+      },
+      "authorsIncomplete": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:authorsIncomplete"
       },
       "base": {
          "@type": "@id",
          "@id": "sh:namespace"
       },
+      "basedOn": {
+         "@type": "@id",
+         "@id": "upcore:basedOn"
+      },
       "subClassOf": {
          "@type": "@id",
          "@id": "rdfs:subClassOf"
       },
+      "binding_key": {
+         "@id": "resultset:binding_key"
+      },
+      "binding_value": {
+         "@id": "resultset:binding_value"
+      },
+      "bindings": {
+         "@type": "@id",
+         "@id": "resultset:bindings"
+      },
+      "catalyticActivity": {
+         "@type": "@id",
+         "@id": "upcore:catalyticActivity"
+      },
+      "cellularComponent": {
+         "@type": "@id",
+         "@id": "upcore:cellularComponent"
+      },
+      "certain": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:certain"
+      },
+      "chain": {
+         "@id": "upcore:chain"
+      },
+      "citation": {
+         "@type": "@id",
+         "@id": "upcore:citation"
+      },
       "class_with_constraint": {
          "@id": "sparqlfun_ubergraph:class_with_constraint"
       },
+      "classifiedWith": {
+         "@type": "@id",
+         "@id": "upcore:classifiedWith"
+      },
+      "cofactorLabel": {
+         "@id": "upcore:cofactorLabel"
+      },
+      "commonTaxon": {
+         "@type": "@id",
+         "@id": "upcore:commonTaxon"
+      },
+      "complete": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:complete"
+      },
+      "component": {
+         "@type": "@id",
+         "@id": "upcore:component"
+      },
+      "conflictingSequence": {
+         "@type": "@id",
+         "@id": "upcore:conflictingSequence"
+      },
+      "created": {
+         "@type": "xsd:date",
+         "@id": "upcore:created"
+      },
+      "curated": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:curated"
+      },
+      "database": {
+         "@type": "@id",
+         "@id": "upcore:database"
+      },
       "datatype": {
          "@id": "sparqlfun_rdf:datatype"
+      },
+      "datatypeProperty": {
+         "@id": "upcore:datatypeProperty"
       },
       "definition": {
          "@id": "IAO:0000115"
@@ -56,19 +171,177 @@
       "direct_taxon": {
          "@id": "sparqlfun_ubergraph:direct_taxon"
       },
+      "disease": {
+         "@type": "@id",
+         "@id": "upcore:disease"
+      },
+      "domain": {
+         "@type": "@id",
+         "@id": "upcore:domain"
+      },
+      "editor": {
+         "@id": "upcore:editor"
+      },
+      "encodedBy": {
+         "@type": "@id",
+         "@id": "upcore:encodedBy"
+      },
+      "encodedIn": {
+         "@type": "@id",
+         "@id": "upcore:encodedIn"
+      },
+      "enzyme": {
+         "@type": "@id",
+         "@id": "upcore:enzyme"
+      },
+      "enzymeClass": {
+         "@type": "@id",
+         "@id": "upcore:enzymeClass"
+      },
+      "erratum": {
+         "@type": "@id",
+         "@id": "upcore:erratum"
+      },
+      "erratumFor": {
+         "@type": "@id",
+         "@id": "upcore:erratumFor"
+      },
       "exact_synonyms": {
          "@id": "oboInOwl:hasExactSynonym"
+      },
+      "exclusionReason": {
+         "@id": "upcore:exclusionReason"
+      },
+      "experiments": {
+         "@type": "xsd:integer",
+         "@id": "upcore:experiments"
+      },
+      "filler": {
+         "@type": "@id",
+         "@id": "sparqlfun_owl:filler"
+      },
+      "frameshift": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:frameshift"
       },
       "graph": {
          "@type": "@id",
          "@id": "sparqlfun_rdf:graph"
       },
+      "groupcore": {
+         "@id": "upcore:group"
+      },
+      "height": {
+         "@type": "xsd:integer",
+         "@id": "upcore:height"
+      },
+      "host": {
+         "@type": "@id",
+         "@id": "upcore:host"
+      },
       "id": "@id",
+      "implicit": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:implicit"
+      },
+      "institution": {
+         "@id": "upcore:institution"
+      },
+      "interaction": {
+         "@type": "@id",
+         "@id": "upcore:interaction"
+      },
+      "isolatedFrom": {
+         "@type": "@id",
+         "@id": "upcore:isolatedFrom"
+      },
       "label_regex": {
          "@id": "sparqlfun_omo:label_regex"
       },
       "language": {
          "@id": "sparqlfun_rdf:language"
+      },
+      "length": {
+         "@type": "xsd:integer",
+         "@id": "upcore:length"
+      },
+      "linkIsExplicit": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:linkIsExplicit"
+      },
+      "locatedOn": {
+         "@type": "@id",
+         "@id": "upcore:locatedOn"
+      },
+      "locator": {
+         "@id": "upcore:locator"
+      },
+      "manual": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:manual"
+      },
+      "mappedAnnotation": {
+         "@type": "@id",
+         "@id": "upcore:mappedAnnotation"
+      },
+      "mappedCitation": {
+         "@type": "@id",
+         "@id": "upcore:mappedCitation"
+      },
+      "mass": {
+         "@type": "xsd:integer",
+         "@id": "upcore:mass"
+      },
+      "maximum": {
+         "@type": "xsd:float",
+         "@id": "upcore:maximum"
+      },
+      "md5Checksum": {
+         "@id": "upcore:md5Checksum"
+      },
+      "measuredActivity": {
+         "@id": "upcore:measuredActivity"
+      },
+      "measuredAffinity": {
+         "@id": "upcore:measuredAffinity"
+      },
+      "measuredError": {
+         "@type": "xsd:float",
+         "@id": "upcore:measuredError"
+      },
+      "measuredValue": {
+         "@type": "xsd:float",
+         "@id": "upcore:measuredValue"
+      },
+      "member": {
+         "@type": "@id",
+         "@id": "upcore:member"
+      },
+      "memberOf": {
+         "@type": "@id",
+         "@id": "upcore:memberOf"
+      },
+      "method": {
+         "@type": "@id",
+         "@id": "upcore:method"
+      },
+      "mnemonic": {
+         "@id": "upcore:mnemonic"
+      },
+      "modification": {
+         "@type": "@id",
+         "@id": "upcore:modification"
+      },
+      "modified": {
+         "@type": "xsd:date",
+         "@id": "upcore:modified"
+      },
+      "name": {
+         "@id": "upcore:name"
+      },
+      "negative": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:negative"
       },
       "node1": {
          "@id": "sparqlfun_ubergraph:node1"
@@ -76,8 +349,76 @@
       "node2": {
          "@id": "sparqlfun_ubergraph:node2"
       },
+      "nodes": {
+         "@id": "sparqlfun_ubergraph:nodes"
+      },
+      "nucleotideSequenceMappingIssue": {
+         "@type": "@id",
+         "@id": "upcore:nucleotideSequenceMappingIssue"
+      },
       "object": {
          "@id": "rdf:object"
+      },
+      "objectProperty": {
+         "@id": "upcore:objectProperty"
+      },
+      "obsolete": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:obsolete"
+      },
+      "oldMnemonic": {
+         "@id": "upcore:oldMnemonic"
+      },
+      "orfName": {
+         "@id": "upcore:orfName"
+      },
+      "organism": {
+         "@type": "@id",
+         "@id": "upcore:organism"
+      },
+      "orientation": {
+         "@type": "@id",
+         "@id": "upcore:orientation"
+      },
+      "otherName": {
+         "@id": "upcore:otherName"
+      },
+      "pages": {
+         "@id": "upcore:pages"
+      },
+      "panproteome": {
+         "@type": "@id",
+         "@id": "upcore:panproteome"
+      },
+      "part": {
+         "@type": "@id",
+         "@id": "upcore:part"
+      },
+      "participant": {
+         "@type": "@id",
+         "@id": "upcore:participant"
+      },
+      "partOf": {
+         "@type": "@id",
+         "@id": "upcore:partOf"
+      },
+      "partOfLineage": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:partOfLineage"
+      },
+      "pattern": {
+         "@id": "upcore:pattern"
+      },
+      "place": {
+         "@id": "upcore:place"
+      },
+      "potentialSequence": {
+         "@type": "@id",
+         "@id": "upcore:potentialSequence"
+      },
+      "precursor": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:precursor"
       },
       "predicate": {
          "@type": "@id",
@@ -94,12 +435,82 @@
       "prefix": {
          "@id": "sh:prefix"
       },
+      "publishedIn": {
+         "@type": "@id",
+         "@id": "upcore:publishedIn"
+      },
+      "publisher": {
+         "@id": "upcore:publisher"
+      },
       "query_has_subclass_ancestor": {
          "@id": "sparqlfun_ubergraph:query_has_subclass_ancestor"
+      },
+      "query_template": {
+         "@id": "resultset:query_template"
+      },
+      "rank": {
+         "@type": "@id",
+         "@id": "upcore:rank"
+      },
+      "recommendedName": {
+         "@type": "@id",
+         "@id": "upcore:recommendedName"
+      },
+      "redundantTo": {
+         "@type": "@id",
+         "@id": "upcore:redundantTo"
+      },
+      "relatedLocation": {
+         "@type": "@id",
+         "@id": "upcore:relatedLocation"
+      },
+      "representativeFor": {
+         "@type": "@id",
+         "@id": "upcore:representativeFor"
+      },
+      "resolution": {
+         "@type": "xsd:float",
+         "@id": "upcore:resolution"
       },
       "results": {
          "@type": "@id",
          "@id": "resultset:results"
+      },
+      "reviewed": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:reviewed"
+      },
+      "scientificName": {
+         "@id": "upcore:scientificName"
+      },
+      "scope": {
+         "@id": "upcore:scope"
+      },
+      "seeAlso": {
+         "@type": "@id",
+         "@id": "rdfs:seeAlso"
+      },
+      "seedFor": {
+         "@type": "@id",
+         "@id": "upcore:seedFor"
+      },
+      "sequence": {
+         "@type": "@id",
+         "@id": "upcore:sequence"
+      },
+      "shortCoden": {
+         "@id": "upcore:shortCoden"
+      },
+      "strain": {
+         "@type": "@id",
+         "@id": "upcore:strain"
+      },
+      "structuredName": {
+         "@type": "@id",
+         "@id": "upcore:structuredName"
+      },
+      "structuredNameType": {
+         "@id": "upcore:structuredNameType"
       },
       "subject": {
          "@type": "@id",
@@ -108,34 +519,268 @@
       "subject_predicate": {
          "@id": "sparqlfun_ubergraph:subject_predicate"
       },
+      "submittedName": {
+         "@type": "@id",
+         "@id": "upcore:submittedName"
+      },
+      "substitution": {
+         "@id": "upcore:substitution"
+      },
+      "synonym": {
+         "@id": "upcore:synonym"
+      },
+      "title": {
+         "@id": "upcore:title"
+      },
+      "topology": {
+         "@type": "@id",
+         "@id": "upcore:topology"
+      },
+      "translatedFrom": {
+         "@type": "@id",
+         "@id": "upcore:translatedFrom"
+      },
       "type": {
          "@type": "@id",
          "@id": "sparqlfun_rdf:type"
       },
+      "uriTemplate": {
+         "@id": "upcore:uriTemplate"
+      },
+      "urlTemplate": {
+         "@id": "upcore:urlTemplate"
+      },
       "value": {
          "@id": "sparqlfun_rdf:value"
+      },
+      "version": {
+         "@type": "xsd:integer",
+         "@id": "upcore:version"
+      },
+      "width": {
+         "@type": "xsd:integer",
+         "@id": "upcore:width"
+      },
+      "xeno": {
+         "@type": "xsd:boolean",
+         "@id": "upcore:xeno"
       },
       "xxresults": {
          "@type": "@id",
          "@id": "sparqlfun_omo:xxresults"
       },
+      "AbsorptionAnnotation": {
+         "@id": "upcore:Absorption_Annotation"
+      },
+      "ActiveSiteAnnotation": {
+         "@id": "upcore:Active_Site_Annotation"
+      },
+      "ActivityRegulationAnnotation": {
+         "@id": "upcore:Activity_Regulation_Annotation"
+      },
+      "AllergenAnnotation": {
+         "@id": "upcore:Allergen_Annotation"
+      },
+      "AlternativeInitiationAnnotation": {
+         "@id": "upcore:Alternative_Initiation_Annotation"
+      },
+      "AlternativeProductsAnnotation": {
+         "@id": "upcore:Alternative_Products_Annotation"
+      },
+      "AlternativePromoterUsageAnnotation": {
+         "@id": "upcore:Alternative_Promoter_Usage_Annotation"
+      },
+      "AlternativeSequenceAnnotation": {
+         "@id": "upcore:Alternative_Sequence_Annotation"
+      },
+      "AlternativeSplicingAnnotation": {
+         "@id": "upcore:Alternative_Splicing_Annotation"
+      },
+      "Annotation": {
+         "@id": "upcore:Annotation"
+      },
+      "Attribution": {
+         "@id": "upcore:Attribution"
+      },
       "BasicClass": {
          "@id": "owl:Class"
+      },
+      "BetaStrandAnnotation": {
+         "@id": "upcore:Beta_Strand_Annotation"
+      },
+      "Binding": {
+         "@id": "resultset:Binding"
+      },
+      "BindingSiteAnnotation": {
+         "@id": "upcore:Binding_Site_Annotation"
+      },
+      "BiophysicochemicalAnnotation": {
+         "@id": "upcore:Biophysicochemical_Annotation"
+      },
+      "BiotechnologyAnnotation": {
+         "@id": "upcore:Biotechnology_Annotation"
       },
       "BlankNode": {
          "@id": "sparqlfun_rdf:BlankNode"
       },
+      "BookCitation": {
+         "@id": "upcore:Book_Citation"
+      },
+      "CalciumBindingAnnotation": {
+         "@id": "upcore:Calcium_Binding_Annotation"
+      },
+      "CatalyticActivity": {
+         "@id": "upcore:Catalytic_Activity"
+      },
+      "CatalyticActivityAnnotation": {
+         "@id": "upcore:Catalytic_Activity_Annotation"
+      },
+      "CautionAnnotation": {
+         "@id": "upcore:Caution_Annotation"
+      },
+      "CellularComponent": {
+         "@id": "upcore:Cellular_Component"
+      },
+      "ChainAnnotation": {
+         "@id": "upcore:Chain_Annotation"
+      },
+      "Citation": {
+         "@id": "upcore:Citation"
+      },
+      "CitationStatement": {
+         "@id": "upcore:Citation_Statement"
+      },
+      "Class": {
+         "@id": "owl:Class"
+      },
       "ClassNode": {
          "@id": "owl:Class"
+      },
+      "ClassTaxonExclusion": {
+         "@id": "sparqlfun_ubergraph:ClassTaxonExclusion"
+      },
+      "ClassTaxonExclusionViaNeverIn": {
+         "@id": "sparqlfun_ubergraph:ClassTaxonExclusionViaNeverIn"
+      },
+      "ClassTaxonExclusionViaOnlyIn": {
+         "@id": "sparqlfun_ubergraph:ClassTaxonExclusionViaOnlyIn"
       },
       "ClassTrait": {
          "@id": "sparqlfun_rdf:ClassTrait"
       },
+      "Cluster": {
+         "@id": "upcore:Cluster"
+      },
+      "CofactorAnnotation": {
+         "@id": "upcore:Cofactor_Annotation"
+      },
+      "CoiledCoilAnnotation": {
+         "@id": "upcore:Coiled_Coil_Annotation"
+      },
+      "CompositionalBiasAnnotation": {
+         "@id": "upcore:Compositional_Bias_Annotation"
+      },
+      "Concept": {
+         "@id": "upcore:Concept"
+      },
+      "CrossLinkAnnotation": {
+         "@id": "upcore:Cross-link_Annotation"
+      },
+      "Database": {
+         "@id": "upcore:Database"
+      },
       "DefinitionTriple": {
          "@id": "sparqlfun_omo:DefinitionTriple"
       },
+      "DescribeEquivalentExpression": {
+         "@id": "sparqlfun_owl:DescribeEquivalentExpression"
+      },
+      "DevelopmentalStageAnnotation": {
+         "@id": "upcore:Developmental_Stage_Annotation"
+      },
+      "Disease": {
+         "@id": "upcore:Disease"
+      },
+      "DiseaseAnnotation": {
+         "@id": "upcore:Disease_Annotation"
+      },
+      "DisruptionPhenotypeAnnotation": {
+         "@id": "upcore:Disruption_Phenotype_Annotation"
+      },
+      "DisulfideBondAnnotation": {
+         "@id": "upcore:Disulfide_Bond_Annotation"
+      },
+      "DNA": {
+         "@id": "upcore:DNA"
+      },
+      "DomainAnnotation": {
+         "@id": "upcore:Domain_Annotation"
+      },
+      "DomainAssignmentStatement": {
+         "@id": "upcore:Domain_Assignment_Statement"
+      },
+      "DomainExtentAnnotation": {
+         "@id": "upcore:Domain_Extent_Annotation"
+      },
+      "ElectronicCitation": {
+         "@id": "upcore:Electronic_Citation"
+      },
+      "EndpointStatement": {
+         "@id": "upcore:Endpoint_Statement"
+      },
+      "Enzyme": {
+         "@id": "upcore:Enzyme"
+      },
+      "EnzymeRegulationAnnotation": {
+         "@id": "upcore:Enzyme_Regulation_Annotation"
+      },
+      "EquivalenceTripleMixin": {
+         "@id": "sparqlfun_owl:EquivalenceTripleMixin"
+      },
+      "ErroneousGeneModelPredictionAnnotation": {
+         "@id": "upcore:Erroneous_Gene_Model_Prediction_Annotation"
+      },
+      "ErroneousInitiationAnnotation": {
+         "@id": "upcore:Erroneous_Initiation_Annotation"
+      },
+      "ErroneousTerminationAnnotation": {
+         "@id": "upcore:Erroneous_Termination_Annotation"
+      },
+      "ErroneousTranslationAnnotation": {
+         "@id": "upcore:Erroneous_Translation_Annotation"
+      },
+      "ExperimentalInformationAnnotation": {
+         "@id": "upcore:Experimental_Information_Annotation"
+      },
+      "ExternalSequence": {
+         "@id": "upcore:External_Sequence"
+      },
+      "FamilyMembershipStatement": {
+         "@id": "upcore:Family_Membership_Statement"
+      },
+      "FrameshiftAnnotation": {
+         "@id": "upcore:Frameshift_Annotation"
+      },
+      "FunctionAnnotation": {
+         "@id": "upcore:Function_Annotation"
+      },
+      "Gene": {
+         "@id": "upcore:Gene"
+      },
       "GenericResult": {
          "@id": "resultset:GenericResult"
+      },
+      "GenomicDNA": {
+         "@id": "upcore:Genomic_DNA"
+      },
+      "GenomicRNA": {
+         "@id": "upcore:Genomic_RNA"
+      },
+      "GlycosylationAnnotation": {
+         "@id": "upcore:Glycosylation_Annotation"
+      },
+      "HelixAnnotation": {
+         "@id": "upcore:Helix_Annotation"
       },
       "InTaxonTriple": {
          "@id": "sparqlfun_ubergraph:InTaxonTriple"
@@ -143,8 +788,17 @@
       "IndividualTrait": {
          "@id": "sparqlfun_rdf:IndividualTrait"
       },
-      "InferredNeverInTaxon": {
-         "@id": "sparqlfun_ubergraph:InferredNeverInTaxon"
+      "InductionAnnotation": {
+         "@id": "upcore:Induction_Annotation"
+      },
+      "InitiatorMethionineAnnotation": {
+         "@id": "upcore:Initiator_Methionine_Annotation"
+      },
+      "Interaction": {
+         "@id": "upcore:Interaction"
+      },
+      "IntramembraneAnnotation": {
+         "@id": "upcore:Intramembrane_Annotation"
       },
       "IriNode": {
          "@id": "sparqlfun_rdf:IriNode"
@@ -152,8 +806,71 @@
       "IsAOrPartOf": {
          "@id": "sparqlfun_ubergraph:IsAOrPartOf"
       },
+      "Journal": {
+         "@id": "upcore:Journal"
+      },
+      "JournalCitation": {
+         "@id": "upcore:Journal_Citation"
+      },
+      "KineticsAnnotation": {
+         "@id": "upcore:Kinetics_Annotation"
+      },
+      "KnownSequence": {
+         "@id": "upcore:Known_Sequence"
+      },
+      "LipidationAnnotation": {
+         "@id": "upcore:Lipidation_Annotation"
+      },
+      "MassMeasurementMethod": {
+         "@id": "upcore:Mass_Measurement_Method"
+      },
+      "MassSpectrometryAnnotation": {
+         "@id": "upcore:Mass_Spectrometry_Annotation"
+      },
+      "MemberOfRedudantProteome": {
+         "@id": "upcore:Member_Of_Redudant_Proteome"
+      },
+      "MetalBindingAnnotation": {
+         "@id": "upcore:Metal_Binding_Annotation"
+      },
+      "Method": {
+         "@id": "upcore:Method"
+      },
+      "ModificationAnnotation": {
+         "@id": "upcore:Modification_Annotation"
+      },
+      "ModifiedResidueAnnotation": {
+         "@id": "upcore:Modified_Residue_Annotation"
+      },
+      "ModifiedSequence": {
+         "@id": "upcore:Modified_Sequence"
+      },
+      "Molecule": {
+         "@id": "upcore:Molecule"
+      },
+      "MoleculeProcessingAnnotation": {
+         "@id": "upcore:Molecule_Processing_Annotation"
+      },
+      "MotifAnnotation": {
+         "@id": "upcore:Motif_Annotation"
+      },
+      "MRNA": {
+         "@id": "upcore:MRNA"
+      },
+      "MutagenesisAnnotation": {
+         "@id": "upcore:Mutagenesis_Annotation"
+      },
       "NamedIndividualNode": {
          "@id": "owl:NamedIndividual"
+      },
+      "NamedNodeToNamedNodeTriple": {
+         "@id": "sparqlfun_rdf:NamedNodeToNamedNodeTriple"
+      },
+      "NaturalVariantAnnotation": {
+         "@id": "upcore:Natural_Variant_Annotation"
+      },
+      "NaturalVariationAnnotation": {
+         "@id": "upcore:Natural_Variation_Annotation"
       },
       "NeverInTaxonTriple": {
          "@id": "sparqlfun_ubergraph:NeverInTaxonTriple"
@@ -173,8 +890,41 @@
       "NonRedundantQuad": {
          "@id": "sparqlfun_rdf:NonRedundantQuad"
       },
+      "NonAdjacentResiduesAnnotation": {
+         "@id": "upcore:Non-adjacent_Residues_Annotation"
+      },
+      "NonSelfInteraction": {
+         "@id": "upcore:Non_Self_Interaction"
+      },
+      "NonStandardResidueAnnotation": {
+         "@id": "upcore:Non-standard_Residue_Annotation"
+      },
+      "NonTerminalResidueAnnotation": {
+         "@id": "upcore:Non-terminal_Residue_Annotation"
+      },
       "NormalizedInformationContentTriple": {
          "@id": "sparqlfun_ubergraph:NormalizedInformationContentTriple"
+      },
+      "NotObsolete": {
+         "@id": "upcore:Not_Obsolete"
+      },
+      "NotObsoleteProtein": {
+         "@id": "upcore:Not_Obsolete_Protein"
+      },
+      "NotObsoleteTaxon": {
+         "@id": "upcore:Not_Obsolete_Taxon"
+      },
+      "NPBindingAnnotation": {
+         "@id": "upcore:NP_Binding_Annotation"
+      },
+      "NucleotideBindingAnnotation": {
+         "@id": "upcore:Nucleotide_Binding_Annotation"
+      },
+      "NucleotideMappingStatement": {
+         "@id": "upcore:Nucleotide_Mapping_Statement"
+      },
+      "NucleotideResource": {
+         "@id": "upcore:Nucleotide_Resource"
       },
       "OboClass": {
          "@id": "owl:Class"
@@ -185,14 +935,83 @@
       "OboClassQuery": {
          "@id": "sparqlfun_omo:OboClassQuery"
       },
+      "ObservationCitation": {
+         "@id": "upcore:Observation_Citation"
+      },
+      "Obsolete": {
+         "@id": "upcore:Obsolete"
+      },
+      "ObsoleteProtein": {
+         "@id": "upcore:Obsolete_Protein"
+      },
+      "ObsoleteTaxon": {
+         "@id": "upcore:Obsolete_Taxon"
+      },
+      "Organelle": {
+         "@id": "upcore:Organelle"
+      },
+      "Orientation": {
+         "@id": "upcore:Orientation"
+      },
+      "OtherDNA": {
+         "@id": "upcore:Other_DNA"
+      },
+      "OtherRNA": {
+         "@id": "upcore:Other_RNA"
+      },
+      "OwlEquivalentClassTriple": {
+         "@id": "sparqlfun_owl:OwlEquivalentClassTriple"
+      },
+      "OwlNamedEquivalentClassTriple": {
+         "@id": "sparqlfun_owl:OwlNamedEquivalentClassTriple"
+      },
       "PairwiseCommonAncestor": {
          "@id": "sparqlfun_ubergraph:PairwiseCommonAncestor"
       },
       "PairwiseCommonSubClassAncestor": {
          "@id": "sparqlfun_ubergraph:PairwiseCommonSubClassAncestor"
       },
+      "PairwiseMostRecentCommonAncestor": {
+         "@id": "sparqlfun_ubergraph:PairwiseMostRecentCommonAncestor"
+      },
+      "PairwiseMostRecentCommonSubClassAncestor": {
+         "@id": "sparqlfun_ubergraph:PairwiseMostRecentCommonSubClassAncestor"
+      },
+      "Part": {
+         "@id": "upcore:Part"
+      },
+      "Participant": {
+         "@id": "upcore:Participant"
+      },
+      "PatentCitation": {
+         "@id": "upcore:Patent_Citation"
+      },
+      "Pathway": {
+         "@id": "upcore:Pathway"
+      },
+      "PathwayAnnotation": {
+         "@id": "upcore:Pathway_Annotation"
+      },
+      "PeptideAnnotation": {
+         "@id": "upcore:Peptide_Annotation"
+      },
+      "PHDependenceAnnotation": {
+         "@id": "upcore:PH_Dependence_Annotation"
+      },
+      "PharmaceuticalAnnotation": {
+         "@id": "upcore:Pharmaceutical_Annotation"
+      },
+      "Plasmid": {
+         "@id": "upcore:Plasmid"
+      },
+      "PolymorphismAnnotation": {
+         "@id": "upcore:Polymorphism_Annotation"
+      },
       "Prefix": {
          "@id": "sh:PrefixDeclaration"
+      },
+      "PropeptideAnnotation": {
+         "@id": "upcore:Propeptide_Annotation"
       },
       "PropertyNode": {
          "@id": "owl:Property"
@@ -200,8 +1019,32 @@
       "PropertyTrait": {
          "@id": "sparqlfun_rdf:PropertyTrait"
       },
+      "Protein": {
+         "@id": "upcore:Protein"
+      },
+      "ProteinClassifiedWith": {
+         "@id": "sparqlfun_rdf:ProteinClassifiedWith"
+      },
+      "ProteinExistence": {
+         "@id": "upcore:Protein_Existence"
+      },
+      "Proteome": {
+         "@id": "upcore:Proteome"
+      },
+      "ProteomeComponent": {
+         "@id": "upcore:Proteome_Component"
+      },
+      "PTMAnnotation": {
+         "@id": "upcore:PTM_Annotation"
+      },
+      "PublishedCitation": {
+         "@id": "upcore:Published_Citation"
+      },
       "Quad": {
          "@id": "sparqlfun_rdf:Quad"
+      },
+      "Rank": {
+         "@id": "upcore:Rank"
       },
       "RdfTypeTriple": {
          "@id": "sparqlfun_rdf:RdfTypeTriple"
@@ -224,14 +1067,128 @@
       "RdfsSubpropertyOfTriple": {
          "@id": "sparqlfun_rdf:RdfsSubpropertyOfTriple"
       },
+      "RedoxPotentialAnnotation": {
+         "@id": "upcore:Redox_Potential_Annotation"
+      },
+      "ReferenceProteome": {
+         "@id": "upcore:Reference_Proteome"
+      },
+      "RegionAnnotation": {
+         "@id": "upcore:Region_Annotation"
+      },
       "RelationGraphQuad": {
          "@id": "sparqlfun_rdf:RelationGraphQuad"
+      },
+      "RepeatAnnotation": {
+         "@id": "upcore:Repeat_Annotation"
+      },
+      "RepresentativeProteome": {
+         "@id": "upcore:Representative_Proteome"
+      },
+      "Resource": {
+         "@id": "upcore:Resource"
       },
       "ResultSet": {
          "@id": "resultset:ResultSet"
       },
+      "Reviewed": {
+         "@id": "upcore:Reviewed"
+      },
+      "ReviewedProtein": {
+         "@id": "upcore:Reviewed_Protein"
+      },
+      "RibosomalFrameshifting": {
+         "@id": "upcore:Ribosomal_Frameshifting"
+      },
+      "RNA": {
+         "@id": "upcore:RNA"
+      },
+      "RNAEditingAnnotation": {
+         "@id": "upcore:RNA_Editing_Annotation"
+      },
+      "SecondaryStructureAnnotation": {
+         "@id": "upcore:Secondary_Structure_Annotation"
+      },
+      "SelfInteraction": {
+         "@id": "upcore:Self_Interaction"
+      },
+      "Sequence": {
+         "@id": "upcore:Sequence"
+      },
+      "SequenceAnnotation": {
+         "@id": "upcore:Sequence_Annotation"
+      },
+      "SequenceCautionAnnotation": {
+         "@id": "upcore:Sequence_Caution_Annotation"
+      },
+      "SequenceConflictAnnotation": {
+         "@id": "upcore:Sequence_Conflict_Annotation"
+      },
+      "SequenceUncertaintyAnnotation": {
+         "@id": "upcore:Sequence_Uncertainty_Annotation"
+      },
+      "SetwiseCommonSubClassAncestor": {
+         "@id": "sparqlfun_ubergraph:SetwiseCommonSubClassAncestor"
+      },
+      "SetwiseMostRecentCommonSubClassAncestor": {
+         "@id": "sparqlfun_ubergraph:SetwiseMostRecentCommonSubClassAncestor"
+      },
+      "SignalPeptideAnnotation": {
+         "@id": "upcore:Signal_Peptide_Annotation"
+      },
+      "SimilarityAnnotation": {
+         "@id": "upcore:Similarity_Annotation"
+      },
+      "SimpleSequence": {
+         "@id": "upcore:Simple_Sequence"
+      },
+      "SiteAnnotation": {
+         "@id": "upcore:Site_Annotation"
+      },
+      "SomeValuesFromRestriction": {
+         "@id": "owl:Restriction"
+      },
+      "Statement": {
+         "@id": "rdf:Statement"
+      },
+      "Status": {
+         "@id": "upcore:Status"
+      },
+      "Strain": {
+         "@id": "upcore:Strain"
+      },
+      "StructureDeterminationMethod": {
+         "@id": "upcore:Structure_Determination_Method"
+      },
+      "StructureMappingStatement": {
+         "@id": "upcore:Structure_Mapping_Statement"
+      },
+      "StructureResource": {
+         "@id": "upcore:Structure_Resource"
+      },
+      "StructuredName": {
+         "@id": "upcore:Structured_Name"
+      },
+      "SubcellularLocation": {
+         "@id": "upcore:Subcellular_Location"
+      },
+      "SubcellularLocationAnnotation": {
+         "@id": "upcore:Subcellular_Location_Annotation"
+      },
       "SubClassCountTriple": {
          "@id": "sparqlfun_ubergraph:SubClassCountTriple"
+      },
+      "SubclassOfSomeValuesFrom": {
+         "@id": "sparqlfun_owl:SubclassOfSomeValuesFrom"
+      },
+      "SubmissionCitation": {
+         "@id": "upcore:Submission_Citation"
+      },
+      "SubunitAnnotation": {
+         "@id": "upcore:Subunit_Annotation"
+      },
+      "Taxon": {
+         "@id": "upcore:Taxon"
       },
       "TaxonApplicable": {
          "@id": "sparqlfun_ubergraph:TaxonApplicable"
@@ -242,8 +1199,50 @@
       "TaxonClass": {
          "@id": "sparqlfun_ubergraph:TaxonClass"
       },
+      "TemperatureDependenceAnnotation": {
+         "@id": "upcore:Temperature_Dependence_Annotation"
+      },
+      "ThesisCitation": {
+         "@id": "upcore:Thesis_Citation"
+      },
+      "Thing": {
+         "@id": "upcore:Thing"
+      },
+      "Tissue": {
+         "@id": "upcore:Tissue"
+      },
+      "TissueSpecificityAnnotation": {
+         "@id": "upcore:Tissue_Specificity_Annotation"
+      },
+      "TopologicalDomainAnnotation": {
+         "@id": "upcore:Topological_Domain_Annotation"
+      },
+      "Topology": {
+         "@id": "upcore:Topology"
+      },
+      "ToxicDoseAnnotation": {
+         "@id": "upcore:Toxic_Dose_Annotation"
+      },
+      "TranscribedRNA": {
+         "@id": "upcore:Transcribed_RNA"
+      },
+      "TranscriptResource": {
+         "@id": "upcore:Transcript_Resource"
+      },
+      "TransitPeptideAnnotation": {
+         "@id": "upcore:Transit_Peptide_Annotation"
+      },
+      "TransmembraneAnnotation": {
+         "@id": "upcore:Transmembrane_Annotation"
+      },
+      "Transposon": {
+         "@id": "upcore:Transposon"
+      },
       "Triple": {
          "@id": "rdf:Statement"
+      },
+      "TurnAnnotation": {
+         "@id": "upcore:Turn_Annotation"
       },
       "TypedNode": {
          "@id": "sparqlfun_rdf:TypedNode"
@@ -253,6 +1252,24 @@
       },
       "UbergraphTaxonClass": {
          "@id": "sparqlfun_ubergraph:UbergraphTaxonClass"
+      },
+      "UnassignedDNA": {
+         "@id": "upcore:Unassigned_DNA"
+      },
+      "UnassignedRNA": {
+         "@id": "upcore:Unassigned_RNA"
+      },
+      "UnknownSequence": {
+         "@id": "upcore:Unknown_Sequence"
+      },
+      "UnpublishedCitation": {
+         "@id": "upcore:Unpublished_Citation"
+      },
+      "ViralCRNA": {
+         "@id": "upcore:Viral_cRNA"
+      },
+      "ZincFingerAnnotation": {
+         "@id": "upcore:Zinc_Finger_Annotation"
       }
    }
 }

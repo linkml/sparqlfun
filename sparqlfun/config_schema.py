@@ -1,5 +1,5 @@
 # Auto generated from config_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-11-19T17:37:54
+# Generation date: 2021-11-24T10:59:42
 # Schema: config_schema
 #
 # id: https://w3id.org/sparqlfun/config_schema
@@ -32,6 +32,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 # Namespaces
 CONFIG_SCHEMA = CurieNamespace('config_schema', 'https://w3id.org/sparqlfun/config_schema')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
+RESULTSET = CurieNamespace('resultset', 'https://w3id.org/sparqlfun/resultset')
 DEFAULT_ = CONFIG_SCHEMA
 
 
@@ -39,6 +40,10 @@ DEFAULT_ = CONFIG_SCHEMA
 
 # Class references
 class EndpointName(extended_str):
+    pass
+
+
+class BindingBindingKey(extended_str):
     pass
 
 
@@ -71,6 +76,7 @@ class Endpoint(YAMLRoot):
     name: Union[str, EndpointName] = None
     url: str = None
     type_property: Optional[str] = None
+    example_queries: Optional[Union[Union[dict, "ExampleQuery"], List[Union[dict, "ExampleQuery"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.name):
@@ -85,6 +91,83 @@ class Endpoint(YAMLRoot):
 
         if self.type_property is not None and not isinstance(self.type_property, str):
             self.type_property = str(self.type_property)
+
+        if not isinstance(self.example_queries, list):
+            self.example_queries = [self.example_queries] if self.example_queries is not None else []
+        self.example_queries = [v if isinstance(v, ExampleQuery) else ExampleQuery(**as_dict(v)) for v in self.example_queries]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ExampleQuery(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CONFIG_SCHEMA.ExampleQuery
+    class_class_curie: ClassVar[str] = "config_schema:ExampleQuery"
+    class_name: ClassVar[str] = "ExampleQuery"
+    class_model_uri: ClassVar[URIRef] = CONFIG_SCHEMA.ExampleQuery
+
+    query_template: Optional[str] = None
+    bindings: Optional[Union[Dict[Union[str, BindingBindingKey], Union[dict, "Binding"]], List[Union[dict, "Binding"]]]] = empty_dict()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.query_template is not None and not isinstance(self.query_template, str):
+            self.query_template = str(self.query_template)
+
+        self._normalize_inlined_as_dict(slot_name="bindings", slot_type=Binding, key_name="binding_key", keyed=True)
+
+        super().__post_init__(**kwargs)
+
+
+class GenericResult(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = RESULTSET.GenericResult
+    class_class_curie: ClassVar[str] = "resultset:GenericResult"
+    class_name: ClassVar[str] = "GenericResult"
+    class_model_uri: ClassVar[URIRef] = CONFIG_SCHEMA.GenericResult
+
+
+@dataclass
+class ResultSet(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = RESULTSET.ResultSet
+    class_class_curie: ClassVar[str] = "resultset:ResultSet"
+    class_name: ClassVar[str] = "ResultSet"
+    class_model_uri: ClassVar[URIRef] = CONFIG_SCHEMA.ResultSet
+
+    results: Optional[Union[Union[dict, GenericResult], List[Union[dict, GenericResult]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.results, list):
+            self.results = [self.results] if self.results is not None else []
+        self.results = [v if isinstance(v, GenericResult) else GenericResult(**as_dict(v)) for v in self.results]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Binding(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = RESULTSET.Binding
+    class_class_curie: ClassVar[str] = "resultset:Binding"
+    class_name: ClassVar[str] = "Binding"
+    class_model_uri: ClassVar[URIRef] = CONFIG_SCHEMA.Binding
+
+    binding_key: Union[str, BindingBindingKey] = None
+    binding_value: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.binding_key):
+            self.MissingRequiredField("binding_key")
+        if not isinstance(self.binding_key, BindingBindingKey):
+            self.binding_key = BindingBindingKey(self.binding_key)
+
+        if self.binding_value is not None and not isinstance(self.binding_value, str):
+            self.binding_value = str(self.binding_value)
 
         super().__post_init__(**kwargs)
 
@@ -107,3 +190,21 @@ slots.url = Slot(uri=CONFIG_SCHEMA.url, name="url", curie=CONFIG_SCHEMA.curie('u
 
 slots.type_property = Slot(uri=CONFIG_SCHEMA.type_property, name="type_property", curie=CONFIG_SCHEMA.curie('type_property'),
                    model_uri=CONFIG_SCHEMA.type_property, domain=None, range=Optional[str])
+
+slots.example_queries = Slot(uri=CONFIG_SCHEMA.example_queries, name="example_queries", curie=CONFIG_SCHEMA.curie('example_queries'),
+                   model_uri=CONFIG_SCHEMA.example_queries, domain=None, range=Optional[Union[Union[dict, ExampleQuery], List[Union[dict, ExampleQuery]]]])
+
+slots.results = Slot(uri=RESULTSET.results, name="results", curie=RESULTSET.curie('results'),
+                   model_uri=CONFIG_SCHEMA.results, domain=None, range=Optional[Union[Union[dict, GenericResult], List[Union[dict, GenericResult]]]])
+
+slots.binding_key = Slot(uri=RESULTSET.binding_key, name="binding_key", curie=RESULTSET.curie('binding_key'),
+                   model_uri=CONFIG_SCHEMA.binding_key, domain=None, range=URIRef)
+
+slots.binding_value = Slot(uri=RESULTSET.binding_value, name="binding_value", curie=RESULTSET.curie('binding_value'),
+                   model_uri=CONFIG_SCHEMA.binding_value, domain=None, range=Optional[str])
+
+slots.query_template = Slot(uri=RESULTSET.query_template, name="query_template", curie=RESULTSET.curie('query_template'),
+                   model_uri=CONFIG_SCHEMA.query_template, domain=None, range=Optional[str])
+
+slots.bindings = Slot(uri=RESULTSET.bindings, name="bindings", curie=RESULTSET.curie('bindings'),
+                   model_uri=CONFIG_SCHEMA.bindings, domain=None, range=Optional[Union[Dict[Union[str, BindingBindingKey], Union[dict, Binding]], List[Union[dict, Binding]]]])

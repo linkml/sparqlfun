@@ -83,6 +83,7 @@ class SparqlEngine:
     lang: LANGSTR = None
     prefix_map: PREFIXMAP = None
     limit: int = 30
+    ignore_unmapped_predicates = False
 
     def query(self, template: Union[Type[YAMLRoot], YAMLRoot, SparqlTemplateInstance],
               _url = None,
@@ -97,6 +98,7 @@ class SparqlEngine:
         """
         if _url is None:
             _url = self.get_endpoint().url
+        logging.info(f'Querying: {_url}')
         prefix_map = self._get_prefix_map()
         cn = template.class_name
         c = self.schema_view.get_class(cn)
@@ -107,6 +109,8 @@ class SparqlEngine:
             ti = self.extract_template_instance(template, **kwargs)
         template_py_class = ti.python_class
         sq = ti.query
+        for k, v in ti.bindings.items():
+            default_vals[k] = v
 
         objs = []
         result_set = ResultSet()
@@ -148,8 +152,10 @@ class SparqlEngine:
             else:
                 result_template = template_py_class
             logging.info(f'Result template: {result_template}')
-            for obj in rdflib_loader.from_rdf_graph(g, target_class=result_template, schemaview=self.schema_view, prefix_map=prefix_map):
+            for obj in rdflib_loader.from_rdf_graph(g, target_class=result_template, schemaview=self.schema_view, prefix_map=prefix_map,
+                                                    ignore_unmapped_predicates=self.ignore_unmapped_predicates):
                 objs.append(obj)
+        logging.info(f'Num objects = {len(objs)}')
         result_set.results = objs
         return result_set
 
@@ -206,7 +212,8 @@ class SparqlEngine:
         sq = self.extract_sparql_template(template)
         # pass-through Jinja2 template rendering
         jt = Template(sq.query)
-        query = jt.render(**kwargs)
+        query = jt.render(_values=lambda l: ' '.join(l),
+                          **kwargs)
         # post-Jinja2, replace any variables that are set
         query = self._replace(query, kwargs)
         pfx = self._get_prefix_block(query)
@@ -290,9 +297,37 @@ class SparqlEngine:
         return nm
 
 
-    def _replace(self, template: str, argdict: dict = {}) -> str:
+    def _OLD_replace(self, template: str, argdict: dict = {}) -> str:
+        import re
+        m = re.search(r'(.*\s+)(where)(\s+.*)', template, flags=re.IGNORECASE | re.DOTALL)
+        if m:
+            pre_where = m.group(1)
+            where = m.group(2)
+            post_where = m.group(3)
+        else:
+            raise ValueError(f'No WHERE in query: {template}')
         for k, v in argdict.items():
-            template = template.replace(f'?{k}', v)
+            if not isinstance(v, list):
+                pre_where = re.sub(f'\\?{k}([^a-zA-Z0-9_])', f'BIND({v} AS ?{k})\\1', pre_where)
+                post_where = re.sub(f'\\?{k}([^a-zA-Z0-9_])', f'{v}\\1', post_where)
+                #template = template.replace(f'?{k}', v)
+        template = f'{pre_where}{where}{post_where}'
+        return template
+
+    def _replace(self, template: str, argdict: dict = {}) -> str:
+        import re
+        m = re.search(r'(.*\s+where\s*\{)(\s+.*)', template, flags=re.IGNORECASE | re.DOTALL)
+        if m:
+            in_select = m.group(1)
+            post_select = m.group(2)
+        else:
+            raise ValueError(f'No WHERE in query: {template}')
+        template = in_select
+        for k, v in argdict.items():
+            if isinstance(v, list):
+                v = ' '.join(v)
+            template += f'\n  VALUES ?{k} {{ {v} }} .'
+        template += post_select
         return template
 
 
@@ -332,12 +367,20 @@ class OutputFormat(Enum):
 @click.option('-M', '--curie-maps', default=['obo_context'],
               show_default=True, multiple=True,
               help="names of CURIE maps to load")
+@click.option('-P', '--prefix',
+              multiple=True,
+              help="prefix list, specified as prefix=uribase")
+@click.option('-m', '--module', default='sparqlfun.model',
+              show_default=True,
+              help="name of module to load")
+@click.option('-S', '--schema',
+              help="path to schema, if not default")
 @click.option('-T', '--template',
               required=True,
               help='name of template')
 @click.option('-v', '--verbose', count=True)
 @click.argument('params', nargs=-1)
-def cli(params: List[str], endpoint: str, limit: int, curie_maps: List[str],
+def cli(params: List[str], module: str, schema: str, endpoint: str, limit: int, curie_maps: List[str], prefix: List[str],
         to_format: str, template: str, verbose: int):
     """
     Query sparql template
@@ -345,16 +388,21 @@ def cli(params: List[str], endpoint: str, limit: int, curie_maps: List[str],
     Examples:
 
     \b
-        sparqlfun -t
-            $ BAR
+        common ancestors
+
+            $ sparqlfun -e ubergraph -T PairwiseCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
 
     """
     logging.basicConfig(level=LOGLEVEL[verbose])
     se = SparqlEngine(endpoint=endpoint)
+    logging.info(f'Engine={se}')
+    se.ignore_unmapped_predicates = True
+    if schema:
+        se.schema_view = SchemaView(schema)
     sv = se.schema_view
 
     se.limit = limit
-    module = importlib.import_module('sparqlfun.model')
+    module = importlib.import_module(module)
     template_py = getattr(module, template)
     args = []
     kwargs = {}
@@ -376,6 +424,9 @@ def cli(params: List[str], endpoint: str, limit: int, curie_maps: List[str],
         for p in prefixes:
             if p in cmap:
                 se.bind_prefixes(**{p: cmap[p]})
+    for p in prefix:
+        [k,v] = p.split('=')
+        se.bind_prefixes(**{k: v})
     if to_format == 'json':
         dumper = json_dumper
     elif to_format == 'yaml':

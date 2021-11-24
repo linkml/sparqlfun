@@ -1,0 +1,27 @@
+id: https://w3id.org/sparqlfun/uniprot_queries
+name: sparqlfun-uniprot
+title: sparqlfun uniprot module
+description: >-
+  Abstractions for querying uniprot
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  uniprot_queries: https://w3id.org/sparqlfun/uniprot_queries
+  linkml: https://w3id.org/linkml/
+
+default_prefix: sparqlfun_rdf
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+
+imports:
+  - uniprot
+
+classes:
+  protein classified with:
+    slots:
+      - subject
+      - object
+    annotations:
+      sparql.select: SELECT * WHERE {?subject upcore:classifiedWith ?object}

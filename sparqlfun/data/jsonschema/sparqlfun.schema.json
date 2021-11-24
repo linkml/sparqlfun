@@ -1,5 +1,93 @@
 {
    "$defs": {
+      "AbsorptionAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "AbsorptionAnnotation",
+         "type": "object"
+      },
+      "ActiveSiteAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ActiveSiteAnnotation",
+         "type": "object"
+      },
+      "ActivityRegulationAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ActivityRegulationAnnotation",
+         "type": "object"
+      },
+      "AllergenAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "AllergenAnnotation",
+         "type": "object"
+      },
+      "AlternativeInitiationAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "AlternativeInitiationAnnotation",
+         "type": "object"
+      },
+      "AlternativeProductsAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "AlternativeProductsAnnotation",
+         "type": "object"
+      },
+      "AlternativePromoterUsageAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "AlternativePromoterUsageAnnotation",
+         "type": "object"
+      },
+      "AlternativeSequenceAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "AlternativeSequenceAnnotation",
+         "type": "object"
+      },
+      "AlternativeSplicingAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "AlternativeSplicingAnnotation",
+         "type": "object"
+      },
+      "Annotation": {
+         "additionalProperties": false,
+         "description": "Description of a resource on a specific topic.",
+         "properties": {},
+         "required": [],
+         "title": "Annotation",
+         "type": "object"
+      },
+      "Attribution": {
+         "additionalProperties": false,
+         "description": "Entity used to attach evidence or provenance to a rdf statement via reification.",
+         "properties": {},
+         "required": [],
+         "title": "Attribution",
+         "type": "object"
+      },
       "BasicClass": {
          "additionalProperties": false,
          "description": "",
@@ -21,6 +109,55 @@
          "title": "BasicClass",
          "type": "object"
       },
+      "BetaStrandAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "BetaStrandAnnotation",
+         "type": "object"
+      },
+      "Binding": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "binding_key": {
+               "type": "string"
+            },
+            "binding_value": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "binding_key"
+         ],
+         "title": "Binding",
+         "type": "object"
+      },
+      "BindingSiteAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "BindingSiteAnnotation",
+         "type": "object"
+      },
+      "BiophysicochemicalAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "BiophysicochemicalAnnotation",
+         "type": "object"
+      },
+      "BiotechnologyAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "BiotechnologyAnnotation",
+         "type": "object"
+      },
       "BlankNode": {
          "additionalProperties": false,
          "description": "A node with an ID that is not preserved between databases",
@@ -34,6 +171,136 @@
             "id"
          ],
          "title": "BlankNode",
+         "type": "object"
+      },
+      "BookCitation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "BookCitation",
+         "type": "object"
+      },
+      "CalciumBindingAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "CalciumBindingAnnotation",
+         "type": "object"
+      },
+      "CatalyticActivity": {
+         "additionalProperties": false,
+         "description": "The catalytic activity of an enzyme.",
+         "properties": {},
+         "required": [],
+         "title": "CatalyticActivity",
+         "type": "object"
+      },
+      "CatalyticActivityAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "CatalyticActivityAnnotation",
+         "type": "object"
+      },
+      "CautionAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "CautionAnnotation",
+         "type": "object"
+      },
+      "CellularComponent": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "CellularComponent",
+         "type": "object"
+      },
+      "ChainAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ChainAnnotation",
+         "type": "object"
+      },
+      "Citation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Citation",
+         "type": "object"
+      },
+      "CitationStatement": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "CitationStatement",
+         "type": "object"
+      },
+      "Class": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Class",
          "type": "object"
       },
       "ClassNode": {
@@ -52,6 +319,187 @@
             "id"
          ],
          "title": "ClassNode",
+         "type": "object"
+      },
+      "ClassTaxonExclusion": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "class_with_constraint": {
+               "type": "string"
+            },
+            "direct_taxon": {
+               "type": "string"
+            },
+            "object": {
+               "description": "The taxon that cannot have the subject class.",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "description": "The class inferred to have the constraint",
+               "type": "string"
+            },
+            "subject_predicate": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "ClassTaxonExclusion",
+         "type": "object"
+      },
+      "ClassTaxonExclusionViaNeverIn": {
+         "additionalProperties": false,
+         "description": "An inferred never-in between a subject term and an object taxon, which holds\nwhen the inferred direct taxon is not in an ancestry relationship with the object taxon",
+         "properties": {
+            "class_with_constraint": {
+               "type": "string"
+            },
+            "direct_taxon": {
+               "type": "string"
+            },
+            "object": {
+               "description": "The taxon that cannot have the subject class.",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "description": "The class inferred to have the constraint",
+               "type": "string"
+            },
+            "subject_predicate": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "ClassTaxonExclusionViaNeverIn",
+         "type": "object"
+      },
+      "ClassTaxonExclusionViaOnlyIn": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "class_with_constraint": {
+               "type": "string"
+            },
+            "direct_taxon": {
+               "type": "string"
+            },
+            "object": {
+               "description": "The taxon that cannot have the subject class.",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "description": "The class inferred to have the constraint",
+               "type": "string"
+            },
+            "subject_predicate": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "ClassTaxonExclusionViaOnlyIn",
+         "type": "object"
+      },
+      "Cluster": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Cluster",
+         "type": "object"
+      },
+      "CofactorAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "CofactorAnnotation",
+         "type": "object"
+      },
+      "CoiledCoilAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "CoiledCoilAnnotation",
+         "type": "object"
+      },
+      "CompositionalBiasAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "CompositionalBiasAnnotation",
+         "type": "object"
+      },
+      "Concept": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Concept",
+         "type": "object"
+      },
+      "CrossLinkAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "CrossLinkAnnotation",
+         "type": "object"
+      },
+      "DNA": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "DNA",
+         "type": "object"
+      },
+      "Database": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Database",
          "type": "object"
       },
       "DefinitionTriple": {
@@ -91,6 +539,302 @@
          "title": "DeprecatedOboClassQuery",
          "type": "object"
       },
+      "DescribeEquivalentExpression": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "results": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "DescribeEquivalentExpression",
+         "type": "object"
+      },
+      "DevelopmentalStageAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "DevelopmentalStageAnnotation",
+         "type": "object"
+      },
+      "Disease": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Disease",
+         "type": "object"
+      },
+      "DiseaseAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "DiseaseAnnotation",
+         "type": "object"
+      },
+      "DisruptionPhenotypeAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "DisruptionPhenotypeAnnotation",
+         "type": "object"
+      },
+      "DisulfideBondAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "DisulfideBondAnnotation",
+         "type": "object"
+      },
+      "DomainAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "DomainAnnotation",
+         "type": "object"
+      },
+      "DomainAssignmentStatement": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "DomainAssignmentStatement",
+         "type": "object"
+      },
+      "DomainExtentAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "DomainExtentAnnotation",
+         "type": "object"
+      },
+      "ElectronicCitation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "ElectronicCitation",
+         "type": "object"
+      },
+      "EndpointStatement": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "EndpointStatement",
+         "type": "object"
+      },
+      "Enzyme": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Enzyme",
+         "type": "object"
+      },
+      "EnzymeRegulationAnnotation": {
+         "additionalProperties": false,
+         "description": "The use of this class has been replaced by Activity_Regulation_Annotation",
+         "properties": {},
+         "required": [],
+         "title": "EnzymeRegulationAnnotation",
+         "type": "object"
+      },
+      "ErroneousGeneModelPredictionAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ErroneousGeneModelPredictionAnnotation",
+         "type": "object"
+      },
+      "ErroneousInitiationAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ErroneousInitiationAnnotation",
+         "type": "object"
+      },
+      "ErroneousTerminationAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ErroneousTerminationAnnotation",
+         "type": "object"
+      },
+      "ErroneousTranslationAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ErroneousTranslationAnnotation",
+         "type": "object"
+      },
+      "ExperimentalInformationAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ExperimentalInformationAnnotation",
+         "type": "object"
+      },
+      "ExternalSequence": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ExternalSequence",
+         "type": "object"
+      },
+      "FamilyMembershipStatement": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "FamilyMembershipStatement",
+         "type": "object"
+      },
+      "FrameshiftAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "FrameshiftAnnotation",
+         "type": "object"
+      },
+      "FunctionAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "FunctionAnnotation",
+         "type": "object"
+      },
+      "Gene": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Gene",
+         "type": "object"
+      },
+      "GenomicDNA": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "GenomicDNA",
+         "type": "object"
+      },
+      "GenomicRNA": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "GenomicRNA",
+         "type": "object"
+      },
+      "GlycosylationAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "GlycosylationAnnotation",
+         "type": "object"
+      },
+      "HelixAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "HelixAnnotation",
+         "type": "object"
+      },
       "InTaxonTriple": {
          "additionalProperties": false,
          "description": "In ubergraph, an in-taxon triple is pre-inferred",
@@ -110,32 +854,36 @@
          "title": "InTaxonTriple",
          "type": "object"
       },
-      "InferredNeverInTaxon": {
+      "InductionAnnotation": {
          "additionalProperties": false,
-         "description": "We infer via join",
-         "properties": {
-            "class_with_constraint": {
-               "type": "string"
-            },
-            "direct_taxon": {
-               "type": "string"
-            },
-            "object": {
-               "description": "a literal or node representing the object of the triple",
-               "type": "string"
-            },
-            "predicate": {
-               "type": "string"
-            },
-            "subject": {
-               "type": "string"
-            },
-            "subject_predicate": {
-               "type": "string"
-            }
-         },
+         "description": "",
+         "properties": {},
          "required": [],
-         "title": "InferredNeverInTaxon",
+         "title": "InductionAnnotation",
+         "type": "object"
+      },
+      "InitiatorMethionineAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "InitiatorMethionineAnnotation",
+         "type": "object"
+      },
+      "Interaction": {
+         "additionalProperties": false,
+         "description": "Description of a protein-protein interaction.",
+         "properties": {},
+         "required": [],
+         "title": "Interaction",
+         "type": "object"
+      },
+      "IntramembraneAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "IntramembraneAnnotation",
          "type": "object"
       },
       "IriNode": {
@@ -177,6 +925,268 @@
          "title": "IsAOrPartOf",
          "type": "object"
       },
+      "Journal": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Journal",
+         "type": "object"
+      },
+      "JournalCitation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "JournalCitation",
+         "type": "object"
+      },
+      "KineticsAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "KineticsAnnotation",
+         "type": "object"
+      },
+      "KnownSequence": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "KnownSequence",
+         "type": "object"
+      },
+      "LipidationAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "LipidationAnnotation",
+         "type": "object"
+      },
+      "MRNA": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "MRNA",
+         "type": "object"
+      },
+      "MassMeasurementMethod": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "MassMeasurementMethod",
+         "type": "object"
+      },
+      "MassSpectrometryAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "MassSpectrometryAnnotation",
+         "type": "object"
+      },
+      "MemberOfRedudantProteome": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "alternativeName": {
+               "$ref": "#/$defs/StructuredName"
+            },
+            "annotation": {
+               "$ref": "#/$defs/Annotation"
+            },
+            "attribution": {
+               "$ref": "#/$defs/Attribution"
+            },
+            "citation": {
+               "type": "string"
+            },
+            "classifiedWith": {
+               "type": "string"
+            },
+            "conflictingSequence": {
+               "$ref": "#/$defs/ExternalSequence"
+            },
+            "created": {
+               "format": "date",
+               "type": "string"
+            },
+            "encodedBy": {
+               "type": "string"
+            },
+            "enzyme": {
+               "type": "string"
+            },
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "interaction": {
+               "$ref": "#/$defs/Interaction"
+            },
+            "isolatedFrom": {
+               "$ref": "#/$defs/Tissue"
+            },
+            "mappedAnnotation": {
+               "$ref": "#/$defs/Annotation"
+            },
+            "mappedCitation": {
+               "type": "string"
+            },
+            "mnemonic": {
+               "type": "string"
+            },
+            "modified": {
+               "format": "date",
+               "type": "string"
+            },
+            "oldMnemonic": {
+               "type": "string"
+            },
+            "organism": {
+               "type": "string"
+            },
+            "potentialSequence": {
+               "$ref": "#/$defs/Sequence"
+            },
+            "recommendedName": {
+               "$ref": "#/$defs/StructuredName"
+            },
+            "representativeFor": {
+               "type": "string"
+            },
+            "reviewed": {
+               "type": "boolean"
+            },
+            "seeAlso": {
+               "type": "string"
+            },
+            "seedFor": {
+               "type": "string"
+            },
+            "sequence": {
+               "$ref": "#/$defs/Sequence"
+            },
+            "submittedName": {
+               "$ref": "#/$defs/StructuredName"
+            },
+            "type": {
+               "type": "string"
+            },
+            "version": {
+               "type": "integer"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "MemberOfRedudantProteome",
+         "type": "object"
+      },
+      "MetalBindingAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "MetalBindingAnnotation",
+         "type": "object"
+      },
+      "Method": {
+         "additionalProperties": false,
+         "description": "An experimental method.",
+         "properties": {},
+         "required": [],
+         "title": "Method",
+         "type": "object"
+      },
+      "ModificationAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ModificationAnnotation",
+         "type": "object"
+      },
+      "ModifiedResidueAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ModifiedResidueAnnotation",
+         "type": "object"
+      },
+      "ModifiedSequence": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ModifiedSequence",
+         "type": "object"
+      },
+      "Molecule": {
+         "additionalProperties": false,
+         "description": "A biological molecule.",
+         "properties": {},
+         "required": [],
+         "title": "Molecule",
+         "type": "object"
+      },
+      "MoleculeProcessingAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "MoleculeProcessingAnnotation",
+         "type": "object"
+      },
+      "MotifAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "MotifAnnotation",
+         "type": "object"
+      },
+      "MutagenesisAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "MutagenesisAnnotation",
+         "type": "object"
+      },
+      "NPBindingAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "NPBindingAnnotation",
+         "type": "object"
+      },
       "NamedIndividualNode": {
          "additionalProperties": false,
          "description": "A node that represents an OWL Named Individual",
@@ -190,6 +1200,41 @@
             "id"
          ],
          "title": "NamedIndividualNode",
+         "type": "object"
+      },
+      "NamedNodeToNamedNodeTriple": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "NamedNodeToNamedNodeTriple",
+         "type": "object"
+      },
+      "NaturalVariantAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "NaturalVariantAnnotation",
+         "type": "object"
+      },
+      "NaturalVariationAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "NaturalVariationAnnotation",
          "type": "object"
       },
       "NeverInTaxonTriple": {
@@ -226,6 +1271,14 @@
          "title": "Node",
          "type": "object"
       },
+      "NonAdjacentResiduesAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "NonAdjacentResiduesAnnotation",
+         "type": "object"
+      },
       "NonRedundantQuad": {
          "additionalProperties": false,
          "description": "A triple that indicates the asserted type of the subject entity",
@@ -249,6 +1302,30 @@
          "title": "NonRedundantQuad",
          "type": "object"
       },
+      "NonSelfInteraction": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "NonSelfInteraction",
+         "type": "object"
+      },
+      "NonStandardResidueAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "NonStandardResidueAnnotation",
+         "type": "object"
+      },
+      "NonTerminalResidueAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "NonTerminalResidueAnnotation",
+         "type": "object"
+      },
       "NormalizedInformationContentTriple": {
          "additionalProperties": false,
          "description": "",
@@ -266,6 +1343,164 @@
          },
          "required": [],
          "title": "NormalizedInformationContentTriple",
+         "type": "object"
+      },
+      "NotObsolete": {
+         "additionalProperties": false,
+         "description": "A class introduced to group all records that are currently in the database.",
+         "properties": {},
+         "required": [],
+         "title": "NotObsolete",
+         "type": "object"
+      },
+      "NotObsoleteProtein": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "alternativeName": {
+               "$ref": "#/$defs/StructuredName"
+            },
+            "annotation": {
+               "$ref": "#/$defs/Annotation"
+            },
+            "attribution": {
+               "$ref": "#/$defs/Attribution"
+            },
+            "citation": {
+               "type": "string"
+            },
+            "classifiedWith": {
+               "type": "string"
+            },
+            "conflictingSequence": {
+               "$ref": "#/$defs/ExternalSequence"
+            },
+            "created": {
+               "format": "date",
+               "type": "string"
+            },
+            "encodedBy": {
+               "type": "string"
+            },
+            "enzyme": {
+               "type": "string"
+            },
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "interaction": {
+               "$ref": "#/$defs/Interaction"
+            },
+            "isolatedFrom": {
+               "$ref": "#/$defs/Tissue"
+            },
+            "mappedAnnotation": {
+               "$ref": "#/$defs/Annotation"
+            },
+            "mappedCitation": {
+               "type": "string"
+            },
+            "mnemonic": {
+               "type": "string"
+            },
+            "modified": {
+               "format": "date",
+               "type": "string"
+            },
+            "oldMnemonic": {
+               "type": "string"
+            },
+            "organism": {
+               "type": "string"
+            },
+            "potentialSequence": {
+               "$ref": "#/$defs/Sequence"
+            },
+            "recommendedName": {
+               "$ref": "#/$defs/StructuredName"
+            },
+            "representativeFor": {
+               "type": "string"
+            },
+            "reviewed": {
+               "type": "boolean"
+            },
+            "seeAlso": {
+               "type": "string"
+            },
+            "seedFor": {
+               "type": "string"
+            },
+            "sequence": {
+               "$ref": "#/$defs/Sequence"
+            },
+            "submittedName": {
+               "$ref": "#/$defs/StructuredName"
+            },
+            "type": {
+               "type": "string"
+            },
+            "version": {
+               "type": "integer"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "NotObsoleteProtein",
+         "type": "object"
+      },
+      "NotObsoleteTaxon": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "NotObsoleteTaxon",
+         "type": "object"
+      },
+      "NucleotideBindingAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "NucleotideBindingAnnotation",
+         "type": "object"
+      },
+      "NucleotideMappingStatement": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "NucleotideMappingStatement",
+         "type": "object"
+      },
+      "NucleotideResource": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "NucleotideResource",
          "type": "object"
       },
       "OboClass": {
@@ -340,9 +1575,258 @@
          "title": "OboClassQuery",
          "type": "object"
       },
-      "PairwiseCommonAncestor": {
+      "ObservationCitation": {
          "additionalProperties": false,
          "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "ObservationCitation",
+         "type": "object"
+      },
+      "Obsolete": {
+         "additionalProperties": false,
+         "description": "The class of all obsolete records in the database (i.e. records that where once published but are now removed).",
+         "properties": {},
+         "required": [],
+         "title": "Obsolete",
+         "type": "object"
+      },
+      "ObsoleteProtein": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "alternativeName": {
+               "$ref": "#/$defs/StructuredName"
+            },
+            "annotation": {
+               "$ref": "#/$defs/Annotation"
+            },
+            "attribution": {
+               "$ref": "#/$defs/Attribution"
+            },
+            "citation": {
+               "type": "string"
+            },
+            "classifiedWith": {
+               "type": "string"
+            },
+            "conflictingSequence": {
+               "$ref": "#/$defs/ExternalSequence"
+            },
+            "created": {
+               "format": "date",
+               "type": "string"
+            },
+            "encodedBy": {
+               "type": "string"
+            },
+            "enzyme": {
+               "type": "string"
+            },
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "interaction": {
+               "$ref": "#/$defs/Interaction"
+            },
+            "isolatedFrom": {
+               "$ref": "#/$defs/Tissue"
+            },
+            "mappedAnnotation": {
+               "$ref": "#/$defs/Annotation"
+            },
+            "mappedCitation": {
+               "type": "string"
+            },
+            "mnemonic": {
+               "type": "string"
+            },
+            "modified": {
+               "format": "date",
+               "type": "string"
+            },
+            "oldMnemonic": {
+               "type": "string"
+            },
+            "organism": {
+               "type": "string"
+            },
+            "potentialSequence": {
+               "$ref": "#/$defs/Sequence"
+            },
+            "recommendedName": {
+               "$ref": "#/$defs/StructuredName"
+            },
+            "representativeFor": {
+               "type": "string"
+            },
+            "reviewed": {
+               "type": "boolean"
+            },
+            "seeAlso": {
+               "type": "string"
+            },
+            "seedFor": {
+               "type": "string"
+            },
+            "sequence": {
+               "$ref": "#/$defs/Sequence"
+            },
+            "submittedName": {
+               "$ref": "#/$defs/StructuredName"
+            },
+            "type": {
+               "type": "string"
+            },
+            "version": {
+               "type": "integer"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "ObsoleteProtein",
+         "type": "object"
+      },
+      "ObsoleteTaxon": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "ObsoleteTaxon",
+         "type": "object"
+      },
+      "Organelle": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Organelle",
+         "type": "object"
+      },
+      "Orientation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Orientation",
+         "type": "object"
+      },
+      "OtherDNA": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "OtherDNA",
+         "type": "object"
+      },
+      "OtherRNA": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "OtherRNA",
+         "type": "object"
+      },
+      "OwlEquivalentClassTriple": {
+         "additionalProperties": false,
+         "description": "A statement that connects two class nodes where both classes are equivalent",
+         "properties": {
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "OwlEquivalentClassTriple",
+         "type": "object"
+      },
+      "OwlNamedEquivalentClassTriple": {
+         "additionalProperties": false,
+         "description": "An equivalence triple between two named classes",
+         "properties": {
+            "object": {
+               "description": "One of the two classes that are equivalent. No significance to subject vs object",
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "description": "One of the two classes that are equivalent. No significance to subject vs object",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "OwlNamedEquivalentClassTriple",
+         "type": "object"
+      },
+      "PHDependenceAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "PHDependenceAnnotation",
+         "type": "object"
+      },
+      "PTMAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "PTMAnnotation",
+         "type": "object"
+      },
+      "PairwiseCommonAncestor": {
+         "additionalProperties": false,
+         "description": "Common ancestor in relation graph over any relations between two nodes",
          "properties": {
             "ancestor": {
                "type": "string"
@@ -388,6 +1872,140 @@
          "title": "PairwiseCommonSubClassAncestor",
          "type": "object"
       },
+      "PairwiseMostRecentCommonAncestor": {
+         "additionalProperties": false,
+         "description": "Common non-redundant ancestor in relation graph over any relations between two nodes",
+         "properties": {
+            "ancestor": {
+               "type": "string"
+            },
+            "node1": {
+               "type": "string"
+            },
+            "node2": {
+               "type": "string"
+            },
+            "predicate1": {
+               "type": "string"
+            },
+            "predicate2": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "PairwiseMostRecentCommonAncestor",
+         "type": "object"
+      },
+      "PairwiseMostRecentCommonSubClassAncestor": {
+         "additionalProperties": false,
+         "description": "Common non-redundant SubClass ancestor between two nodes",
+         "properties": {
+            "ancestor": {
+               "type": "string"
+            },
+            "node1": {
+               "type": "string"
+            },
+            "node2": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "PairwiseMostRecentCommonSubClassAncestor",
+         "type": "object"
+      },
+      "Part": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Part",
+         "type": "object"
+      },
+      "Participant": {
+         "additionalProperties": false,
+         "description": "A participant in a protein-protein interaction.",
+         "properties": {},
+         "required": [],
+         "title": "Participant",
+         "type": "object"
+      },
+      "PatentCitation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "PatentCitation",
+         "type": "object"
+      },
+      "Pathway": {
+         "additionalProperties": false,
+         "description": "A hierarchical discription of a metabolic pathway.",
+         "properties": {},
+         "required": [],
+         "title": "Pathway",
+         "type": "object"
+      },
+      "PathwayAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "PathwayAnnotation",
+         "type": "object"
+      },
+      "PeptideAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "PeptideAnnotation",
+         "type": "object"
+      },
+      "PharmaceuticalAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "PharmaceuticalAnnotation",
+         "type": "object"
+      },
+      "Plasmid": {
+         "additionalProperties": false,
+         "description": "Description of a Plasmid",
+         "properties": {},
+         "required": [],
+         "title": "Plasmid",
+         "type": "object"
+      },
+      "PolymorphismAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "PolymorphismAnnotation",
+         "type": "object"
+      },
       "Prefix": {
          "additionalProperties": false,
          "description": "Maps CURIEs to URIs",
@@ -403,6 +2021,190 @@
          },
          "required": [],
          "title": "Prefix",
+         "type": "object"
+      },
+      "PropeptideAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "PropeptideAnnotation",
+         "type": "object"
+      },
+      "Protein": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "alternativeName": {
+               "$ref": "#/$defs/StructuredName"
+            },
+            "annotation": {
+               "$ref": "#/$defs/Annotation"
+            },
+            "attribution": {
+               "$ref": "#/$defs/Attribution"
+            },
+            "citation": {
+               "type": "string"
+            },
+            "classifiedWith": {
+               "type": "string"
+            },
+            "conflictingSequence": {
+               "$ref": "#/$defs/ExternalSequence"
+            },
+            "created": {
+               "format": "date",
+               "type": "string"
+            },
+            "encodedBy": {
+               "type": "string"
+            },
+            "enzyme": {
+               "type": "string"
+            },
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "interaction": {
+               "$ref": "#/$defs/Interaction"
+            },
+            "isolatedFrom": {
+               "$ref": "#/$defs/Tissue"
+            },
+            "mappedAnnotation": {
+               "$ref": "#/$defs/Annotation"
+            },
+            "mappedCitation": {
+               "type": "string"
+            },
+            "mnemonic": {
+               "type": "string"
+            },
+            "modified": {
+               "format": "date",
+               "type": "string"
+            },
+            "oldMnemonic": {
+               "type": "string"
+            },
+            "organism": {
+               "type": "string"
+            },
+            "potentialSequence": {
+               "$ref": "#/$defs/Sequence"
+            },
+            "recommendedName": {
+               "$ref": "#/$defs/StructuredName"
+            },
+            "representativeFor": {
+               "type": "string"
+            },
+            "reviewed": {
+               "type": "boolean"
+            },
+            "seeAlso": {
+               "type": "string"
+            },
+            "seedFor": {
+               "type": "string"
+            },
+            "sequence": {
+               "$ref": "#/$defs/Sequence"
+            },
+            "submittedName": {
+               "$ref": "#/$defs/StructuredName"
+            },
+            "type": {
+               "type": "string"
+            },
+            "version": {
+               "type": "integer"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Protein",
+         "type": "object"
+      },
+      "ProteinClassifiedWith": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "object": {
+               "description": "a literal or node representing the object of the triple",
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "ProteinClassifiedWith",
+         "type": "object"
+      },
+      "ProteinExistence": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "ProteinExistence",
+         "type": "object"
+      },
+      "Proteome": {
+         "additionalProperties": false,
+         "description": "Description of a proteome.",
+         "properties": {},
+         "required": [],
+         "title": "Proteome",
+         "type": "object"
+      },
+      "ProteomeComponent": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "ProteomeComponent",
+         "type": "object"
+      },
+      "PublishedCitation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "PublishedCitation",
          "type": "object"
       },
       "Quad": {
@@ -426,6 +2228,30 @@
          },
          "required": [],
          "title": "Quad",
+         "type": "object"
+      },
+      "RNA": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "RNA",
+         "type": "object"
+      },
+      "RNAEditingAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "RNAEditingAnnotation",
+         "type": "object"
+      },
+      "Rank": {
+         "additionalProperties": false,
+         "description": "A rank of a taxon.",
+         "properties": {},
+         "required": [],
+         "title": "Rank",
          "type": "object"
       },
       "RdfTypeTriple": {
@@ -568,6 +2394,54 @@
          "title": "RdfsSubpropertyOfTriple",
          "type": "object"
       },
+      "RedoxPotentialAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "RedoxPotentialAnnotation",
+         "type": "object"
+      },
+      "ReferenceProteome": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ReferenceProteome",
+         "type": "object"
+      },
+      "RegionAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "RegionAnnotation",
+         "type": "object"
+      },
+      "RepeatAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "RepeatAnnotation",
+         "type": "object"
+      },
+      "RepresentativeProteome": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "RepresentativeProteome",
+         "type": "object"
+      },
+      "Resource": {
+         "additionalProperties": false,
+         "description": "A life science resource.",
+         "properties": {},
+         "required": [],
+         "title": "Resource",
+         "type": "object"
+      },
       "ResultSet": {
          "additionalProperties": false,
          "description": "",
@@ -581,6 +2455,248 @@
          },
          "required": [],
          "title": "ResultSet",
+         "type": "object"
+      },
+      "Reviewed": {
+         "additionalProperties": false,
+         "description": "The class of all reviewed records in the database (i.e. records that where looked at by a curator for integration into the database).",
+         "properties": {},
+         "required": [],
+         "title": "Reviewed",
+         "type": "object"
+      },
+      "ReviewedProtein": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ReviewedProtein",
+         "type": "object"
+      },
+      "RibosomalFrameshifting": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "RibosomalFrameshifting",
+         "type": "object"
+      },
+      "SecondaryStructureAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "SecondaryStructureAnnotation",
+         "type": "object"
+      },
+      "SelfInteraction": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "SelfInteraction",
+         "type": "object"
+      },
+      "Sequence": {
+         "additionalProperties": false,
+         "description": "An amino acid sequence.",
+         "properties": {},
+         "required": [],
+         "title": "Sequence",
+         "type": "object"
+      },
+      "SequenceAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "SequenceAnnotation",
+         "type": "object"
+      },
+      "SequenceCautionAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "SequenceCautionAnnotation",
+         "type": "object"
+      },
+      "SequenceConflictAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "SequenceConflictAnnotation",
+         "type": "object"
+      },
+      "SequenceUncertaintyAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "SequenceUncertaintyAnnotation",
+         "type": "object"
+      },
+      "SetwiseCommonSubClassAncestor": {
+         "additionalProperties": false,
+         "description": "Common superclass ancestor to a set of nodes",
+         "properties": {
+            "ancestor": {
+               "type": "string"
+            },
+            "nodes": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "SetwiseCommonSubClassAncestor",
+         "type": "object"
+      },
+      "SetwiseMostRecentCommonSubClassAncestor": {
+         "additionalProperties": false,
+         "description": "Most recent common superclass ancestor to a set of nodes",
+         "properties": {
+            "ancestor": {
+               "type": "string"
+            },
+            "nodes": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "SetwiseMostRecentCommonSubClassAncestor",
+         "type": "object"
+      },
+      "SignalPeptideAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "SignalPeptideAnnotation",
+         "type": "object"
+      },
+      "SimilarityAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "SimilarityAnnotation",
+         "type": "object"
+      },
+      "SimpleSequence": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "SimpleSequence",
+         "type": "object"
+      },
+      "SiteAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "SiteAnnotation",
+         "type": "object"
+      },
+      "SomeValuesFromRestriction": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "filler": {
+               "type": "string"
+            },
+            "predicate": {
+               "type": "string"
+            },
+            "subject": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "SomeValuesFromRestriction",
+         "type": "object"
+      },
+      "Statement": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Statement",
+         "type": "object"
+      },
+      "Status": {
+         "additionalProperties": false,
+         "description": "Indicator for the reliability of a piece of information.",
+         "properties": {},
+         "required": [],
+         "title": "Status",
+         "type": "object"
+      },
+      "Strain": {
+         "additionalProperties": false,
+         "description": "A strain of a species.",
+         "properties": {},
+         "required": [],
+         "title": "Strain",
+         "type": "object"
+      },
+      "StructureDeterminationMethod": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "StructureDeterminationMethod",
+         "type": "object"
+      },
+      "StructureMappingStatement": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "StructureMappingStatement",
+         "type": "object"
+      },
+      "StructureResource": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "StructureResource",
+         "type": "object"
+      },
+      "StructuredName": {
+         "additionalProperties": false,
+         "description": "A resource that holds a set of the known names for this protein together.",
+         "properties": {},
+         "required": [],
+         "title": "StructuredName",
          "type": "object"
       },
       "SubClassCountTriple": {
@@ -602,6 +2718,218 @@
          "title": "SubClassCountTriple",
          "type": "object"
       },
+      "SubcellularLocation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "SubcellularLocation",
+         "type": "object"
+      },
+      "SubcellularLocationAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "SubcellularLocationAnnotation",
+         "type": "object"
+      },
+      "SubclassOfSomeValuesFrom": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "SubclassOfSomeValuesFrom",
+         "type": "object"
+      },
+      "SubmissionCitation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "SubmissionCitation",
+         "type": "object"
+      },
+      "SubunitAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "SubunitAnnotation",
+         "type": "object"
+      },
+      "Taxon": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Taxon",
+         "type": "object"
+      },
+      "TemperatureDependenceAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "TemperatureDependenceAnnotation",
+         "type": "object"
+      },
+      "ThesisCitation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "ThesisCitation",
+         "type": "object"
+      },
+      "Thing": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Thing",
+         "type": "object"
+      },
+      "Tissue": {
+         "additionalProperties": false,
+         "description": "A tissue such as lung or heart.",
+         "properties": {},
+         "required": [],
+         "title": "Tissue",
+         "type": "object"
+      },
+      "TissueSpecificityAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "TissueSpecificityAnnotation",
+         "type": "object"
+      },
+      "TopologicalDomainAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "TopologicalDomainAnnotation",
+         "type": "object"
+      },
+      "Topology": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "Topology",
+         "type": "object"
+      },
+      "ToxicDoseAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ToxicDoseAnnotation",
+         "type": "object"
+      },
+      "TranscribedRNA": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "TranscribedRNA",
+         "type": "object"
+      },
+      "TranscriptResource": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "TranscriptResource",
+         "type": "object"
+      },
+      "TransitPeptideAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "TransitPeptideAnnotation",
+         "type": "object"
+      },
+      "TransmembraneAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "TransmembraneAnnotation",
+         "type": "object"
+      },
+      "Transposon": {
+         "additionalProperties": false,
+         "description": "A transposon",
+         "properties": {},
+         "required": [],
+         "title": "Transposon",
+         "type": "object"
+      },
       "Triple": {
          "additionalProperties": false,
          "description": "Represents an RDF triple",
@@ -619,6 +2947,14 @@
          },
          "required": [],
          "title": "Triple",
+         "type": "object"
+      },
+      "TurnAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "TurnAnnotation",
          "type": "object"
       },
       "TypedNode": {
@@ -661,6 +2997,64 @@
             "id"
          ],
          "title": "UbergraphTaxonClass",
+         "type": "object"
+      },
+      "UnassignedDNA": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "UnassignedDNA",
+         "type": "object"
+      },
+      "UnassignedRNA": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "UnassignedRNA",
+         "type": "object"
+      },
+      "UnknownSequence": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "UnknownSequence",
+         "type": "object"
+      },
+      "UnpublishedCitation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "description": "An identifier for an element. Note blank node ids are not unique across databases",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "UnpublishedCitation",
+         "type": "object"
+      },
+      "ViralCRNA": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ViralCRNA",
+         "type": "object"
+      },
+      "ZincFingerAnnotation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "ZincFingerAnnotation",
          "type": "object"
       }
    },

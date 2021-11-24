@@ -17,6 +17,7 @@ default_curi_maps:
 
 imports:
   - linkml:types
+  - resultset
 
 classes:
   SystemConfiguration:
@@ -27,6 +28,11 @@ classes:
       - name
       - url
       - type_property
+      - example_queries
+  ExampleQuery:
+    slots:
+      - query_template
+      - bindings
 
 slots:
   endpoints:
@@ -40,4 +46,7 @@ slots:
   type_property:
     description:
       typically rdf:type, but others, e.g. wikidata may use others
+  example_queries:
+    multivalued: true
+    range: ExampleQuery
 

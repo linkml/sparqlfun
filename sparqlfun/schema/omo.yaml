@@ -25,6 +25,7 @@ default_curi_maps:
 imports:
   - linkml:types
   - rdf
+  - resultset
 
 
 
@@ -58,6 +59,7 @@ classes:
         }
 
   obo class query:
+    is_a: ResultSet
     slots:
       - results
       - label_regex

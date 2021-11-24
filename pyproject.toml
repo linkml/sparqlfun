@@ -6,7 +6,7 @@ authors = ["cmungall <cjm@berkeleybop.org>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-linkml-runtime = "^1.1.6"
+linkml-runtime = ">=1.1.7"
 Jinja2 = "^3.0.3"
 
 [tool.poetry.dev-dependencies]

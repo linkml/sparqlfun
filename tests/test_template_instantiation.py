@@ -67,7 +67,7 @@ def test_namespaces(engine):
     assert 'rdf' in schema_map
     pb = engine._get_prefix_block()
     print(pb)
-    assert 'renci' in pb
+    #assert 'renci' in pb
     assert 'PREFIX GO:' in pb
 
 

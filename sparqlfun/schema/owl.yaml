@@ -1,0 +1,118 @@
+id: https://w3id.org/sparqlfun/owl
+name: sparqlfun-OWL
+title: sparqlfun OWL module
+description: >-
+  Abstractions for working with RDF and RDFS triples
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  sparqlfun_owl: https://w3id.org/sparqlfun/owl
+  linkml: https://w3id.org/linkml/
+
+default_prefix: sparqlfun_owl
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+
+imports:
+  - linkml:types
+  - rdf
+
+classes:
+
+  equivalence triple mixin:
+    mixin: true
+    slot_usage:
+      subject:
+        description: >-
+          One of the two classes that are equivalent. No significance to subject vs object
+        range: class node
+      object:
+        description: >-
+          One of the two classes that are equivalent. No significance to subject vs object
+        range: class node
+
+  owl equivalent class triple:
+    is_a: node to node triple
+    mixins:
+      - equivalence triple mixin
+    description: >-
+      A statement that connects two class nodes where both classes are equivalent
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: owl:equivalentClass
+
+  owl named equivalent class triple:
+    is_a: named node to named node triple
+    mixins:
+      - equivalence triple mixin
+    description: >-
+      An equivalence triple between two named classes
+    slot_usage:
+      subject:
+        description: >-
+          One of the two classes that are equivalent. No significance to subject vs object
+        range: class node
+      object:
+        description: >-
+          One of the two classes that are equivalent. No significance to subject vs object
+        range: class node
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: owl:equivalentClass
+
+  some values from restriction:
+    class_uri: owl:Restriction
+    slots:
+      - subject
+      - predicate
+      - filler
+    annotations:
+      sparql.construct:
+        CONSTRUCT {
+          ?subject a owl:Restriction ;
+            owl:onProperty ?predicate ;
+            owl:someValuesFrom ?filler
+        }
+        WHERE {
+        ?subject a owl:Restriction ;
+          owl:onProperty ?predicate ;
+          owl:someValuesFrom ?filler
+        }
+
+  subclass of some values from:
+    annotations:
+      sparql.select:
+        SELECT *
+        WHERE {
+        ?subject rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty ?predicate ;
+          owl:someValuesFrom ?object
+        ]
+        }
+
+  describe equivalent expression:
+    is_a: ResultSet
+    slots:
+      - results
+      - subject
+    slot_usage:
+      results:
+        range: class node
+    annotations:
+      sparql.results_slot: results
+      sparql.construct:
+        DESCRIBE ?object
+        WHERE {
+        ?subject owl:equivalentClass ?object
+        }
+
+slots:
+  filler:
+    range: node

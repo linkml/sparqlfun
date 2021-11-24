@@ -17,6 +17,8 @@ sparqlfun/config_schema.py: sparqlfun/schema/config_schema.yaml
 
 sparqlfun/resultset.py: sparqlfun/schema/resultset.yaml
 	$(RUN) gen-python $< > $@
+sparqlfun/%.py: sparqlfun/schema/%.yaml
+	$(RUN) gen-python $< > $@
 
 
 

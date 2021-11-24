@@ -98,7 +98,17 @@ classes:
     slot_usage:
       object:
         range: node
-      
+
+  named node to named node triple:
+    is_a: node to node triple
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+         ?subject ?predicate ?object .
+         FILTER isIRI(?subject) .
+         FILTER isIRI(?object) .
+        }
+
   node to value triple:
     abstract: true
     is_a: triple
@@ -107,6 +117,8 @@ classes:
     slot_usage:
       object:
         range: string
+
+
 
   rdf type triple:
     is_a: node to node triple
@@ -266,6 +278,8 @@ classes:
   basic class:
     is_a: node
     class_uri: owl:Class
+    comments:
+      - this is mostly to serve as an example and may move
     attributes:
       subClassOf:
         slot_uri: rdfs:subClassOf

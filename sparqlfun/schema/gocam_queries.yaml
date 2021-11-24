@@ -1,0 +1,230 @@
+id: https://w3id.org/sparqlfun/gocam_queries
+name: gocam-queries
+title: sparqlfun gocam module
+description: >-
+  Abstractions for querying gocam
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  gocam_queries: https://w3id.org/sparqlfun/gocam_queries
+  linkml: https://w3id.org/linkml/
+  RO: http://purl.obolibrary.org/obo/RO_
+  BFO: http://purl.obolibrary.org/obo/BFO_
+  GO: http://purl.obolibrary.org/obo/GO_
+  ECO: http://purl.obolibrary.org/obo/ECO_
+  gomodel: http://model.geneontology.org/
+
+default_prefix: gocam_queries
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+
+imports:
+  - resultset
+  - gocam
+
+classes:
+  model info:
+    slots:
+      - id
+      - title
+      - state
+      - provided_by
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?id dce:title ?title ;
+              lego:modelstate ?state .
+          OPTIONAL { ?id pav:providedBy ?provided_by }
+        }
+
+  model elements:
+    slots:
+      - id
+      - title
+      - subject
+      - object
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?id dce:title ?title
+          GRAPH ?id {
+            ?subject rdf:type ?object .
+            ?object rdf:type owl:Class .
+            FILTER(?object != owl:NamedIndividual)
+          }
+        }
+
+  model elements inferred types:
+    slots:
+      - id
+      - title
+      - subject
+      - object
+      - type
+      - graph
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?id dce:title ?title
+          GRAPH ?id {
+            ?subject rdf:type ?object .
+            ?object rdf:type owl:Class .
+            FILTER(?object != owl:NamedIndividual)
+          }
+          GRAPH ?graph {
+            ?subject rdf:type ?type
+          }
+        }
+
+  model interactions:
+    slots:
+      - id
+      - title
+      - subject
+      - predicate
+      - object
+    annotations:
+      sparql.select: |-
+        SELECT ?id ?title ?subject ?predicate ?object WHERE {
+          ?id dce:title ?title
+          GRAPH ?id {
+            ?subject_inst rdf:type ?subject .
+            ?object_inst rdf:type ?object .
+            ?subject_activity_inst RO:0002333 ?subject_inst .
+            ?object_activity_inst RO:0002333 ?object_inst .
+            ?subject_activity_inst ?predicate ?object_activity_inst .
+            ?subject rdf:type owl:Class .
+            ?object rdf:type owl:Class .
+          }
+        }
+
+  model statistics:
+    slots:
+      - id
+#      - title
+#      - state
+      - activity_count
+    annotations:
+      sparql.select: |-
+        SELECT ?id (COUNT(?activity) as ?activity_count)  WHERE {
+           GRAPH ?id {?activity RO:0002333 ?_enabler }
+        } GROUP BY ?id
+
+  model causal statistics:
+    slots:
+      - id
+#      - minimum_connected_entity_count
+      - activity_count
+    annotations:
+      sparql.select: |-
+        SELECT ?id (COUNT(?activity1) as ?activity_count)   WHERE {
+           GRAPH ?id {?activity1 RO:0002333 ?_enabler1 .
+                      ?activity2 RO:0002333 ?_enabler2 .
+                      ?activity1 ?causal_relation ?activity2 }
+        } GROUP BY ?id
+
+  causal model:
+    slots:
+      - id
+    annotations:
+      sparql.select: |-
+        SELECT ?id WHERE {
+           GRAPH ?id {?activity1 RO:0002333 ?_enabler1 .
+                      ?activity2 RO:0002333 ?_enabler2 .
+                      ?activity1 ?causal_relation ?activity2 }
+        }
+
+  model query:
+    slots:
+      - results
+      - state
+      - contributor
+      - title_regex
+      - provided_by
+    slot_usage:
+      results:
+        range: model
+    annotations:
+      sparql.results_slot: results
+      sparql.construct:
+        CONSTRUCT {
+          ?id a gocam:Model ;
+              ?_p ?_v
+        }
+        WHERE {
+          ?id ?_p ?_v .
+          {% if state %}
+          ?id lego:modelstate "{{ state }}" .
+          {% endif %}
+          {% if contributor %}
+          ?id lego:modelstate "{{ contributor }}" .
+          {% endif %}
+          {% if contributor %}
+          ?id dce:contributor "{{ contributor }}" .
+          {% endif %}
+          {% if provided_by %}
+          ?id pav:providedBy "{{ provided_by }}" .
+          {% endif %}
+          {% if title_regex %}
+          ?id dce:title ?title .
+          FILTER regex( str(?title), "{{title_regex}}", "i" )
+          {% endif %}
+
+        }
+
+  model id query:
+    slots:
+      - id
+      - title
+      - state
+      - contributor
+      - title_regex
+      - provided_by
+    slot_usage:
+    annotations:
+      sparql.select:
+        SELECT ?id ?title
+        WHERE {
+        ?id dce:title ?title .
+        {% if state %}
+        ?id lego:modelstate "{{ state }}" .
+        {% endif %}
+        {% if contributor %}
+        ?id lego:modelstate "{{ contributor }}" .
+        {% endif %}
+        {% if contributor %}
+        ?id dce:contributor "{{ contributor }}" .
+        {% endif %}
+        {% if provided_by %}
+        ?id pav:providedBy "{{ provided_by }}" .
+        {% endif %}
+        {% if title_regex %}
+        FILTER regex( str(?title), "{{title_regex}}", "i" )
+        {% endif %}
+        }
+
+  # TODO
+  model query TODO:
+    slots:
+      - results
+      - state
+    annotations:
+      sparql.results_slot: results
+      sparql.construct:
+        DESCRIBE ?id WHERE {
+          ?id lego:modelstate "{{ state }}"
+        }
+
+slots:
+  aggregate_count:
+    range: integer
+  model_count:
+    is_a: aggregate_count
+  activity_count:
+    is_a: aggregate_count
+  minimum_connected_entity_count:
+    is_a: aggregate_count
+  title_regex:
+  graph:

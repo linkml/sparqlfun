@@ -1,3 +1,18 @@
 endpoints:
   ubergraph:
     url: https://stars-app.renci.org/ubergraph/sparql
+    example_queries:
+      - query_template: PairwiseCommonSubClassAncestor
+        bindings:
+          node1: GO:0046220
+          node2: GO:0008295
+  dbpedia:
+    url: http://dbpedia.org/sparql
+  go:
+    url: http://rdf.geneontology.org/sparql
+  uniprot:
+    url: https://sparql.uniprot.org/sparql
+  ontobee:
+    url: http://sparql.hegroup.org/sparql
+  rhea:
+    url: https://sparql.rhea-db.org/sparql

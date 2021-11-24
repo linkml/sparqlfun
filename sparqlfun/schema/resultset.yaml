@@ -21,7 +21,21 @@ classes:
   ResultSet:
     slots:
       - results
+  Binding:
+    slots:
+      - binding_key
+      - binding_value
+
 slots:
   results:
     multivalued: true
     range: GenericResult
+  binding_key:
+    key: true
+    required: true
+  binding_value:
+  query_template:
+  bindings:
+    range: Binding
+    multivalued: true
+    inlined: true
