@@ -14,7 +14,7 @@ prefixes:
   RO: http://purl.obolibrary.org/obo/RO_
   
 default_prefix: sparqlfun_ubergraph
-default_range: string
+default_range: node
 
 default_curi_maps:
   - semweb_context

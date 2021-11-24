@@ -21,7 +21,7 @@ def test_basic_instantiation(engine: SparqlEngine):
     qstr = ti.query.normalized_query
     print(qstr)
     # Assumes a particular canonical serialization
-    assert 'SELECT * WHERE { ?subject rdf:type owl:Class}' in qstr
+    assert 'SELECT * WHERE { VALUES ?object { owl:Class } . VALUES ?predicate { rdf:type } . ?subject ?predicate ?object}' in qstr
     assert 'LIMIT' in qstr
     assert 'PREFIX owl' in qstr
 
@@ -33,7 +33,7 @@ def test_instantiation_from_prototype(engine: SparqlEngine):
     assert len(ti.bindings.keys()) == 1
     qstr = ti.query.normalized_query
     print(qstr)
-    assert 'SELECT * WHERE { ?subject rdf:type owl:Class}' in qstr
+    assert 'SELECT * WHERE { VALUES ?object { owl:Class } . VALUES ?predicate { rdf:type } . ?subject ?predicate ?object}' in qstr
     assert 'LIMIT' in qstr
     assert 'PREFIX owl' in qstr
 
@@ -81,7 +81,7 @@ def test_custom_prefixes(engine: SparqlEngine):
     qstr = ti.query.normalized_query
     print(qstr)
     # Assumes a particular canonical serialization
-    assert 'SELECT * WHERE { ?subject rdfs:subClassOf GO:0005694}' in qstr
+    assert 'SELECT * WHERE { VALUES ?object { GO:0005694 } . VALUES ?predicate { rdfs:subClassOf } . ?subject ?predicate ?object}' in qstr
     assert 'LIMIT' in qstr
     assert 'PREFIX rdfs' in qstr
     assert 'PREFIX GO: <http://purl.obolibrary.org/obo/GO_>' in qstr

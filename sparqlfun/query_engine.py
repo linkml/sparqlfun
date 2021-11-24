@@ -160,6 +160,7 @@ class SparqlEngine:
         return result_set
 
     def extract_template_instance(self, template: Union[Type[YAMLRoot], YAMLRoot], **kwargs) -> SparqlTemplateInstance:
+        sv = self.schema_view
         if isinstance(template, YAMLRoot):
             template_py_class = type(template)
             bindings = {}
@@ -171,7 +172,14 @@ class SparqlEngine:
             template_py_class = template
             bindings = kwargs
         cn = template_py_class.class_name
-        c = self.schema_view.get_class(cn)
+        c = sv.get_class(cn)
+        for k, v in bindings.items():
+            slot = sv.induced_slot(k, cn)
+            if slot.range in sv.all_types():
+                t = sv.get_type(slot.range)
+                if t.base == 'str':
+                    v = f'"{v}"'
+            bindings[k] = v
         query = self.extract_sparql(template_py_class, **bindings)
         ti = SparqlTemplateInstance(query=query,
                                     bindings=bindings,
@@ -323,6 +331,9 @@ class SparqlEngine:
         else:
             raise ValueError(f'No WHERE in query: {template}')
         template = in_select
+        sv = self.schema_view
+        #def serialize(k: str, v: str):
+
         for k, v in argdict.items():
             if isinstance(v, list):
                 v = ' '.join(v)

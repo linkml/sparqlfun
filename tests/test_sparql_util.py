@@ -12,6 +12,8 @@ def example_graph():
     g = Graph()
     return g.parse(DATA, format='ttl')
 
+
+@pytest.mark.skip(reason="requires rdflib6")
 def test_sparql_select_local(example_graph):
     #rows = sparql_select("SELECT * WHERE {?x rdf:type owl:Class}", graph=example_graph)
     rows = sparql_select("SELECT * WHERE {?x ?r ?y}", graph=example_graph)

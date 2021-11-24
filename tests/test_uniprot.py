@@ -24,6 +24,7 @@ def check(rs: ResultSet, min_expected=1, max_expected: int = None):
 
 #def test_protein(engine):
 #    check(engine.query(Protein(id='uniprot:Q15465')))
+@pytest.mark.skip(reason="compatibility issues between rdflib and uniprot endpoint")
 def test_classified_with(engine):
     q = ProteinClassifiedWith(object='GO:0006915')
     check(engine.query(q))

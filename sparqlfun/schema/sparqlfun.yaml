@@ -17,7 +17,7 @@ prefixes:
   ubergraph: http://reasoner.renci.org/
   
 default_prefix: sparqlfun
-default_range: string
+default_range: node
 
 default_curi_maps:
   - semweb_context

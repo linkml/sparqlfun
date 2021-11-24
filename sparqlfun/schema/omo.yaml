@@ -79,7 +79,7 @@ classes:
           VALUES ?_p { IAO:0000115 oboInOwl:hasExactSynonym }
           {% if label_regex  %}
           ?id rdfs:label ?label .
-          FILTER regex( ?label, "{{label_regex}}", "i" )
+          FILTER regex( ?label, {{label_regex}}, "i" )
           {% endif %}
         }
 
@@ -105,12 +105,15 @@ classes:
           ?id ?_p ?_v .
           {% if label_regex  %}
           ?id rdfs:label ?label .
-          FILTER regex( ?label, "{{label_regex}}", "i" )
+          FILTER regex( ?label, {{label_regex}}, "i" )
           {% endif %}
         }
 
 slots:
   label_regex:
+    range: string
+    mixins:
+     - regex_slot
   xxresults:
     multivalued: true
     inlined: true

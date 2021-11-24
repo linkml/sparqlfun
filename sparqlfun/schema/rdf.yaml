@@ -316,6 +316,7 @@ slots:
       - range: string
       - range: node
     slot_uri: rdf:object
+    range: node  ## TODO
   graph:
     description: >-
       Graph to which the triple belongs
@@ -347,6 +348,9 @@ slots:
       The base URI a prefix will expand to
   description:
     slot_uri: dcterms:description
+
+  regex_slot:
+    range: string
 
 types:
   node id type:
