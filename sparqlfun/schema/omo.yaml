@@ -13,6 +13,7 @@ prefixes:
   IAO: http://purl.obolibrary.org/obo/IAO_
   OMO: http://purl.obolibrary.org/obo/OMO_
   oboInOwl: http://www.geneontology.org/formats/oboInOwl#
+  obmerged: http://purl.obolibrary.org/obo/merged/
 ## ^^ TODO: check why oio: does not work
 
 default_prefix: sparqlfun_omo
@@ -39,26 +40,47 @@ classes:
           predicate:
             equals_string: IAO:0000115
 
-  obo class:
+  conforms to triple:
+    is_a: node to node triple
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: dcterms:conformsTo
+
+  graph class node:
     is_a: class node
+    slots:
+      - graph
+
+  obo class:
+    is_a: graph class node
     class_uri: owl:Class
     slots:
+      - label
       - definition
       - exact_synonyms
     annotations:
       sparql.construct: |-
         CONSTRUCT {
           ?id a owl:Class ;
+              rdfs:label ?label ;
               IAO:0000115 ?definition ;
-              oboInOwl:hasExactSynonym ?exact_snonyms
+              oboInOwl:hasExactSynonym ?exact_snonyms ;
+              rdfs:isDefinedBy ?graph
         }
         WHERE {
+          GRAPH ?graph {
           ?id a owl:Class .
+          OPTIONAL { ?id rdfs:label ?label } .
           OPTIONAL { ?id IAO:0000115 ?definition } .
           OPTIONAL { ?id oboInOwl:hasExactSynonym ?exact_snonyms } .
+          }
         }
 
   obo class query:
+    comments:
+      - INCOMPLETE
     is_a: ResultSet
     slots:
       - results
@@ -80,6 +102,10 @@ classes:
           {% if label_regex  %}
           ?id rdfs:label ?label .
           FILTER regex( ?label, {{label_regex}}, "i" )
+          {% endif %}
+          {% if label_starts_with  %}
+          ?id rdfs:label ?label .
+          FILTER strStarts( ?label, {{label_starts_with}} )
           {% endif %}
         }
 
@@ -114,6 +140,8 @@ slots:
     range: string
     mixins:
      - regex_slot
+  label_starts_with:
+    range: string
   xxresults:
     multivalued: true
     inlined: true
@@ -122,9 +150,11 @@ slots:
 
   definition:
     slot_uri: IAO:0000115
+    range: string
   exact_synonyms:
     slot_uri: oboInOwl:hasExactSynonym
     multivalued: true
+    range: string
 
 
 

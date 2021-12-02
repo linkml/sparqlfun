@@ -33,8 +33,11 @@ slots:
   binding_key:
     key: true
     required: true
+    range: string
   binding_value:
+    range: string
   query_template:
+    range: string
   bindings:
     range: Binding
     multivalued: true

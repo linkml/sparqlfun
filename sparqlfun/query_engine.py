@@ -153,11 +153,35 @@ class SparqlEngine:
                 result_template = template_py_class
             logging.info(f'Result template: {result_template}')
             for obj in rdflib_loader.from_rdf_graph(g, target_class=result_template, schemaview=self.schema_view, prefix_map=prefix_map,
+                                                    cast_literals=True,
                                                     ignore_unmapped_predicates=self.ignore_unmapped_predicates):
                 objs.append(obj)
         logging.info(f'Num objects = {len(objs)}')
         result_set.results = objs
         return result_set
+
+    def construct(self, template: str,
+              _url = None,
+              **kwargs) -> Graph:
+        if _url is None:
+            _url = self.get_endpoint().url
+        logging.info(f'Querying: {_url}')
+        prefix_map = self._get_prefix_map()
+        # TODO: quote literals
+        ti = SparqlTemplateInstance(query=SparqlQuery(template),
+                                    bindings=kwargs,
+                                    linkml_class=self.schema_view.get_class(template))
+
+        default_vals = self._get_defaults(c)
+        sq = ti.query
+        for k, v in ti.bindings.items():
+            default_vals[k] = v
+
+        spw = SPARQLWrapper(_url)
+        spw.setQuery(sq.query)
+        spw.setReturnFormat(RDF)
+        g = spw.query().convert()
+        return g
 
     def extract_template_instance(self, template: Union[Type[YAMLRoot], YAMLRoot], **kwargs) -> SparqlTemplateInstance:
         sv = self.schema_view
@@ -424,8 +448,14 @@ def cli(params: List[str], module: str, schema: str, endpoint: str, limit: int, 
     for p in params:
         if '=' in p:
             [k, v] = p.split('=')
+            if ',' in v:
+                # TODO: allow escape mechanism if a comma is to be included
+                v = v.split(',')
+                for x in v:
+                    add_prefix(x)
+            else:
+                add_prefix(v)
             kwargs[k] = v
-            add_prefix(v)
         else:
             args.append(p)
             add_prefix(p)

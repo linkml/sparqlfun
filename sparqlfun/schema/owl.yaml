@@ -113,6 +113,66 @@ classes:
         ?subject owl:equivalentClass ?object
         }
 
+  owl triple annotation:
+    is_a: triple
+    slots:
+      - axiom_identifier
+      - axiom_predicate
+      - axiom_object
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?axiom_identifier a owl:Axiom ;
+            owl:annotatedSource ?subject ;
+            owl:annotatedProperty ?predicate ;
+            owl:annotatedTarget ?object ;
+            ?axiom_predicate ?axiom_object .
+          FILTER (?axiom_predicate != owl:annotatedSource) .
+          FILTER (?axiom_predicate != owl:annotatedProperty) .
+          FILTER (?axiom_predicate != owl:annotatedTarget) .
+
+        }
+    ## TODO: check why this doesn't work: FILTER NOT EXISTS {VALUES (?axiom_predicate) { (owl:annotatedSource) (owl:annotatedProperty) }}
+
+  owl triple with annotations TODO:
+    is_a: triple
+    slots:
+      - annotations
+    annotations:
+      sparql.construct: |-
+        CONSTRUCT {
+          ?axiom_identifier a owl:Axiom ;
+                        owl:annotatedSource ?subject ;
+                        owl:annotatedProperty ?predicate ;
+                        owl:annotatedTarget ?object ;
+                        ?axiom_predicate ?axiom_object .
+        }
+        WHERE {
+          ?axiom_identifier a owl:Axiom ;
+            owl:annotatedSource ?subject ;
+            owl:annotatedProperty ?predicate ;
+            owl:annotatedTarget ?object ;
+            ?axiom_predicate ?axiom_object .
+          FILTER (?axiom_predicate != owl:annotatedSource) .
+          FILTER (?axiom_predicate != owl:annotatedProperty) .
+          FILTER (?axiom_predicate != owl:annotatedTarget) .
+
+        }
+
+  owl annotation:
+    slots:
+      - predicate
+      - object
+
 slots:
+  axiom_identifier:
+    identifier: false  ## blank nodes cannot be true identifiers
+    range: blank node
   filler:
     range: node
+  axiom_predicate:
+    range: property node
+  axiom_object:
+    range: node or literal  ## TODO
+  annotations:
+    range: owl annotation

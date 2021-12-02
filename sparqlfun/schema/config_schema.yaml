@@ -41,11 +41,14 @@ slots:
     inlined: true
   name:
     identifier: true
+    range: string
   url:
     required: true
+    range: string
   type_property:
     description:
       typically rdf:type, but others, e.g. wikidata may use others
+    range: string
   example_queries:
     multivalued: true
     range: ExampleQuery

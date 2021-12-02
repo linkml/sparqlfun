@@ -6,7 +6,8 @@ description: >-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  sparqlfun_rdf: https://w3id.org/sparqlfun/rdf
+  sparqlfun_rdf: https://w3id.org/sparqlfun/rdf/
+  sparqlfun: https://w3id.org/sparqlfun/
   linkml: https://w3id.org/linkml/
   sh: http://www.w3.org/ns/shacl#
   
@@ -28,6 +29,11 @@ subsets:
       Indicates the class/table is typically not constructed from a view
 
 classes:
+
+  node or literal:
+    description: A grouping for nodes or literals, maps to Any type
+    class_uri: linkml:Any
+
   prefix:
     description: >-
       Maps CURIEs to URIs
@@ -63,7 +69,7 @@ classes:
     aliases:
       - statement
     description: >-
-      Represents an RDF triple
+      Represents a single unadorned RDF triple
     slots:
       - subject
       - predicate
@@ -79,7 +85,7 @@ classes:
     aliases:
       - statement with graph
     description: >-
-      Represents an RDF triple plus named graph
+      Represents an RDF triple plus named graph to which the triple belongs
     slots:
       - subject
       - predicate
@@ -90,17 +96,42 @@ classes:
     annotations:
       sparql.select: SELECT * WHERE { GRAPH ?graph { ?subject ?predicate ?object} }
 
+  statement:
+    is_a: quad
+    description: A quad that is optionally adorned with statements about it
+    slots:
+      - node_statements
+      - value_statements
+    slot_usage:
+      node_statements:
+        description: statements about the quad where the object is a node
+      value_statements:
+        description: statements about the quad where the object is a literal
+
   node to node triple:
-    abstract: true
     is_a: triple
     description: >-
-      A triple where object is a node
+      A triple where object is a node (isIRI)
     slot_usage:
       object:
         range: node
+    annotations:
+      sparql.select: SELECT * WHERE { ?subject ?predicate ?object . FILTER isIRI(?object) }
+
+  node to node statement:
+    is_a: statement
+    description: >-
+      A statement where object is a node (isIRI)
+    slot_usage:
+      object:
+        range: node
+    annotations:
+      sparql.select: SELECT * WHERE {?graph { ?subject ?predicate ?object . FILTER isIRI(?object) }}
 
   named node to named node triple:
     is_a: node to node triple
+    description: >-
+      A triple where subject and object are both nodes (isIRI)
     annotations:
       sparql.select: |-
         SELECT * WHERE {
@@ -116,9 +147,28 @@ classes:
       A triple where object is a literal
     slot_usage:
       object:
-        range: string
+        range: string  ## TODO
+        exactly_one_of:
+          - range: string
+          - range: integer
+          - range: date
+    annotations:
+      sparql.select: SELECT * WHERE { ?subject ?predicate ?object . FILTER (isLiteral(?object)) }
 
-
+  node to value statement:
+    abstract: true
+    is_a: statement
+    description: >-
+      A statement where object is a literal
+    slot_usage:
+      object:
+        range: string  ## TODO
+        exactly_one_of:
+          - range: string
+          - range: integer
+          - range: date
+    annotations:
+      sparql.select: SELECT * WHERE { GRAPH ?graph { ?subject ?predicate ?object . FILTER (isLiteral(?object)) }}
 
   rdf type triple:
     is_a: node to node triple
@@ -134,8 +184,21 @@ classes:
         slot_conditions:
           predicate:
             equals_string: rdf:type
-    #annotations:
-    #  sparql.select: SELECT * WHERE { ?subject rdf:type ?object}
+
+  rdf type statement:
+    is_a: node to node statement
+    description: >-
+      A statement that indicates the asserted type of the subject entity
+    slot_usage:
+      object:
+        description: >-
+          The entity type
+        range: class node
+    classification_rules:
+      - is_a: statement
+        slot_conditions:
+          predicate:
+            equals_string: rdf:type
 
   rdfs subclass of triple:
     is_a: node to node triple
@@ -153,8 +216,6 @@ classes:
         slot_conditions:
           predicate:
             equals_string: rdfs:subClassOf
-    #annotations:
-    #  sparql.select: SELECT * WHERE { ?subject rdfs:subClassOf ?object}
 
   rdfs subclass of named triple:
     is_a: rdfs subclass of triple
@@ -273,8 +334,123 @@ classes:
           type:
             equals_string: owl:NamedIndividual
 
-  # -- reporting/stats --
+  nested triple:
+    is_a: triple
+    class_uri: rdf:Statement
+    slot_usage:
+      subject:
+        required: false
+      object:
+        range: node
+    attributes:
+      xobject:
+        slot_uri: rdf:xobject
+        range: node
 
+
+  node object:
+    class_uri: rdf:Resource
+    is_a: node
+    slots:
+      - node_statements
+      - value_statements
+    annotations:
+      sparql.construct: |-
+        CONSTRUCT {
+          ?id a rdf:Resource ;
+              sparqlfun:value_statements [
+                  rdf:predicate ?value_predicate ;
+                  rdf:object ?value_object ;
+                  rdfs:isDefinedBy ?value_graph
+              ] ;
+              sparqlfun:node_statements [
+                 rdf:predicate ?node_predicate ;
+                 rdf:object ?node_object ;
+                 rdfs:isDefinedBy ?node_graph
+              ] .
+        }
+        WHERE {
+          {
+            GRAPH ?node_graph {
+              ?id ?node_predicate ?node_object
+              FILTER(isIRI(?node_object))
+            }
+          }
+          UNION
+          {
+            GRAPH ?value_graph {
+              ?id ?value_predicate ?value_object
+              FILTER(isLiteral(?value_object))
+            }
+          }
+        }
+
+  nested node object:
+    comments:
+      - EXPERIMENTAL: currently used OWL reif vocab so should move to OWL module
+    class_uri: rdf:Resource
+    is_a: node
+    slots:
+      - node_statements
+      - value_statements
+    annotations:
+      sparql.construct: |-
+        CONSTRUCT {
+          ?id a rdf:Resource ;
+              sparqlfun:value_statements [
+                  rdf:predicate ?value_predicate ;
+                  rdf:object ?value_object ;
+                  rdfs:isDefinedBy ?value_graph ;
+                  sparqlfun:value_statements [
+                                    rdf:predicate ?vi_value_predicate ;
+                                    rdf:object ?vi_value_object ;
+                                ] ;
+              ] ;
+              sparqlfun:node_statements [
+                                rdf:predicate ?node_predicate ;
+                                rdf:object ?node_object ;
+                                rdfs:isDefinedBy ?node_graph ;
+                                sparqlfun:value_statements [
+                                                  rdf:predicate ?ni_value_predicate ;
+                                                  rdf:object ?ni_value_object ;
+                                              ] ;
+                            ]
+        }
+        WHERE {
+          {
+            GRAPH ?value_graph {
+              ?id ?value_predicate ?value_object .
+              OPTIONAL {
+                   ?value_statement_id owl:annotatedSource ?id ;
+                       owl:annotatedProperty ?value_predicate ;
+                       owl:annotatedTarget ?value_object ;
+                       ?vi_value_predicate ?vi_value_object .
+                   FILTER (?vi_value_predicate != owl:annotatedSource)
+                   FILTER (?vi_value_predicate != owl:annotatedProperty)
+                   FILTER (?vi_value_predicate != owl:annotatedTarget)
+                   FILTER (!(?vi_value_predicate = rdf:type AND ?vi_value_object = owl:Axiom))
+              }
+              FILTER(isLiteral(?value_object))
+            }
+          } UNION {
+                    GRAPH ?node_graph {
+                      ?id ?node_predicate ?node_object .
+                      OPTIONAL {
+                           ?node_statement_id owl:annotatedSource ?id ;
+                               owl:annotatedProperty ?node_predicate ;
+                               owl:annotatedTarget ?node_object ;
+                               ?ni_value_predicate ?ni_value_object .
+                           FILTER (?ni_value_predicate != owl:annotatedSource)
+                           FILTER (?ni_value_predicate != owl:annotatedProperty)
+                           FILTER (?ni_value_predicate != owl:annotatedTarget)
+                           FILTER (!(?ni_value_predicate = rdf:type AND ?ni_value_object = owl:Axiom))
+                      }
+                      FILTER(isIRI(?node_object))
+                    }
+          }
+        }
+
+  # DEMO
   basic class:
     is_a: node
     class_uri: owl:Class
@@ -310,20 +486,53 @@ slots:
     range: property node
     slot_uri: rdf:predicate
   object:
+    abstract: true
     description: >-
       a literal or node representing the object of the triple
     exactly_one_of:
       - range: string
       - range: node
     slot_uri: rdf:object
-    range: node  ## TODO
+    range: node or literal  ## TODO
+    inlined: false
+  value_object:
+    #slot_uri: rdf:object
+    is_a: object
+    range: string  ## TODO
+  node_object:
+    #slot_uri: rdf:object
+    is_a: object
+    range: node
   graph:
+    slot_uri: rdfs:isDefinedBy
     description: >-
       Graph to which the triple belongs
     range: node
+  statements:
+    slot_uri: sparqlfun:statements
+    range: statement
+    multivalued: true
+    inlined: true
+
+  value_statements:
+    is_a: statements
+    slot_uri: sparqlfun:value_statements
+    range: node to value statement
+    multivalued: true
+
+  node_statements:
+    is_a: statements
+    slot_uri: sparqlfun:node_statements
+    range: node to node statement
+    multivalued: true
 
   type:
+    slot_uri: rdf:type
     range: node
+
+  label:
+    slot_uri: rdfs:label
+    range: string
 
   datatype:
   value:
@@ -353,6 +562,8 @@ slots:
     range: string
 
 types:
+
+
   node id type:
     typeof: uriorcurie
     description: >-

@@ -33,4 +33,5 @@ imports:
   - omo
   - ubergraph
   - uniprot_queries
+  - uberon
 

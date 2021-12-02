@@ -1,0 +1,134 @@
+id: https://w3id.org/sparqlfun/uberon
+name: uberon
+title: sparqlfun uberon module
+description: >-
+  Abstractions for working with uberon
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  sparqlfun_uberon: https://w3id.org/sparqlfun/uberon
+  sparqlfun: https://w3id.org/sparqlfun/
+  ubergraph: http://reasoner.renci.org/
+  linkml: https://w3id.org/linkml/
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  CL: http://purl.obolibrary.org/obo/CL_
+
+default_prefix: sparqlfun_uberon
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+  - obo_context
+
+imports:
+  - linkml:types
+  - omo
+  - ubergraph
+
+
+
+classes:
+
+  obo class with category:
+    class_uri: UBERON:0001062
+    is_a: obo class
+    slots:
+      - category
+    annotations:
+      sparql.construct: |-
+        CONSTRUCT {
+          ?id a ?category ;
+            rdfs:label ?label
+        }
+        WHERE {
+          ?id rdfs:label ?label .
+          ?id rdfs:subClassOf ?category
+        }
+
+  anatomical entity:
+    class_uri: UBERON:0001062
+    is_a: obo class
+    annotations:
+      sparql.construct: |-
+        CONSTRUCT {
+          ?id a UBERON:0001062 ;
+            rdfs:label ?label
+        }
+        WHERE {
+          ?id rdfs:label ?label .
+          ?id rdfs:subClassOf UBERON:0001062
+        }
+
+  blood vessel:
+    class_uri: UBERON:0001981
+    is_a: obo class
+    slots:
+      - subcategory
+      - supplies
+      - drains
+      - branching_part_of
+    slot_usage:
+      subcategory:
+        range: BloodVesselSubcategory
+    annotations:
+      sparql.construct: |-
+        CONSTRUCT {
+          ?id a UBERON:0001981 ;
+            rdfs:label ?label ;
+            sparqlfun:subcategory ?subcategory ;
+            RO:0002178 ?supplies ;
+            RO:0002179 ?drains ;
+            RO:0002380 ?branching_part_of
+        }
+        WHERE {
+          ?id rdfs:label ?label .
+          ?id rdfs:subClassOf UBERON:0001981 .
+          ?id rdfs:subClassOf ?subcategory .
+          VALUES ?subcategory { UBERON:0001637 UBERON:0001638 } .
+          OPTIONAL {
+             GRAPH ubergraph:nonredundant { ?id RO:0002178 ?supplies }
+          }
+          OPTIONAL {
+             GRAPH ubergraph:nonredundant { ?id RO:0002179 ?drains }
+          }
+          OPTIONAL {
+                       GRAPH ubergraph:nonredundant { ?id RO:0002380 ?branching_part_of }
+                    }
+        }
+
+  cell type:
+    class_uri: CL:0000000
+    is_a: obo class
+    classification_rules:
+      - is_a: obo class with category
+        slot_conditions:
+          category:
+            equals_string: CL:0000000
+
+slots:
+  category:
+    range: class node
+  subcategory:
+    slot_uri: sparqlfun:subcategory
+    range: class node
+  # TODO: move to RO
+  supplies:
+    slot_uri: RO:0002178
+    range: anatomical entity
+  drains:
+    slot_uri: RO:0002179
+    range: anatomical entity
+  branching_part_of:
+    slot_uri: RO:0002380
+    range: anatomical entity
+
+enums:
+  BloodVesselSubcategory:
+    permissible_values:
+      artery:
+        meaning: UBERON:0001637
+      vein:
+        meaning: UBERON:0001638
+
+
+    
