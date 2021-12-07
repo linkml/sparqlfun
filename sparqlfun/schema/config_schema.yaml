@@ -23,16 +23,28 @@ classes:
   SystemConfiguration:
     slots:
       - endpoints
+      - profiles
+      - description
   Endpoint:
     slots:
       - name
       - url
       - type_property
       - example_queries
+      - implements
+      - description
   ExampleQuery:
     slots:
       - query_template
       - bindings
+  Profile:
+    description: >-
+      A feature implemented by an endpoint for supporting certain kinds of queries
+    slots:
+      - name
+      - description
+      - subsets
+      - modules
 
 slots:
   endpoints:
@@ -45,6 +57,9 @@ slots:
   url:
     required: true
     range: string
+  description:
+    recommended: true
+    range: string
   type_property:
     description:
       typically rdf:type, but others, e.g. wikidata may use others
@@ -52,4 +67,15 @@ slots:
   example_queries:
     multivalued: true
     range: ExampleQuery
-
+  profiles:
+    multivalued: true
+    range: Profile
+    inlined: true
+  implements:
+    multivalued: true
+    range: Profile
+    inlined: false
+  subsets:
+    multivalued: true
+  modules:
+    multivalued: true

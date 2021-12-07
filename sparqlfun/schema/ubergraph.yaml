@@ -4,6 +4,8 @@ title: sparqlfun ubergraph module
 description: >-
   Abstractions for working with ubergraph
 license: https://creativecommons.org/publicdomain/zero/1.0/
+annotations:
+  profiles: relation_graph,taxon
 
 prefixes:
   sparqlfun_ubergraph: https://w3id.org/sparqlfun/ubergraph
@@ -30,12 +32,17 @@ classes:
 
   ubergraph taxon class:
     is_a: taxon class
+    description: all classes representing a taxon in ubergraph
+    comments:
+      - this query works on ubergraph-style endpoints where (1) inferred reflexive subClassOf triples are asserted (2) NCBITaxon is loaded
     annotations:
+      uses_resource: NCBITaxon
       sparql.select: SELECT ?id WHERE { ?id rdfs:subClassOf NCBITaxon:1 }
 
   ubergraph quad:
     abstract: true
     is_a: relation graph quad
+    description: a quad in an ubergraph endpoint
 
   normalized information content triple:
     is_a: triple
@@ -246,6 +253,65 @@ classes:
           }
         }
 
+  pairwise common descendant:
+    description: Common descendant in relation graph over any relations between two nodes
+    slots:
+      - node1
+      - node2
+      - predicate1
+      - predicate2
+      - descendant
+      - is_direction_canonical
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?descendant ?predicate1 ?node1 .
+          ?descendant ?predicate1 ?node2
+          FILTER (?node1 != ?node2) .
+          BIND( str(?node1) < str(?node2) AS ?is_direction_canonical)
+        }
+
+  pairwise common SubClass descendant:
+    is_a: pairwise common descendant
+    classification_rules:
+      - is_a: pairwise common descendant
+        slot_conditions:
+          predicate1:
+            equals_string: rdfs:subClassOf
+          predicate2:
+            equals_string: rdfs:subClassOf
+
+  pairwise common descendant matrix:
+    description: Common descendant in relation graph over any relations between two nodes from two axes
+    slots:
+      - node1
+      - node2
+      - node1_candidates
+      - node2_candidates
+      - predicate1
+      - predicate2
+      - descendant
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+
+          ?descendant ?predicate1 ?node1 .
+          ?descendant ?predicate1 ?node2 .
+          FILTER (?node1 = ?node1_candidates)
+          FILTER (?node2 = ?node2_candidates)
+        }
+
+  pairwise common SubClass descendant matrix:
+    is_a: pairwise common descendant matrix
+    classification_rules:
+      - is_a: pairwise common descendant matrix
+        slot_conditions:
+          predicate1:
+            equals_string: rdfs:subClassOf
+          predicate2:
+            equals_string: rdfs:subClassOf
+
+
   obo class filtered:
     is_a: class node
     class_uri: owl:Class
@@ -270,8 +336,15 @@ classes:
 
 slots:
   ancestor:
+  descendant:
   node1:
   node2:
+  is_direction_canonical:
+    range: boolean
+  node1_candidates:
+    multivalued: true
+  node2_candidates:
+    multivalued: true
   nodes:
     multivalued: true
   predicate1:

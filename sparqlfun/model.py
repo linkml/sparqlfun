@@ -1,5 +1,5 @@
 # Auto generated from sparqlfun.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-11-27T17:15:35
+# Generation date: 2021-12-07T12:01:40
 # Schema: sparqlfun
 #
 # id: https://w3id.org/sparqlfun
@@ -45,11 +45,11 @@ RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
 RESULTSET = CurieNamespace('resultset', 'https://w3id.org/sparqlfun/resultset')
 SH = CurieNamespace('sh', 'http://www.w3.org/ns/shacl#')
 SPARQLFUN = CurieNamespace('sparqlfun', 'https://w3id.org/sparqlfun/')
+SPARQLFUN_BIOLINK = CurieNamespace('sparqlfun_biolink', 'https://w3id.org/sparqlfun/biolink')
 SPARQLFUN_OMO = CurieNamespace('sparqlfun_omo', 'https://w3id.org/sparqlfun/omo')
 SPARQLFUN_OWL = CurieNamespace('sparqlfun_owl', 'https://w3id.org/sparqlfun/owl')
 SPARQLFUN_RDF = CurieNamespace('sparqlfun_rdf', 'https://w3id.org/sparqlfun/rdf/')
 SPARQLFUN_UBERGRAPH = CurieNamespace('sparqlfun_ubergraph', 'https://w3id.org/sparqlfun/ubergraph')
-SPARQLFUN_UBERON = CurieNamespace('sparqlfun_uberon', 'https://w3id.org/sparqlfun/uberon')
 UBERGRAPH = CurieNamespace('ubergraph', 'http://reasoner.renci.org/')
 UPCORE = CurieNamespace('upcore', 'http://purl.uniprot.org/core/')
 XSD = CurieNamespace('xsd', 'http://www.w3.org/2001/XMLSchema#')
@@ -1188,6 +1188,32 @@ class OwlAnnotation(YAMLRoot):
 
 
 @dataclass
+class TraversalBasedPairwiseDisjointnessViolation(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SPARQLFUN_OWL.TraversalBasedPairwiseDisjointnessViolation
+    class_class_curie: ClassVar[str] = "sparqlfun_owl:TraversalBasedPairwiseDisjointnessViolation"
+    class_name: ClassVar[str] = "traversal based pairwise disjointness violation"
+    class_model_uri: ClassVar[URIRef] = SPARQLFUN.TraversalBasedPairwiseDisjointnessViolation
+
+    class1: Optional[Union[str, NodeId]] = None
+    class2: Optional[Union[str, NodeId]] = None
+    descendant_class: Optional[Union[str, NodeId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.class1 is not None and not isinstance(self.class1, NodeId):
+            self.class1 = NodeId(self.class1)
+
+        if self.class2 is not None and not isinstance(self.class2, NodeId):
+            self.class2 = NodeId(self.class2)
+
+        if self.descendant_class is not None and not isinstance(self.descendant_class, NodeId):
+            self.descendant_class = NodeId(self.descendant_class)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class RelationGraphQuad(Quad):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1300,6 +1326,24 @@ class DefinitionTriple(NodeToValueTriple):
     class_model_uri: ClassVar[URIRef] = SPARQLFUN.DefinitionTriple
 
 
+class ConformsToTriple(NodeToNodeTriple):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SPARQLFUN_OMO.ConformsToTriple
+    class_class_curie: ClassVar[str] = "sparqlfun_omo:ConformsToTriple"
+    class_name: ClassVar[str] = "conforms to triple"
+    class_model_uri: ClassVar[URIRef] = SPARQLFUN.ConformsToTriple
+
+
+class ConformsToStatement(NodeToNodeStatement):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SPARQLFUN_OMO.ConformsToStatement
+    class_class_curie: ClassVar[str] = "sparqlfun_omo:ConformsToStatement"
+    class_name: ClassVar[str] = "conforms to statement"
+    class_model_uri: ClassVar[URIRef] = SPARQLFUN.ConformsToStatement
+
+
 @dataclass
 class GraphClassNode(ClassNode):
     _inherited_slots: ClassVar[List[str]] = []
@@ -1405,6 +1449,9 @@ class DeprecatedOboClassQuery(YAMLRoot):
 
 @dataclass
 class UbergraphTaxonClass(TaxonClass):
+    """
+    all classes representing a taxon in ubergraph
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = SPARQLFUN_UBERGRAPH.UbergraphTaxonClass
@@ -1424,6 +1471,9 @@ class UbergraphTaxonClass(TaxonClass):
 
 
 class UbergraphQuad(RelationGraphQuad):
+    """
+    a quad in an ubergraph endpoint
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = SPARQLFUN_UBERGRAPH.UbergraphQuad
@@ -1721,6 +1771,112 @@ class PairwiseMostRecentCommonSubClassAncestor(YAMLRoot):
 
 
 @dataclass
+class PairwiseCommonDescendant(YAMLRoot):
+    """
+    Common descendant in relation graph over any relations between two nodes
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SPARQLFUN_UBERGRAPH.PairwiseCommonDescendant
+    class_class_curie: ClassVar[str] = "sparqlfun_ubergraph:PairwiseCommonDescendant"
+    class_name: ClassVar[str] = "pairwise common descendant"
+    class_model_uri: ClassVar[URIRef] = SPARQLFUN.PairwiseCommonDescendant
+
+    node1: Optional[Union[str, NodeId]] = None
+    node2: Optional[Union[str, NodeId]] = None
+    predicate1: Optional[Union[str, PropertyNodeId]] = None
+    predicate2: Optional[Union[str, PropertyNodeId]] = None
+    descendant: Optional[Union[str, NodeId]] = None
+    is_direction_canonical: Optional[Union[bool, Bool]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.node1 is not None and not isinstance(self.node1, NodeId):
+            self.node1 = NodeId(self.node1)
+
+        if self.node2 is not None and not isinstance(self.node2, NodeId):
+            self.node2 = NodeId(self.node2)
+
+        if self.predicate1 is not None and not isinstance(self.predicate1, PropertyNodeId):
+            self.predicate1 = PropertyNodeId(self.predicate1)
+
+        if self.predicate2 is not None and not isinstance(self.predicate2, PropertyNodeId):
+            self.predicate2 = PropertyNodeId(self.predicate2)
+
+        if self.descendant is not None and not isinstance(self.descendant, NodeId):
+            self.descendant = NodeId(self.descendant)
+
+        if self.is_direction_canonical is not None and not isinstance(self.is_direction_canonical, Bool):
+            self.is_direction_canonical = Bool(self.is_direction_canonical)
+
+        super().__post_init__(**kwargs)
+
+
+class PairwiseCommonSubClassDescendant(PairwiseCommonDescendant):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SPARQLFUN_UBERGRAPH.PairwiseCommonSubClassDescendant
+    class_class_curie: ClassVar[str] = "sparqlfun_ubergraph:PairwiseCommonSubClassDescendant"
+    class_name: ClassVar[str] = "pairwise common SubClass descendant"
+    class_model_uri: ClassVar[URIRef] = SPARQLFUN.PairwiseCommonSubClassDescendant
+
+
+@dataclass
+class PairwiseCommonDescendantMatrix(YAMLRoot):
+    """
+    Common descendant in relation graph over any relations between two nodes from two axes
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SPARQLFUN_UBERGRAPH.PairwiseCommonDescendantMatrix
+    class_class_curie: ClassVar[str] = "sparqlfun_ubergraph:PairwiseCommonDescendantMatrix"
+    class_name: ClassVar[str] = "pairwise common descendant matrix"
+    class_model_uri: ClassVar[URIRef] = SPARQLFUN.PairwiseCommonDescendantMatrix
+
+    node1: Optional[Union[str, NodeId]] = None
+    node2: Optional[Union[str, NodeId]] = None
+    node1_candidates: Optional[Union[Union[str, NodeId], List[Union[str, NodeId]]]] = empty_list()
+    node2_candidates: Optional[Union[Union[str, NodeId], List[Union[str, NodeId]]]] = empty_list()
+    predicate1: Optional[Union[str, PropertyNodeId]] = None
+    predicate2: Optional[Union[str, PropertyNodeId]] = None
+    descendant: Optional[Union[str, NodeId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.node1 is not None and not isinstance(self.node1, NodeId):
+            self.node1 = NodeId(self.node1)
+
+        if self.node2 is not None and not isinstance(self.node2, NodeId):
+            self.node2 = NodeId(self.node2)
+
+        if not isinstance(self.node1_candidates, list):
+            self.node1_candidates = [self.node1_candidates] if self.node1_candidates is not None else []
+        self.node1_candidates = [v if isinstance(v, NodeId) else NodeId(v) for v in self.node1_candidates]
+
+        if not isinstance(self.node2_candidates, list):
+            self.node2_candidates = [self.node2_candidates] if self.node2_candidates is not None else []
+        self.node2_candidates = [v if isinstance(v, NodeId) else NodeId(v) for v in self.node2_candidates]
+
+        if self.predicate1 is not None and not isinstance(self.predicate1, PropertyNodeId):
+            self.predicate1 = PropertyNodeId(self.predicate1)
+
+        if self.predicate2 is not None and not isinstance(self.predicate2, PropertyNodeId):
+            self.predicate2 = PropertyNodeId(self.predicate2)
+
+        if self.descendant is not None and not isinstance(self.descendant, NodeId):
+            self.descendant = NodeId(self.descendant)
+
+        super().__post_init__(**kwargs)
+
+
+class PairwiseCommonSubClassDescendantMatrix(PairwiseCommonDescendantMatrix):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SPARQLFUN_UBERGRAPH.PairwiseCommonSubClassDescendantMatrix
+    class_class_curie: ClassVar[str] = "sparqlfun_ubergraph:PairwiseCommonSubClassDescendantMatrix"
+    class_name: ClassVar[str] = "pairwise common SubClass descendant matrix"
+    class_model_uri: ClassVar[URIRef] = SPARQLFUN.PairwiseCommonSubClassDescendantMatrix
+
+
+@dataclass
 class OboClassFiltered(ClassNode):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1866,6 +2022,71 @@ class CellType(OboClass):
             self.id = CellTypeId(self.id)
 
         super().__post_init__(**kwargs)
+
+
+class BiolinkCategoryTriple(NodeToNodeTriple):
+    """
+    A triple that connects any node to its biolink category
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SPARQLFUN_BIOLINK.BiolinkCategoryTriple
+    class_class_curie: ClassVar[str] = "sparqlfun_biolink:BiolinkCategoryTriple"
+    class_name: ClassVar[str] = "biolink category triple"
+    class_model_uri: ClassVar[URIRef] = SPARQLFUN.BiolinkCategoryTriple
+
+
+@dataclass
+class Association(Statement):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SPARQLFUN_BIOLINK.Association
+    class_class_curie: ClassVar[str] = "sparqlfun_biolink:Association"
+    class_name: ClassVar[str] = "association"
+    class_model_uri: ClassVar[URIRef] = SPARQLFUN.Association
+
+    subject_category: Optional[Union[str, ClassNodeId]] = None
+    object_category: Optional[Union[str, ClassNodeId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.subject_category is not None and not isinstance(self.subject_category, ClassNodeId):
+            self.subject_category = ClassNodeId(self.subject_category)
+
+        if self.object_category is not None and not isinstance(self.object_category, ClassNodeId):
+            self.object_category = ClassNodeId(self.object_category)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class AssociationWithInferredCategories(Statement):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SPARQLFUN_BIOLINK.AssociationWithInferredCategories
+    class_class_curie: ClassVar[str] = "sparqlfun_biolink:AssociationWithInferredCategories"
+    class_name: ClassVar[str] = "association with inferred categories"
+    class_model_uri: ClassVar[URIRef] = SPARQLFUN.AssociationWithInferredCategories
+
+    subject_category: Optional[Union[str, ClassNodeId]] = None
+    object_category: Optional[Union[str, ClassNodeId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.subject_category is not None and not isinstance(self.subject_category, ClassNodeId):
+            self.subject_category = ClassNodeId(self.subject_category)
+
+        if self.object_category is not None and not isinstance(self.object_category, ClassNodeId):
+            self.object_category = ClassNodeId(self.object_category)
+
+        super().__post_init__(**kwargs)
+
+
+class GeneToGeneAssociation(Association):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SPARQLFUN_BIOLINK.GeneToGeneAssociation
+    class_class_curie: ClassVar[str] = "sparqlfun_biolink:GeneToGeneAssociation"
+    class_name: ClassVar[str] = "gene to gene association"
+    class_model_uri: ClassVar[URIRef] = SPARQLFUN.GeneToGeneAssociation
 
 
 @dataclass
@@ -4137,6 +4358,9 @@ slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
 slots.label = Slot(uri=RDFS.label, name="label", curie=RDFS.curie('label'),
                    model_uri=SPARQLFUN.label, domain=None, range=Optional[str])
 
+slots.category = Slot(uri=SPARQLFUN_RDF.category, name="category", curie=SPARQLFUN_RDF.curie('category'),
+                   model_uri=SPARQLFUN.category, domain=None, range=Optional[Union[str, ClassNodeId]])
+
 slots.datatype = Slot(uri=SPARQLFUN_RDF.datatype, name="datatype", curie=SPARQLFUN_RDF.curie('datatype'),
                    model_uri=SPARQLFUN.datatype, domain=None, range=Optional[Union[str, NodeId]])
 
@@ -4157,6 +4381,15 @@ slots.description = Slot(uri=DCTERMS.description, name="description", curie=DCTE
 
 slots.regex_slot = Slot(uri=SPARQLFUN_RDF.regex_slot, name="regex_slot", curie=SPARQLFUN_RDF.curie('regex_slot'),
                    model_uri=SPARQLFUN.regex_slot, domain=None, range=Optional[str])
+
+slots.class1 = Slot(uri=SPARQLFUN_OWL.class1, name="class1", curie=SPARQLFUN_OWL.curie('class1'),
+                   model_uri=SPARQLFUN.class1, domain=None, range=Optional[Union[str, NodeId]])
+
+slots.class2 = Slot(uri=SPARQLFUN_OWL.class2, name="class2", curie=SPARQLFUN_OWL.curie('class2'),
+                   model_uri=SPARQLFUN.class2, domain=None, range=Optional[Union[str, NodeId]])
+
+slots.descendant_class = Slot(uri=SPARQLFUN_OWL.descendant_class, name="descendant_class", curie=SPARQLFUN_OWL.curie('descendant_class'),
+                   model_uri=SPARQLFUN.descendant_class, domain=None, range=Optional[Union[str, NodeId]])
 
 slots.axiom_identifier = Slot(uri=SPARQLFUN_OWL.axiom_identifier, name="axiom_identifier", curie=SPARQLFUN_OWL.curie('axiom_identifier'),
                    model_uri=SPARQLFUN.axiom_identifier, domain=None, range=Optional[Union[str, BlankNodeId]])
@@ -4191,11 +4424,23 @@ slots.exact_synonyms = Slot(uri=OBOINOWL.hasExactSynonym, name="exact_synonyms",
 slots.ancestor = Slot(uri=SPARQLFUN_UBERGRAPH.ancestor, name="ancestor", curie=SPARQLFUN_UBERGRAPH.curie('ancestor'),
                    model_uri=SPARQLFUN.ancestor, domain=None, range=Optional[Union[str, NodeId]])
 
+slots.descendant = Slot(uri=SPARQLFUN_UBERGRAPH.descendant, name="descendant", curie=SPARQLFUN_UBERGRAPH.curie('descendant'),
+                   model_uri=SPARQLFUN.descendant, domain=None, range=Optional[Union[str, NodeId]])
+
 slots.node1 = Slot(uri=SPARQLFUN_UBERGRAPH.node1, name="node1", curie=SPARQLFUN_UBERGRAPH.curie('node1'),
                    model_uri=SPARQLFUN.node1, domain=None, range=Optional[Union[str, NodeId]])
 
 slots.node2 = Slot(uri=SPARQLFUN_UBERGRAPH.node2, name="node2", curie=SPARQLFUN_UBERGRAPH.curie('node2'),
                    model_uri=SPARQLFUN.node2, domain=None, range=Optional[Union[str, NodeId]])
+
+slots.is_direction_canonical = Slot(uri=SPARQLFUN_UBERGRAPH.is_direction_canonical, name="is_direction_canonical", curie=SPARQLFUN_UBERGRAPH.curie('is_direction_canonical'),
+                   model_uri=SPARQLFUN.is_direction_canonical, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.node1_candidates = Slot(uri=SPARQLFUN_UBERGRAPH.node1_candidates, name="node1_candidates", curie=SPARQLFUN_UBERGRAPH.curie('node1_candidates'),
+                   model_uri=SPARQLFUN.node1_candidates, domain=None, range=Optional[Union[Union[str, NodeId], List[Union[str, NodeId]]]])
+
+slots.node2_candidates = Slot(uri=SPARQLFUN_UBERGRAPH.node2_candidates, name="node2_candidates", curie=SPARQLFUN_UBERGRAPH.curie('node2_candidates'),
+                   model_uri=SPARQLFUN.node2_candidates, domain=None, range=Optional[Union[Union[str, NodeId], List[Union[str, NodeId]]]])
 
 slots.nodes = Slot(uri=SPARQLFUN_UBERGRAPH.nodes, name="nodes", curie=SPARQLFUN_UBERGRAPH.curie('nodes'),
                    model_uri=SPARQLFUN.nodes, domain=None, range=Optional[Union[Union[str, NodeId], List[Union[str, NodeId]]]])
@@ -4218,9 +4463,6 @@ slots.direct_taxon = Slot(uri=SPARQLFUN_UBERGRAPH.direct_taxon, name="direct_tax
 slots.query_has_subclass_ancestor = Slot(uri=SPARQLFUN_UBERGRAPH.query_has_subclass_ancestor, name="query_has_subclass_ancestor", curie=SPARQLFUN_UBERGRAPH.curie('query_has_subclass_ancestor'),
                    model_uri=SPARQLFUN.query_has_subclass_ancestor, domain=None, range=Optional[Union[str, NodeId]])
 
-slots.category = Slot(uri=SPARQLFUN_UBERON.category, name="category", curie=SPARQLFUN_UBERON.curie('category'),
-                   model_uri=SPARQLFUN.category, domain=None, range=Optional[Union[str, ClassNodeId]])
-
 slots.subcategory = Slot(uri=SPARQLFUN.subcategory, name="subcategory", curie=SPARQLFUN.curie('subcategory'),
                    model_uri=SPARQLFUN.subcategory, domain=None, range=Optional[Union[str, ClassNodeId]])
 
@@ -4232,6 +4474,18 @@ slots.drains = Slot(uri=RO['0002179'], name="drains", curie=RO.curie('0002179'),
 
 slots.branching_part_of = Slot(uri=RO['0002380'], name="branching_part_of", curie=RO.curie('0002380'),
                    model_uri=SPARQLFUN.branching_part_of, domain=None, range=Optional[Union[str, AnatomicalEntityId]])
+
+slots.subject_category = Slot(uri=SPARQLFUN_BIOLINK.subject_category, name="subject_category", curie=SPARQLFUN_BIOLINK.curie('subject_category'),
+                   model_uri=SPARQLFUN.subject_category, domain=None, range=Optional[Union[str, ClassNodeId]])
+
+slots.object_category = Slot(uri=SPARQLFUN_BIOLINK.object_category, name="object_category", curie=SPARQLFUN_BIOLINK.curie('object_category'),
+                   model_uri=SPARQLFUN.object_category, domain=None, range=Optional[Union[str, ClassNodeId]])
+
+slots.subject_category_inferred = Slot(uri=SPARQLFUN_BIOLINK.subject_category_inferred, name="subject_category_inferred", curie=SPARQLFUN_BIOLINK.curie('subject_category_inferred'),
+                   model_uri=SPARQLFUN.subject_category_inferred, domain=None, range=Optional[Union[str, ClassNodeId]])
+
+slots.object_category_inferred = Slot(uri=SPARQLFUN_BIOLINK.object_category_inferred, name="object_category_inferred", curie=SPARQLFUN_BIOLINK.curie('object_category_inferred'),
+                   model_uri=SPARQLFUN.object_category_inferred, domain=None, range=Optional[Union[str, ClassNodeId]])
 
 slots.seeAlso = Slot(uri=RDFS.seeAlso, name="seeAlso", curie=RDFS.curie('seeAlso'),
                    model_uri=SPARQLFUN.seeAlso, domain=None, range=Optional[Union[str, ThingId]])

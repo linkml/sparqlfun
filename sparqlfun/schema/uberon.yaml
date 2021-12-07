@@ -106,8 +106,7 @@ classes:
             equals_string: CL:0000000
 
 slots:
-  category:
-    range: class node
+
   subcategory:
     slot_uri: sparqlfun:subcategory
     range: class node

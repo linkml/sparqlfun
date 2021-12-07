@@ -1,5 +1,5 @@
 # Auto generated from config_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-11-24T10:59:42
+# Generation date: 2021-12-07T11:13:12
 # Schema: config_schema
 #
 # id: https://w3id.org/sparqlfun/config_schema
@@ -43,6 +43,10 @@ class EndpointName(extended_str):
     pass
 
 
+class ProfileName(extended_str):
+    pass
+
+
 class BindingBindingKey(extended_str):
     pass
 
@@ -57,9 +61,16 @@ class SystemConfiguration(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = CONFIG_SCHEMA.SystemConfiguration
 
     endpoints: Optional[Union[Dict[Union[str, EndpointName], Union[dict, "Endpoint"]], List[Union[dict, "Endpoint"]]]] = empty_dict()
+    profiles: Optional[Union[Dict[Union[str, ProfileName], Union[dict, "Profile"]], List[Union[dict, "Profile"]]]] = empty_dict()
+    description: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         self._normalize_inlined_as_dict(slot_name="endpoints", slot_type=Endpoint, key_name="name", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="profiles", slot_type=Profile, key_name="name", keyed=True)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
 
         super().__post_init__(**kwargs)
 
@@ -77,6 +88,8 @@ class Endpoint(YAMLRoot):
     url: str = None
     type_property: Optional[str] = None
     example_queries: Optional[Union[Union[dict, "ExampleQuery"], List[Union[dict, "ExampleQuery"]]]] = empty_list()
+    implements: Optional[Union[Union[str, ProfileName], List[Union[str, ProfileName]]]] = empty_list()
+    description: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.name):
@@ -95,6 +108,13 @@ class Endpoint(YAMLRoot):
         if not isinstance(self.example_queries, list):
             self.example_queries = [self.example_queries] if self.example_queries is not None else []
         self.example_queries = [v if isinstance(v, ExampleQuery) else ExampleQuery(**as_dict(v)) for v in self.example_queries]
+
+        if not isinstance(self.implements, list):
+            self.implements = [self.implements] if self.implements is not None else []
+        self.implements = [v if isinstance(v, ProfileName) else ProfileName(v) for v in self.implements]
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
 
         super().__post_init__(**kwargs)
 
@@ -116,6 +136,43 @@ class ExampleQuery(YAMLRoot):
             self.query_template = str(self.query_template)
 
         self._normalize_inlined_as_dict(slot_name="bindings", slot_type=Binding, key_name="binding_key", keyed=True)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Profile(YAMLRoot):
+    """
+    A feature implemented by an endpoint for supporting certain kinds of queries
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CONFIG_SCHEMA.Profile
+    class_class_curie: ClassVar[str] = "config_schema:Profile"
+    class_name: ClassVar[str] = "Profile"
+    class_model_uri: ClassVar[URIRef] = CONFIG_SCHEMA.Profile
+
+    name: Union[str, ProfileName] = None
+    description: Optional[str] = None
+    subsets: Optional[Union[str, List[str]]] = empty_list()
+    modules: Optional[Union[str, List[str]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, ProfileName):
+            self.name = ProfileName(self.name)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
+        if not isinstance(self.subsets, list):
+            self.subsets = [self.subsets] if self.subsets is not None else []
+        self.subsets = [v if isinstance(v, str) else str(v) for v in self.subsets]
+
+        if not isinstance(self.modules, list):
+            self.modules = [self.modules] if self.modules is not None else []
+        self.modules = [v if isinstance(v, str) else str(v) for v in self.modules]
 
         super().__post_init__(**kwargs)
 
@@ -188,11 +245,26 @@ slots.name = Slot(uri=CONFIG_SCHEMA.name, name="name", curie=CONFIG_SCHEMA.curie
 slots.url = Slot(uri=CONFIG_SCHEMA.url, name="url", curie=CONFIG_SCHEMA.curie('url'),
                    model_uri=CONFIG_SCHEMA.url, domain=None, range=str)
 
+slots.description = Slot(uri=CONFIG_SCHEMA.description, name="description", curie=CONFIG_SCHEMA.curie('description'),
+                   model_uri=CONFIG_SCHEMA.description, domain=None, range=Optional[str])
+
 slots.type_property = Slot(uri=CONFIG_SCHEMA.type_property, name="type_property", curie=CONFIG_SCHEMA.curie('type_property'),
                    model_uri=CONFIG_SCHEMA.type_property, domain=None, range=Optional[str])
 
 slots.example_queries = Slot(uri=CONFIG_SCHEMA.example_queries, name="example_queries", curie=CONFIG_SCHEMA.curie('example_queries'),
                    model_uri=CONFIG_SCHEMA.example_queries, domain=None, range=Optional[Union[Union[dict, ExampleQuery], List[Union[dict, ExampleQuery]]]])
+
+slots.profiles = Slot(uri=CONFIG_SCHEMA.profiles, name="profiles", curie=CONFIG_SCHEMA.curie('profiles'),
+                   model_uri=CONFIG_SCHEMA.profiles, domain=None, range=Optional[Union[Dict[Union[str, ProfileName], Union[dict, Profile]], List[Union[dict, Profile]]]])
+
+slots.implements = Slot(uri=CONFIG_SCHEMA.implements, name="implements", curie=CONFIG_SCHEMA.curie('implements'),
+                   model_uri=CONFIG_SCHEMA.implements, domain=None, range=Optional[Union[Union[str, ProfileName], List[Union[str, ProfileName]]]])
+
+slots.subsets = Slot(uri=CONFIG_SCHEMA.subsets, name="subsets", curie=CONFIG_SCHEMA.curie('subsets'),
+                   model_uri=CONFIG_SCHEMA.subsets, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.modules = Slot(uri=CONFIG_SCHEMA.modules, name="modules", curie=CONFIG_SCHEMA.curie('modules'),
+                   model_uri=CONFIG_SCHEMA.modules, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.results = Slot(uri=RESULTSET.results, name="results", curie=RESULTSET.curie('results'),
                    model_uri=CONFIG_SCHEMA.results, domain=None, range=Optional[Union[Union[dict, GenericResult], List[Union[dict, GenericResult]]]])

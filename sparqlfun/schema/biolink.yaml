@@ -1,0 +1,87 @@
+id: https://w3id.org/sparqlfun/biolink
+name: biolink
+title: sparqlfun biolink module
+description: >-
+  Abstractions for working with biolink
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  sparqlfun_biolink: https://w3id.org/sparqlfun/biolink
+  biolink: https://w3id.org/biolink/vocab/
+  sparqlfun: https://w3id.org/sparqlfun/
+  ubergraph: http://reasoner.renci.org/
+  linkml: https://w3id.org/linkml/
+  CL: http://purl.obolibrary.org/obo/CL_
+
+default_prefix: sparqlfun_biolink
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+  - obo_context
+
+imports:
+  - linkml:types
+  - omo
+  - ubergraph
+
+
+
+classes:
+
+  biolink category triple:
+    is_a: node to node triple
+    description: >-
+      A triple that connects any node to its biolink category
+    classification_rules:
+      - is_a: triple
+        slot_conditions:
+          predicate:
+            equals_string: biolink:category
+
+  association:
+    is_a: statement
+    slots:
+      - subject_category
+      - object_category
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?subject ?predicate ?object .
+          ?subject biolink:category ?subject_category .
+          ?object biolink:category ?object_category .
+        }
+
+  association with inferred categories:
+    is_a: statement
+    slots:
+      - subject_category
+      - object_category
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?subject ?predicate ?object .
+          ?subject biolink:category ?subject_category .
+          ?object biolink:category ?object_category .
+          ?subject_category rdfs:subClassOf* ?subject_category_inferred .
+          ?object_category rdfs:subClassOf* ?object_category_inferred .
+        }
+  gene to gene association:
+    is_a: association
+    classification_rules:
+      - is_a: association
+        slot_conditions:
+          subject_category:
+            equals_string: biolink:Gene
+          object_category:
+            equals_string: biolink:Gene
+
+slots:
+  subject_category:
+    is_a: category
+  object_category:
+    is_a: category
+  subject_category_inferred:
+    is_a: category
+  object_category_inferred:
+    is_a: category

@@ -21,7 +21,8 @@ default_range: node
 
 default_curi_maps:
   - semweb_context
-#  - obo_context
+  - obo_context
+  - idot_context
 
 imports:
   - linkml:types
@@ -34,4 +35,6 @@ imports:
   - ubergraph
   - uniprot_queries
   - uberon
+  - biolink
+
 

@@ -126,7 +126,7 @@ classes:
       object:
         range: node
     annotations:
-      sparql.select: SELECT * WHERE {?graph { ?subject ?predicate ?object . FILTER isIRI(?object) }}
+      sparql.select: SELECT * WHERE { GRAPH ?graph { ?subject ?predicate ?object . FILTER isIRI(?object) } }
 
   named node to named node triple:
     is_a: node to node triple
@@ -533,6 +533,9 @@ slots:
   label:
     slot_uri: rdfs:label
     range: string
+
+  category:
+    range: class node
 
   datatype:
   value:

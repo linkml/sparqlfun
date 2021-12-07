@@ -4,6 +4,8 @@ title: sparqlfun relation_graph module
 description: >-
   Abstractions for working with relation_graph
 license: https://creativecommons.org/publicdomain/zero/1.0/
+annotations:
+  profiles: relation_graph
 
 prefixes:
   sparqlfun_relation_graph: https://w3id.org/sparqlfun/relation_graph
@@ -50,6 +52,8 @@ classes:
         slot_conditions:
           graph:
             equals_string: ubergraph:nonredundant
+
+
 
 
     

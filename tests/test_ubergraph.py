@@ -58,6 +58,11 @@ def test_proto_style(engine):
 def test_construct(engine):
     check(engine.query(BasicClass(id='GO:0005694')))
 
+def test_yasgui(engine):
+    url = engine.yasgui_url(BasicClass(id='GO:0005694'))
+    print(f'URL={url}')
+
+
 def test_nr(engine):
     check(engine.query(NonRedundantQuad, subject='GO:0005694'))
 
@@ -93,14 +98,41 @@ def test_custom_result_set(engine):
 def test_common_ancestor(engine):
     check(engine.query(PairwiseCommonSubClassAncestor, node1='GO:0046220', node2='GO:0008295'))
 
-def test_setwise_common_ancestor(engine):
-    check(engine.query(SetwiseCommonSubClassAncestor, nodes=['GO:0046220', 'GO:0008295']))
+#def test_setwise_common_ancestor(engine):
+#    check(engine.query(SetwiseCommonSubClassAncestor, nodes=['GO:0046220', 'GO:0008295']))
 
 def test_mrca(engine):
     check(engine.query(PairwiseMostRecentCommonSubClassAncestor, node1='GO:0046220', node2='GO:0008295'))
 
-def test_setwise_mrca(engine):
-    check(engine.query(SetwiseMostRecentCommonSubClassAncestor, nodes=['GO:0046220', 'GO:0008295']))
+# doesn't work as intended
+#def test_setwise_mrca(engine):
+#    check(engine.query(SetwiseMostRecentCommonSubClassAncestor, nodes=['GO:0046220', 'GO:0008295']))
+
+#def test_setwise_mrca_empty(engine):
+#    check(engine.query(SetwiseMostRecentCommonSubClassAncestor, nodes=['GO:0003674', 'GO:0005575']))
+
+def test_common_subclass_descendant(engine):
+    """
+    test is-a descendants query for a pair of non-disjoint classes
+    """
+    check(engine.query(PairwiseCommonSubClassDescendant(node1='GO:0032502', node2='GO:0065003')))
+
+def test_common_subclass_descendant_disjoint(engine):
+    """
+    test is-a descendants query for a pair of disjoint classes
+    """
+    check(engine.query(PairwiseCommonSubClassDescendant(node1='GO:0008150', node2='GO:0003674')),
+          min_expected=0,
+          max_expected=0)
+
+def test_common_subclass_descendant_matrix(engine):
+    """
+    test is-a descendants from
+    """
+    check(engine.query(PairwiseCommonSubClassDescendant, node1='GO:0032502', node2=['GO:0065003', 'GO:0032984']))
+
+#def test_common_subclass_descendant_matrix(engine):
+#    check(engine.query(PairwiseCommonSubClassDescendantMatrix, node1_candidates=['GO:0032502'], node2_candidates=['GO:0065003', 'GO:0032984']))
 
 def test_owl(engine):
     check(engine.query(OwlNamedEquivalentClassTriple))

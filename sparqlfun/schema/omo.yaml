@@ -48,6 +48,14 @@ classes:
           predicate:
             equals_string: dcterms:conformsTo
 
+  conforms to statement:
+    is_a: node to node statement
+    classification_rules:
+      - is_a: node to node statement
+        slot_conditions:
+          predicate:
+            equals_string: dcterms:conformsTo
+
   graph class node:
     is_a: class node
     slots:

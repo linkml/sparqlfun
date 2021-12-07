@@ -164,7 +164,29 @@ classes:
       - predicate
       - object
 
+  traversal based pairwise disjointness violation:
+    slots:
+      - class1
+      - class2
+      - descendant_class
+    comments:
+      - This is not intended to replace using an OWL reasoner to discover unsatisfiable classes
+      - >-
+        This works by traversing over subClassOf links. Note that results may be incomplete if
+        inferred subClassOf edges are not added. However, note that reasoner runners such as robot
+        may fail fast if unsatisfiable classes are discovered
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?descendant_class rdfs:subClassOf* ?class1 .
+          ?descendant_class rdfs:subClassOf* ?class2 .
+          ?class1 owl:disjointWith ?class1
+        }
+
 slots:
+  class1:
+  class2:
+  descendant_class:
   axiom_identifier:
     identifier: false  ## blank nodes cannot be true identifiers
     range: blank node

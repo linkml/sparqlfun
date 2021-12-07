@@ -1,0 +1,2 @@
+#!/bin/sh
+poetry run python -m sparqlfun.query_engine -m sparqlfun.model -e uniprot "$@"

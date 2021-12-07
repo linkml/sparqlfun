@@ -6,13 +6,67 @@ endpoints:
         bindings:
           node1: GO:0046220
           node2: GO:0008295
+    implements:
+      - relation_graph
+      - taxon
+      - owl_as_rdf
+      - omo
+      - biolink_categories
+      - biolink_ontology
   dbpedia:
     url: http://dbpedia.org/sparql
   go:
     url: http://rdf.geneontology.org/sparql
+    implements:
+#      - relation_graph
+      - taxon
+      - owl_as_rdf
+      - omo
   uniprot:
     url: https://sparql.uniprot.org/sparql
+    implements:
+      - ontobee
+      - taxon
+      - owl_as_rdf
+      - omo
+  nextprot:
+    url: https://api.nextprot.org/sparql
+    implements:
+  kghub:
+    url: http://kg-hub-rdf.berkeleybop.io/sparql
+    implements:
+      - biolink_categories
+      - ontologies_as_kgx
   ontobee:
     url: http://sparql.hegroup.org/sparql
+    implements:
+      - ontobee
+      - taxon
+      - owl_as_rdf
+      - omo
   rhea:
     url: https://sparql.rhea-db.org/sparql
+    implements:
+  wikidata:
+    url: http://query.wikidata.org/sparql
+    implements:
+      - wikidata
+profiles:
+  relation_graph:
+    description: Implementing endpoints must have reflexive inferred triples asserted with named graph indicating method as per balhoff/relation-graph
+  taxon:
+    description: Implementing endpoints must have NCBITaxon, or a relevant subset of NCBITaxon loaded
+  owl_as_rdf:
+    description: Implementing endpoints must OWL axioms loaded as per the OWL2 mapping to RDF specification
+  omo:
+    description: Implementing endpoints must use OBO ontology-metadata (OMO) compliant annotations on terms
+  ontobee:
+    description: Implementing endpoints must use ontobee patterns for indicating source of ontology as Named Graph
+  wikidata:
+    description: Implementing endpoints must use Wikidata properties and Wikidata-style reification
+  biolink_categories:
+    description: Implementing endpoints must tag elements to biolink categories using biolink:category
+  biolink_ontology:
+    description: Implementing endpoints must have the biolink OWL ontology loaded
+  ontologies_as_kgx:
+    description: Implementing endpoints must use kgx/rdf reification patterns for ontology edges

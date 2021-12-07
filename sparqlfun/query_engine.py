@@ -3,6 +3,7 @@ import logging
 from dataclasses import dataclass
 from enum import Enum, unique
 from typing import Dict, Union, List, Any, Optional, Type
+import requests
 
 import click
 import pkg_resources
@@ -109,6 +110,7 @@ class SparqlEngine:
             ti = self.extract_template_instance(template, **kwargs)
         template_py_class = ti.python_class
         sq = ti.query
+        logging.info(f'Yasgui: {self.yasgui_url(ti)}')
         for k, v in ti.bindings.items():
             default_vals[k] = v
 
@@ -129,7 +131,7 @@ class SparqlEngine:
             for result in spw.query().bindings:
                 # TODO: default values
                 row = {k: getval(v) for k, v in result.items()}
-                objs.append(template_py_class(**{**row, **kwargs, **default_vals}))
+                objs.append(template_py_class(**{**default_vals, **kwargs, **row}))
         else:
             spw = SPARQLWrapper(_url)
             spw.setQuery(sq.query)
@@ -174,8 +176,8 @@ class SparqlEngine:
 
         default_vals = self._get_defaults(c)
         sq = ti.query
-        for k, v in ti.bindings.items():
-            default_vals[k] = v
+        #for k, v in ti.bindings.items():
+        #    default_vals[k] = v
 
         spw = SPARQLWrapper(_url)
         spw.setQuery(sq.query)
@@ -183,8 +185,34 @@ class SparqlEngine:
         g = spw.query().convert()
         return g
 
-    def extract_template_instance(self, template: Union[Type[YAMLRoot], YAMLRoot], **kwargs) -> SparqlTemplateInstance:
+    def yasgui_url(self, template: Union[Type[YAMLRoot], YAMLRoot, SparqlTemplateInstance],
+                   _url = None,
+                   **kwargs) -> str:
+        if _url is None:
+            _url = self.get_endpoint().url
+        logging.info(f'Querying: {_url}')
+        prefix_map = self._get_prefix_map()
+        ti = self.extract_template_instance(template, **kwargs)
+        params = {
+            'query': requests.utils.quote(ti.query.query),
+            'endpoint': requests.utils.quote(_url),
+        }
+        params_str = '&'.join([f'{k}={v}' for k, v in params.items()])
+        return f'https://yasgui.triply.cc/#{params_str}'
+
+
+    def extract_template_instance(self, template: Union[Type[YAMLRoot], YAMLRoot, SparqlTemplateInstance], **kwargs) -> SparqlTemplateInstance:
+        """
+
+        :param template:
+        :param kwargs:
+        :return:
+        """
         sv = self.schema_view
+        if isinstance(template, SparqlTemplateInstance):
+            if len(kwargs.items()):
+                logging.error(f'Ignoring kwargs: {kwargs}, as template already instantiated: {template}')
+            return template
         if isinstance(template, YAMLRoot):
             template_py_class = type(template)
             bindings = {}
@@ -410,13 +438,15 @@ class OutputFormat(Enum):
               help="name of module to load")
 @click.option('-S', '--schema',
               help="path to schema, if not default")
+@click.option('--yasgui/--no-yasgui', default=False, show_default=True,
+              help="return URL to yasgui interface rather than execute query")
 @click.option('-T', '--template',
               required=True,
               help='name of template')
 @click.option('-v', '--verbose', count=True)
 @click.argument('params', nargs=-1)
 def cli(params: List[str], module: str, schema: str, endpoint: str, limit: int, curie_maps: List[str], prefix: List[str],
-        to_format: str, template: str, verbose: int):
+        yasgui, to_format: str, template: str, verbose: int):
     """
     Query sparql template
 
@@ -455,7 +485,11 @@ def cli(params: List[str], module: str, schema: str, endpoint: str, limit: int, 
                     add_prefix(x)
             else:
                 add_prefix(v)
-            kwargs[k] = v
+            if ',' in k:
+                for k1 in k.split(','):
+                    kwargs[k1] = v
+            else:
+                kwargs[k] = v
         else:
             args.append(p)
             add_prefix(p)
@@ -480,6 +514,11 @@ def cli(params: List[str], module: str, schema: str, endpoint: str, limit: int, 
         dumper = rdf_dumper
     else:
         raise Exception(f'Unknown format: {to_format}')
+
+    if yasgui:
+        yasgui_url = se.yasgui_url(template_py, **kwargs)
+        print(yasgui_url)
+        exit(0)
 
     container = se.query(template_py, *args, **kwargs)
     #result_set_py_class = getattr(module, 'ResultSet')
