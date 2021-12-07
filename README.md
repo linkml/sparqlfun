@@ -16,6 +16,7 @@ LinkML based SPARQL template library and execution engine
  - optional python bindings / [object model](https://github.com/linkml/sparqlfun/blob/main/sparqlfun/model.py) using LinkML
  - supports both SELECT and CONSTRUCT
  - optional export to TSV, JSON, YAML, RDF
+ - extensive [endpoint metadata](https://github.com/linkml/sparqlfun/tree/main/sparqlfun/config)
 
 This is currently alpha software, interfaces and organization may change
 
