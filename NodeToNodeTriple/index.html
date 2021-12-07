@@ -99,15 +99,19 @@
             <div class="section">
               
                 <h1 id="class-node-to-node-triple">Class: node to node triple</h1>
-<p>A triple where object is a node</p>
-<p>URI: <a href="https://w3id.org/sparqlfun/NodeToNodeTriple">sparqlfun:NodeToNodeTriple</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Triple],[RdfsSubpropertyOfTriple],[RdfsSubclassOfTriple],[RdfsRangeTriple],[RdfsDomainTriple],[RdfTypeTriple],[PropertyNode],[Node]&lt;object%200..1-%20[NodeToNodeTriple],[NodeToNodeTriple]^-[RdfsSubpropertyOfTriple],[NodeToNodeTriple]^-[RdfsSubclassOfTriple],[NodeToNodeTriple]^-[RdfsRangeTriple],[NodeToNodeTriple]^-[RdfsDomainTriple],[NodeToNodeTriple]^-[RdfTypeTriple],[Triple]^-[NodeToNodeTriple],[Node]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Triple],[RdfsSubpropertyOfTriple],[RdfsSubclassOfTriple],[RdfsRangeTriple],[RdfsDomainTriple],[RdfTypeTriple],[PropertyNode],[Node]&lt;object%200..1-%20[NodeToNodeTriple],[NodeToNodeTriple]^-[RdfsSubpropertyOfTriple],[NodeToNodeTriple]^-[RdfsSubclassOfTriple],[NodeToNodeTriple]^-[RdfsRangeTriple],[NodeToNodeTriple]^-[RdfsDomainTriple],[NodeToNodeTriple]^-[RdfTypeTriple],[Triple]^-[NodeToNodeTriple],[Node]" /></a></p>
+<p>A triple where object is a node (isIRI)</p>
+<p>URI: <a href="https://linkml.io/sparqlfun/NodeToNodeTriple">sparqlfun:NodeToNodeTriple</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Triple],[RdfsSubpropertyOfTriple],[RdfsSubclassOfTriple],[RdfsRangeTriple],[RdfsDomainTriple],[RdfTypeTriple],[PropertyNode],[OwlEquivalentClassTriple],[Node]&lt;object%200..1-%20[NodeToNodeTriple],[NodeToNodeTriple]^-[RdfsSubpropertyOfTriple],[NodeToNodeTriple]^-[RdfsSubclassOfTriple],[NodeToNodeTriple]^-[RdfsRangeTriple],[NodeToNodeTriple]^-[RdfsDomainTriple],[NodeToNodeTriple]^-[RdfTypeTriple],[NodeToNodeTriple]^-[OwlEquivalentClassTriple],[NodeToNodeTriple]^-[NamedNodeToNamedNodeTriple],[NodeToNodeTriple]^-[ConformsToTriple],[NodeToNodeTriple]^-[BiolinkCategoryTriple],[Triple]^-[NodeToNodeTriple],[Node],[NamedNodeToNamedNodeTriple],[ConformsToTriple],[BiolinkCategoryTriple]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Triple],[RdfsSubpropertyOfTriple],[RdfsSubclassOfTriple],[RdfsRangeTriple],[RdfsDomainTriple],[RdfTypeTriple],[PropertyNode],[OwlEquivalentClassTriple],[Node]&lt;object%200..1-%20[NodeToNodeTriple],[NodeToNodeTriple]^-[RdfsSubpropertyOfTriple],[NodeToNodeTriple]^-[RdfsSubclassOfTriple],[NodeToNodeTriple]^-[RdfsRangeTriple],[NodeToNodeTriple]^-[RdfsDomainTriple],[NodeToNodeTriple]^-[RdfTypeTriple],[NodeToNodeTriple]^-[OwlEquivalentClassTriple],[NodeToNodeTriple]^-[NamedNodeToNamedNodeTriple],[NodeToNodeTriple]^-[ConformsToTriple],[NodeToNodeTriple]^-[BiolinkCategoryTriple],[Triple]^-[NodeToNodeTriple],[Node],[NamedNodeToNamedNodeTriple],[ConformsToTriple],[BiolinkCategoryTriple]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../Triple/">Triple</a> - Represents an RDF triple</li>
+<li>is_a: <a href="../Triple/">Triple</a> - Represents a single unadorned RDF triple</li>
 </ul>
 <h2 id="children">Children</h2>
 <ul>
+<li><a href="../BiolinkCategoryTriple/">BiolinkCategoryTriple</a> - A triple that connects any node to its biolink category</li>
+<li><a href="../ConformsToTriple/">ConformsToTriple</a></li>
+<li><a href="../NamedNodeToNamedNodeTriple/">NamedNodeToNamedNodeTriple</a> - A triple where subject and object are both nodes (isIRI)</li>
+<li><a href="../OwlEquivalentClassTriple/">OwlEquivalentClassTriple</a> - A statement that connects two class nodes where both classes are equivalent</li>
 <li><a href="../RdfTypeTriple/">RdfTypeTriple</a> - A triple that indicates the asserted type of the subject entity</li>
 <li><a href="../RdfsDomainTriple/">RdfsDomainTriple</a></li>
 <li><a href="../RdfsRangeTriple/">RdfsRangeTriple</a></li>

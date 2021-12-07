@@ -2,597 +2,2442 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://linkml.github.io/sparqlfun/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/AbsorptionAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ActiveSiteAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ActivityRegulationAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/AllergenAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/AlternativeInitiationAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/AlternativeProductsAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/AlternativePromoterUsageAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/AlternativeSequenceAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/AlternativeSplicingAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/AnatomicalEntity/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Association/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/AssociationWithInferredCategories/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/BaseTable/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/BasicClass/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/BetaStrandAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Binding/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/BindingSiteAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/BiolinkCategoryTriple/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/BiophysicochemicalAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/BiotechnologyAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/BlankNode/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/BloodVessel/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/BloodVesselSubcategory/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/BookCitation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/CalciumBindingAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/CatalyticActivityAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/CautionAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/CellType/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ChainAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/CitationStatement/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Class/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/ClassNode/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ClassTaxonExclusion/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ClassTaxonExclusionViaNeverIn/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ClassTaxonExclusionViaOnlyIn/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/ClassTrait/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Cluster/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/CofactorAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/CoiledCoilAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/CompositionalBiasAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Concept/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ConformsToStatement/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ConformsToTriple/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/CountOfInstantiatedClasses/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/CountOfPredicates/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/CountOfSubclasses/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/CrossLinkAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/DNA/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/DefinitionTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/DeprecatedOboClassQuery/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/DescribeEquivalentExpression/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/DevelopmentalStageAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/DiseaseAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/DisruptionPhenotypeAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/DisulfideBondAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/DomainAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/DomainAssignmentStatement/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/DomainExtentAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ElectronicCitation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/EndpointStatement/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/EnzymeRegulationAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/EquivalenceTripleMixin/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ErroneousGeneModelPredictionAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ErroneousInitiationAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ErroneousTerminationAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ErroneousTranslationAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ExperimentalInformationAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/Export/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ExternalSequence/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/FamilyMembershipStatement/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/FrameshiftAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/FunctionAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Gene/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/GeneToGeneAssociation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/GenericResult/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/GenomicDNA/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/GenomicRNA/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/GlycosylationAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/GraphClassNode/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/HelixAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/InTaxonTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/IndividualTrait/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/InductionAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/InferredNeverInTaxon/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/InitiatorMethionineAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/IntramembraneAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/IriNode/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/IsAOrPartOf/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/IsReport/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Journal/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/JournalCitation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/KineticsAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/KnownSequence/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/LipidationAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/MRNA/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/MassMeasurementMethod/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/MassSpectrometryAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/MemberOfRedudantProteome/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/MetalBindingAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ModificationAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ModifiedResidueAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ModifiedSequence/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Molecule/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/MoleculeProcessingAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/MotifAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/MutagenesisAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NPBindingAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/NamedIndividualNode/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NamedNodeToNamedNodeTriple/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NaturalVariantAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NaturalVariationAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NestedNodeObject/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NestedTriple/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/NeverInTaxonTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/Node/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NodeObject/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NodeOrLiteral/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NodeToNodeStatement/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/NodeToNodeTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NodeToValueStatement/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/NodeToValueTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/NodeTrait/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NonAdjacentResiduesAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/NonRedundantQuad/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NonSelfInteraction/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NonStandardResidueAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NonTerminalResidueAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/NormalizedInformationContentTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NotObsolete/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NotObsoleteProtein/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NotObsoleteTaxon/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NucleotideBindingAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NucleotideMappingStatement/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/NucleotideResource/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/OboClass/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/OboClassFiltered/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/OboClassQuery/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/OboClassWithCategory/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ObservationCitation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ObsoleteProtein/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ObsoleteTaxon/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Organelle/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/OtherDNA/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/OtherRNA/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/OwlAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/OwlEquivalentClassTriple/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/OwlNamedEquivalentClassTriple/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/OwlTripleAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/OwlTripleWithAnnotationsTODO/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PHDependenceAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PTMAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/PairwiseCommonAncestor/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PairwiseCommonDescendant/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PairwiseCommonDescendantMatrix/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/PairwiseCommonSubClassAncestor/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PairwiseCommonSubClassDescendant/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PairwiseCommonSubClassDescendantMatrix/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PairwiseMostRecentCommonAncestor/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PairwiseMostRecentCommonSubClassAncestor/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PatentCitation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Pathway/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PathwayAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PeptideAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PharmaceuticalAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Plasmid/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PolymorphismAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PropeptideAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/PropertyNode/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/PropertyTrait/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Protein/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ProteinClassifiedWith/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ProteinExistence/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Proteome/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ProteomeComponent/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/PublishedCitation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/Quad/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/RNA/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/RNAEditingAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfFirstTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfLevelSummaryStatistic/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfListMemberTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfListNode/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfListTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfRestTransitiveTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfRestTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/RdfTypeStatement/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfTypeTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfsDomainTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfsLabelTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfsRangeTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfsSubclassOfNamedTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfsSubclassOfTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RdfsSubpropertyOfTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/RedoxPotentialAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ReferenceProteome/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/RegionAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/RelationGraphQuad/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/RepeatAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/RepresentativeProteome/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Resource/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/ResultSet/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ReviewedProtein/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/RibosomalFrameshifting/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SecondaryStructureAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SelfInteraction/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SequenceAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SequenceCautionAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SequenceConflictAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SequenceUncertaintyAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SetwiseCommonSubClassAncestor/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SetwiseMostRecentCommonSubClassAncestor/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SignalPeptideAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SimilarityAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SimpleSequence/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SiteAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SomeValuesFromRestriction/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Statement/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Status/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/StructureDeterminationMethod/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/StructureMappingStatement/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/StructureResource/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/SubClassCountTriple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SubcellularLocation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SubcellularLocationAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SubclassOfSomeValuesFrom/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SubmissionCitation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/SubunitAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Taxon/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/TaxonApplicable/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/TaxonApplicableClass/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/TaxonClass/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/TemperatureDependenceAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ThesisCitation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Thing/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Tissue/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/TissueSpecificityAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/TopologicalDomainAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ToxicDoseAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/TranscribedRNA/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/TranscriptResource/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/TransitPeptideAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/TransmembraneAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/Transposon/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/TraversalBasedPairwiseDisjointnessViolation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/Triple/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/TurnAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/TypedNode/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/UberGraphSourceEnum/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/UbergraphQuad/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/UbergraphTaxonClass/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/UnassignedDNA/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/UnassignedRNA/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/UnknownSequence/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/UnpublishedCitation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ViralCRNA/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/ZincFingerAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/abstract/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/activity/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/alias/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/alternativeName/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/ancestor/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/annotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/annotations/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/attribution/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/author/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/authorsIncomplete/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/axiom_identifier/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/axiom_object/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/axiom_predicate/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/base/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/basedOn/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/basicClass__parents/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/basicClass__subClassOf/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/binding_key/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/binding_value/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/bindings/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/blood_vessel_subcategory/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/branching_part_of/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/catalyticActivity/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/category/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/cellularComponent/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/certain/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/chain/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/citation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/class1/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/class2/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/class_taxon_exclusion_object/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/class_taxon_exclusion_subject/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/class_taxon_exclusion_via_never_in_object/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/class_taxon_exclusion_via_never_in_subject/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/class_taxon_exclusion_via_only_in_object/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/class_taxon_exclusion_via_only_in_subject/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/class_with_constraint/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/classifiedWith/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/cofactorLabel/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/commonTaxon/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/complete/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/component/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/conflictingSequence/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/created/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/curated/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/database/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/datatype/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/datatypeProperty/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/definition/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/deprecated_obo_class_query_results/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/descendant/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/descendant_class/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/describe_equivalent_expression_results/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/description/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/direct_taxon/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/disease/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/domain/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/drains/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/editor/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/encodedBy/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/encodedIn/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/enzyme/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/enzymeClass/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/equivalence_triple_mixin_object/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/equivalence_triple_mixin_subject/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/erratum/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/erratumFor/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/exact_synonyms/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/exclusionReason/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/experiments/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/filler/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/frameshift/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/graph/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/groupcore/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/height/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/home/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/host/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/id/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/implicit/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/institution/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/interaction/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/iri_node_id/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/is_a_or_part_of_graph/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/is_direction_canonical/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/isolatedFrom/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/label/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/label_regex/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/label_starts_with/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/language/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/length/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/linkIsExplicit/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/locatedOn/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/locator/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/manual/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/mappedAnnotation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/mappedCitation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/mass/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/maximum/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/md5Checksum/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/measuredActivity/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/measuredAffinity/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/measuredError/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/measuredValue/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/member/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/memberOf/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/method/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/mnemonic/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/modification/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/modified/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/name/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/negative/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/nestedTriple__xobject/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/nested_triple_object/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/nested_triple_subject/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/node1/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/node1_candidates/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/node2/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/node2_candidates/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/node_object/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/node_statements/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/node_to_node_statement_object/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/node_to_node_triple_object/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/node_to_value_statement_object/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/node_to_value_triple_object/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/nodes/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/non_redundant_quad_graph/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/nucleotideSequenceMappingIssue/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/object/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/objectProperty/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/object_category/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/object_category_inferred/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/obo_class_query_results/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/obsolete/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/oldMnemonic/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/orfName/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/organism/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/orientation/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/otherName/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/owl_named_equivalent_class_triple_object/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/owl_named_equivalent_class_triple_subject/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/pages/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/panproteome/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/part/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/partOf/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/partOfLineage/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/participant/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/pattern/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/place/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/potentialSequence/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/precursor/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/predicate/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/predicate1/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/predicate2/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/prefix/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/publishedIn/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/publisher/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/query_has_subclass_ancestor/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/query_template/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/rank/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/rdfLevelSummaryStatistic__count_value/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/rdfLevelSummaryStatistic__element/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/rdf_list_triple_subject/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/rdf_type_statement_object/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/rdf_type_triple_object/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/rdfs_label_triple_value/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/rdfs_subclass_of_triple_object/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/rdfs_subclass_of_triple_subject/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/rdfs_subproperty_of_triple_object/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/rdfs_subproperty_of_triple_subject/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/recommendedName/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/redundantTo/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/regex_slot/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/relatedLocation/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/relation_graph_quad_graph/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/representativeFor/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/resolution/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/results/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/reviewed/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/scientificName/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/scope/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/seeAlso/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/seedFor/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/sequence/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/shortCoden/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/stanza/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/statement_node_statements/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/statement_value_statements/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/statements/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/strain/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/structuredName/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/structuredNameType/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/subcategory/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/subject/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/subject_category/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/subject_category_inferred/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/subject_predicate/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/submittedName/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/substitution/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/supplies/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/synonym/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/taxon_applicable_object/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/taxon_applicable_subject/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/title/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/topology/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/translatedFrom/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/type/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/uriTemplate/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/urlTemplate/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/value/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/value_object/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/value_statements/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/version/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/width/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/xeno/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/sparqlfun/xxresults/</loc>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/Boolean/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/Date/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/Datetime/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/Decimal/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/Double/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/Float/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/Integer/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/LiteralAsStringType/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/Ncname/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/NodeIdType/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/Nodeidentifier/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/Objectidentifier/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/String/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/Time/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/Uri/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://linkml.github.io/sparqlfun/types/Uriorcurie/</loc>
-         <lastmod>2021-11-20</lastmod>
+         <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -99,12 +99,14 @@
             <div class="section">
               
                 <h1 id="class-taxon-applicable">Class: taxon applicable</h1>
-<p>URI: <a href="https://w3id.org/sparqlfun/TaxonApplicable">sparqlfun:TaxonApplicable</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[TaxonClass],[TaxonApplicableClass],[TaxonClass]&lt;object%200..1-%20[TaxonApplicable],[TaxonApplicableClass]&lt;subject%200..1-%20[TaxonApplicable],[NeverInTaxonTriple]uses%20-.-&gt;[TaxonApplicable],[InferredNeverInTaxon]uses%20-.-&gt;[TaxonApplicable],[InTaxonTriple]uses%20-.-&gt;[TaxonApplicable],[NeverInTaxonTriple],[InferredNeverInTaxon],[InTaxonTriple]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[TaxonClass],[TaxonApplicableClass],[TaxonClass]&lt;object%200..1-%20[TaxonApplicable],[TaxonApplicableClass]&lt;subject%200..1-%20[TaxonApplicable],[NeverInTaxonTriple]uses%20-.-&gt;[TaxonApplicable],[InferredNeverInTaxon]uses%20-.-&gt;[TaxonApplicable],[InTaxonTriple]uses%20-.-&gt;[TaxonApplicable],[NeverInTaxonTriple],[InferredNeverInTaxon],[InTaxonTriple]" /></a></p>
+<p>URI: <a href="https://linkml.io/sparqlfun/TaxonApplicable">sparqlfun:TaxonApplicable</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[TaxonClass],[TaxonApplicableClass],[TaxonClass]&lt;object%200..1-%20[TaxonApplicable],[TaxonApplicableClass]&lt;subject%200..1-%20[TaxonApplicable],[NeverInTaxonTriple]uses%20-.-&gt;[TaxonApplicable],[InTaxonTriple]uses%20-.-&gt;[TaxonApplicable],[ClassTaxonExclusionViaOnlyIn]uses%20-.-&gt;[TaxonApplicable],[ClassTaxonExclusionViaNeverIn]uses%20-.-&gt;[TaxonApplicable],[ClassTaxonExclusion]uses%20-.-&gt;[TaxonApplicable],[NeverInTaxonTriple],[InTaxonTriple],[ClassTaxonExclusionViaOnlyIn],[ClassTaxonExclusionViaNeverIn],[ClassTaxonExclusion]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[TaxonClass],[TaxonApplicableClass],[TaxonClass]&lt;object%200..1-%20[TaxonApplicable],[TaxonApplicableClass]&lt;subject%200..1-%20[TaxonApplicable],[NeverInTaxonTriple]uses%20-.-&gt;[TaxonApplicable],[InTaxonTriple]uses%20-.-&gt;[TaxonApplicable],[ClassTaxonExclusionViaOnlyIn]uses%20-.-&gt;[TaxonApplicable],[ClassTaxonExclusionViaNeverIn]uses%20-.-&gt;[TaxonApplicable],[ClassTaxonExclusion]uses%20-.-&gt;[TaxonApplicable],[NeverInTaxonTriple],[InTaxonTriple],[ClassTaxonExclusionViaOnlyIn],[ClassTaxonExclusionViaNeverIn],[ClassTaxonExclusion]" /></a></p>
 <h2 id="mixin-for">Mixin for</h2>
 <ul>
+<li><a href="../ClassTaxonExclusion/">ClassTaxonExclusion</a> (mixin) </li>
+<li><a href="../ClassTaxonExclusionViaNeverIn/">ClassTaxonExclusionViaNeverIn</a> (mixin)  - An inferred never-in between a subject term and an object taxon, which holds</li>
+<li><a href="../ClassTaxonExclusionViaOnlyIn/">ClassTaxonExclusionViaOnlyIn</a> (mixin) </li>
 <li><a href="../InTaxonTriple/">InTaxonTriple</a> (mixin)  - In ubergraph, an in-taxon triple is pre-inferred</li>
-<li><a href="../InferredNeverInTaxon/">InferredNeverInTaxon</a> (mixin)  - We infer via join</li>
 <li><a href="../NeverInTaxonTriple/">NeverInTaxonTriple</a> (mixin) </li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>

@@ -75,6 +75,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#sparql-construct-and-nestedinlined-objects">SPARQL CONSTRUCT and nested/inlined objects</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#multiple-values">Multiple Values</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#modularity">Modularity</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#use-of-jinja-commands">Use of Jinja commands</a>
@@ -82,6 +84,8 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#supported-endpoints">Supported Endpoints</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adding-your-own-templates">Adding your own templates</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#see-also">See also</a>
     </li>
@@ -133,29 +137,35 @@
                 <h1 id="sparqlfun">sparqlfun</h1>
 <p>LinkML based SPARQL template library and execution engine</p>
 <ul>
-<li>modularized core library of SPARQL templates<ul>
+<li>modularized core library of <a href="https://github.com/linkml/sparqlfun/tree/main/sparqlfun/schema">SPARQL templates</a><ul>
 <li>generic templates using common vocabs (rdf, owl, skos, ...)</li>
 <li>OBO and biology specific, e.g. Ubergraph</li>
 <li>coming soon: uniprot, wikidata, etc</li>
 </ul>
 </li>
 <li>Fully FAIR description of templates<ul>
-<li>Each template has a URI</li>
-<li>Each template parameters has a URI</li>
+<li>Each template has a URI (e.g.: https://linkml.io/sparqlfun/PairwiseCommonDescendant)</li>
+<li>Each template parameter has a URI (e.g. https://linkml.io/sparqlfun/subject)</li>
 <li>Full metadata including descriptions of each</li>
 <li>Templates described in YAML, RDF, SHACL, ShEx, ...</li>
 </ul>
 </li>
-<li>optional python bindings using LinkML</li>
-<li>supports both SELECT and CONSTRUCT</li>
-<li>optional export to TSV, JSON, YAML</li>
+<li>Rich expressive language for moedeling templates<ul>
+<li>uses <a href="https://linkml.io/linkml/">LinkML</a> as base language</li>
 </ul>
+</li>
+<li>optional python bindings / <a href="https://github.com/linkml/sparqlfun/blob/main/sparqlfun/model.py">object model</a> using LinkML</li>
+<li>supports both SELECT and CONSTRUCT</li>
+<li>optional export to TSV, JSON, YAML, RDF</li>
+</ul>
+<p>This is currently alpha software, interfaces and organization may change</p>
 <h2 id="browse-the-default-templates">Browse the default templates</h2>
 <ul>
 <li><a href="http://linkml.io/sparqlfun/">http://linkml.io/sparqlfun/</a></li>
 </ul>
 <p>Note: currently not all metadata from the yaml is shown in the generated docs</p>
 <h2 id="command-line">Command Line</h2>
+<p>Use the <a href="https://linkml.io/sparqlfun/PairwiseCommonSubClassAncestor">sparqlfun:PairwiseCommonSubClassAncestor</a> template</p>
 <pre><code class="language-bash">sparqlfun -e ubergraph -T PairwiseCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
 </code></pre>
 <p>results:</p>
@@ -178,27 +188,37 @@
 ...
 </code></pre>
 <h2 id="python">Python</h2>
-<pre><code class="language-python">se = SparqlEngine(endpoint='ubergraph')
+<pre><code class="language-python">from sparqlfun import SparqlEngine
+from sparqlfun.model import PairwiseCommonSubClassAncestor
+
+se = SparqlEngine(endpoint='ubergraph')
 se.bind_prefixes(GO='http://purl.obolibrary.org/obo/GO_')
-for row in se.query(PairwiseCommonSubClassAncestor, node1='GO:0046220', node2='GO:0008295'):
+for row in se.query(PairwiseCommonSubClassAncestor(node1='GO:0046220', node2='GO:0008295')):
         print(f'ROW={row}')
 </code></pre>
-<p>For more examples, see tests/</p>
+<p>For more examples, see tests/ in GitHub</p>
 <h2 id="service-via-fast-api">Service (via Fast API)</h2>
 <p>coming soon!</p>
 <h2 id="browsing-the-templates">Browsing the templates</h2>
 <ul>
-<li>source is in sparqlfun/schema<ul>
+<li>source is in <a href="https://github.com/linkml/sparqlfun/tree/main/sparqlfun/schema">sparqlfun/schema</a><ul>
 <li>add new templates here</li>
 </ul>
 </li>
-<li>Browse the generated markdown on the site</li>
+<li>Browse the generated markdown on the site<ul>
+<li>markdown is auto-created from the yaml schema</li>
+</ul>
+</li>
 </ul>
 <h2 id="how-it-works">How it works</h2>
 <h3 id="basics">Basics</h3>
 <p>Templates are defined as YAML files following the LinkML schema.</p>
 <p>A yaml file with a single template might look like this:</p>
-<pre><code class="language-yaml">classes:
+<pre><code class="language-yaml">schema:
+   id: http://example.org/my-vocab/templates
+prefixes:
+   my: http://example.org/my-vocab/
+classes:
   my template:
     slots:
       - my_var1
@@ -215,8 +235,17 @@ slots:
 </code></pre>
 <p>This defines a template <code>MyTemplate</code> with two slots/parameters, and an
 arbitrarily complex SPARQL select query.</p>
+<p>The YAML file is broken into blocks that minimally include 3 sections:</p>
+<ul>
+<li>schema metadata, including prefix declarations</li>
+<li>your templates, which are in the <code>classes</code> section</li>
+<li>your parameters/variables, which are in the <code>slots</code> section</li>
+</ul>
 <p>Note that the definitions of the slots go in a different section from
-the classes/templates. You are encouraged to "reuse" slots across templates.</p>
+the classes/templates. You are encouraged to "reuse" slots across templates.
+However, you can use an
+<a href="https://linkml.io/linkml/faq/modeling.html?highlight=attributes#when-should-i-use-attributes-vs-slots">attribute declaration as a shortcut</a>
+if you don't want to reuse.</p>
 <p>The above can be used in queries:</p>
 <pre><code class="language-bash">sparqlfun -e ubergraph -T MyTemplate my_var2=MY_VAL
 </code></pre>
@@ -229,10 +258,23 @@ the fact that LinkML is a fully-fledged rich modeling language with bindings to 
 <li>ranges for slots</li>
 <li>mappings and URIs for your templates and slots</li>
 </ul>
+<p>This brings a number of tangible benefits:</p>
+<ul>
+<li>your templates can be strongly typed</li>
+<li>templates can be compiled to multiple other forms</li>
+<li>templates are turned into Python dataclasses, giving an optional ORM-like layer, IDE suppport, etc</li>
+<li>in future applications will be able to use template metadata<ul>
+<li>documentation on each slot</li>
+<li>pickers for fields such as dates, enums, etc </li>
+<li>e.g. if a template slot has a range of class MyClass, applications could provide autocomplete</li>
+</ul>
+</li>
+</ul>
 <h3 id="template-inheritance">Template Inheritance</h3>
-<p>Templates can be inherited, facilitating reuse and composition patterns</p>
+<p>Templates can be <a href="https://linkml.io/linkml/schemas/inheritance">inherited</a>, facilitating reuse and composition patterns</p>
 <p>To illustrate consider a simple "base" template to query a triple:</p>
-<pre><code class="language-yaml">triple:
+<pre><code class="language-yaml">classes:
+  triple:
     aliases:
       - statement
     description: &gt;-
@@ -247,16 +289,28 @@ the fact that LinkML is a fully-fledged rich modeling language with bindings to 
     annotations:
       sparql.select: SELECT  * WHERE { ?subject ?predicate ?object}
 </code></pre>
-<p>This is not a particularly useful template in isolation - you may as
+<p>This is arguable not a particularly useful template in isolation - you may as
 well query directly with sparql (nevertheless it can be useful to have
 templates for even this simple pattern, to faciliate generation of
 APIs etc)</p>
-<p>This template can be inherited, which means that slots will be
+<p>New templates can use this as a base class, and inherit from it, which means that slots will be
 inherited, eliminating some boilerplate and the need to redefine them</p>
-<p>Inerhitance allows even more powerful features using the LinkML
-<code>classification_rules</code> construct. Let's say we want to represent type
-triples as children of generic triples:</p>
-<pre><code class="language-yaml">rdf type triple:
+<pre><code class="language-yaml">classes:
+  quad:
+    is_a: triple
+  slots:
+     - graph  ## s/p/o slots inherited from triple
+  annotations:
+    sparql.select: SELECT  * WHERE {GRAPH ?graph { ?subject ?predicate ?object}}
+````
+
+Inerhitance allows even more powerful features using the LinkML
+`classification_rules` construct. Let's say we want to represent type
+triples as children of generic triples:
+
+
+```yaml
+rdf type triple:
     is_a: triple
     description: &gt;-
       A triple that indicates the asserted type of the subject entity
@@ -273,6 +327,9 @@ triples as children of generic triples:</p>
 </code></pre>
 <p><strong>Note we don't need to specify a SPARQL template here</strong> - the
 template is autogenerated from the classification rule.</p>
+<p>Use of inheritance is a matter of choice. You may find it simpler to have some level of redundancy
+and repeat information in similar templates. Note you will still get a decent
+amount of reuse via a common vocabulary of slots</p>
 <h3 id="sparql-construct-and-nestedinlined-objects">SPARQL CONSTRUCT and nested/inlined objects</h3>
 <p>Example CONSTRUCT query:</p>
 <pre><code class="language-yaml">obo class:
@@ -304,7 +361,7 @@ slots:
     multivalued: true
 </code></pre>
 <p>We can then query this as follows:</p>
-<pre><code class="language-bash">sparqlfun -e ubergraph -T OboClass id=GO:0000023
+<pre><code class="language-bash">sparqlfun -e ontobee -T OboClass id=GO:0000023
 </code></pre>
 <p>The results will be nested following the LinkML specification for the model</p>
 <pre><code class="language-json">{
@@ -322,7 +379,8 @@ slots:
   &quot;@type&quot;: &quot;ResultSet&quot;
 }
 </code></pre>
-<p>You can also get the turtle as returned by the triplestore:</p>
+<p>(note: templates are also compiled to JSON-Schema, which can be used for additional validation)</p>
+<p>You can also get the turtle as returned by the triplestore using <code>-f ttl</code>:</p>
 <pre><code class="language-turtle">@prefix ns1: &lt;http://www.geneontology.org/formats/oboInOwl#&gt; .
 @prefix ns2: &lt;http://purl.obolibrary.org/obo/&gt; .
 @prefix ns3: &lt;https://w3id.org/sparqlfun/&gt; .
@@ -337,9 +395,13 @@ ns2:GO_0000023 a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;
     ns3:results ns2:GO_0000023 .
 </code></pre>
 <p>With <code>-t tsv</code> the linkml csv dumper will attempt to flatten the nested structure to TSV as closely as possible, e.g. using pipe internal seperators for multivalued</p>
+<h3 id="multiple-values">Multiple Values</h3>
+<p>Parameters can be passed as lists, which will be translated to <code>VALUES</code> statements</p>
+<pre><code class="language-bash">sparqlfun -e ontobee -T OboClass id=GO:0000023,GO:0000024
+</code></pre>
 <h3 id="modularity">Modularity</h3>
-<p>LinkML allows importing so templates can be modularized</p>
-<p>In future this repo may be split up, with the bio/obo specific features migrating to a new repo.</p>
+<p>LinkML allows importing so templates can be modularized using <a href="https://linkml.io/linkml/schemas/imports">imports</a></p>
+<p><strong>NOTE</strong> In future this repo may be split up, with the bio/obo specific features migrating to a new repo.</p>
 <h3 id="use-of-jinja-commands">Use of Jinja commands</h3>
 <p>You can incorporate additional logic via Jinja2 templating instructions:</p>
 <pre><code class="language-yaml">obo class filtered:
@@ -363,6 +425,13 @@ ns2:GO_0000023 a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;
           ?id rdfs:subClassOf ?query_has_subclass_ancestor
           {% endif %}
         }
+
+slots:
+  query_has_subclass_ancestor:
+    range: class node
+    description: transitive is_a parent
+    in_subset:
+       - ubergraph  ## requires relation-graph closure
 </code></pre>
 <h2 id="supported-endpoints">Supported Endpoints</h2>
 <p>This framework can be used with any SPARQL endpoint. However, the
@@ -375,8 +444,44 @@ triplestores such as ubergraph and ontobee.</p>
 <p>In particular, ubergraph uses the relation-graph inference tool to
 pre-compute inferred direct triples from TBox existential axioms,
 allowing for simple and powerful queries over inferred ontologies</p>
+<p>See the config files in sparqlfun/config for a list of all pre-defined endpoints</p>
+<p>Example:</p>
+<pre><code class="language-yaml">endpoints:
+   ubergraph:
+      url: https://stars-app.renci.org/ubergraph/sparql
+      example_queries:
+         - query_template: PairwiseCommonSubClassAncestor
+           bindings:
+              node1: GO:0046220
+              node2: GO:0008295
+</code></pre>
+<p>See config_schema.yaml for the schema for endpoints</p>
+<p>Note there is a rich metadata model that is intended to facilitate
+applications and automated testing. It should be possible to automatically determine
+which templates are compatible with which endpoints based on provided metadata.</p>
+<h2 id="adding-your-own-templates">Adding your own templates</h2>
+<p>Currently this library is easiest to use if you are working with the existing pre-defined templates (PRs are welcome)</p>
+<p>However, you can use the framework with your own templates for your own triple data.
+<strong>THIS IS NOT YET WELL-SUPPORTED</strong>
+There are a couple of steps involved,
+in future this should be easier.</p>
+<p>First you need to create your own yaml file. This needs to conform to
+the LinkML metamodel - we recommend just copying an existing template
+to do this. Some of this may seem like unnecessary boilerplate at this
+stage, but it will come in useful later.</p>
+<p>Next you need to compile the template:</p>
+<pre><code class="language-bash">gen-python my_template.yaml &gt; my_template.py
+</code></pre>
+<p>This requires <a href="https://linkml.io/linkml/">linkml</a> (this library uses linkml as a developer dependency)</p>
+<p>You will need to pass BOTH of these as arguments to sparqlfun (<code>-m</code> and <code>-S</code>)</p>
+<p>TODO:</p>
+<ul>
+<li>add a dependency to the full linkml framework</li>
+<li>allow dynamic compilation of templates</li>
+</ul>
 <h2 id="see-also">See also</h2>
-<p>This was inspired in part by the powerful but arcane <a href="https://github.com/cmungall/sparqlprog/">sparqlprog</a> system</p>
+<p>This was inspired by and designed as a replacement for the powerful but arcane <a href="https://github.com/cmungall/sparqlprog/">sparqlprog</a> system.</p>
+<p>TODO: list other SPARQL template frameworks</p>
 <h2 id="todos">TODOs</h2>
 <ul>
 <li>Better Document<ul>
@@ -387,16 +492,20 @@ allowing for simple and powerful queries over inferred ontologies</p>
 </ul>
 </li>
 <li>Unify with SQL/rdftab functionality in semantic-sql</li>
+<li>Cypher bindings</li>
 <li>Split into bio-specific</li>
 <li>Expose more ubergraph awesomeness</li>
 <li>FastAPI/serverless endpoint</li>
-<li>Expose more validatin</li>
+<li>Expose more validation</li>
 <li>Integrate visualization / obographviz</li>
+<li>compilation to other frameworks, e.g. grlc</li>
 <li>Chaining<ul>
 <li>inject output from one into another and merge results, e.g. to get labels</li>
 <li>similar to wikidata services</li>
 </ul>
 </li>
+<li>UI/yasgui integration</li>
+<li>generation from dosdp (use dosdp-query algorithm)</li>
 <li>Templates for<ul>
 <li>uniprot</li>
 <li>gocams</li>

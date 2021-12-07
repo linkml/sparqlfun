@@ -99,16 +99,17 @@
             <div class="section">
               
                 <h1 id="class-quad">Class: quad</h1>
-<p>Represents an RDF triple plus named graph</p>
-<p>URI: <a href="https://w3id.org/sparqlfun/Quad">sparqlfun:Quad</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Triple],[RelationGraphQuad],[PropertyNode]&lt;predicate(i)%200..1-%20[Quad&#124;object(i):string%20%3F],[Node]&lt;subject(i)%200..1-%20[Quad],[Node]&lt;graph%200..1-%20[Quad],[Quad]^-[RelationGraphQuad],[Triple]^-[Quad],[PropertyNode],[Node]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Triple],[RelationGraphQuad],[PropertyNode]&lt;predicate(i)%200..1-%20[Quad&#124;object(i):string%20%3F],[Node]&lt;subject(i)%200..1-%20[Quad],[Node]&lt;graph%200..1-%20[Quad],[Quad]^-[RelationGraphQuad],[Triple]^-[Quad],[PropertyNode],[Node]" /></a></p>
+<p>Represents an RDF triple plus named graph to which the triple belongs</p>
+<p>URI: <a href="https://linkml.io/sparqlfun/Quad">sparqlfun:Quad</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Triple],[Statement],[RelationGraphQuad],[NodeOrLiteral]&lt;object(i)%200..1-++[Quad],[PropertyNode]&lt;predicate(i)%200..1-%20[Quad],[Node]&lt;subject(i)%200..1-%20[Quad],[Node]&lt;graph%200..1-%20[Quad],[Quad]^-[Statement],[Quad]^-[RelationGraphQuad],[Triple]^-[Quad],[PropertyNode],[NodeOrLiteral],[Node]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Triple],[Statement],[RelationGraphQuad],[NodeOrLiteral]&lt;object(i)%200..1-++[Quad],[PropertyNode]&lt;predicate(i)%200..1-%20[Quad],[Node]&lt;subject(i)%200..1-%20[Quad],[Node]&lt;graph%200..1-%20[Quad],[Quad]^-[Statement],[Quad]^-[RelationGraphQuad],[Triple]^-[Quad],[PropertyNode],[NodeOrLiteral],[Node]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../Triple/">Triple</a> - Represents an RDF triple</li>
+<li>is_a: <a href="../Triple/">Triple</a> - Represents a single unadorned RDF triple</li>
 </ul>
 <h2 id="children">Children</h2>
 <ul>
 <li><a href="../RelationGraphQuad/">RelationGraphQuad</a></li>
+<li><a href="../Statement/">Statement</a> - A quad that is optionally adorned with statements about it</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <h2 id="attributes">Attributes</h2>
@@ -124,7 +125,7 @@
 </li>
 <li><a href="../object/">object</a>  <sub>0..1</sub><ul>
 <li>Description: a literal or node representing the object of the triple</li>
-<li>Range: <a href="../types/String/">String</a></li>
+<li>Range: <a href="../NodeOrLiteral/">NodeOrLiteral</a></li>
 </ul>
 </li>
 <li><a href="../graph/">graph</a>  <sub>0..1</sub><ul>

@@ -99,16 +99,16 @@
             <div class="section">
               
                 <h1 id="class-relation-graph-quad">Class: relation graph quad</h1>
-<p>URI: <a href="https://w3id.org/sparqlfun/RelationGraphQuad">sparqlfun:RelationGraphQuad</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[UbergraphQuad],[Node]&lt;graph%200..1-%20[RelationGraphQuad&#124;object(i):string%20%3F],[RelationGraphQuad]^-[UbergraphQuad],[RelationGraphQuad]^-[NonRedundantQuad],[Quad]^-[RelationGraphQuad],[Quad],[PropertyNode],[NonRedundantQuad],[Node]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[UbergraphQuad],[Node]&lt;graph%200..1-%20[RelationGraphQuad&#124;object(i):string%20%3F],[RelationGraphQuad]^-[UbergraphQuad],[RelationGraphQuad]^-[NonRedundantQuad],[Quad]^-[RelationGraphQuad],[Quad],[PropertyNode],[NonRedundantQuad],[Node]" /></a></p>
+<p>URI: <a href="https://linkml.io/sparqlfun/RelationGraphQuad">sparqlfun:RelationGraphQuad</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[UbergraphQuad],[Node]&lt;graph%200..1-%20[RelationGraphQuad],[RelationGraphQuad]^-[UbergraphQuad],[RelationGraphQuad]^-[NonRedundantQuad],[Quad]^-[RelationGraphQuad],[Quad],[PropertyNode],[NonRedundantQuad],[NodeOrLiteral],[Node]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[UbergraphQuad],[Node]&lt;graph%200..1-%20[RelationGraphQuad],[RelationGraphQuad]^-[UbergraphQuad],[RelationGraphQuad]^-[NonRedundantQuad],[Quad]^-[RelationGraphQuad],[Quad],[PropertyNode],[NonRedundantQuad],[NodeOrLiteral],[Node]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../Quad/">Quad</a> - Represents an RDF triple plus named graph</li>
+<li>is_a: <a href="../Quad/">Quad</a> - Represents an RDF triple plus named graph to which the triple belongs</li>
 </ul>
 <h2 id="children">Children</h2>
 <ul>
 <li><a href="../NonRedundantQuad/">NonRedundantQuad</a> - A triple that indicates the asserted type of the subject entity</li>
-<li><a href="../UbergraphQuad/">UbergraphQuad</a></li>
+<li><a href="../UbergraphQuad/">UbergraphQuad</a> - a quad in an ubergraph endpoint</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
 <h2 id="attributes">Attributes</h2>
@@ -132,7 +132,7 @@
 </li>
 <li><a href="../object/">object</a>  <sub>0..1</sub><ul>
 <li>Description: a literal or node representing the object of the triple</li>
-<li>Range: <a href="../types/String/">String</a></li>
+<li>Range: <a href="../NodeOrLiteral/">NodeOrLiteral</a></li>
 </ul>
 </li>
 </ul>

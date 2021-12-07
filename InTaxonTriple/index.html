@@ -100,11 +100,11 @@
               
                 <h1 id="class-in-taxon-triple">Class: in taxon triple</h1>
 <p>In ubergraph, an in-taxon triple is pre-inferred</p>
-<p>URI: <a href="https://w3id.org/sparqlfun/InTaxonTriple">sparqlfun:InTaxonTriple</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Triple],[TaxonApplicable],[PropertyNode],[Node],[InTaxonTriple&#124;object(i):string%20%3F]uses%20-.-&gt;[TaxonApplicable],[Triple]^-[InTaxonTriple]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Triple],[TaxonApplicable],[PropertyNode],[Node],[InTaxonTriple&#124;object(i):string%20%3F]uses%20-.-&gt;[TaxonApplicable],[Triple]^-[InTaxonTriple]" /></a></p>
+<p>URI: <a href="https://linkml.io/sparqlfun/InTaxonTriple">sparqlfun:InTaxonTriple</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Triple],[TaxonApplicable],[PropertyNode],[NodeOrLiteral],[Node],[InTaxonTriple]uses%20-.-&gt;[TaxonApplicable],[Triple]^-[InTaxonTriple]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Triple],[TaxonApplicable],[PropertyNode],[NodeOrLiteral],[Node],[InTaxonTriple]uses%20-.-&gt;[TaxonApplicable],[Triple]^-[InTaxonTriple]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../Triple/">Triple</a> - Represents an RDF triple</li>
+<li>is_a: <a href="../Triple/">Triple</a> - Represents a single unadorned RDF triple</li>
 </ul>
 <h2 id="uses-mixin">Uses Mixin</h2>
 <ul>
@@ -123,7 +123,7 @@
 </li>
 <li><a href="../object/">object</a>  <sub>0..1</sub><ul>
 <li>Description: a literal or node representing the object of the triple</li>
-<li>Range: <a href="../types/String/">String</a></li>
+<li>Range: <a href="../NodeOrLiteral/">NodeOrLiteral</a></li>
 </ul>
 </li>
 </ul>

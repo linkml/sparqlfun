@@ -99,9 +99,43 @@
             <div class="section">
               
                 <h1 id="class-ubergraph-taxon-class">Class: ubergraph taxon class</h1>
-<p>URI: <a href="https://w3id.org/sparqlfun/UbergraphTaxonClass">sparqlfun:UbergraphTaxonClass</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[UbergraphTaxonClass]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[UbergraphTaxonClass]" /></a></p>
+<p>all classes representing a taxon in ubergraph</p>
+<p>URI: <a href="https://linkml.io/sparqlfun/UbergraphTaxonClass">sparqlfun:UbergraphTaxonClass</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[TaxonClass]^-[UbergraphTaxonClass&#124;id(i):node_id_type],[TaxonClass],[Node]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[TaxonClass]^-[UbergraphTaxonClass&#124;id(i):node_id_type],[TaxonClass],[Node]" /></a></p>
+<h2 id="parents">Parents</h2>
+<ul>
+<li>is_a: <a href="../TaxonClass/">TaxonClass</a></li>
+</ul>
 <h2 id="attributes">Attributes</h2>
+<h3 id="inherited-from-taxon-class">Inherited from taxon class:</h3>
+<ul>
+<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
+<li>Description: An identifier for an element. Note blank node ids are not unique across databases</li>
+<li>Range: <a href="../types/NodeIdType/">NodeIdType</a></li>
+</ul>
+</li>
+<li><a href="../type/">type</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../Node/">Node</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="other-properties">Other properties</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Comments:</strong></td>
+<td></td>
+<td>this query works on ubergraph-style endpoints where (1) inferred reflexive subClassOf triples are asserted (2) NCBITaxon is loaded</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>

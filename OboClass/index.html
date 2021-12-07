@@ -99,15 +99,31 @@
             <div class="section">
               
                 <h1 id="class-obo-class">Class: obo class</h1>
-<p>URI: <a href="https://w3id.org/sparqlfun/OboClass">sparqlfun:OboClass</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[ClassNode]^-[OboClass&#124;definition:string%20%3F;exact_synonyms:string%20*;id(i):node_id_type],[Node],[ClassNode]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[ClassNode]^-[OboClass&#124;definition:string%20%3F;exact_synonyms:string%20*;id(i):node_id_type],[Node],[ClassNode]" /></a></p>
+<p>URI: <a href="https://linkml.io/sparqlfun/OboClass">sparqlfun:OboClass</a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[OboClassWithCategory],[OboClassQuery],[DeprecatedOboClassQuery]-%20results%200..*&gt;[OboClass&#124;label:string%20%3F;definition:string%20%3F;exact_synonyms:string%20*;id(i):node_id_type],[OboClassQuery]-%20results%200..*&gt;[OboClass],[OboClass]^-[OboClassWithCategory],[OboClass]^-[CellType],[OboClass]^-[BloodVessel],[OboClass]^-[AnatomicalEntity],[GraphClassNode]^-[OboClass],[Node],[GraphClassNode],[DeprecatedOboClassQuery],[CellType],[BloodVessel],[AnatomicalEntity]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[OboClassWithCategory],[OboClassQuery],[DeprecatedOboClassQuery]-%20results%200..*&gt;[OboClass&#124;label:string%20%3F;definition:string%20%3F;exact_synonyms:string%20*;id(i):node_id_type],[OboClassQuery]-%20results%200..*&gt;[OboClass],[OboClass]^-[OboClassWithCategory],[OboClass]^-[CellType],[OboClass]^-[BloodVessel],[OboClass]^-[AnatomicalEntity],[GraphClassNode]^-[OboClass],[Node],[GraphClassNode],[DeprecatedOboClassQuery],[CellType],[BloodVessel],[AnatomicalEntity]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../ClassNode/">ClassNode</a> - A node that represents an RDFS/OWL class</li>
+<li>is_a: <a href="../GraphClassNode/">GraphClassNode</a></li>
+</ul>
+<h2 id="children">Children</h2>
+<ul>
+<li><a href="../AnatomicalEntity/">AnatomicalEntity</a></li>
+<li><a href="../BloodVessel/">BloodVessel</a></li>
+<li><a href="../CellType/">CellType</a></li>
+<li><a href="../OboClassWithCategory/">OboClassWithCategory</a></li>
+</ul>
+<h2 id="referenced-by-class">Referenced by Class</h2>
+<ul>
+<li><strong><a href="../DeprecatedOboClassQuery/">DeprecatedOboClassQuery</a></strong> <em><a href="../deprecated_obo_class_query_results/">deprecated obo class query➞results</a></em>  <sub>0..*</sub>  <strong><a href="./">OboClass</a></strong></li>
+<li><strong><a href="../OboClassQuery/">OboClassQuery</a></strong> <em><a href="../obo_class_query_results/">obo class query➞results</a></em>  <sub>0..*</sub>  <strong><a href="./">OboClass</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
+<li><a href="../label/">label</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
 <li><a href="../definition/">definition</a>  <sub>0..1</sub><ul>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
@@ -117,7 +133,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="inherited-from-class-node">Inherited from class node:</h3>
+<h3 id="inherited-from-graph-class-node">Inherited from graph class node:</h3>
 <ul>
 <li><a href="../id/">id</a>  <sub>1..1</sub><ul>
 <li>Description: An identifier for an element. Note blank node ids are not unique across databases</li>
@@ -125,6 +141,11 @@
 </ul>
 </li>
 <li><a href="../type/">type</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../Node/">Node</a></li>
+</ul>
+</li>
+<li><a href="../graph/">graph</a>  <sub>0..1</sub><ul>
+<li>Description: Graph to which the triple belongs</li>
 <li>Range: <a href="../Node/">Node</a></li>
 </ul>
 </li>
