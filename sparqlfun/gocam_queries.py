@@ -2,7 +2,7 @@
 # Generation date: 2021-11-24T13:47:29
 # Schema: gocam-queries
 #
-# id: https://w3id.org/sparqlfun/gocam_queries
+# id: https://linkml.io/sparqlfun/gocam_queries
 # description: Abstractions for querying gocam
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
@@ -41,7 +41,7 @@ RO = CurieNamespace('RO', 'http://purl.obolibrary.org/obo/RO_')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/')
 DCE = CurieNamespace('dce', 'http://purl.org/dc/elements/1.1/')
 GOCAM = CurieNamespace('gocam', 'https://w3id.org/gocam/')
-GOCAM_QUERIES = CurieNamespace('gocam_queries', 'https://w3id.org/sparqlfun/gocam_queries')
+GOCAM_QUERIES = CurieNamespace('gocam_queries', 'https://linkml.io/sparqlfun/gocam_queries')
 GOMODEL = CurieNamespace('gomodel', 'http://model.geneontology.org/')
 GOSHAPES = CurieNamespace('goshapes', 'http://purl.obolibrary.org/obo/go/shapes/')
 LEGO = CurieNamespace('lego', 'http://geneontology.org/lego/')
@@ -50,7 +50,7 @@ OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 PAV = CurieNamespace('pav', 'http://purl.org/pav/')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
-RESULTSET = CurieNamespace('resultset', 'https://w3id.org/sparqlfun/resultset')
+RESULTSET = CurieNamespace('resultset', 'https://linkml.io/sparqlfun/resultset')
 XSD = CurieNamespace('xsd', 'http://www.w3.org/2001/XMLSchema#')
 DEFAULT_ = GOCAM_QUERIES
 

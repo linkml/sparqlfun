@@ -1,4 +1,4 @@
-id: https://w3id.org/sparqlfun/config_schema
+id: https://linkml.io/sparqlfun/config_schema
 name: config_schema
 title: Config Schema
 description: |-
@@ -6,7 +6,7 @@ description: |-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  config_schema: https://w3id.org/sparqlfun/config_schema
+  config_schema: https://linkml.io/sparqlfun/config_schema
   linkml: https://w3id.org/linkml/
 
 default_prefix: config_schema

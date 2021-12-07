@@ -1,4 +1,4 @@
-id: https://w3id.org/sparqlfun
+id: https://linkml.io/sparqlfun
 name: sparqlfun
 title: SPARQLFun
 description: |-
@@ -9,7 +9,7 @@ see_also:
 
 # TODO: move some of these to sub-modules
 prefixes:
-  sparqlfun: https://w3id.org/sparqlfun/
+  sparqlfun: https://linkml.io/sparqlfun/
   linkml: https://w3id.org/linkml/
   IAO: http://purl.obolibrary.org/obo/IAO_
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_

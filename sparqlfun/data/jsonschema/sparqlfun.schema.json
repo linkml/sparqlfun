@@ -3058,7 +3058,7 @@
          "type": "object"
       }
    },
-   "$id": "https://w3id.org/sparqlfun",
+   "$id": "https://linkml.io/sparqlfun",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "properties": {},

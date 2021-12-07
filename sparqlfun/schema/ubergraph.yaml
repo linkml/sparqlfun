@@ -1,4 +1,4 @@
-id: https://w3id.org/sparqlfun/ubergraph
+id: https://linkml.io/sparqlfun/ubergraph
 name: ubergraph
 title: sparqlfun ubergraph module
 description: >-
@@ -8,7 +8,7 @@ annotations:
   profiles: relation_graph,taxon
 
 prefixes:
-  sparqlfun_ubergraph: https://w3id.org/sparqlfun/ubergraph
+  sparqlfun_ubergraph: https://linkml.io/sparqlfun/ubergraph
   linkml: https://w3id.org/linkml/
   ubergraph: http://reasoner.renci.org/
   ubergraph_vocab: http://reasoner.renci.org/vocab/

@@ -1,4 +1,4 @@
-id: https://w3id.org/sparqlfun/resultset
+id: https://linkml.io/sparqlfun/resultset
 name: sparqlfun-resultset
 title: SPARQLFun Result Sets
 description: |-
@@ -6,7 +6,7 @@ description: |-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  resultset: https://w3id.org/sparqlfun/resultset
+  resultset: https://linkml.io/sparqlfun/resultset
   linkml: https://w3id.org/linkml/
 
 default_prefix: resultset

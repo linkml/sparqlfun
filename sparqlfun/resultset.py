@@ -2,7 +2,7 @@
 # Generation date: 2021-11-22T16:07:22
 # Schema: sparqlfun-resultset
 #
-# id: https://w3id.org/sparqlfun/resultset
+# id: https://linkml.io/sparqlfun/resultset
 # description: SPARQL Query Result Model
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
@@ -31,7 +31,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
-RESULTSET = CurieNamespace('resultset', 'https://w3id.org/sparqlfun/resultset')
+RESULTSET = CurieNamespace('resultset', 'https://linkml.io/sparqlfun/resultset')
 DEFAULT_ = RESULTSET
 
 

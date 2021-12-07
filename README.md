@@ -2,18 +2,18 @@
 
 LinkML based SPARQL template library and execution engine
 
- - modularized core library of SPARQL templates
+ - modularized core library of [SPARQL templates](https://github.com/linkml/sparqlfun/tree/main/sparqlfun/schema)
     - generic templates using common vocabs (rdf, owl, skos, ...)
     - OBO and biology specific, e.g. Ubergraph
     - coming soon: uniprot, wikidata, etc
  - Fully FAIR description of templates
-    - Each template has a URI
-    - Each template parameters has a URI
+    - Each template has a URI (e.g.: https://linkml.io/sparqlfun/PairwiseCommonDescendant)
+    - Each template parameter has a URI (e.g. https://linkml.io/sparqlfun/subject)
     - Full metadata including descriptions of each
     - Templates described in YAML, RDF, SHACL, ShEx, ...
  - Rich expressive language for moedeling templates
      - uses [LinkML](https://linkml.io/linkml/) as base language
- - optional python bindings using LinkML
+ - optional python bindings / [object model](https://github.com/linkml/sparqlfun/blob/main/sparqlfun/model.py) using LinkML
  - supports both SELECT and CONSTRUCT
  - optional export to TSV, JSON, YAML, RDF
 
@@ -26,6 +26,8 @@ This is currently alpha software, interfaces and organization may change
 Note: currently not all metadata from the yaml is shown in the generated docs
 
 ## Command Line
+
+Use the [sparqlfun:PairwiseCommonSubClassAncestor](https://linkml.io/sparqlfun/PairwiseCommonSubClassAncestor) template
 
 ```bash
 sparqlfun -e ubergraph -T PairwiseCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
@@ -73,7 +75,7 @@ coming soon!
 
 ## Browsing the templates
 
- - source is in sparqlfun/schema
+ - source is in [sparqlfun/schema](https://github.com/linkml/sparqlfun/tree/main/sparqlfun/schema)
      - add new templates here
  - Browse the generated markdown on the site
      - markdown is auto-created from the yaml schema

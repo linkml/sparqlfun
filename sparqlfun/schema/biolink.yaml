@@ -1,4 +1,4 @@
-id: https://w3id.org/sparqlfun/biolink
+id: https://linkml.io/sparqlfun/biolink
 name: biolink
 title: sparqlfun biolink module
 description: >-
@@ -6,9 +6,9 @@ description: >-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  sparqlfun_biolink: https://w3id.org/sparqlfun/biolink
+  sparqlfun_biolink: https://linkml.io/sparqlfun/biolink
   biolink: https://w3id.org/biolink/vocab/
-  sparqlfun: https://w3id.org/sparqlfun/
+  sparqlfun: https://linkml.io/sparqlfun/
   ubergraph: http://reasoner.renci.org/
   linkml: https://w3id.org/linkml/
   CL: http://purl.obolibrary.org/obo/CL_

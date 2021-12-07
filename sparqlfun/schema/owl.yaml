@@ -1,4 +1,4 @@
-id: https://w3id.org/sparqlfun/owl
+id: https://linkml.io/sparqlfun/owl
 name: sparqlfun-OWL
 title: sparqlfun OWL module
 description: >-
@@ -6,7 +6,7 @@ description: >-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  sparqlfun_owl: https://w3id.org/sparqlfun/owl
+  sparqlfun_owl: https://linkml.io/sparqlfun/owl
   linkml: https://w3id.org/linkml/
 
 default_prefix: sparqlfun_owl

@@ -2,7 +2,7 @@
 # Generation date: 2021-12-07T12:01:40
 # Schema: sparqlfun
 #
-# id: https://w3id.org/sparqlfun
+# id: https://linkml.io/sparqlfun
 # description: SPARQL Templates
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
@@ -42,14 +42,14 @@ OBOINOWL = CurieNamespace('oboInOwl', 'http://www.geneontology.org/formats/oboIn
 OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
-RESULTSET = CurieNamespace('resultset', 'https://w3id.org/sparqlfun/resultset')
+RESULTSET = CurieNamespace('resultset', 'https://linkml.io/sparqlfun/resultset')
 SH = CurieNamespace('sh', 'http://www.w3.org/ns/shacl#')
-SPARQLFUN = CurieNamespace('sparqlfun', 'https://w3id.org/sparqlfun/')
-SPARQLFUN_BIOLINK = CurieNamespace('sparqlfun_biolink', 'https://w3id.org/sparqlfun/biolink')
-SPARQLFUN_OMO = CurieNamespace('sparqlfun_omo', 'https://w3id.org/sparqlfun/omo')
-SPARQLFUN_OWL = CurieNamespace('sparqlfun_owl', 'https://w3id.org/sparqlfun/owl')
-SPARQLFUN_RDF = CurieNamespace('sparqlfun_rdf', 'https://w3id.org/sparqlfun/rdf/')
-SPARQLFUN_UBERGRAPH = CurieNamespace('sparqlfun_ubergraph', 'https://w3id.org/sparqlfun/ubergraph')
+SPARQLFUN = CurieNamespace('sparqlfun', 'https://linkml.io/sparqlfun/')
+SPARQLFUN_BIOLINK = CurieNamespace('sparqlfun_biolink', 'https://linkml.io/sparqlfun/biolink')
+SPARQLFUN_OMO = CurieNamespace('sparqlfun_omo', 'https://linkml.io/sparqlfun/omo')
+SPARQLFUN_OWL = CurieNamespace('sparqlfun_owl', 'https://linkml.io/sparqlfun/owl')
+SPARQLFUN_RDF = CurieNamespace('sparqlfun_rdf', 'https://linkml.io/sparqlfun/rdf/')
+SPARQLFUN_UBERGRAPH = CurieNamespace('sparqlfun_ubergraph', 'https://linkml.io/sparqlfun/ubergraph')
 UBERGRAPH = CurieNamespace('ubergraph', 'http://reasoner.renci.org/')
 UPCORE = CurieNamespace('upcore', 'http://purl.uniprot.org/core/')
 XSD = CurieNamespace('xsd', 'http://www.w3.org/2001/XMLSchema#')

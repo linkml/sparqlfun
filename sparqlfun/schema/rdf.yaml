@@ -1,4 +1,4 @@
-id: https://w3id.org/sparqlfun/rdf
+id: https://linkml.io/sparqlfun/rdf
 name: sparqlfun-RDF
 title: sparqlfun RDF module
 description: >-
@@ -6,8 +6,8 @@ description: >-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  sparqlfun_rdf: https://w3id.org/sparqlfun/rdf/
-  sparqlfun: https://w3id.org/sparqlfun/
+  sparqlfun_rdf: https://linkml.io/sparqlfun/rdf/
+  sparqlfun: https://linkml.io/sparqlfun/
   linkml: https://w3id.org/linkml/
   sh: http://www.w3.org/ns/shacl#
   

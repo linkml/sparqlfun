@@ -2,7 +2,7 @@
 # Generation date: 2021-12-07T11:13:12
 # Schema: config_schema
 #
-# id: https://w3id.org/sparqlfun/config_schema
+# id: https://linkml.io/sparqlfun/config_schema
 # description: Schema for configuration
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
@@ -30,9 +30,9 @@ metamodel_version = "1.7.0"
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
-CONFIG_SCHEMA = CurieNamespace('config_schema', 'https://w3id.org/sparqlfun/config_schema')
+CONFIG_SCHEMA = CurieNamespace('config_schema', 'https://linkml.io/sparqlfun/config_schema')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
-RESULTSET = CurieNamespace('resultset', 'https://w3id.org/sparqlfun/resultset')
+RESULTSET = CurieNamespace('resultset', 'https://linkml.io/sparqlfun/resultset')
 DEFAULT_ = CONFIG_SCHEMA
 
 

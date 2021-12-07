@@ -1,4 +1,4 @@
-id: https://w3id.org/sparqlfun/relation_graph
+id: https://linkml.io/sparqlfun/relation_graph
 name: relation_graph
 title: sparqlfun relation_graph module
 description: >-
@@ -8,7 +8,7 @@ annotations:
   profiles: relation_graph
 
 prefixes:
-  sparqlfun_relation_graph: https://w3id.org/sparqlfun/relation_graph
+  sparqlfun_relation_graph: https://linkml.io/sparqlfun/relation_graph
   linkml: https://w3id.org/linkml/
   ubergraph: http://reasoner.renci.org/
   

@@ -1,4 +1,4 @@
-id: https://w3id.org/sparqlfun/ro
+id: https://linkml.io/sparqlfun/ro
 name: ubergraph
 title: sparqlfun ubergraph module
 description: >-
@@ -6,7 +6,7 @@ description: >-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  sparqlfun_ubergraph: https://w3id.org/sparqlfun/ubergraph
+  sparqlfun_ubergraph: https://linkml.io/sparqlfun/ubergraph
   linkml: https://w3id.org/linkml/
   ubergraph: http://reasoner.renci.org/
   RO: http://purl.obolibrary.org/obo/RO_

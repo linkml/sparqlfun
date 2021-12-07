@@ -1,4 +1,4 @@
-id: https://w3id.org/sparqlfun/uniprot_queries
+id: https://linkml.io/sparqlfun/uniprot_queries
 name: sparqlfun-uniprot
 title: sparqlfun uniprot module
 description: >-
@@ -6,7 +6,7 @@ description: >-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  uniprot_queries: https://w3id.org/sparqlfun/uniprot_queries
+  uniprot_queries: https://linkml.io/sparqlfun/uniprot_queries
   linkml: https://w3id.org/linkml/
 
 default_prefix: sparqlfun_rdf

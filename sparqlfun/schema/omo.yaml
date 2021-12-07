@@ -1,4 +1,4 @@
-id: https://w3id.org/sparqlfun/omo
+id: https://linkml.io/sparqlfun/omo
 name: omo
 title: sparqlfun omo module
 description: >-
@@ -6,7 +6,7 @@ description: >-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  sparqlfun_omo: https://w3id.org/sparqlfun/omo
+  sparqlfun_omo: https://linkml.io/sparqlfun/omo
   linkml: https://w3id.org/linkml/
   omo: http://reasoner.renci.org/
   RO: http://purl.obolibrary.org/obo/RO_

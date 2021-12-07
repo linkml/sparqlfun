@@ -1,4 +1,4 @@
-id: https://w3id.org/sparqlfun/uberon
+id: https://linkml.io/sparqlfun/uberon
 name: uberon
 title: sparqlfun uberon module
 description: >-
@@ -6,8 +6,8 @@ description: >-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  sparqlfun_uberon: https://w3id.org/sparqlfun/uberon
-  sparqlfun: https://w3id.org/sparqlfun/
+  sparqlfun_uberon: https://linkml.io/sparqlfun/uberon
+  sparqlfun: https://linkml.io/sparqlfun/
   ubergraph: http://reasoner.renci.org/
   linkml: https://w3id.org/linkml/
   UBERON: http://purl.obolibrary.org/obo/UBERON_

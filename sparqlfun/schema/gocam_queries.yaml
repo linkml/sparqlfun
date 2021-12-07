@@ -1,4 +1,4 @@
-id: https://w3id.org/sparqlfun/gocam_queries
+id: https://linkml.io/sparqlfun/gocam_queries
 name: gocam-queries
 title: sparqlfun gocam module
 description: >-
@@ -6,7 +6,7 @@ description: >-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  gocam_queries: https://w3id.org/sparqlfun/gocam_queries
+  gocam_queries: https://linkml.io/sparqlfun/gocam_queries
   linkml: https://w3id.org/linkml/
   RO: http://purl.obolibrary.org/obo/RO_
   BFO: http://purl.obolibrary.org/obo/BFO_
