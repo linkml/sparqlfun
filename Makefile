@@ -10,7 +10,7 @@ md:
 	$(RUN) gen-markdown -d docs $(SRC) -I docs/index.md && cp README.md docs/home.md
 
 py:
-	$(RUN) gen-python $(SRC) > sparqlfun/model.py
+	$(RUN) gen-python $(SRC) > sparqlfun/model.py.tmp && mv sparqlfun/model.py.tmp sparqlfun/model.py
 
 sparqlfun/config_schema.py: sparqlfun/schema/config_schema.yaml
 	$(RUN) gen-python $< > $@

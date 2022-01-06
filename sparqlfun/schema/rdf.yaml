@@ -226,6 +226,14 @@ classes:
             range: node
             ## TODO
 
+  redundant rdfs subclass of triple:
+    is_a: rdfs subclass of triple
+    annotations:
+      sparql.select: |-
+        SELECT * WHERE {
+          ?subject rdfs}
+
+
   rdfs subproperty of triple:
     is_a: node to node triple
     slot_usage:

@@ -1,5 +1,5 @@
 # Auto generated from sparqlfun.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-12-07T12:01:40
+# Generation date: 2021-12-08T10:58:47
 # Schema: sparqlfun
 #
 # id: https://linkml.io/sparqlfun
