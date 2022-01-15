@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sparqlfun"
-version = "0.0.0"
+version = "0.1.2"
 description = "SPARQL templates for LinkML"
 authors = ["cmungall <cjm@berkeleybop.org>"]
 
