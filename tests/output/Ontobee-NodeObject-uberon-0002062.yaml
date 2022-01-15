@@ -1,0 +1,1852 @@
+results:
+- id: UBERON:0002062
+  node_statements:
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: IAO:0000412
+    object: http://purl.obolibrary.org/obo/mondo.owl
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: IAO:0000412
+    object: http://purl.obolibrary.org/obo/uberon.owl
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#pheno_slim
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/MONDO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: rdfs:subClassOf
+    object: UBERON:0014387
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/MONDO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: rdfs:subClassOf
+    object: UBERON:0009751
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/MONDO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0003104
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0003104
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0003104
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0005256
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/MONDO
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: rdfs:subClassOf
+    object: UBERON:0002050
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/MONDO
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: rdf:type
+    object: owl:Class
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasDbXref
+    object: http://en.wikipedia.org/wiki/Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasDbXref
+    object: http://en.wikipedia.org/wiki/Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasDbXref
+    object: http://en.wikipedia.org/wiki/Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasDbXref
+    object: http://en.wikipedia.org/wiki/Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasDbXref
+    object: http://en.wikipedia.org/wiki/Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasDbXref
+    object: http://en.wikipedia.org/wiki/Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasDbXref
+    object: http://en.wikipedia.org/wiki/Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasDbXref
+    object: http://en.wikipedia.org/wiki/Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasDbXref
+    object: http://en.wikipedia.org/wiki/Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#uberon_slim
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:inSubset
+    object: http://purl.obolibrary.org/obo/uberon/core#vertebrate_core
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  value_statements:
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: foaf:depicted_by
+    object: http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000003
+    object: (Cardiac valve formation in vertebrates) In response to a myocardial signal,
+      endocardial cells at chamber boundaries take on a mesenchymal character, delaminate
+      and migrate into the cardiac jelly. There, they form an endocardial cushion
+      that is later remodelled into a valve.[well established][VHOG]
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000002
+    object: 'relationship loss: develops_from endocardial ring (TAO:0005072)[TAO]'
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: http://purl.obolibrary.org/obo/UBPROP_0000001
+    object: Swellings of tissue present between the endocardial and myocardial cell
+      layers that will give rise to the interstitial cells of the cardiac valves.[TAO]
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/MONDO
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: IAO:0000115
+    object: The endocardial cushion is a specialized region of mesenchymal cells that
+      will give rise to the heart septa and valves[GO]. Swellings of tissue present
+      between the endocardial and myocardial cell layers that will give rise to the
+      interstitial cells of the cardiac valves[ZFA].
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:id
+    object: UBERON:0002062
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/MONDO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/MONDO
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: endocardial cushions
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasRelatedSynonym
+    object: atrioventricular canal cushion
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasOBONamespace
+    object: uberon
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/MONDO
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/MONDO
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/MONDO
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/MONDO
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasExactSynonym
+    object: cardiac cushion
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasExactSynonym
+    object: endocardial cushion tissue
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasExactSynonym
+    object: atrioventricular cushion
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasExactSynonym
+    object: AV cushion
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasDbXref
+    object: Wikipedia:Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasDbXref
+    object: Wikipedia:Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasDbXref
+    object: Wikipedia:Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasDbXref
+    object: Wikipedia:Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasDbXref
+    object: Wikipedia:Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasDbXref
+    object: Wikipedia:Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasDbXref
+    object: Wikipedia:Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasDbXref
+    object: Wikipedia:Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasDbXref
+    object: Wikipedia:Atrioventricular_cushions
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasDbXref
+    object: XAO:0004189
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasDbXref
+    object: VHOG:0000932
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0000434
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasDbXref
+    object: ZFA:0001317
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: oboInOwl:hasDbXref
+    object: TAO:0001317
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA:2586
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasDbXref
+    object: MA:0000078
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasDbXref
+    object: FMA:70302
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: oboInOwl:hasDbXref
+    object: EHDAA2:0004028
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: oboInOwl:hasDbXref
+    object: EMAPA:16696
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/KTAO
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/DPO
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: rdfs:comment
+    object: 'GO graph seems to suggest this is an endothelium. WP: The endocardial
+      cushions are thought to arise from a subset of endothelial cells that undergo
+      epithelial to mesenchymal transformation, a process whereby these cells break
+      cell-to-cell contacts and migrate into the cardiac jelly (towards to interior
+      of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
+      Note that EHDAA2 has a more detailed model which we may later adopt. JB: Patterning
+      makes the cushions lay down connective tissue in three domains that force out
+      the local endothelial lining and so the leaflets form'
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/WBPHENOTYPE
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/MP
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/ECTO
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/HP
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/MONDO
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/UBERON
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/OAE
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/ZP
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/RBO
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/AISM
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/OBA
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/FOVT
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/MAXO
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/FYPO
+  - predicate: rdfs:label
+    object: endocardial cushion
+    graph: http://purl.obolibrary.org/obo/merged/ECOCORE
