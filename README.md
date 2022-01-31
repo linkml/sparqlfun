@@ -64,7 +64,7 @@ from sparqlfun.model import PairwiseCommonSubClassAncestor
 
 se = SparqlEngine(endpoint='ubergraph')
 se.bind_prefixes(GO='http://purl.obolibrary.org/obo/GO_')
-for row in se.query(PairwiseCommonSubClassAncestor(node1='GO:0046220', node2='GO:0008295')):
+for row in se.query(PairwiseCommonSubClassAncestor(node1='GO:0046220', node2='GO:0008295')).results:
         print(f'ROW={row}')
 ```
 

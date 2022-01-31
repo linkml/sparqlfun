@@ -7,7 +7,9 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
   config_schema: https://linkml.io/sparqlfun/config_schema
+  schema: http://schema.org/
   linkml: https://w3id.org/linkml/
+  info: https://linkml.io/sparqlfun/info/
 
 default_prefix: config_schema
 default_range: string
@@ -21,10 +23,12 @@ imports:
 
 classes:
   SystemConfiguration:
+    tree_root: true
     slots:
       - endpoints
       - profiles
       - description
+      - competency_questions
   Endpoint:
     slots:
       - name
@@ -34,9 +38,16 @@ classes:
       - implements
       - description
   ExampleQuery:
+    description: >-
+      An example query that can be executed on a particular endpoint
     slots:
+      - description
       - query_template
       - bindings
+      - answers
+      - expected_max_results
+      - expected_min_results
+      - results_must_contain
   Profile:
     description: >-
       A feature implemented by an endpoint for supporting certain kinds of queries
@@ -45,6 +56,23 @@ classes:
       - description
       - subsets
       - modules
+  CompetencyQuestion:
+    description: >-
+      A high level description of a domain question that can potentially be executed on one or more endpoints
+    slots:
+      - name
+      - description
+      - has_story
+  UserStory:
+    attributes:
+      user_category:
+      task:
+      objective:
+  ResultObject:
+    #class_uri: linkml:Any
+    slots:
+      - description
+      - bindings
 
 slots:
   endpoints:
@@ -55,18 +83,35 @@ slots:
     identifier: true
     range: string
   url:
+    slot_uri: schema:url
     required: true
     range: string
   description:
     recommended: true
+    range: string
+  notes:
+    multivalued: true
     range: string
   type_property:
     description:
       typically rdf:type, but others, e.g. wikidata may use others
     range: string
   example_queries:
+    description: >-
+      A list of all example queries
     multivalued: true
     range: ExampleQuery
+  competency_questions:
+    description: >-
+      A list of all competency queries
+    multivalued: true
+    range: CompetencyQuestion
+  answers:
+    description: >-
+      All competency questions implemented
+    multivalued: true
+    range: CompetencyQuestion
+    inlined: false
   profiles:
     multivalued: true
     range: Profile
@@ -79,3 +124,16 @@ slots:
     multivalued: true
   modules:
     multivalued: true
+  has_story:
+    range: UserStory
+  expected_max_results:
+    range: integer
+    minimum_value: 0
+  expected_min_results:
+    range: integer
+    minimum_value: 0
+  results_must_contain:
+    multivalued: true
+    inlined: true
+    range: ResultObject
+
