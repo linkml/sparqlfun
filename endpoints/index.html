@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://linkml.github.io/sparqlfun/endpoints/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Endpoints - SPARQL-Fun templates</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Endpoints";
+    var mkdocs_page_input_path = "endpoints.md";
+    var mkdocs_page_url = "/sparqlfun/endpoints/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SYBSJVZ23"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2SYBSJVZ23');
+  </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> SPARQL-Fun templates</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../home/">Readme</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Endpoints</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#endpoint-ubergraph">Endpoint: ubergraph</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#examples">EXAMPLES</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pairwisecommonsubclassancestor">PairwiseCommonSubClassAncestor</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pairwisemostrecentcommonsubclassancestor">PairwiseMostRecentCommonSubClassAncestor</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#endpoint-dbpedia">Endpoint: dbpedia</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#endpoint-go">Endpoint: go</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#endpoint-uniprot">Endpoint: uniprot</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#endpoint-nextprot">Endpoint: nextprot</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#endpoint-kghub">Endpoint: kghub</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#endpoint-ontobee">Endpoint: ontobee</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#endpoint-rhea">Endpoint: rhea</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#endpoint-wikidata">Endpoint: wikidata</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">SPARQL-Fun templates</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Endpoints</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/linkml/sparqlfun/edit/master/docs/endpoints.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="endpoints">ENDPOINTS</h1>
+<h2 id="endpoint-ubergraph">Endpoint: ubergraph</h2>
+<p><em>ubergraph is a merged set of mutually referential OBO ontologies, pre-reasoned,
+and implementing relation-graph triples</em></p>
+<ul>
+<li>URL: https://stars-app.renci.org/ubergraph/sparql</li>
+<li>Implements Profiles:<ul>
+<li>relation_graph: Implementing endpoints must have reflexive inferred triples asserted with named graph indicating method as per balhoff/relation-graph</li>
+<li>taxon: Implementing endpoints must have NCBITaxon, or a relevant subset of NCBITaxon loaded</li>
+<li>owl_as_rdf: Implementing endpoints must OWL axioms loaded as per the OWL2 mapping to RDF specification</li>
+<li>omo: Implementing endpoints must use OBO ontology-metadata (OMO) compliant annotations on terms</li>
+<li>biolink_categories: Implementing endpoints must tag elements to biolink categories using biolink:category</li>
+<li>biolink_ontology: Implementing endpoints must have the biolink OWL ontology loaded</li>
+</ul>
+</li>
+</ul>
+<h3 id="examples">EXAMPLES</h3>
+<h4 id="pairwisecommonsubclassancestor">PairwiseCommonSubClassAncestor</h4>
+<p>Finds common ancestors between pyridine biosynthetic process and spermidine biosynthetic process</p>
+<pre><code>sparqlfun query -e ubergraph -T PairwiseCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
+</code></pre>
+<h4 id="pairwisemostrecentcommonsubclassancestor">PairwiseMostRecentCommonSubClassAncestor</h4>
+<p>Finds most recent common ancestors between pyridine biosynthetic process and spermidine biosynthetic process</p>
+<pre><code>sparqlfun query -e ubergraph -T PairwiseMostRecentCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
+</code></pre>
+<h2 id="endpoint-dbpedia">Endpoint: dbpedia</h2>
+<p><em>a project aiming to extract structured content from the information created in the Wikipedia project,
+implementing the dbpedia ontology</em></p>
+<ul>
+<li>URL: http://dbpedia.org/sparql</li>
+<li>Implements Profiles:</li>
+</ul>
+<h2 id="endpoint-go">Endpoint: go</h2>
+<p><em>public endpoint for GO-CAMs</em></p>
+<ul>
+<li>URL: http://rdf.geneontology.org/sparql</li>
+<li>Implements Profiles:<ul>
+<li>taxon: Implementing endpoints must have NCBITaxon, or a relevant subset of NCBITaxon loaded</li>
+<li>owl_as_rdf: Implementing endpoints must OWL axioms loaded as per the OWL2 mapping to RDF specification</li>
+<li>omo: Implementing endpoints must use OBO ontology-metadata (OMO) compliant annotations on terms</li>
+</ul>
+</li>
+</ul>
+<h2 id="endpoint-uniprot">Endpoint: uniprot</h2>
+<p><em>Contains all UniProt data.</em></p>
+<ul>
+<li>URL: https://sparql.uniprot.org/sparql</li>
+<li>Implements Profiles:<ul>
+<li>ontobee: Implementing endpoints must use ontobee patterns for indicating source of ontology as Named Graph</li>
+<li>taxon: Implementing endpoints must have NCBITaxon, or a relevant subset of NCBITaxon loaded</li>
+<li>owl_as_rdf: Implementing endpoints must OWL axioms loaded as per the OWL2 mapping to RDF specification</li>
+<li>omo: Implementing endpoints must use OBO ontology-metadata (OMO) compliant annotations on terms</li>
+</ul>
+</li>
+</ul>
+<h2 id="endpoint-nextprot">Endpoint: nextprot</h2>
+<p><em>endpoint for nextprot database of human proteins</em></p>
+<ul>
+<li>URL: https://api.nextprot.org/sparql</li>
+<li>Implements Profiles:</li>
+</ul>
+<h2 id="endpoint-kghub">Endpoint: kghub</h2>
+<p><em>endpoint for the KG-Hub project, which amalgamates multiple Knowledge Graphs
+following the Biolink Model</em></p>
+<ul>
+<li>URL: http://kg-hub-rdf.berkeleybop.io/sparql</li>
+<li>Implements Profiles:<ul>
+<li>biolink_categories: Implementing endpoints must tag elements to biolink categories using biolink:category</li>
+<li>ontologies_as_kgx: Implementing endpoints must use kgx/rdf reification patterns for ontology edges</li>
+</ul>
+</li>
+</ul>
+<h2 id="endpoint-ontobee">Endpoint: ontobee</h2>
+<p><em>Endpoint for OBO ontologies, provided by the He Group</em></p>
+<ul>
+<li>URL: http://sparql.hegroup.org/sparql</li>
+<li>Implements Profiles:<ul>
+<li>ontobee: Implementing endpoints must use ontobee patterns for indicating source of ontology as Named Graph</li>
+<li>taxon: Implementing endpoints must have NCBITaxon, or a relevant subset of NCBITaxon loaded</li>
+<li>owl_as_rdf: Implementing endpoints must OWL axioms loaded as per the OWL2 mapping to RDF specification</li>
+<li>omo: Implementing endpoints must use OBO ontology-metadata (OMO) compliant annotations on terms</li>
+</ul>
+</li>
+</ul>
+<h2 id="endpoint-rhea">Endpoint: rhea</h2>
+<p><em>Endpoint for the Rhea database of enzymatic reactions</em></p>
+<ul>
+<li>URL: https://sparql.rhea-db.org/sparql</li>
+<li>Implements Profiles:</li>
+</ul>
+<h2 id="endpoint-wikidata">Endpoint: wikidata</h2>
+<p><em>Wikidata triple store</em></p>
+<ul>
+<li>URL: http://query.wikidata.org/sparql</li>
+<li>Implements Profiles:<ul>
+<li>wikidata: Implementing endpoints must use Wikidata properties and Wikidata-style reification</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".." class="btn btn-neutral float-right" title="Index">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../home/" class="btn btn-neutral" title="Readme"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/linkml/sparqlfun/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../home/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href=".." style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
