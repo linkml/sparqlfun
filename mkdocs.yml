@@ -6,6 +6,7 @@ theme:
 docs_dir: docs
 nav:
   - Readme: home.md
+  - Endpoints: endpoints.md
   - Index: index.md
 site_url: https://linkml.github.io/sparqlfun/
 repo_url: https://github.com/linkml/sparqlfun/

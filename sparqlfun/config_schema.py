@@ -1,5 +1,5 @@
 # Auto generated from config_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-12-07T11:13:12
+# Generation date: 2022-01-25T15:34:58
 # Schema: config_schema
 #
 # id: https://linkml.io/sparqlfun/config_schema
@@ -22,7 +22,7 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import String
+from linkml_runtime.linkml_model.types import Integer, String
 
 metamodel_version = "1.7.0"
 
@@ -47,6 +47,10 @@ class ProfileName(extended_str):
     pass
 
 
+class CompetencyQuestionName(extended_str):
+    pass
+
+
 class BindingBindingKey(extended_str):
     pass
 
@@ -63,6 +67,7 @@ class SystemConfiguration(YAMLRoot):
     endpoints: Optional[Union[Dict[Union[str, EndpointName], Union[dict, "Endpoint"]], List[Union[dict, "Endpoint"]]]] = empty_dict()
     profiles: Optional[Union[Dict[Union[str, ProfileName], Union[dict, "Profile"]], List[Union[dict, "Profile"]]]] = empty_dict()
     description: Optional[str] = None
+    competency_questions: Optional[Union[Union[str, CompetencyQuestionName], List[Union[str, CompetencyQuestionName]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         self._normalize_inlined_as_dict(slot_name="endpoints", slot_type=Endpoint, key_name="name", keyed=True)
@@ -71,6 +76,10 @@ class SystemConfiguration(YAMLRoot):
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
+
+        if not isinstance(self.competency_questions, list):
+            self.competency_questions = [self.competency_questions] if self.competency_questions is not None else []
+        self.competency_questions = [v if isinstance(v, CompetencyQuestionName) else CompetencyQuestionName(v) for v in self.competency_questions]
 
         super().__post_init__(**kwargs)
 
@@ -121,6 +130,9 @@ class Endpoint(YAMLRoot):
 
 @dataclass
 class ExampleQuery(YAMLRoot):
+    """
+    An example query that can be executed on a particular endpoint
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = CONFIG_SCHEMA.ExampleQuery
@@ -128,14 +140,36 @@ class ExampleQuery(YAMLRoot):
     class_name: ClassVar[str] = "ExampleQuery"
     class_model_uri: ClassVar[URIRef] = CONFIG_SCHEMA.ExampleQuery
 
+    description: Optional[str] = None
     query_template: Optional[str] = None
     bindings: Optional[Union[Dict[Union[str, BindingBindingKey], Union[dict, "Binding"]], List[Union[dict, "Binding"]]]] = empty_dict()
+    answers: Optional[Union[Union[str, CompetencyQuestionName], List[Union[str, CompetencyQuestionName]]]] = empty_list()
+    expected_max_results: Optional[int] = None
+    expected_min_results: Optional[int] = None
+    results_must_contain: Optional[Union[Union[dict, "ResultObject"], List[Union[dict, "ResultObject"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
         if self.query_template is not None and not isinstance(self.query_template, str):
             self.query_template = str(self.query_template)
 
         self._normalize_inlined_as_dict(slot_name="bindings", slot_type=Binding, key_name="binding_key", keyed=True)
+
+        if not isinstance(self.answers, list):
+            self.answers = [self.answers] if self.answers is not None else []
+        self.answers = [v if isinstance(v, CompetencyQuestionName) else CompetencyQuestionName(v) for v in self.answers]
+
+        if self.expected_max_results is not None and not isinstance(self.expected_max_results, int):
+            self.expected_max_results = int(self.expected_max_results)
+
+        if self.expected_min_results is not None and not isinstance(self.expected_min_results, int):
+            self.expected_min_results = int(self.expected_min_results)
+
+        if not isinstance(self.results_must_contain, list):
+            self.results_must_contain = [self.results_must_contain] if self.results_must_contain is not None else []
+        self.results_must_contain = [v if isinstance(v, ResultObject) else ResultObject(**as_dict(v)) for v in self.results_must_contain]
 
         super().__post_init__(**kwargs)
 
@@ -173,6 +207,84 @@ class Profile(YAMLRoot):
         if not isinstance(self.modules, list):
             self.modules = [self.modules] if self.modules is not None else []
         self.modules = [v if isinstance(v, str) else str(v) for v in self.modules]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class CompetencyQuestion(YAMLRoot):
+    """
+    A high level description of a domain question that can potentially be executed on one or more endpoints
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CONFIG_SCHEMA.CompetencyQuestion
+    class_class_curie: ClassVar[str] = "config_schema:CompetencyQuestion"
+    class_name: ClassVar[str] = "CompetencyQuestion"
+    class_model_uri: ClassVar[URIRef] = CONFIG_SCHEMA.CompetencyQuestion
+
+    name: Union[str, CompetencyQuestionName] = None
+    description: Optional[str] = None
+    has_story: Optional[Union[dict, "UserStory"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, CompetencyQuestionName):
+            self.name = CompetencyQuestionName(self.name)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
+        if self.has_story is not None and not isinstance(self.has_story, UserStory):
+            self.has_story = UserStory(**as_dict(self.has_story))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class UserStory(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CONFIG_SCHEMA.UserStory
+    class_class_curie: ClassVar[str] = "config_schema:UserStory"
+    class_name: ClassVar[str] = "UserStory"
+    class_model_uri: ClassVar[URIRef] = CONFIG_SCHEMA.UserStory
+
+    user_category: Optional[str] = None
+    task: Optional[str] = None
+    objective: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.user_category is not None and not isinstance(self.user_category, str):
+            self.user_category = str(self.user_category)
+
+        if self.task is not None and not isinstance(self.task, str):
+            self.task = str(self.task)
+
+        if self.objective is not None and not isinstance(self.objective, str):
+            self.objective = str(self.objective)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ResultObject(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CONFIG_SCHEMA.ResultObject
+    class_class_curie: ClassVar[str] = "config_schema:ResultObject"
+    class_name: ClassVar[str] = "ResultObject"
+    class_model_uri: ClassVar[URIRef] = CONFIG_SCHEMA.ResultObject
+
+    description: Optional[str] = None
+    bindings: Optional[Union[Dict[Union[str, BindingBindingKey], Union[dict, "Binding"]], List[Union[dict, "Binding"]]]] = empty_dict()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
+        self._normalize_inlined_as_dict(slot_name="bindings", slot_type=Binding, key_name="binding_key", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -254,6 +366,12 @@ slots.type_property = Slot(uri=CONFIG_SCHEMA.type_property, name="type_property"
 slots.example_queries = Slot(uri=CONFIG_SCHEMA.example_queries, name="example_queries", curie=CONFIG_SCHEMA.curie('example_queries'),
                    model_uri=CONFIG_SCHEMA.example_queries, domain=None, range=Optional[Union[Union[dict, ExampleQuery], List[Union[dict, ExampleQuery]]]])
 
+slots.competency_questions = Slot(uri=CONFIG_SCHEMA.competency_questions, name="competency_questions", curie=CONFIG_SCHEMA.curie('competency_questions'),
+                   model_uri=CONFIG_SCHEMA.competency_questions, domain=None, range=Optional[Union[Union[str, CompetencyQuestionName], List[Union[str, CompetencyQuestionName]]]])
+
+slots.answers = Slot(uri=CONFIG_SCHEMA.answers, name="answers", curie=CONFIG_SCHEMA.curie('answers'),
+                   model_uri=CONFIG_SCHEMA.answers, domain=None, range=Optional[Union[Union[str, CompetencyQuestionName], List[Union[str, CompetencyQuestionName]]]])
+
 slots.profiles = Slot(uri=CONFIG_SCHEMA.profiles, name="profiles", curie=CONFIG_SCHEMA.curie('profiles'),
                    model_uri=CONFIG_SCHEMA.profiles, domain=None, range=Optional[Union[Dict[Union[str, ProfileName], Union[dict, Profile]], List[Union[dict, Profile]]]])
 
@@ -265,6 +383,18 @@ slots.subsets = Slot(uri=CONFIG_SCHEMA.subsets, name="subsets", curie=CONFIG_SCH
 
 slots.modules = Slot(uri=CONFIG_SCHEMA.modules, name="modules", curie=CONFIG_SCHEMA.curie('modules'),
                    model_uri=CONFIG_SCHEMA.modules, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.has_story = Slot(uri=CONFIG_SCHEMA.has_story, name="has_story", curie=CONFIG_SCHEMA.curie('has_story'),
+                   model_uri=CONFIG_SCHEMA.has_story, domain=None, range=Optional[Union[dict, UserStory]])
+
+slots.expected_max_results = Slot(uri=CONFIG_SCHEMA.expected_max_results, name="expected_max_results", curie=CONFIG_SCHEMA.curie('expected_max_results'),
+                   model_uri=CONFIG_SCHEMA.expected_max_results, domain=None, range=Optional[int])
+
+slots.expected_min_results = Slot(uri=CONFIG_SCHEMA.expected_min_results, name="expected_min_results", curie=CONFIG_SCHEMA.curie('expected_min_results'),
+                   model_uri=CONFIG_SCHEMA.expected_min_results, domain=None, range=Optional[int])
+
+slots.results_must_contain = Slot(uri=CONFIG_SCHEMA.results_must_contain, name="results_must_contain", curie=CONFIG_SCHEMA.curie('results_must_contain'),
+                   model_uri=CONFIG_SCHEMA.results_must_contain, domain=None, range=Optional[Union[Union[dict, ResultObject], List[Union[dict, ResultObject]]]])
 
 slots.results = Slot(uri=RESULTSET.results, name="results", curie=RESULTSET.curie('results'),
                    model_uri=CONFIG_SCHEMA.results, domain=None, range=Optional[Union[Union[dict, GenericResult], List[Union[dict, GenericResult]]]])
@@ -280,3 +410,12 @@ slots.query_template = Slot(uri=RESULTSET.query_template, name="query_template",
 
 slots.bindings = Slot(uri=RESULTSET.bindings, name="bindings", curie=RESULTSET.curie('bindings'),
                    model_uri=CONFIG_SCHEMA.bindings, domain=None, range=Optional[Union[Dict[Union[str, BindingBindingKey], Union[dict, Binding]], List[Union[dict, Binding]]]])
+
+slots.userStory__user_category = Slot(uri=CONFIG_SCHEMA.user_category, name="userStory__user_category", curie=CONFIG_SCHEMA.curie('user_category'),
+                   model_uri=CONFIG_SCHEMA.userStory__user_category, domain=None, range=Optional[str])
+
+slots.userStory__task = Slot(uri=CONFIG_SCHEMA.task, name="userStory__task", curie=CONFIG_SCHEMA.curie('task'),
+                   model_uri=CONFIG_SCHEMA.userStory__task, domain=None, range=Optional[str])
+
+slots.userStory__objective = Slot(uri=CONFIG_SCHEMA.objective, name="userStory__objective", curie=CONFIG_SCHEMA.curie('objective'),
+                   model_uri=CONFIG_SCHEMA.userStory__objective, domain=None, range=Optional[str])

@@ -33,7 +33,7 @@ imports:
   - ro
   - omo
   - ubergraph
-  - uniprot_queries
+#  - uniprot_queries
   - uberon
   - biolink
 

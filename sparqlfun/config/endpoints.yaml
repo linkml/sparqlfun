@@ -1,11 +1,39 @@
 endpoints:
   ubergraph:
     url: https://stars-app.renci.org/ubergraph/sparql
+    description: |-
+      ubergraph is a merged set of mutually referential OBO ontologies, pre-reasoned,
+      and implementing relation-graph triples
     example_queries:
       - query_template: PairwiseCommonSubClassAncestor
+        description: >-
+          Finds common ancestors between pyridine biosynthetic process and spermidine biosynthetic process
+        answers:
+          - ancestors_in_common
         bindings:
           node1: GO:0046220
           node2: GO:0008295
+        expected_min_results: 1
+        results_must_contain:
+          - description: organonitrogen compound biosynthetic process (also an MRCA)
+            bindings:
+              ancestor: GO:1901566
+          - bindings:
+              description: cellular process
+              ancestor: GO:0009987
+      - query_template: PairwiseMostRecentCommonSubClassAncestor
+        description: >-
+          Finds most recent common ancestors between pyridine biosynthetic process and spermidine biosynthetic process
+        answers:
+          - ancestors_in_common
+        bindings:
+          node1: GO:0046220
+          node2: GO:0008295
+        expected_min_results: 1
+        results_must_contain:
+          - description: organonitrogen compound biosynthetic process
+            bindings:
+              ancestor: GO:1901566
     implements:
       - relation_graph
       - taxon
@@ -15,8 +43,13 @@ endpoints:
       - biolink_ontology
   dbpedia:
     url: http://dbpedia.org/sparql
+    description: |-
+      a project aiming to extract structured content from the information created in the Wikipedia project,
+      implementing the dbpedia ontology
   go:
     url: http://rdf.geneontology.org/sparql
+    description: |-
+      public endpoint for GO-CAMs
     implements:
 #      - relation_graph
       - taxon
@@ -24,6 +57,8 @@ endpoints:
       - omo
   uniprot:
     url: https://sparql.uniprot.org/sparql
+    description: |-
+      Contains all UniProt data.
     implements:
       - ontobee
       - taxon
@@ -31,23 +66,46 @@ endpoints:
       - omo
   nextprot:
     url: https://api.nextprot.org/sparql
+    description: endpoint for nextprot database of human proteins
     implements:
   kghub:
     url: http://kg-hub-rdf.berkeleybop.io/sparql
+    description: |-
+      endpoint for the KG-Hub project, which amalgamates multiple Knowledge Graphs
+      following the Biolink Model
     implements:
       - biolink_categories
       - ontologies_as_kgx
   ontobee:
     url: http://sparql.hegroup.org/sparql
+    description: |-
+      Endpoint for OBO ontologies, provided by the He Group
     implements:
       - ontobee
       - taxon
       - owl_as_rdf
       - omo
+    example_queries:
+      - query_template: OboClassQuery
+        description: >-
+          Finds classes with labels starting with the string 'cysteine metab'
+        answers:
+          - find_class_by_label_match
+        bindings:
+          label_regex: "^cysteine metabol"
+        expected_min_results: 1
+        results_must_contain:
+          - description: cysteine metabolic process
+            bindings:
+              id: GO:0006534
   rhea:
+    description: |-
+      Endpoint for the Rhea database of enzymatic reactions
     url: https://sparql.rhea-db.org/sparql
     implements:
   wikidata:
+    description: |-
+      Wikidata triple store
     url: http://query.wikidata.org/sparql
     implements:
       - wikidata
@@ -70,3 +128,16 @@ profiles:
     description: Implementing endpoints must have the biolink OWL ontology loaded
   ontologies_as_kgx:
     description: Implementing endpoints must use kgx/rdf reification patterns for ontology edges
+competency_questions:
+  class_ancestors:
+    description: Find all named ancestors of a specified class over subClassOf
+  part_ancestors:
+    description: Find all things a specified class must be a part of
+  class_descendants:
+    description: Find all named descendants of a specified class over subClassOf
+  part_descendants:
+    description: Find all things that are part of a specified class
+  ancestors_in_common:
+    description: Find commonalities between two classes
+  find_class_by_label_match:
+    description: Find a class using an inexact match using a regex or string pattern

@@ -77,8 +77,11 @@ class SparqlTemplateInstance:
 
 @dataclass
 class SparqlEngine:
+    """
+    Engine that can interpret and executed templated sparql queries
+    """
 
-    endpoint: Union[str, Endpoint]
+    endpoint: Union[str, Endpoint] = None
     schema_view: SchemaView = SchemaView(schema_path)
     config: SystemConfiguration = None
     lang: LANGSTR = None
@@ -357,23 +360,6 @@ class SparqlEngine:
         return nm
 
 
-    def _OLD_replace(self, template: str, argdict: dict = {}) -> str:
-        import re
-        m = re.search(r'(.*\s+)(where)(\s+.*)', template, flags=re.IGNORECASE | re.DOTALL)
-        if m:
-            pre_where = m.group(1)
-            where = m.group(2)
-            post_where = m.group(3)
-        else:
-            raise ValueError(f'No WHERE in query: {template}')
-        for k, v in argdict.items():
-            if not isinstance(v, list):
-                pre_where = re.sub(f'\\?{k}([^a-zA-Z0-9_])', f'BIND({v} AS ?{k})\\1', pre_where)
-                post_where = re.sub(f'\\?{k}([^a-zA-Z0-9_])', f'{v}\\1', post_where)
-                #template = template.replace(f'?{k}', v)
-        template = f'{pre_where}{where}{post_where}'
-        return template
-
     def _replace(self, template: str, argdict: dict = {}) -> str:
         import re
         m = re.search(r'(.*\s+where\s*\{)(\s+.*)', template, flags=re.IGNORECASE | re.DOTALL)
@@ -409,131 +395,7 @@ def _unwrap(v: sw.Value) -> Node:
     else:
         raise Exception(f'Unknown type {v.type} for {v}')
 
-@unique
-class OutputFormat(Enum):
-    json = 'json'
-    yaml = 'yaml'
-    tsv = 'tsv'
-    ttl = 'ttl'
-    obj = 'obj'
-    @staticmethod
-    def list():
-        return list(map(lambda c: c.value, OutputFormat))
-
-@click.command()
-@click.option('--endpoint', '-e', help='Name or path of endpoint', required=True)
-@click.option('-f', '--to_format', default='json',
-              type=click.Choice(OutputFormat.list()),
-              help='output format')
-@click.option('-l', '--limit', default=10, show_default=True,
-              help="limit on number of query results")
-@click.option('-M', '--curie-maps', default=['obo_context'],
-              show_default=True, multiple=True,
-              help="names of CURIE maps to load")
-@click.option('-P', '--prefix',
-              multiple=True,
-              help="prefix list, specified as prefix=uribase")
-@click.option('-m', '--module', default='sparqlfun.model',
-              show_default=True,
-              help="name of module to load")
-@click.option('-S', '--schema',
-              help="path to schema, if not default")
-@click.option('--yasgui/--no-yasgui', default=False, show_default=True,
-              help="return URL to yasgui interface rather than execute query")
-@click.option('-T', '--template',
-              required=True,
-              help='name of template')
-@click.option('-v', '--verbose', count=True)
-@click.argument('params', nargs=-1)
-def cli(params: List[str], module: str, schema: str, endpoint: str, limit: int, curie_maps: List[str], prefix: List[str],
-        yasgui, to_format: str, template: str, verbose: int):
-    """
-    Query sparql template
-
-    Examples:
-
-    \b
-        common ancestors
-
-            $ sparqlfun -e ubergraph -T PairwiseCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
-
-    """
-    logging.basicConfig(level=LOGLEVEL[verbose])
-    se = SparqlEngine(endpoint=endpoint)
-    logging.info(f'Engine={se}')
-    se.ignore_unmapped_predicates = True
-    if schema:
-        se.schema_view = SchemaView(schema)
-    sv = se.schema_view
-
-    se.limit = limit
-    module = importlib.import_module(module)
-    template_py = getattr(module, template)
-    args = []
-    kwargs = {}
-    prefixes = []
-    def add_prefix(curie: str):
-        if ':' in curie:
-            prefixes.append(curie.split(':')[0])
-    for p in params:
-        if '=' in p:
-            [k, v] = p.split('=')
-            if ',' in v:
-                # TODO: allow escape mechanism if a comma is to be included
-                v = v.split(',')
-                for x in v:
-                    add_prefix(x)
-            else:
-                add_prefix(v)
-            if ',' in k:
-                for k1 in k.split(','):
-                    kwargs[k1] = v
-            else:
-                kwargs[k] = v
-        else:
-            args.append(p)
-            add_prefix(p)
-    logging.info(f'Prefixes detected in query: {prefixes}')
-    for cmap_name in curie_maps:
-        cmap = curie_util.read_biocontext(cmap_name)
-        for p in prefixes:
-            if p in cmap:
-                se.bind_prefixes(**{p: cmap[p]})
-    for p in prefix:
-        [k,v] = p.split('=')
-        se.bind_prefixes(**{k: v})
-    if to_format == 'json':
-        dumper = json_dumper
-    elif to_format == 'yaml':
-        dumper = yaml_dumper
-    elif to_format == 'tsv':
-        dumper = csv_dumper
-    elif to_format == 'ttl':
-        dumper = rdflib_dumper
-    elif to_format == 'jsonld':
-        dumper = rdf_dumper
-    else:
-        raise Exception(f'Unknown format: {to_format}')
-
-    if yasgui:
-        yasgui_url = se.yasgui_url(template_py, **kwargs)
-        print(yasgui_url)
-        exit(0)
-
-    container = se.query(template_py, *args, **kwargs)
-    #result_set_py_class = getattr(module, 'ResultSet')
-    #container = result_set_py_class()
-    #container.results = objs
-    if to_format == 'tsv':
-        dump_str = csv_dumper.dumps(container, index_slot='results', schemaview=se.schema_view)
-    elif to_format == 'ttl':
-        dump_str = dumper.dumps(container, schemaview=se.schema_view)
-    else:
-        dump_str = dumper.dumps(container)
-    print(dump_str)
 
 
-if __name__ == '__main__':
-    cli()
 
 
