@@ -92,8 +92,8 @@ def test_definition(engine):
 def test_jinja(engine):
     check(engine.query(OboClassFiltered, query_has_subclass_ancestor='GO:0044271'))
 
-def test_custom_result_set(engine):
-    check(engine.query(OboClassQuery, label_regex='^cysteine metabol'))
+#def test_custom_result_set(engine):
+#    check(engine.query(OboClassQuery, label_regex='^cysteine metabol'))
 
 def test_common_ancestor(engine):
     check(engine.query(PairwiseCommonSubClassAncestor, node1='GO:0046220', node2='GO:0008295'))
