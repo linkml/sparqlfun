@@ -1,0 +1,86 @@
+id: https://linkml.io/sparqlfun/chebi
+name: chebi
+title: sparqlfun chebi module
+description: >-
+  Abstractions for working with chebi
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  sparqlfun_chebi: https://linkml.io/sparqlfun/chebi/
+  sparqlfun: https://linkml.io/sparqlfun/
+  ubergraph: http://reasoner.renci.org/
+  linkml: https://w3id.org/linkml/
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+
+
+default_prefix: sparqlfun_chebi
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+  - obo_context
+
+imports:
+  - linkml:types
+  - omo
+  - owl
+  - biolink
+  - ubergraph
+
+
+
+classes:
+
+  charge:
+    is_a: rdf triple
+
+
+  chemical entity:
+    class_uri: CHEBI:24431
+    is_a: obo class
+    annotations:
+      sparql.construct: |-
+        CONSTRUCT {
+          ?id a biolink:ChemicalEntity ;
+            rdfs:label ?label
+        }
+        WHERE {
+          ?id rdfs:label ?label ;
+              rdfs:subClassOf* CHEBI:0001062 .
+        }
+
+  conjugate base:
+    is_a: subclass of some values from
+    classification_rules:
+      - is_a: subclass of some values from
+        slot_conditions:
+          predicate:
+            equals_string: chebirel:is_conjugate_base_of
+
+  conjugate base with charge:
+    is_a: conjugate base
+    attributes:
+      subject_charge:
+        range: int
+      object_charge:
+        range: int
+    annotations:
+      sparql.select:
+        SELECT *
+        WHERE {
+        ?subject rdfs:subClassOf [
+           a owl:Restriction ;
+           owl:onProperty chebirel:is_conjugate_base_of ;
+           owl:someValuesFrom ?object
+         ] .
+         ?subject chebivocab:charge ?subject_charge .
+         ?object chebivocab:charge ?object_charge .
+        }
+
+
+slots:
+  charge:
+
+
+
+    

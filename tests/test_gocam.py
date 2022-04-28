@@ -32,6 +32,6 @@ def check(rs: ResultSet, min_expected=1, max_expected: int = None):
         assert n <= max_expected
 
 
-def test_model_query(engine):
-    check(engine.query(ModelInfo, state="production"))
+#def test_model_query(engine):
+#    check(engine.query(ModelInfo, state="production"))
 #    check(engine.query(DescribeEquivalentExpression))
