@@ -1,6 +1,6 @@
 endpoints:
   ubergraph:
-    url: https://stars-app.renci.org/ubergraph/sparql
+    url: https://ubergraph.apps.renci.org/sparql
     description: |-
       ubergraph is a merged set of mutually referential OBO ontologies, pre-reasoned,
       and implementing relation-graph triples

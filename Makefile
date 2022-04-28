@@ -23,6 +23,8 @@ sparqlfun/resultset.py: sparqlfun/schema/resultset.yaml
 	$(RUN) gen-python $< > $@
 sparqlfun/%.py: sparqlfun/schema/%.yaml
 	$(RUN) gen-python $< > $@
+sparqlfun/model.py: sparqlfun/schema/sparqlfun.yaml
+	$(RUN) gen-python $< > $@
 
 # TODO: https://github.com/linkml/linkml/issues/576
 sparqlfun/config/endpoints.ttl: sparqlfun/config/endpoints.yaml
