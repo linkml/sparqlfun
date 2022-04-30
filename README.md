@@ -31,7 +31,7 @@ Note: currently not all metadata from the yaml is shown in the generated docs
 Use the [sparqlfun:PairwiseCommonSubClassAncestor](https://linkml.io/sparqlfun/PairwiseCommonSubClassAncestor) template
 
 ```bash
-sparqlfun -e ubergraph -T PairwiseCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
+sparqlfun query -e ubergraph -T PairwiseCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
 ```
 
 results:
@@ -56,6 +56,21 @@ results:
 ...
 ```
 
+## Local RDF files
+
+If you specify the `-f` / `--format` option then `-e` is assumed to be a path to a file on disk:
+
+```bash
+sparqlfun query -e go.owl.ttl -f ttl -T PairwiseCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
+```
+
+
+## List all templates
+
+```bash
+sparqlfun endpoints
+```
+
 ## Python
 
 ```python
@@ -64,15 +79,12 @@ from sparqlfun.model import PairwiseCommonSubClassAncestor
 
 se = SparqlEngine(endpoint='ubergraph')
 se.bind_prefixes(GO='http://purl.obolibrary.org/obo/GO_')
-for row in se.query(PairwiseCommonSubClassAncestor(node1='GO:0046220', node2='GO:0008295')).results:
-        print(f'ROW={row}')
+for apair in se.query(PairwiseCommonSubClassAncestor(node1='GO:0046220', node2='GO:0008295')).results:
+        print(f'ROW={apair.node1} <-> {apair.node2} ANCESTOR = {apair.ancestor}')
 ```
 
-For more examples, see tests/ in GitHub
+For more examples, see [tests/] in GitHub
 
-## Service (via Fast API)
-
-coming soon!
 
 ## Browsing the templates
 
@@ -80,8 +92,21 @@ coming soon!
      - add new templates here
  - Browse the generated markdown on the site
      - markdown is auto-created from the yaml schema
-   
+
+You can also list templates here:
+
+```bash
+sparqlfun templates
+```
+
+or for detailed view:
+
+```bash
+sparqlfun templates --detail
+```
+
 ## How it works
+
 
 ### Basics
 

@@ -5,6 +5,10 @@ endpoints:
       ubergraph is a merged set of mutually referential OBO ontologies, pre-reasoned,
       and implementing relation-graph triples
     example_queries:
+      - query_template: OboClass
+        description: Find metadata about the class nucleus in GO
+        bindings:
+          id: GO:0005634
       - query_template: PairwiseCommonSubClassAncestor
         description: >-
           Finds common ancestors between pyridine biosynthetic process and spermidine biosynthetic process

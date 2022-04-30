@@ -11,52 +11,52 @@
 <http://purl.obolibrary.org/obo/CHEBI_24431> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path rdfs:label ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:description "Graph to which the triple belongs" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path rdfs:isDefinedBy ],
-        [ sh:order 2 ;
-            sh:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
-        [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path IAO:0000115 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path rdf:type ],
-        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path <https://linkml.io/sparqlfun/rdf/id> ] ;
-    sh:targetClass <http://purl.obolibrary.org/obo/CHEBI_24431> .
-
-<http://purl.obolibrary.org/obo/CL_0000000> a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:description "Graph to which the triple belongs" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path rdfs:isDefinedBy ],
-        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+    sh:property [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
             sh:maxCount 1 ;
             sh:order 5 ;
             sh:path <https://linkml.io/sparqlfun/rdf/id> ],
         [ sh:maxCount 1 ;
             sh:order 1 ;
             sh:path IAO:0000115 ],
+        [ sh:order 2 ;
+            sh:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
         [ sh:maxCount 1 ;
             sh:order 0 ;
             sh:path rdfs:label ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:description "Graph to which the triple belongs" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path rdfs:isDefinedBy ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path rdf:type ] ;
+    sh:targetClass <http://purl.obolibrary.org/obo/CHEBI_24431> .
+
+<http://purl.obolibrary.org/obo/CL_0000000> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:description "Graph to which the triple belongs" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path rdfs:isDefinedBy ],
+        [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path IAO:0000115 ],
         [ sh:order 2 ;
             sh:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path rdfs:label ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -67,55 +67,67 @@
 <http://purl.obolibrary.org/obo/UBERON_0001981> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <http://purl.obolibrary.org/obo/UBERON_0001062> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path RO:0002380 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 8 ;
             sh:path rdf:type ],
-        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            sh:maxCount 1 ;
-            sh:order 9 ;
-            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
-        [ sh:class <http://purl.obolibrary.org/obo/UBERON_0001062> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path RO:0002179 ],
         [ sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path rdfs:label ],
+            sh:order 5 ;
+            sh:path IAO:0000115 ],
         [ sh:class <http://purl.obolibrary.org/obo/UBERON_0001062> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
             sh:path RO:0002178 ],
         [ sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path IAO:0000115 ],
+            sh:order 4 ;
+            sh:path rdfs:label ],
+        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            sh:maxCount 1 ;
+            sh:order 9 ;
+            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
         [ sh:in ( <http://purl.obolibrary.org/obo/UBERON_0001637> <http://purl.obolibrary.org/obo/UBERON_0001638> ) ;
             sh:maxCount 1 ;
             sh:order 0 ;
             sh:path sparqlfun:subcategory ],
-        [ sh:order 6 ;
-            sh:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
+        [ sh:class <http://purl.obolibrary.org/obo/UBERON_0001062> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path RO:0002179 ],
+        [ sh:class <http://purl.obolibrary.org/obo/UBERON_0001062> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path RO:0002380 ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:description "Graph to which the triple belongs" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 7 ;
-            sh:path rdfs:isDefinedBy ] ;
+            sh:path rdfs:isDefinedBy ],
+        [ sh:order 6 ;
+            sh:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ] ;
     sh:targetClass <http://purl.obolibrary.org/obo/UBERON_0001981> .
 
 rdf:Resource a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ),
         ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
+    sh:property [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path sparqlfun:value_statements ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path sparqlfun:value_statements ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
             sh:nodeKind sh:BlankNode ;
             sh:order 0 ;
             sh:path sparqlfun:node_statements ],
@@ -123,18 +135,6 @@ rdf:Resource a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:order 2 ;
             sh:path <https://linkml.io/sparqlfun/rdf/id> ],
-        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 1 ;
-            sh:path sparqlfun:value_statements ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 1 ;
-            sh:path sparqlfun:value_statements ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
             sh:nodeKind sh:BlankNode ;
             sh:order 0 ;
@@ -151,6 +151,17 @@ rdf:Statement a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
             sh:path rdf:subject ],
+        [ sh:class linkml:Any ;
+            sh:description "a literal or node representing the object of the triple" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path rdf:object ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path rdf:predicate ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -159,29 +170,18 @@ rdf:Statement a sh:NodeShape ;
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 2 ;
+            sh:order 1 ;
             sh:path rdf:predicate ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:description "a literal or node representing the object of the triple" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path rdf:object ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
             sh:path rdf:subject ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path rdf:predicate ],
-        [ sh:class linkml:Any ;
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 2 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
             sh:path rdf:object ] ;
     sh:targetClass rdf:Statement .
 
@@ -198,7 +198,12 @@ owl:NamedIndividual a sh:NodeShape ;
 owl:Restriction a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+    sh:property [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path rdf:predicate ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
@@ -207,12 +212,7 @@ owl:Restriction a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
-            sh:path rdf:subject ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path rdf:predicate ] ;
+            sh:path rdf:subject ] ;
     sh:targetClass owl:Restriction .
 
 sh:PrefixDeclaration a sh:NodeShape ;
@@ -232,29 +232,19 @@ sh:PrefixDeclaration a sh:NodeShape ;
 sparqlfun:OboClassQuery a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class owl:Class ;
+    sh:property [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <sparqlfun_omo:label_regex> ],
+        [ sh:class owl:Class ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
-            sh:path <resultset:results> ],
-        [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <sparqlfun_omo:label_regex> ] ;
+            sh:path <resultset:results> ] ;
     sh:targetClass sparqlfun:OboClassQuery .
 
 sparqlfun:biolinkAssociation a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 2 ;
-            sh:path sparqlfun:node_statements ],
-        [ sh:class linkml:Any ;
-            sh:description "a literal or node representing the object of the triple" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 6 ;
-            sh:path rdf:object ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:description "Graph to which the triple belongs" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -270,20 +260,30 @@ sparqlfun:biolinkAssociation a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 5 ;
             sh:path rdf:predicate ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 3 ;
-            sh:path sparqlfun:value_statements ],
+        [ sh:class owl:Class ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:biolinksubject_category ],
         [ sh:class owl:Class ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
             sh:path sparqlfun:biolinkobject_category ],
-        [ sh:class owl:Class ;
+        [ sh:class linkml:Any ;
+            sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:biolinksubject_category ] ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 6 ;
+            sh:path rdf:object ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path sparqlfun:value_statements ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path sparqlfun:node_statements ] ;
     sh:targetClass sparqlfun:biolinkAssociation .
 
 sparqlfun:biolinkAssociationWithInferredCategories a sh:NodeShape ;
@@ -294,11 +294,32 @@ sparqlfun:biolinkAssociationWithInferredCategories a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 4 ;
             sh:path rdf:subject ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path sparqlfun:node_statements ],
+        [ sh:class linkml:Any ;
+            sh:description "a literal or node representing the object of the triple" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 6 ;
+            sh:path rdf:object ],
         [ sh:class owl:Class ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
             sh:path sparqlfun:biolinksubject_category ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:description "Graph to which the triple belongs" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 7 ;
+            sh:path rdfs:isDefinedBy ],
+        [ sh:class owl:Class ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path sparqlfun:biolinkobject_category ],
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -307,35 +328,19 @@ sparqlfun:biolinkAssociationWithInferredCategories a sh:NodeShape ;
         [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
             sh:nodeKind sh:BlankNode ;
             sh:order 3 ;
-            sh:path sparqlfun:value_statements ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:description "Graph to which the triple belongs" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 7 ;
-            sh:path rdfs:isDefinedBy ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 2 ;
-            sh:path sparqlfun:node_statements ],
-        [ sh:class owl:Class ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path sparqlfun:biolinkobject_category ],
-        [ sh:class linkml:Any ;
-            sh:description "a literal or node representing the object of the triple" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 6 ;
-            sh:path rdf:object ] ;
+            sh:path sparqlfun:value_statements ] ;
     sh:targetClass sparqlfun:biolinkAssociationWithInferredCategories .
 
 sparqlfun:biolinkBiolinkCategoryTriple a sh:NodeShape ;
     sh:closed true ;
     sh:description "A triple that connects any node to its biolink category" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+    sh:property [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path rdf:predicate ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
@@ -345,41 +350,18 @@ sparqlfun:biolinkBiolinkCategoryTriple a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
-            sh:path rdf:object ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path rdf:predicate ] ;
+            sh:path rdf:object ] ;
     sh:targetClass sparqlfun:biolinkBiolinkCategoryTriple .
 
 sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 2 ;
-            sh:path sparqlfun:node_statements ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 3 ;
-            sh:path sparqlfun:value_statements ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:description "Graph to which the triple belongs" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 7 ;
             sh:path rdfs:isDefinedBy ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path rdf:subject ],
-        [ sh:class owl:Class ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path sparqlfun:biolinkobject_category ],
         [ sh:class linkml:Any ;
             sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
@@ -389,13 +371,31 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
         [ sh:class owl:Class ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:biolinksubject_category ],
+            sh:order 1 ;
+            sh:path sparqlfun:biolinkobject_category ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path rdf:subject ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path sparqlfun:node_statements ],
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 5 ;
-            sh:path rdf:predicate ] ;
+            sh:path rdf:predicate ],
+        [ sh:class owl:Class ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:biolinksubject_category ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path sparqlfun:value_statements ] ;
     sh:targetClass sparqlfun:biolinkGeneToGeneAssociation .
 
 <https://linkml.io/sparqlfun/rdf/ClassTrait> a sh:NodeShape ;
@@ -423,16 +423,16 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
     sh:description "A triple where subject and object are both nodes (isIRI)" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path rdf:subject ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
             sh:path rdf:object ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdf:subject ],
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -445,21 +445,21 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
     sh:description "A triple where object is a node (isIRI)" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdf:subject ],
+            sh:order 2 ;
+            sh:path rdf:object ],
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
             sh:path rdf:predicate ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path rdf:object ] ;
+            sh:order 0 ;
+            sh:path rdf:subject ] ;
     sh:targetClass <https://linkml.io/sparqlfun/rdf/NodeToNodeTriple> .
 
 <https://linkml.io/sparqlfun/rdf/NodeToValueTriple> a sh:NodeShape ;
@@ -471,15 +471,15 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
             sh:path rdf:subject ],
-        [ sh:description "a literal or node representing the object of the triple" ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path rdf:object ],
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
-            sh:path rdf:predicate ] ;
+            sh:path rdf:predicate ],
+        [ sh:description "a literal or node representing the object of the triple" ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path rdf:object ] ;
     sh:targetClass <https://linkml.io/sparqlfun/rdf/NodeToValueTriple> .
 
 <https://linkml.io/sparqlfun/rdf/NodeTrait> a sh:NodeShape ;
@@ -498,11 +498,6 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
             sh:nodeKind sh:BlankNode ;
             sh:order 2 ;
             sh:path rdf:object ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path rdf:predicate ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -513,7 +508,12 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
-            sh:path rdfs:isDefinedBy ] ;
+            sh:path rdfs:isDefinedBy ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path rdf:predicate ] ;
     sh:targetClass <https://linkml.io/sparqlfun/rdf/NonRedundantQuad> .
 
 <https://linkml.io/sparqlfun/rdf/PropertyTrait> a sh:NodeShape ;
@@ -525,7 +525,13 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
     sh:closed true ;
     sh:description "Represents an RDF triple plus named graph to which the triple belongs" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class owl:Property ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:description "Graph to which the triple belongs" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path rdfs:isDefinedBy ],
+        [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
@@ -537,12 +543,6 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
             sh:order 2 ;
             sh:path rdf:object ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:description "Graph to which the triple belongs" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path rdfs:isDefinedBy ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
@@ -553,36 +553,36 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
     sh:closed true ;
     sh:description "A statement that indicates the asserted type of the subject entity" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class owl:Class ;
-            sh:description "The entity type" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path rdf:object ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 0 ;
-            sh:path sparqlfun:node_statements ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path rdf:predicate ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 1 ;
-            sh:path sparqlfun:value_statements ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:description "Graph to which the triple belongs" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 5 ;
             sh:path rdfs:isDefinedBy ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path sparqlfun:value_statements ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
-            sh:path rdf:subject ] ;
+            sh:path rdf:subject ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path rdf:predicate ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path sparqlfun:node_statements ],
+        [ sh:class owl:Class ;
+            sh:description "The entity type" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path rdf:object ] ;
     sh:targetClass <https://linkml.io/sparqlfun/rdf/RdfTypeStatement> .
 
 <https://linkml.io/sparqlfun/rdf/RdfTypeTriple> a sh:NodeShape ;
@@ -631,20 +631,20 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
 <https://linkml.io/sparqlfun/rdf/RdfsLabelTriple> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+    sh:property [ sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdf:subject ],
+            sh:order 2 ;
+            sh:path rdf:object ],
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
             sh:path rdf:predicate ],
-        [ sh:description "a literal or node representing the object of the triple" ;
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path rdf:object ] ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path rdf:subject ] ;
     sh:targetClass <https://linkml.io/sparqlfun/rdf/RdfsLabelTriple> .
 
 <https://linkml.io/sparqlfun/rdf/RdfsRangeTriple> a sh:NodeShape ;
@@ -671,22 +671,22 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
 <https://linkml.io/sparqlfun/rdf/RdfsSubclassOfNamedTriple> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class owl:Property ;
+    sh:property [ sh:class owl:Class ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path rdf:predicate ],
+            sh:order 0 ;
+            sh:path rdf:subject ],
         [ sh:class owl:Class ;
             sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
             sh:path rdf:object ],
-        [ sh:class owl:Class ;
+        [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdf:subject ] ;
+            sh:order 1 ;
+            sh:path rdf:predicate ] ;
     sh:targetClass <https://linkml.io/sparqlfun/rdf/RdfsSubclassOfNamedTriple> .
 
 <https://linkml.io/sparqlfun/rdf/RdfsSubclassOfTriple> a sh:NodeShape ;
@@ -698,17 +698,17 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
             sh:path rdf:object ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path rdf:predicate ],
         [ sh:class owl:Class ;
             sh:description "The subclass element of the triple" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
-            sh:path rdf:subject ] ;
+            sh:path rdf:subject ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path rdf:predicate ] ;
     sh:targetClass <https://linkml.io/sparqlfun/rdf/RdfsSubclassOfTriple> .
 
 <https://linkml.io/sparqlfun/rdf/RdfsSubpropertyOfTriple> a sh:NodeShape ;
@@ -736,12 +736,7 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
 <https://linkml.io/sparqlfun/rdf/RedundantRdfsSubclassOfTriple> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path rdf:predicate ],
-        [ sh:class owl:Class ;
+    sh:property [ sh:class owl:Class ;
             sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -751,19 +746,18 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
-            sh:path rdf:subject ] ;
+            sh:path rdf:subject ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path rdf:predicate ] ;
     sh:targetClass <https://linkml.io/sparqlfun/rdf/RedundantRdfsSubclassOfTriple> .
 
 <https://linkml.io/sparqlfun/rdf/RelationGraphQuad> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class linkml:Any ;
-            sh:description "a literal or node representing the object of the triple" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 2 ;
-            sh:path rdf:object ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
@@ -778,14 +772,31 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
-            sh:path rdf:predicate ] ;
+            sh:path rdf:predicate ],
+        [ sh:class linkml:Any ;
+            sh:description "a literal or node representing the object of the triple" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path rdf:object ] ;
     sh:targetClass <https://linkml.io/sparqlfun/rdf/RelationGraphQuad> .
 
 <https://linkml.io/sparqlfun/rdf/Statement> a sh:NodeShape ;
     sh:closed true ;
     sh:description "A quad that is optionally adorned with statements about it" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+    sh:property [ sh:class linkml:Any ;
+            sh:description "a literal or node representing the object of the triple" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 4 ;
+            sh:path rdf:object ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
+            sh:description "statements about the quad where the object is a node" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path sparqlfun:node_statements ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
@@ -800,23 +811,12 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
             sh:path rdf:predicate ],
-        [ sh:class linkml:Any ;
-            sh:description "a literal or node representing the object of the triple" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 4 ;
-            sh:path rdf:object ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:description "Graph to which the triple belongs" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 5 ;
-            sh:path rdfs:isDefinedBy ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
-            sh:description "statements about the quad where the object is a node" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 0 ;
-            sh:path sparqlfun:node_statements ] ;
+            sh:path rdfs:isDefinedBy ] ;
     sh:targetClass <https://linkml.io/sparqlfun/rdf/Statement> .
 
 <https://linkml.io/sparqlfun/rdf/TypedNode> a sh:NodeShape ;
@@ -836,46 +836,12 @@ sparqlfun:biolinkGeneToGeneAssociation a sh:NodeShape ;
 sparqlfun:ubergraphClassTaxonExclusion a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class sparqlfun:ubergraphTaxonClass ;
-            sh:description "The taxon that cannot have the subject class." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 5 ;
-            sh:path rdf:object ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path sparqlfun:ubergraphdirect_taxon ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:ubergraphsubject_predicate ],
-        [ sh:class sparqlfun:ubergraphTaxonApplicableClass ;
-            sh:description "The class inferred to have the constraint" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path rdf:subject ],
-        [ sh:class owl:Property ;
+    sh:property [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 4 ;
             sh:path rdf:predicate ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path sparqlfun:ubergraphclass_with_constraint ] ;
-    sh:targetClass sparqlfun:ubergraphClassTaxonExclusion .
-
-sparqlfun:ubergraphClassTaxonExclusionViaNeverIn a sh:NodeShape ;
-    sh:closed true ;
-    sh:description """An inferred never-in between a subject term and an object taxon, which holds
-when the inferred direct taxon is not in an ancestry relationship with the object taxon""" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
@@ -889,6 +855,11 @@ when the inferred direct taxon is not in an ancestry relationship with the objec
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:ubergraphsubject_predicate ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
             sh:order 2 ;
             sh:path sparqlfun:ubergraphdirect_taxon ],
         [ sh:class sparqlfun:ubergraphTaxonApplicableClass ;
@@ -896,7 +867,25 @@ when the inferred direct taxon is not in an ancestry relationship with the objec
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
+            sh:path rdf:subject ] ;
+    sh:targetClass sparqlfun:ubergraphClassTaxonExclusion .
+
+sparqlfun:ubergraphClassTaxonExclusionViaNeverIn a sh:NodeShape ;
+    sh:closed true ;
+    sh:description """An inferred never-in between a subject term and an object taxon, which holds
+when the inferred direct taxon is not in an ancestry relationship with the object taxon""" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class sparqlfun:ubergraphTaxonApplicableClass ;
+            sh:description "The class inferred to have the constraint" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
             sh:path rdf:subject ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path sparqlfun:ubergraphdirect_taxon ],
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -906,7 +895,18 @@ when the inferred direct taxon is not in an ancestry relationship with the objec
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
-            sh:path sparqlfun:ubergraphsubject_predicate ] ;
+            sh:path sparqlfun:ubergraphsubject_predicate ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path sparqlfun:ubergraphclass_with_constraint ],
+        [ sh:class sparqlfun:ubergraphTaxonClass ;
+            sh:description "The taxon that cannot have the subject class." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 5 ;
+            sh:path rdf:object ] ;
     sh:targetClass sparqlfun:ubergraphClassTaxonExclusionViaNeverIn .
 
 sparqlfun:ubergraphClassTaxonExclusionViaOnlyIn a sh:NodeShape ;
@@ -915,24 +915,13 @@ sparqlfun:ubergraphClassTaxonExclusionViaOnlyIn a sh:NodeShape ;
     sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:ubergraphsubject_predicate ],
-        [ sh:class sparqlfun:ubergraphTaxonClass ;
-            sh:description "The taxon that cannot have the subject class." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 5 ;
-            sh:path rdf:object ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path sparqlfun:ubergraphdirect_taxon ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
             sh:order 1 ;
             sh:path sparqlfun:ubergraphclass_with_constraint ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:ubergraphsubject_predicate ],
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -943,24 +932,35 @@ sparqlfun:ubergraphClassTaxonExclusionViaOnlyIn a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
-            sh:path rdf:subject ] ;
+            sh:path rdf:subject ],
+        [ sh:class sparqlfun:ubergraphTaxonClass ;
+            sh:description "The taxon that cannot have the subject class." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 5 ;
+            sh:path rdf:object ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path sparqlfun:ubergraphdirect_taxon ] ;
     sh:targetClass sparqlfun:ubergraphClassTaxonExclusionViaOnlyIn .
 
 sparqlfun:ubergraphInTaxonTriple a sh:NodeShape ;
     sh:closed true ;
     sh:description "In ubergraph, an in-taxon triple is pre-inferred" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class sparqlfun:ubergraphTaxonApplicableClass ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdf:subject ],
-        [ sh:class sparqlfun:ubergraphTaxonClass ;
+    sh:property [ sh:class sparqlfun:ubergraphTaxonClass ;
             sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
             sh:path rdf:object ],
+        [ sh:class sparqlfun:ubergraphTaxonApplicableClass ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path rdf:subject ],
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -970,6 +970,389 @@ sparqlfun:ubergraphInTaxonTriple a sh:NodeShape ;
 
 sparqlfun:ubergraphIsAOrPartOf a sh:NodeShape ;
     sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:description "Graph to which the triple belongs" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path rdfs:isDefinedBy ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path rdf:subject ],
+        [ sh:class linkml:Any ;
+            sh:description "a literal or node representing the object of the triple" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path rdf:object ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path rdf:predicate ] ;
+    sh:targetClass sparqlfun:ubergraphIsAOrPartOf .
+
+sparqlfun:ubergraphNeverInTaxonTriple a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path rdf:predicate ],
+        [ sh:class sparqlfun:ubergraphTaxonApplicableClass ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path rdf:subject ],
+        [ sh:class sparqlfun:ubergraphTaxonClass ;
+            sh:description "a literal or node representing the object of the triple" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path rdf:object ] ;
+    sh:targetClass sparqlfun:ubergraphNeverInTaxonTriple .
+
+sparqlfun:ubergraphNormalizedInformationContentTriple a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path rdf:predicate ],
+        [ sh:class linkml:Any ;
+            sh:description "a literal or node representing the object of the triple" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path rdf:object ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path rdf:subject ] ;
+    sh:targetClass sparqlfun:ubergraphNormalizedInformationContentTriple .
+
+sparqlfun:ubergraphPairwiseCommonAncestor a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Common ancestor in relation graph over any relations between two nodes" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:ubergraphnode1 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path sparqlfun:ubergraphnode2 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path sparqlfun:ubergraphancestor ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path sparqlfun:ubergraphpredicate2 ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path sparqlfun:ubergraphpredicate1 ] ;
+    sh:targetClass sparqlfun:ubergraphPairwiseCommonAncestor .
+
+sparqlfun:ubergraphPairwiseCommonDescendant a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Common descendant in relation graph over any relations between two nodes" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path sparqlfun:ubergraphpredicate2 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:ubergraphnode1 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path sparqlfun:ubergraphdescendant ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path sparqlfun:ubergraphnode2 ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path sparqlfun:ubergraphpredicate1 ],
+        [ sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path sparqlfun:ubergraphis_direction_canonical ] ;
+    sh:targetClass sparqlfun:ubergraphPairwiseCommonDescendant .
+
+sparqlfun:ubergraphPairwiseCommonDescendantMatrix a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Common descendant in relation graph over any relations between two nodes from two axes" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 6 ;
+            sh:path sparqlfun:ubergraphdescendant ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path sparqlfun:ubergraphnode1_candidates ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:ubergraphnode1 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path sparqlfun:ubergraphnode2 ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 5 ;
+            sh:path sparqlfun:ubergraphpredicate2 ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path sparqlfun:ubergraphpredicate1 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path sparqlfun:ubergraphnode2_candidates ] ;
+    sh:targetClass sparqlfun:ubergraphPairwiseCommonDescendantMatrix .
+
+sparqlfun:ubergraphPairwiseCommonSubClassAncestor a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:ubergraphnode1 ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path sparqlfun:ubergraphpredicate1 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path sparqlfun:ubergraphnode2 ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path sparqlfun:ubergraphpredicate2 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path sparqlfun:ubergraphancestor ] ;
+    sh:targetClass sparqlfun:ubergraphPairwiseCommonSubClassAncestor .
+
+sparqlfun:ubergraphPairwiseCommonSubClassDescendant a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path sparqlfun:ubergraphnode2 ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path sparqlfun:ubergraphpredicate1 ],
+        [ sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path sparqlfun:ubergraphis_direction_canonical ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:ubergraphnode1 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path sparqlfun:ubergraphdescendant ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path sparqlfun:ubergraphpredicate2 ] ;
+    sh:targetClass sparqlfun:ubergraphPairwiseCommonSubClassDescendant .
+
+sparqlfun:ubergraphPairwiseCommonSubClassDescendantMatrix a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path sparqlfun:ubergraphpredicate1 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path sparqlfun:ubergraphnode2 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 6 ;
+            sh:path sparqlfun:ubergraphdescendant ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 5 ;
+            sh:path sparqlfun:ubergraphpredicate2 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:ubergraphnode1 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path sparqlfun:ubergraphnode1_candidates ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path sparqlfun:ubergraphnode2_candidates ] ;
+    sh:targetClass sparqlfun:ubergraphPairwiseCommonSubClassDescendantMatrix .
+
+sparqlfun:ubergraphPairwiseMostRecentCommonAncestor a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Common non-redundant ancestor in relation graph over any relations between two nodes" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path sparqlfun:ubergraphnode2 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:ubergraphnode1 ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path sparqlfun:ubergraphpredicate1 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path sparqlfun:ubergraphancestor ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 3 ;
+            sh:path sparqlfun:ubergraphpredicate2 ] ;
+    sh:targetClass sparqlfun:ubergraphPairwiseMostRecentCommonAncestor .
+
+sparqlfun:ubergraphPairwiseMostRecentCommonSubClassAncestor a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Common non-redundant SubClass ancestor between two nodes" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:ubergraphnode1 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path sparqlfun:ubergraphancestor ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path sparqlfun:ubergraphnode2 ] ;
+    sh:targetClass sparqlfun:ubergraphPairwiseMostRecentCommonSubClassAncestor .
+
+sparqlfun:ubergraphSetwiseCommonSubClassAncestor a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Common superclass ancestor to a set of nodes" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path sparqlfun:ubergraphancestor ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:ubergraphnodes ] ;
+    sh:targetClass sparqlfun:ubergraphSetwiseCommonSubClassAncestor .
+
+sparqlfun:ubergraphSetwiseMostRecentCommonSubClassAncestor a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Most recent common superclass ancestor to a set of nodes" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path sparqlfun:ubergraphnodes ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path sparqlfun:ubergraphancestor ] ;
+    sh:targetClass sparqlfun:ubergraphSetwiseMostRecentCommonSubClassAncestor .
+
+sparqlfun:ubergraphSubClassCountTriple a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path rdf:subject ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path rdf:predicate ],
+        [ sh:class linkml:Any ;
+            sh:description "a literal or node representing the object of the triple" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path rdf:object ] ;
+    sh:targetClass sparqlfun:ubergraphSubClassCountTriple .
+
+sparqlfun:ubergraphTaxonApplicable a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass sparqlfun:ubergraphTaxonApplicable .
+
+sparqlfun:ubergraphUbergraphQuad a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "a quad in an ubergraph endpoint" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
@@ -993,389 +1376,6 @@ sparqlfun:ubergraphIsAOrPartOf a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
             sh:path rdf:predicate ] ;
-    sh:targetClass sparqlfun:ubergraphIsAOrPartOf .
-
-sparqlfun:ubergraphNeverInTaxonTriple a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class sparqlfun:ubergraphTaxonClass ;
-            sh:description "a literal or node representing the object of the triple" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path rdf:object ],
-        [ sh:class sparqlfun:ubergraphTaxonApplicableClass ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdf:subject ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path rdf:predicate ] ;
-    sh:targetClass sparqlfun:ubergraphNeverInTaxonTriple .
-
-sparqlfun:ubergraphNormalizedInformationContentTriple a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdf:subject ],
-        [ sh:class linkml:Any ;
-            sh:description "a literal or node representing the object of the triple" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 2 ;
-            sh:path rdf:object ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path rdf:predicate ] ;
-    sh:targetClass sparqlfun:ubergraphNormalizedInformationContentTriple .
-
-sparqlfun:ubergraphPairwiseCommonAncestor a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Common ancestor in relation graph over any relations between two nodes" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path sparqlfun:ubergraphnode2 ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path sparqlfun:ubergraphpredicate2 ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path sparqlfun:ubergraphpredicate1 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:ubergraphnode1 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path sparqlfun:ubergraphancestor ] ;
-    sh:targetClass sparqlfun:ubergraphPairwiseCommonAncestor .
-
-sparqlfun:ubergraphPairwiseCommonDescendant a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Common descendant in relation graph over any relations between two nodes" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path sparqlfun:ubergraphdescendant ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path sparqlfun:ubergraphpredicate1 ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path sparqlfun:ubergraphpredicate2 ],
-        [ sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path sparqlfun:ubergraphis_direction_canonical ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path sparqlfun:ubergraphnode2 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:ubergraphnode1 ] ;
-    sh:targetClass sparqlfun:ubergraphPairwiseCommonDescendant .
-
-sparqlfun:ubergraphPairwiseCommonDescendantMatrix a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Common descendant in relation graph over any relations between two nodes from two axes" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path sparqlfun:ubergraphpredicate1 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path sparqlfun:ubergraphnode1_candidates ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path sparqlfun:ubergraphnode2 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 6 ;
-            sh:path sparqlfun:ubergraphdescendant ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 5 ;
-            sh:path sparqlfun:ubergraphpredicate2 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path sparqlfun:ubergraphnode2_candidates ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:ubergraphnode1 ] ;
-    sh:targetClass sparqlfun:ubergraphPairwiseCommonDescendantMatrix .
-
-sparqlfun:ubergraphPairwiseCommonSubClassAncestor a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path sparqlfun:ubergraphpredicate2 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path sparqlfun:ubergraphnode2 ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path sparqlfun:ubergraphpredicate1 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:ubergraphnode1 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path sparqlfun:ubergraphancestor ] ;
-    sh:targetClass sparqlfun:ubergraphPairwiseCommonSubClassAncestor .
-
-sparqlfun:ubergraphPairwiseCommonSubClassDescendant a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path sparqlfun:ubergraphdescendant ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path sparqlfun:ubergraphpredicate1 ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path sparqlfun:ubergraphpredicate2 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:ubergraphnode1 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path sparqlfun:ubergraphnode2 ],
-        [ sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path sparqlfun:ubergraphis_direction_canonical ] ;
-    sh:targetClass sparqlfun:ubergraphPairwiseCommonSubClassDescendant .
-
-sparqlfun:ubergraphPairwiseCommonSubClassDescendantMatrix a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path sparqlfun:ubergraphnode2_candidates ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path sparqlfun:ubergraphpredicate1 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path sparqlfun:ubergraphnode2 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 6 ;
-            sh:path sparqlfun:ubergraphdescendant ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path sparqlfun:ubergraphnode1_candidates ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 5 ;
-            sh:path sparqlfun:ubergraphpredicate2 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:ubergraphnode1 ] ;
-    sh:targetClass sparqlfun:ubergraphPairwiseCommonSubClassDescendantMatrix .
-
-sparqlfun:ubergraphPairwiseMostRecentCommonAncestor a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Common non-redundant ancestor in relation graph over any relations between two nodes" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path sparqlfun:ubergraphpredicate1 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:ubergraphnode1 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path sparqlfun:ubergraphancestor ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path sparqlfun:ubergraphnode2 ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path sparqlfun:ubergraphpredicate2 ] ;
-    sh:targetClass sparqlfun:ubergraphPairwiseMostRecentCommonAncestor .
-
-sparqlfun:ubergraphPairwiseMostRecentCommonSubClassAncestor a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Common non-redundant SubClass ancestor between two nodes" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path sparqlfun:ubergraphnode2 ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path sparqlfun:ubergraphancestor ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:ubergraphnode1 ] ;
-    sh:targetClass sparqlfun:ubergraphPairwiseMostRecentCommonSubClassAncestor .
-
-sparqlfun:ubergraphSetwiseCommonSubClassAncestor a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Common superclass ancestor to a set of nodes" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:ubergraphnodes ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path sparqlfun:ubergraphancestor ] ;
-    sh:targetClass sparqlfun:ubergraphSetwiseCommonSubClassAncestor .
-
-sparqlfun:ubergraphSetwiseMostRecentCommonSubClassAncestor a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Most recent common superclass ancestor to a set of nodes" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path sparqlfun:ubergraphancestor ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path sparqlfun:ubergraphnodes ] ;
-    sh:targetClass sparqlfun:ubergraphSetwiseMostRecentCommonSubClassAncestor .
-
-sparqlfun:ubergraphSubClassCountTriple a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class linkml:Any ;
-            sh:description "a literal or node representing the object of the triple" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 2 ;
-            sh:path rdf:object ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdf:subject ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path rdf:predicate ] ;
-    sh:targetClass sparqlfun:ubergraphSubClassCountTriple .
-
-sparqlfun:ubergraphTaxonApplicable a sh:NodeShape ;
-    sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:targetClass sparqlfun:ubergraphTaxonApplicable .
-
-sparqlfun:ubergraphUbergraphQuad a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "a quad in an ubergraph endpoint" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdf:subject ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path rdf:predicate ],
-        [ sh:class linkml:Any ;
-            sh:description "a literal or node representing the object of the triple" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 2 ;
-            sh:path rdf:object ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:description "Graph to which the triple belongs" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path rdfs:isDefinedBy ] ;
     sh:targetClass sparqlfun:ubergraphUbergraphQuad .
 
 sparqlfun:ubergraphUbergraphTaxonClass a sh:NodeShape ;
@@ -1414,20 +1414,31 @@ sparqlfun:ubergraphUbergraphTaxonClass a sh:NodeShape ;
             sh:path <resultset:results> ] ;
     sh:targetClass <resultset:ResultSet> .
 
+<sparqlfun_chebi:Charge> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:targetClass <sparqlfun_chebi:Charge> .
+
 <sparqlfun_chebi:ConjugateBase> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:targetClass <sparqlfun_chebi:ConjugateBase> .
 
+<sparqlfun_chebi:ConjugateBaseWithCharge> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <sparqlfun_chebi:subject_charge> ],
+        [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <sparqlfun_chebi:object_charge> ] ;
+    sh:targetClass <sparqlfun_chebi:ConjugateBaseWithCharge> .
+
 <sparqlfun_omo:ConformsToStatement> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path rdf:subject ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:description "Graph to which the triple belongs" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -1448,6 +1459,11 @@ sparqlfun:ubergraphUbergraphTaxonClass a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
             sh:path rdf:predicate ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path rdf:subject ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
             sh:nodeKind sh:BlankNode ;
             sh:order 1 ;
@@ -1458,35 +1474,35 @@ sparqlfun:ubergraphUbergraphTaxonClass a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdf:subject ],
+            sh:order 2 ;
+            sh:path rdf:object ],
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
             sh:path rdf:predicate ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path rdf:object ] ;
+            sh:order 0 ;
+            sh:path rdf:subject ] ;
     sh:targetClass <sparqlfun_omo:ConformsToTriple> .
 
 <sparqlfun_omo:DefinitionTriple> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+    sh:property [ sh:description "a literal or node representing the object of the triple" ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path rdf:object ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
             sh:path rdf:subject ],
-        [ sh:description "a literal or node representing the object of the triple" ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path rdf:object ],
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -1498,6 +1514,12 @@ sparqlfun:ubergraphUbergraphTaxonClass a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:description "Graph to which the triple belongs" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path rdfs:isDefinedBy ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
@@ -1505,39 +1527,33 @@ sparqlfun:ubergraphUbergraphTaxonClass a sh:NodeShape ;
         [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
             sh:maxCount 1 ;
             sh:order 2 ;
-            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:description "Graph to which the triple belongs" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdfs:isDefinedBy ] ;
+            sh:path <https://linkml.io/sparqlfun/rdf/id> ] ;
     sh:targetClass <sparqlfun_omo:GraphClassNode> .
 
 <sparqlfun_omo:OboClassQuery> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <sparqlfun_omo:label_regex> ],
-        [ sh:class owl:Class ;
+    sh:property [ sh:class owl:Class ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
-            sh:path <resultset:results> ] ;
+            sh:path <resultset:results> ],
+        [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <sparqlfun_omo:label_regex> ] ;
     sh:targetClass <sparqlfun_omo:OboClassQuery> .
 
 <sparqlfun_owl:DescribeEquivalentExpression> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+    sh:property [ sh:class owl:Class ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path <resultset:results> ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
-            sh:path rdf:subject ],
-        [ sh:class owl:Class ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path <resultset:results> ] ;
+            sh:path rdf:subject ] ;
     sh:targetClass <sparqlfun_owl:DescribeEquivalentExpression> .
 
 <sparqlfun_owl:EquivalenceTripleMixin> a sh:NodeShape ;
@@ -1550,21 +1566,21 @@ sparqlfun:ubergraphUbergraphTaxonClass a sh:NodeShape ;
     sh:description "A statement that connects two class nodes where both classes are equivalent" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:class owl:Class ;
+            sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdf:subject ],
+            sh:order 2 ;
+            sh:path rdf:object ],
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
             sh:path rdf:predicate ],
         [ sh:class owl:Class ;
-            sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path rdf:object ] ;
+            sh:order 0 ;
+            sh:path rdf:subject ] ;
     sh:targetClass <sparqlfun_owl:OwlEquivalentClassTriple> .
 
 <sparqlfun_owl:OwlNamedEquivalentClassTriple> a sh:NodeShape ;
@@ -1575,19 +1591,19 @@ sparqlfun:ubergraphUbergraphTaxonClass a sh:NodeShape ;
             sh:description "One of the two classes that are equivalent. No significance to subject vs object" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdf:subject ],
-        [ sh:class owl:Class ;
-            sh:description "One of the two classes that are equivalent. No significance to subject vs object" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
             sh:order 2 ;
             sh:path rdf:object ],
         [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 1 ;
-            sh:path rdf:predicate ] ;
+            sh:path rdf:predicate ],
+        [ sh:class owl:Class ;
+            sh:description "One of the two classes that are equivalent. No significance to subject vs object" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path rdf:subject ] ;
     sh:targetClass <sparqlfun_owl:OwlNamedEquivalentClassTriple> .
 
 <sparqlfun_owl:OwlTripleAnnotation> a sh:NodeShape ;
@@ -1596,40 +1612,51 @@ sparqlfun:ubergraphUbergraphTaxonClass a sh:NodeShape ;
     sh:property [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path rdf:predicate ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/BlankNode> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path <sparqlfun_owl:axiom_identifier> ],
+            sh:order 1 ;
+            sh:path <sparqlfun_owl:axiom_predicate> ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
             sh:path rdf:subject ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path <sparqlfun_owl:axiom_predicate> ],
         [ sh:class linkml:Any ;
             sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNode ;
             sh:order 5 ;
             sh:path rdf:object ],
+        [ sh:class owl:Property ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 4 ;
+            sh:path rdf:predicate ],
         [ sh:class linkml:Any ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNode ;
             sh:order 2 ;
-            sh:path <sparqlfun_owl:axiom_object> ] ;
+            sh:path <sparqlfun_owl:axiom_object> ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/BlankNode> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path <sparqlfun_owl:axiom_identifier> ] ;
     sh:targetClass <sparqlfun_owl:OwlTripleAnnotation> .
 
 <sparqlfun_owl:OwlTripleWithAnnotationsTODO> a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class owl:Property ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 1 ;
+            sh:path rdf:subject ],
+        [ sh:class linkml:Any ;
+            sh:description "a literal or node representing the object of the triple" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 3 ;
+            sh:path rdf:object ],
+        [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
@@ -1638,18 +1665,7 @@ sparqlfun:ubergraphUbergraphTaxonClass a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNode ;
             sh:order 0 ;
-            sh:path <sparqlfun_owl:annotations> ],
-        [ sh:class linkml:Any ;
-            sh:description "a literal or node representing the object of the triple" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 3 ;
-            sh:path rdf:object ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 1 ;
-            sh:path rdf:subject ] ;
+            sh:path <sparqlfun_owl:annotations> ] ;
     sh:targetClass <sparqlfun_owl:OwlTripleWithAnnotationsTODO> .
 
 <sparqlfun_owl:SubclassOfSomeValuesFrom> a sh:NodeShape ;
@@ -1715,18 +1731,6 @@ sparqlfun:ubergraphUbergraphTaxonClass a sh:NodeShape ;
     sh:property [ sh:order 3 ;
             sh:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
         [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path IAO:0000115 ],
-        [ sh:order 2 ;
-            sh:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
-        [ sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path rdfs:label ],
-        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            sh:maxCount 1 ;
-            sh:order 6 ;
-            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
-        [ sh:maxCount 1 ;
             sh:order 2 ;
             sh:path IAO:0000115 ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
@@ -1740,6 +1744,26 @@ sparqlfun:ubergraphUbergraphTaxonClass a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 4 ;
             sh:path rdf:type ],
+        [ sh:order 2 ;
+            sh:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
+        [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path rdfs:label ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 5 ;
+            sh:path rdf:type ],
+        [ sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path IAO:0000115 ],
+        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path rdfs:label ],
         [ sh:class owl:Class ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -1754,15 +1778,7 @@ sparqlfun:ubergraphUbergraphTaxonClass a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
-            sh:path rdfs:isDefinedBy ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path rdfs:label ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 5 ;
-            sh:path rdf:type ] ;
+            sh:path rdfs:isDefinedBy ] ;
     sh:targetClass <http://purl.obolibrary.org/obo/UBERON_0001062> .
 
 sparqlfun:ubergraphTaxonApplicableClass a sh:NodeShape ;
@@ -1782,27 +1798,35 @@ sparqlfun:ubergraphTaxonApplicableClass a sh:NodeShape ;
 sparqlfun:ubergraphTaxonClass a sh:NodeShape ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
-            sh:path rdf:type ] ;
+            sh:path rdf:type ],
+        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://linkml.io/sparqlfun/rdf/id> ] ;
     sh:targetClass sparqlfun:ubergraphTaxonClass .
 
 <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> a sh:NodeShape ;
     sh:closed true ;
     sh:description "A statement where object is a node (isIRI)" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:description "a literal or node representing the object of the triple" ;
+    sh:property [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 4 ;
-            sh:path rdf:object ],
+            sh:order 3 ;
+            sh:path rdf:predicate ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path sparqlfun:value_statements ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 2 ;
+            sh:path rdf:subject ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:description "Graph to which the triple belongs" ;
             sh:maxCount 1 ;
@@ -1814,53 +1838,45 @@ sparqlfun:ubergraphTaxonClass a sh:NodeShape ;
             sh:order 0 ;
             sh:path sparqlfun:node_statements ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 2 ;
-            sh:path rdf:subject ],
-        [ sh:class owl:Property ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 3 ;
-            sh:path rdf:predicate ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 1 ;
-            sh:path sparqlfun:value_statements ] ;
+            sh:order 4 ;
+            sh:path rdf:object ] ;
     sh:targetClass <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> .
 
 <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> a sh:NodeShape ;
     sh:closed true ;
     sh:description "A statement where object is a literal" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class owl:Property ;
+    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:description "Graph to which the triple belongs" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 5 ;
+            sh:path rdfs:isDefinedBy ],
+        [ sh:class owl:Property ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 3 ;
             sh:path rdf:predicate ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 0 ;
-            sh:path sparqlfun:node_statements ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 1 ;
-            sh:path sparqlfun:value_statements ],
         [ sh:description "a literal or node representing the object of the triple" ;
             sh:maxCount 1 ;
             sh:order 4 ;
             sh:path rdf:object ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path sparqlfun:value_statements ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 2 ;
             sh:path rdf:subject ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:description "Graph to which the triple belongs" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:order 5 ;
-            sh:path rdfs:isDefinedBy ] ;
+        [ sh:class <https://linkml.io/sparqlfun/rdf/NodeToNodeStatement> ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path sparqlfun:node_statements ] ;
     sh:targetClass <https://linkml.io/sparqlfun/rdf/NodeToValueStatement> .
 
 linkml:Any a sh:NodeShape ;
@@ -1878,6 +1894,22 @@ owl:Class a sh:NodeShape ;
         ( rdf:type ) ;
     sh:property [ sh:order 1 ;
             sh:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
+        [ sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path IAO:0000115 ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path rdf:type ],
+        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
+        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
         [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
             sh:maxCount 1 ;
             sh:order 5 ;
@@ -1885,29 +1917,8 @@ owl:Class a sh:NodeShape ;
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path rdf:type ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path IAO:0000115 ],
-        [ sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path rdfs:label ],
-        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
             sh:order 2 ;
             sh:path rdf:type ],
-        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
-        [ sh:order 2 ;
-            sh:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
-        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:description "Graph to which the triple belongs" ;
             sh:maxCount 1 ;
@@ -1917,34 +1928,39 @@ owl:Class a sh:NodeShape ;
         [ sh:maxCount 1 ;
             sh:order 1 ;
             sh:path IAO:0000115 ],
-        [ sh:class owl:Class ;
-            sh:nodeKind sh:IRI ;
+        [ sh:order 2 ;
+            sh:path <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ],
+        [ sh:maxCount 1 ;
             sh:order 0 ;
-            sh:path rdfs:subClassOf ],
-        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
+            sh:path rdfs:label ],
         [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 4 ;
-            sh:path rdf:type ] ;
+            sh:path rdf:type ],
+        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
+        [ sh:class owl:Class ;
+            sh:nodeKind sh:IRI ;
+            sh:order 0 ;
+            sh:path rdfs:subClassOf ] ;
     sh:targetClass owl:Class .
 
 owl:Property a sh:NodeShape ;
     sh:closed true ;
     sh:description "Note this only directly classifies nodes asserted to be rdf:Properties" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
+    sh:property [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <https://linkml.io/sparqlfun/rdf/id> ],
+        [ sh:class <https://linkml.io/sparqlfun/rdf/Node> ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
-            sh:path rdf:type ],
-        [ sh:description "An identifier for an element. Note blank node ids are not unique across databases" ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path <https://linkml.io/sparqlfun/rdf/id> ] ;
+            sh:path rdf:type ] ;
     sh:targetClass owl:Property .
 
 <https://linkml.io/sparqlfun/rdf/Node> a sh:NodeShape ;

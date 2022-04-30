@@ -18,7 +18,7 @@ from linkml_runtime.utils.schemaview import SchemaView, ClassDefinitionName
 from linkml_runtime.utils.yamlutils import YAMLRoot, as_json_object
 from prefixcommons import curie_util
 from rdflib import URIRef, Graph, Literal, BNode, RDF
-from rdflib.term import Node
+from rdflib.term import Node, Identifier
 from jinja2 import Template
 from sparqlfun.config_schema import SystemConfiguration, Endpoint
 from sparqlfun.resultset import ResultSet
@@ -41,8 +41,9 @@ LANGSTR = str
 
 SPARQL_STR = str
 
-#@dataclass
-#class SparqlEndpoint:
+
+# @dataclass
+# class SparqlEndpoint:
 #    url: Optional[str] = None
 #    graph: Optional[Graph] = None
 #    named_graph_iri: Optional[IRI] = None
@@ -78,10 +79,10 @@ class SparqlTemplateInstance:
 @dataclass
 class SparqlEngine:
     """
-    Engine that can interpret and executed templated sparql queries
+    Engine that can interpret and execute templated sparql queries
     """
 
-    endpoint: Union[str, Endpoint] = None
+    endpoint: Union[str, Endpoint, Graph] = None
     schema_view: SchemaView = SchemaView(schema_path)
     config: SystemConfiguration = None
     lang: LANGSTR = None
@@ -90,7 +91,7 @@ class SparqlEngine:
     ignore_unmapped_predicates = False
 
     def query(self, template: Union[Type[YAMLRoot], YAMLRoot, SparqlTemplateInstance],
-              _url = None,
+              _url=None,
               **kwargs) -> ResultSet:
         """
         Compile a template, binding variables, executed, and translate results to objects
@@ -100,8 +101,15 @@ class SparqlEngine:
         :param kwargs:
         :return: result set container
         """
-        if _url is None:
-            _url = self.get_endpoint().url
+        endpoint = self.get_endpoint()
+        if isinstance(endpoint, Endpoint):
+            if _url is None:
+                _url = endpoint.url
+        elif isinstance(endpoint, Graph):
+            source_graph = endpoint
+        else:
+            if _url is None:
+                raise ValueError(f'No URL or endpoint specified')
         logging.info(f'Querying: {_url}')
         prefix_map = self._get_prefix_map()
         cn = template.class_name
@@ -120,29 +128,51 @@ class SparqlEngine:
         objs = []
         result_set = ResultSet()
         if sq.query_type == 'SELECT':
-            spw = SPARQLWrapper2(_url)
-            spw.setQuery(sq.query)
-            def getval(v: sw.Value) -> Any:
-                if v.type == sw.Value.URI:
-                    uri = str(v.value)
-                    for pfx, uribase in prefix_map.items():
-                        if uri.startswith(uribase):
-                            return f'{pfx}:{uri.replace(uribase, "")}'
-                    return v.value
-                else:
-                    return v.value
-            for result in spw.query().bindings:
-                # TODO: default values
-                row = {k: getval(v) for k, v in result.items()}
-                objs.append(template_py_class(**{**default_vals, **kwargs, **row}))
+            if _url:
+                spw = SPARQLWrapper2(_url)
+                spw.setQuery(sq.query)
+
+                def getval(v: sw.Value) -> Any:
+                    if v.type == sw.Value.URI:
+                        uri = str(v.value)
+                        for pfx, uribase in prefix_map.items():
+                            if uri.startswith(uribase):
+                                return f'{pfx}:{uri.replace(uribase, "")}'
+                        return v.value
+                    else:
+                        return v.value
+
+                for result in spw.query().bindings:
+                    row = {k: getval(v) for k, v in result.items()}
+                    objs.append(template_py_class(**{**default_vals, **kwargs, **row}))
+            elif isinstance(endpoint, Graph):
+                def getval(v: Identifier) -> Any:
+                    if isinstance(v, URIRef):
+                        uri = str(v)
+                        for pfx, uribase in prefix_map.items():
+                            if uri.startswith(uribase):
+                                return f'{pfx}:{uri.replace(uribase, "")}'
+                    return v
+                for result in endpoint.query(sq.query):
+                    row = {k: getval(result[k]) for k in result.labels}
+                    objs.append(template_py_class(**{**default_vals, **kwargs, **row}))
+            else:
+                raise ValueError
         else:
-            spw = SPARQLWrapper(_url)
-            spw.setQuery(sq.query)
-            spw.setReturnFormat(RDF)
-            g = spw.query().convert()
-            g: Graph
+            g: Optional[Graph] = None
+            if _url:
+                spw = SPARQLWrapper(_url)
+                spw.setQuery(sq.query)
+                spw.setReturnFormat(RDF)
+                g = spw.query().convert()
+            elif isinstance(endpoint, Graph):
+                g = Graph()
+                for t in endpoint.query(sq.query):
+                    g.add(t)
+            else:
+                raise ValueError
             logging.info(f'Nodes = {len(g.all_nodes())}')
-            #for s,p,o in g.triples((None,None,None)):
+            # for s,p,o in g.triples((None,None,None)):
             #    logging.debug(f' T {s} {p} {o}')
             results_slot_av = c.annotations.get('sparql.results_slot', None)
             if results_slot_av:
@@ -157,7 +187,8 @@ class SparqlEngine:
             else:
                 result_template = template_py_class
             logging.info(f'Result template: {result_template}')
-            for obj in rdflib_loader.from_rdf_graph(g, target_class=result_template, schemaview=self.schema_view, prefix_map=prefix_map,
+            for obj in rdflib_loader.from_rdf_graph(g, target_class=result_template, schemaview=self.schema_view,
+                                                    prefix_map=prefix_map,
                                                     cast_literals=True,
                                                     ignore_unmapped_predicates=self.ignore_unmapped_predicates):
                 objs.append(obj)
@@ -166,8 +197,8 @@ class SparqlEngine:
         return result_set
 
     def construct(self, template: str,
-              _url = None,
-              **kwargs) -> Graph:
+                  _url=None,
+                  **kwargs) -> Graph:
         if _url is None:
             _url = self.get_endpoint().url
         logging.info(f'Querying: {_url}')
@@ -179,7 +210,7 @@ class SparqlEngine:
 
         default_vals = self._get_defaults(c)
         sq = ti.query
-        #for k, v in ti.bindings.items():
+        # for k, v in ti.bindings.items():
         #    default_vals[k] = v
 
         spw = SPARQLWrapper(_url)
@@ -189,10 +220,13 @@ class SparqlEngine:
         return g
 
     def yasgui_url(self, template: Union[Type[YAMLRoot], YAMLRoot, SparqlTemplateInstance],
-                   _url = None,
+                   _url=None,
                    **kwargs) -> str:
         if _url is None:
-            _url = self.get_endpoint().url
+            if isinstance(self.get_endpoint(), Endpoint):
+                _url = self.get_endpoint().url
+            else:
+                _url = 'http://example.org/'
         logging.info(f'Querying: {_url}')
         prefix_map = self._get_prefix_map()
         ti = self.extract_template_instance(template, **kwargs)
@@ -203,15 +237,18 @@ class SparqlEngine:
         params_str = '&'.join([f'{k}={v}' for k, v in params.items()])
         return f'https://yasgui.triply.cc/#{params_str}'
 
-
-    def extract_template_instance(self, template: Union[Type[YAMLRoot], YAMLRoot, SparqlTemplateInstance], **kwargs) -> SparqlTemplateInstance:
+    def extract_template_instance(self, template: Union[Type[YAMLRoot], YAMLRoot, SparqlTemplateInstance],
+                                  **kwargs) -> SparqlTemplateInstance:
         """
+        Create a populated query template instance from either an existing
+        partially populated instance or a class template, and initialization arguments
 
         :param template:
         :param kwargs:
         :return:
         """
         sv = self.schema_view
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         if isinstance(template, SparqlTemplateInstance):
             if len(kwargs.items()):
                 logging.error(f'Ignoring kwargs: {kwargs}, as template already instantiated: {template}')
@@ -256,7 +293,7 @@ class SparqlEngine:
         construct_template = self._get_query_template(c, 'sparql.construct')
         if select_template and construct_template:
             raise Exception(f'Cannot have both select and construct: {template}')
-        if not(select_template or construct_template):
+        if not (select_template or construct_template):
             raise Exception(f'Must have EITHER select OR construct: {template}')
 
         if select_template:
@@ -291,7 +328,7 @@ class SparqlEngine:
             logging.info(f'CONFIG={self.config}')
         return self.config
 
-    def get_endpoint(self):
+    def get_endpoint(self) -> Optional[Union[Endpoint, Graph]]:
         if isinstance(self.endpoint, str):
             logging.info(f'Setting endpoint using name {self.endpoint}')
             self.endpoint = self.get_config().endpoints[self.endpoint]
@@ -359,7 +396,6 @@ class SparqlEngine:
             nm.bind(k, v.prefix_reference)
         return nm
 
-
     def _replace(self, template: str, argdict: dict = {}) -> str:
         import re
         m = re.search(r'(.*\s+where\s*\{)(\s+.*)', template, flags=re.IGNORECASE | re.DOTALL)
@@ -370,7 +406,7 @@ class SparqlEngine:
             raise ValueError(f'No WHERE in query: {template}')
         template = in_select
         sv = self.schema_view
-        #def serialize(k: str, v: str):
+        # def serialize(k: str, v: str):
 
         for k, v in argdict.items():
             if isinstance(v, list):
@@ -394,8 +430,3 @@ def _unwrap(v: sw.Value) -> Node:
         return BNode(v.value)
     else:
         raise Exception(f'Unknown type {v.type} for {v}')
-
-
-
-
-

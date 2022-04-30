@@ -32,8 +32,6 @@ imports:
 classes:
 
   charge:
-    is_a: rdf triple
-
 
   chemical entity:
     class_uri: CHEBI:24431
@@ -61,9 +59,9 @@ classes:
     is_a: conjugate base
     attributes:
       subject_charge:
-        range: int
+        range: integer
       object_charge:
-        range: int
+        range: integer
     annotations:
       sparql.select:
         SELECT *
