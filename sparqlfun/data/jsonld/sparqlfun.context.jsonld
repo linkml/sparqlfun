@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from sparqlfun.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-01-30T22:42:44\n    Schema: sparqlfun\n    \n    id: https://linkml.io/sparqlfun\n    description: SPARQL Templates\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from sparqlfun.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-04-29T17:00:51\n    Schema: sparqlfun\n    \n    id: https://linkml.io/sparqlfun\n    description: SPARQL Templates\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "CHEBI": {
          "@id": "http://purl.obolibrary.org/obo/CHEBI_",
@@ -25,7 +25,8 @@
          "@id": "http://purl.obolibrary.org/obo/UBERON_",
          "@prefix": true
       },
-      "chebivocab": "http://purl.obolibrary.org/obo/chebi#",
+      "chebirel": "http://purl.obolibrary.org/obo/chebi#",
+      "chebivocab": "http://purl.obolibrary.org/obo/chebi/",
       "dcterms": "http://purl.org/dc/terms/",
       "linkml": "https://w3id.org/linkml/",
       "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
@@ -104,6 +105,10 @@
          "@type": "@id",
          "@id": "sparqlfun_rdf:category"
       },
+      "charge": {
+         "@type": "@id",
+         "@id": "sparqlfun_chebi:charge"
+      },
       "class1": {
          "@type": "@id",
          "@id": "sparqlfun_owl:class1"
@@ -115,6 +120,12 @@
       "class_with_constraint": {
          "@type": "@id",
          "@id": "sparqlfun_ubergraph:class_with_constraint"
+      },
+      "object_charge": {
+         "@type": "xsd:integer"
+      },
+      "subject_charge": {
+         "@type": "xsd:integer"
       },
       "datatype": {
          "@type": "@id",
@@ -313,6 +324,9 @@
       "CellType": {
          "@id": "CL:0000000"
       },
+      "Charge": {
+         "@id": "sparqlfun_chebi:Charge"
+      },
       "ChemicalEntity": {
          "@id": "CHEBI:24431"
       },
@@ -339,6 +353,9 @@
       },
       "ConjugateBase": {
          "@id": "sparqlfun_chebi:ConjugateBase"
+      },
+      "ConjugateBaseWithCharge": {
+         "@id": "sparqlfun_chebi:ConjugateBaseWithCharge"
       },
       "DefinitionTriple": {
          "@id": "sparqlfun_omo:DefinitionTriple"

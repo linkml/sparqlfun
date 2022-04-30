@@ -46,8 +46,12 @@
       "prefix_reference": "http://reasoner.renci.org/"
     },
     {
-      "prefix_prefix": "chebivocab",
+      "prefix_prefix": "chebirel",
       "prefix_reference": "http://purl.obolibrary.org/obo/chebi#"
+    },
+    {
+      "prefix_prefix": "chebivocab",
+      "prefix_reference": "http://purl.obolibrary.org/obo/chebi/"
     }
   ],
   "default_curi_maps": [
@@ -995,6 +999,14 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "charge",
+      "definition_uri": "https://linkml.io/sparqlfun/chebi/charge",
+      "from_schema": "https://linkml.io/sparqlfun/chebi",
+      "slot_uri": "https://linkml.io/sparqlfun/chebi/charge",
+      "range": "Node",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "subcategory",
       "definition_uri": "https://linkml.io/sparqlfun/uberonsubcategory",
       "mappings": [
@@ -1129,6 +1141,30 @@
         "BasicClass"
       ],
       "range": "ClassNode",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "conjugateBaseWithCharge__subject_charge",
+      "from_schema": "https://linkml.io/sparqlfun",
+      "slot_uri": "https://linkml.io/sparqlfun/subject_charge",
+      "alias": "subject_charge",
+      "owner": "ConjugateBaseWithCharge",
+      "domain_of": [
+        "ConjugateBaseWithCharge"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "conjugateBaseWithCharge__object_charge",
+      "from_schema": "https://linkml.io/sparqlfun",
+      "slot_uri": "https://linkml.io/sparqlfun/object_charge",
+      "alias": "object_charge",
+      "owner": "ConjugateBaseWithCharge",
+      "domain_of": [
+        "ConjugateBaseWithCharge"
+      ],
+      "range": "integer",
       "@type": "SlotDefinition"
     },
     {
@@ -3876,6 +3912,14 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "Charge",
+      "definition_uri": "https://linkml.io/sparqlfun/chebi/Charge",
+      "from_schema": "https://linkml.io/sparqlfun/chebi",
+      "slot_usage": {},
+      "class_uri": "https://linkml.io/sparqlfun/chebi/Charge",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "ChemicalEntity",
       "definition_uri": "https://linkml.io/sparqlfun/chebi/ChemicalEntity",
       "mappings": [
@@ -3884,7 +3928,7 @@
       "annotations": [
         {
           "tag": "sparql.construct",
-          "value": "CONSTRUCT {\n  ?id a biolink:ChemicalEntity ;\n    rdfs:label ?label\n}\nWHERE {\n  ?id rdfs:label ?label .\n  ?id rdfs:subClassOf* CHEBI:0001062 ;\n}",
+          "value": "CONSTRUCT {\n  ?id a biolink:ChemicalEntity ;\n    rdfs:label ?label\n}\nWHERE {\n  ?id rdfs:label ?label ;\n      rdfs:subClassOf* CHEBI:0001062 .\n}",
           "@type": "Annotation"
         }
       ],
@@ -3915,13 +3959,45 @@
           "slot_conditions": [
             {
               "name": "predicate",
-              "equals_string": "chebivocab:conjugate_base_of",
+              "equals_string": "chebirel:is_conjugate_base_of",
               "@type": "SlotDefinition"
             }
           ],
           "@type": "AnonymousClassExpression"
         }
       ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ConjugateBaseWithCharge",
+      "definition_uri": "https://linkml.io/sparqlfun/chebi/ConjugateBaseWithCharge",
+      "annotations": [
+        {
+          "tag": "sparql.select",
+          "value": "SELECT * WHERE { ?subject rdfs:subClassOf [ a owl:Restriction ; owl:onProperty chebirel:is_conjugate_base_of ; owl:someValuesFrom ?object ] . ?subject chebivocab:charge ?subject_charge . ?object chebivocab:charge ?object_charge . }",
+          "@type": "Annotation"
+        }
+      ],
+      "from_schema": "https://linkml.io/sparqlfun/chebi",
+      "is_a": "ConjugateBase",
+      "slots": [
+        "conjugateBaseWithCharge__subject_charge",
+        "conjugateBaseWithCharge__object_charge"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "subject_charge",
+          "range": "integer",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "object_charge",
+          "range": "integer",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://linkml.io/sparqlfun/chebi/ConjugateBaseWithCharge",
       "@type": "ClassDefinition"
     },
     {
@@ -4163,9 +4239,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "sparqlfun.yaml",
-  "source_file_date": "2022-01-30T22:41:37",
-  "source_file_size": 858,
-  "generation_date": "2022-01-30T22:42:45",
+  "source_file_date": "2022-04-29T17:00:04",
+  "source_file_size": 927,
+  "generation_date": "2022-04-29T17:00:52",
   "@type": "SchemaDefinition",
   "@context": [
     "sparqlfun/data/jsonld/sparqlfun.context.jsonld",

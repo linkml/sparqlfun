@@ -281,6 +281,14 @@
          "title": "CellType",
          "type": "object"
       },
+      "Charge": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "Charge",
+         "type": "object"
+      },
       "ChemicalEntity": {
          "additionalProperties": false,
          "description": "",
@@ -482,6 +490,21 @@
          "properties": {},
          "required": [],
          "title": "ConjugateBase",
+         "type": "object"
+      },
+      "ConjugateBaseWithCharge": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "object_charge": {
+               "type": "integer"
+            },
+            "subject_charge": {
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "ConjugateBaseWithCharge",
          "type": "object"
       },
       "DefinitionTriple": {

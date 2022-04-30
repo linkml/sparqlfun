@@ -39,6 +39,6 @@ imports:
 #  - uniprot_queries
   - uberon
   - biolink
-  - gocam_queries
+#  - gocam_queries
 
 

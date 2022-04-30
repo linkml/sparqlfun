@@ -12,7 +12,7 @@ documentation = "https://github.com/linkml/sparqlfun"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-linkml-runtime = "^1.2.7"
+linkml-runtime = "^1.2.9"
 Jinja2 = "^3.0.3"
 rdflib = ">=6.1.1"
 

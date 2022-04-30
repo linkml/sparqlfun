@@ -2,6 +2,7 @@ import importlib
 import logging
 from dataclasses import dataclass
 from enum import Enum, unique
+from pathlib import Path
 from typing import Dict, Union, List, Any, Optional, Type
 import requests
 
@@ -10,7 +11,7 @@ from linkml_runtime.dumpers import json_dumper, yaml_dumper, csv_dumper, rdflib_
 from linkml_runtime.utils.schemaview import SchemaView, ClassDefinitionName
 from linkml_runtime.utils.yamlutils import YAMLRoot, as_json_object
 from prefixcommons import curie_util
-from rdflib import URIRef, Graph, Literal, BNode, RDF
+from rdflib import URIRef, Graph, Literal, BNode, RDF, ConjunctiveGraph
 from rdflib.term import Node
 from jinja2 import Template
 
@@ -29,6 +30,7 @@ class OutputFormat(Enum):
     yaml = 'yaml'
     tsv = 'tsv'
     ttl = 'ttl'
+    rdfxml = 'rdfxml'
     obj = 'obj'
     @staticmethod
     def list():
@@ -55,7 +57,10 @@ def main(verbose: int, quiet: bool):
 @main.command()
 @click.option('--endpoint', '-e',
               help='Name or path of endpoint', required=True)
-@click.option('-f', '--to_format', default='json',
+@click.option('-f', '--input-format',
+              type=click.Choice(OutputFormat.list()),
+              help='input format')
+@click.option('-O', '--to-format', default='json',
               type=click.Choice(OutputFormat.list()),
               help='output format')
 @click.option('-l', '--limit', default=10, show_default=True,
@@ -78,7 +83,7 @@ def main(verbose: int, quiet: bool):
               help='name of template')
 @click.argument('params', nargs=-1)
 def query(params: List[str], module: str, schema: str, endpoint: str, limit: int, curie_maps: List[str], prefix: List[str],
-          yasgui, to_format: str, template: str,):
+          yasgui, input_format: str, to_format: str, template: str,):
     """
     Query sparql template
 
@@ -91,6 +96,10 @@ def query(params: List[str], module: str, schema: str, endpoint: str, limit: int
             $ sparqlfun query -e ubergraph -T PairwiseCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
 
     """
+    if input_format:
+        g = ConjunctiveGraph()
+        g.parse(endpoint, format=input_format)
+        endpoint = g
     se = SparqlEngine(endpoint=endpoint)
     logging.info(f'Engine={se}')
     se.ignore_unmapped_predicates = True

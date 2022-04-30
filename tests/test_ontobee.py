@@ -41,9 +41,6 @@ def check(rs: ResultSet, min_expected=1, max_expected: int = None, outfile=None)
         yaml_dumper.dump(rs, to_file=os.path.join(OUTPUT_DIR, outfile))
 
 
-
-
-
 def test_construct(engine):
     engine.limit = 1000
     check(engine.query(NodeObject, id='UBERON:0002062'),
@@ -53,4 +50,9 @@ def test_multivalued(engine):
     engine.limit = 1000
     check(engine.query(NodeObject, id=['UBERON:0002062', 'UBERON:0002061']),
           outfile='Ontobee-NodeObject-uberon-0002061-0002062.yaml')
+
+def test_triple(engine):
+    engine.limit = 1000
+    check(engine.query(Triple, subject=['UBERON:0002062']),
+          outfile='Ontobee-Triple-uberon-0002062.yaml')
 

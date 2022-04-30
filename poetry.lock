@@ -422,7 +422,7 @@ linkml-runtime = ">=1.1.6"
 
 [[package]]
 name = "linkml-runtime"
-version = "1.2.7"
+version = "1.2.9"
 description = "Runtime environment for LinkML, the Linked open data modeling language"
 category = "main"
 optional = false
@@ -1271,7 +1271,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "db73a10a21c730ccfe7bd2a3f257a18611561d597126bdfcd47829ff5c5624ec"
+content-hash = "46dc31de443bf89396baff7375bd2f76cd6c0155871e8148fa0c6d4e83a381ab"
 
 [metadata.files]
 alabaster = [
@@ -1526,8 +1526,8 @@ linkml-dataops = [
     {file = "linkml_dataops-0.1.0.tar.gz", hash = "sha256:4550eab65e78b70dc3b9c651724a94ac2b1d1edb2fbe576465f1d6951a54ed04"},
 ]
 linkml-runtime = [
-    {file = "linkml_runtime-1.2.7-py3-none-any.whl", hash = "sha256:ba02d958af88ebc3eff8b521adb61b89049ced91523d637543dffe1493ae9900"},
-    {file = "linkml_runtime-1.2.7.tar.gz", hash = "sha256:8fa7d89a370217759a4e1c883c9da17e3dbb4144e55cfc5a4bd3d69b66b66d3e"},
+    {file = "linkml_runtime-1.2.9-py3-none-any.whl", hash = "sha256:99cee1eff5b34cd2d1da0b9bf8cd91b9f0c2dcc0b4a9a7e44c242f4a0043d91a"},
+    {file = "linkml_runtime-1.2.9.tar.gz", hash = "sha256:17fc4ad38e1e421101b2e934eca7f9d8b57f301038efe8e3fa669146b7c9a85f"},
 ]
 lxml = [
     {file = "lxml-4.7.1-cp27-cp27m-macosx_10_14_x86_64.whl", hash = "sha256:d546431636edb1d6a608b348dd58cc9841b81f4116745857b6cb9f8dadb2725f"},
