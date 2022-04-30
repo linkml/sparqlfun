@@ -9,7 +9,7 @@
   
   <link rel="canonical" href="https://linkml.github.io/sparqlfun/Statement/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Class: Statement - SPARQL-Fun templates</title>
+  <title>Class: statement - SPARQL-Fun templates</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Class: Statement";
+    var mkdocs_page_name = "Class: statement";
     var mkdocs_page_input_path = "Statement.md";
     var mkdocs_page_url = "/sparqlfun/Statement/";
   </script>
@@ -87,7 +87,7 @@
     
       
     
-    <li>Class: Statement</li>
+    <li>Class: statement</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/linkml/sparqlfun/edit/master/docs/Statement.md"
@@ -102,52 +102,60 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="class-statement">Class: Statement</h1>
+                <h1 id="class-statement">Class: statement</h1>
+<p>A quad that is optionally adorned with statements about it</p>
 <p>URI: <a href="https://linkml.io/sparqlfun/Statement">sparqlfun:Statement</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Node],[Thing],[StructureMappingStatement],[Statement&#124;id(i):node_id_type]^-[StructureMappingStatement],[Statement]^-[NucleotideMappingStatement],[Statement]^-[EndpointStatement],[Statement]^-[DomainAssignmentStatement],[Statement]^-[CitationStatement],[Thing]^-[Statement],[NucleotideMappingStatement],[EndpointStatement],[DomainAssignmentStatement],[CitationStatement]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Node],[Thing],[StructureMappingStatement],[Statement&#124;id(i):node_id_type]^-[StructureMappingStatement],[Statement]^-[NucleotideMappingStatement],[Statement]^-[EndpointStatement],[Statement]^-[DomainAssignmentStatement],[Statement]^-[CitationStatement],[Thing]^-[Statement],[NucleotideMappingStatement],[EndpointStatement],[DomainAssignmentStatement],[CitationStatement]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NodeToValueStatement]&lt;value_statements%200..*-++[Statement],[NodeToNodeStatement]&lt;node_statements%200..*-++[Statement],[Statement]^-[NodeToValueStatement],[Statement]^-[NodeToNodeStatement],[Statement]^-[AssociationWithInferredCategories],[Statement]^-[Association],[Quad]^-[Statement],[Quad],[PropertyNode],[NodeToValueStatement],[NodeToNodeStatement],[NodeOrLiteral],[Node],[AssociationWithInferredCategories],[Association]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NodeToValueStatement]&lt;value_statements%200..*-++[Statement],[NodeToNodeStatement]&lt;node_statements%200..*-++[Statement],[Statement]^-[NodeToValueStatement],[Statement]^-[NodeToNodeStatement],[Statement]^-[AssociationWithInferredCategories],[Statement]^-[Association],[Quad]^-[Statement],[Quad],[PropertyNode],[NodeToValueStatement],[NodeToNodeStatement],[NodeOrLiteral],[Node],[AssociationWithInferredCategories],[Association]" /></a></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../Thing/">Thing</a></li>
+<li>is_a: <a href="../Quad/">Quad</a> - Represents an RDF triple plus named graph to which the triple belongs</li>
 </ul>
 <h2 id="children">Children</h2>
 <ul>
-<li><a href="../CitationStatement/">CitationStatement</a></li>
-<li><a href="../DomainAssignmentStatement/">DomainAssignmentStatement</a></li>
-<li><a href="../EndpointStatement/">EndpointStatement</a></li>
-<li><a href="../NucleotideMappingStatement/">NucleotideMappingStatement</a></li>
-<li><a href="../StructureMappingStatement/">StructureMappingStatement</a></li>
+<li><a href="../Association/">Association</a></li>
+<li><a href="../AssociationWithInferredCategories/">AssociationWithInferredCategories</a></li>
+<li><a href="../NodeToNodeStatement/">NodeToNodeStatement</a> - A statement where object is a node (isIRI)</li>
+<li><a href="../NodeToValueStatement/">NodeToValueStatement</a> - A statement where object is a literal</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class</h2>
-<h2 id="attributes">Attributes</h2>
-<h3 id="inherited-from-thing">Inherited from Thing:</h3>
 <ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Description: An identifier for an element. Note blank node ids are not unique across databases</li>
-<li>Range: <a href="../types/NodeIdType/">NodeIdType</a></li>
+<li><strong>None</strong> <em><a href="../statements/">statements</a></em>  <sub>0..*</sub>  <strong><a href="./">Statement</a></strong></li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../statement_node_statements/">statement➞node_statements</a>  <sub>0..*</sub><ul>
+<li>Description: statements about the quad where the object is a node</li>
+<li>Range: <a href="../NodeToNodeStatement/">NodeToNodeStatement</a></li>
 </ul>
 </li>
-<li><a href="../type/">type</a>  <sub>0..1</sub><ul>
+<li><a href="../statement_value_statements/">statement➞value_statements</a>  <sub>0..*</sub><ul>
+<li>Description: statements about the quad where the object is a literal</li>
+<li>Range: <a href="../NodeToValueStatement/">NodeToValueStatement</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="inherited-from-quad">Inherited from quad:</h3>
+<ul>
+<li><a href="../subject/">subject</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../Node/">Node</a></li>
+</ul>
+</li>
+<li><a href="../predicate/">predicate</a>  <sub>0..1</sub><ul>
+<li>Range: <a href="../PropertyNode/">PropertyNode</a></li>
+</ul>
+</li>
+<li><a href="../object/">object</a>  <sub>0..1</sub><ul>
+<li>Description: a literal or node representing the object of the triple</li>
+<li>Range: <a href="../NodeOrLiteral/">NodeOrLiteral</a></li>
+</ul>
+</li>
+<li><a href="../graph/">graph</a>  <sub>0..1</sub><ul>
+<li>Description: Graph to which the triple belongs</li>
 <li>Range: <a href="../Node/">Node</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="other-properties">Other properties</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Mappings:</strong></td>
-<td></td>
-<td>rdf:Statement</td>
-</tr>
-</tbody>
-</table>
               
             </div>
           </div>

@@ -61,9 +61,11 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#command-line">Command Line</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#python">Python</a>
+    <li class="toctree-l2"><a class="reference internal" href="#local-rdf-files">Local RDF files</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#service-via-fast-api">Service (via Fast API)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#list-all-templates">List all templates</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#python">Python</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#browsing-the-templates">Browsing the templates</a>
     </li>
@@ -161,6 +163,7 @@
 <li>optional python bindings / <a href="https://github.com/linkml/sparqlfun/blob/main/sparqlfun/model.py">object model</a> using LinkML</li>
 <li>supports both SELECT and CONSTRUCT</li>
 <li>optional export to TSV, JSON, YAML, RDF</li>
+<li>extensive <a href="https://github.com/linkml/sparqlfun/tree/main/sparqlfun/config">endpoint metadata</a></li>
 </ul>
 <p>This is currently alpha software, interfaces and organization may change</p>
 <h2 id="browse-the-default-templates">Browse the default templates</h2>
@@ -170,7 +173,7 @@
 <p>Note: currently not all metadata from the yaml is shown in the generated docs</p>
 <h2 id="command-line">Command Line</h2>
 <p>Use the <a href="https://linkml.io/sparqlfun/PairwiseCommonSubClassAncestor">sparqlfun:PairwiseCommonSubClassAncestor</a> template</p>
-<pre><code class="language-bash">sparqlfun -e ubergraph -T PairwiseCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
+<pre><code class="language-bash">sparqlfun query -e ubergraph -T PairwiseCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
 </code></pre>
 <p>results:</p>
 <pre><code class="language-yaml">results:
@@ -191,18 +194,23 @@
   ancestor: GO:0044271
 ...
 </code></pre>
+<h2 id="local-rdf-files">Local RDF files</h2>
+<p>If you specify the <code>-f</code> / <code>--format</code> option then <code>-e</code> is assumed to be a path to a file on disk:</p>
+<pre><code class="language-bash">sparqlfun query -e go.owl.ttl -f ttl -T PairwiseCommonSubClassAncestor node1=GO:0046220 node2=GO:0008295
+</code></pre>
+<h2 id="list-all-templates">List all templates</h2>
+<pre><code class="language-bash">sparqlfun endpoints
+</code></pre>
 <h2 id="python">Python</h2>
 <pre><code class="language-python">from sparqlfun import SparqlEngine
 from sparqlfun.model import PairwiseCommonSubClassAncestor
 
 se = SparqlEngine(endpoint='ubergraph')
 se.bind_prefixes(GO='http://purl.obolibrary.org/obo/GO_')
-for row in se.query(PairwiseCommonSubClassAncestor(node1='GO:0046220', node2='GO:0008295')):
-        print(f'ROW={row}')
+for apair in se.query(PairwiseCommonSubClassAncestor(node1='GO:0046220', node2='GO:0008295')).results:
+        print(f'ROW={apair.node1} &lt;-&gt; {apair.node2} ANCESTOR = {apair.ancestor}')
 </code></pre>
-<p>For more examples, see tests/ in GitHub</p>
-<h2 id="service-via-fast-api">Service (via Fast API)</h2>
-<p>coming soon!</p>
+<p>For more examples, see [tests/] in GitHub</p>
 <h2 id="browsing-the-templates">Browsing the templates</h2>
 <ul>
 <li>source is in <a href="https://github.com/linkml/sparqlfun/tree/main/sparqlfun/schema">sparqlfun/schema</a><ul>
@@ -214,6 +222,12 @@ for row in se.query(PairwiseCommonSubClassAncestor(node1='GO:0046220', node2='GO
 </ul>
 </li>
 </ul>
+<p>You can also list templates here:</p>
+<pre><code class="language-bash">sparqlfun templates
+</code></pre>
+<p>or for detailed view:</p>
+<pre><code class="language-bash">sparqlfun templates --detail
+</code></pre>
 <h2 id="how-it-works">How it works</h2>
 <h3 id="basics">Basics</h3>
 <p>Templates are defined as YAML files following the LinkML schema.</p>
